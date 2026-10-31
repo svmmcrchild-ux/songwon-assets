@@ -31,7 +31,7 @@
 body {
   background-color: #e9ddc9 !important;
   background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/fond-jour.png") !important;
-  background-position: center bottom !important;
+  background-position: center, bottom !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
