@@ -115,7 +115,7 @@ body:not(.songwon-dark) {
     linear-gradient(rgba(250,245,236,.20), rgba(250,245,236,.20)),
     url("https://svmmcrchild-ux.github.io/songwon-assets/fond-jour.png") !important;
 
-  background-position: bottom !important;
+  background-position: background-position: center center, center 40px !important;
   background-size: auto, 100% auto !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
@@ -126,7 +126,7 @@ body.songwon-dark {
     linear-gradient(rgba(174,132,96,.22), rgba(174,132,96,.22)),
     url("https://svmmcrchild-ux.github.io/songwon-assets/fond-nuit.png") !important;
 
-  background-position: bottom !important;
+  background-position: background-position: center center, center 40px !important;
   background-size: auto, 100% auto !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
