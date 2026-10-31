@@ -1,0 +1,117 @@
+/* SONGWON 1995 — NAVIGATION */
+/* Barre de navigation vintage et icones jour/nuit. */
+
+/* 04 — NAVIGATION VINTAGE */
+
+a.mainmenu,
+a.mainmenu:hover,
+body.songwon-dark a.mainmenu,
+body.songwon-dark a.mainmenu:hover {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  color: inherit;
+  margin: 2px;
+  padding: 0;
+}
+
+#page-header .mainmenu,
+#page-header .gen,
+#page-header .gensmall {
+  text-align: center;
+}
+
+#page-header .mainmenu {
+  display: inline-block;
+}
+
+#page-header .headerbar + .navbar,
+#page-header .navlinks,
+#page-header td:has(a.mainmenu) {
+  text-align: center !important;
+}
+
+/* Boutons inutiles */
+
+a.mainmenu[href="/"],
+a.mainmenu[href^="/calendar"],
+a.mainmenu[href^="/images"],
+a.mainmenu[href^="/discover"],
+a.mainmenu[href^="/faq"],
+a.mainmenu[href^="/groups"] {
+  display: none !important;
+}
+
+/* Images de navigation — jour */
+
+a.mainmenu[href*="search"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/rechercher-jour.png") !important;
+}
+
+a.mainmenu[href*="memberlist"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/membres-jour.png") !important;
+}
+
+a.mainmenu[href*="profile"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/profil-jour.png") !important;
+}
+
+a.mainmenu[href*="privmsg"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/enveloppe-fermee-jour.png") !important;
+}
+
+a.mainmenu[href*="logout"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/deconnexion-jour.png") !important;
+}
+
+/* Dimensions des icônes */
+
+a.mainmenu[href*="search"],
+a.mainmenu[href*="memberlist"],
+a.mainmenu[href*="profile"],
+a.mainmenu[href*="privmsg"],
+a.mainmenu[href*="logout"] {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  font-size: 0 !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 48px 48px !important;
+}
+
+/* Anciennes icônes Forumactif */
+
+a.mainmenu[href*="search"] img,
+a.mainmenu[href*="memberlist"] img,
+a.mainmenu[href*="profile"] img,
+a.mainmenu[href*="privmsg"] img,
+a.mainmenu[href*="logout"] img {
+  display: none !important;
+}
+
+/* Images de navigation — nuit */
+
+body.songwon-dark a.mainmenu[href*="search"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/rechercher-nuit.png") !important;
+}
+
+body.songwon-dark a.mainmenu[href*="memberlist"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/membres-nuit.png") !important;
+}
+
+body.songwon-dark a.mainmenu[href*="profile"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/profil-nuit.png") !important;
+}
+
+body.songwon-dark a.mainmenu[href*="privmsg"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/enveloppe-fermee-nuit.png") !important;
+}
+
+body.songwon-dark a.mainmenu[href*="logout"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/deconnexion-nuit.png") !important;
+}
