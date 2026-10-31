@@ -109,17 +109,27 @@ body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {
   text-align: center;
 }
 
-
-/* Fond illustré adouci, sans modifier l’opacité des textes. */
+/* SONGWON — Fonds illustrés jour et nuit */
 body:not(.songwon-dark) {
-  background-image: linear-gradient(rgba(250,245,236,.20),rgba(250,245,236,.20)),url("https://svmmcrchild-ux.github.io/songwon-assets/fond-jour.png") !important;
-  background-position: center center !important;
-  background-size: auto,cover !important;
+  background-image:
+    linear-gradient(rgba(250,245,236,.20), rgba(250,245,236,.20)),
+    url("https://svmmcrchild-ux.github.io/songwon-assets/fond-jour.png") !important;
+
+  background-position: center center, center bottom !important;
+  background-size: auto, 100% auto !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
+
 body.songwon-dark {
-  background-image: linear-gradient(rgba(174,132,96,.22),rgba(174,132,96,.22)),url("https://svmmcrchild-ux.github.io/songwon-assets/fond-nuit.png") !important;
-  background-position: center center !important;
-  background-size: auto,cover !important;
+  background-image:
+    linear-gradient(rgba(174,132,96,.22), rgba(174,132,96,.22)),
+    url("https://svmmcrchild-ux.github.io/songwon-assets/fond-nuit.png") !important;
+
+  background-position: center center, center bottom !important;
+  background-size: auto, 100% auto !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
 }
 
 
