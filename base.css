@@ -1,5 +1,13 @@
 /* SONGWON — BASE : polices, fonds et couleurs */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap");
+/* Police manuscrite Dry Brush */
+@font-face {
+  font-family: "Dry Brush";
+  src: url("https://svmmcrchild-ux.github.io/songwon-assets/Dry%20Brush.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
 /* Nom exact utilisé dans les titres de l’accueil. */
 @font-face {
@@ -113,3 +121,5 @@ body.songwon-dark {
   background-position: center center !important;
   background-size: auto,cover !important;
 }
+
+
