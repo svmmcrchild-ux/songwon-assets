@@ -1103,3 +1103,87 @@ body.songwon-dark .sw-topic-view {
 /* ==========================================================
    FIN DE LA FEUILLE CSS — SONGWON 1995
    ========================================================== */
+/* ==========================================
+   SONGWON — NAVIGATION SUR PAPIER
+   Même style que les liens de l'accueil
+   JOUR + NUIT
+   ========================================== */
+
+/* Supprimer complètement la carte de navigation */
+.sw-viewforum .sw-vf-toolbar {
+  width: calc(100% - 48px);
+  max-width: 1120px;
+  margin: 15px auto 25px;
+  padding: 8px 0;
+
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Typographie manuscrite du fil d'Ariane */
+.sw-viewforum .sw-vf-breadcrumb,
+.sw-viewforum .sw-vf-breadcrumb a,
+.sw-viewforum .sw-vf-breadcrumb-trail,
+.sw-viewforum .sw-vf-breadcrumb-trail a {
+  font-family: "Caveat", cursive !important;
+  font-size: 23px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  color: var(--vf-ink) !important;
+  text-decoration: none !important;
+}
+
+/* Liens de navigation à droite */
+.sw-viewforum .sw-vf-actions,
+.sw-viewforum .sw-vf-more,
+.sw-viewforum .sw-vf-more a,
+.sw-viewforum .sw-vf-newtopic {
+  font-family: "Caveat", cursive !important;
+  font-size: 23px !important;
+  font-weight: 400 !important;
+  color: var(--vf-ink) !important;
+}
+
+/* Nouveau sujet : plus de bouton */
+.sw-viewforum .sw-vf-newtopic {
+  min-height: 0;
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+/* Petit crayon */
+.sw-viewforum .sw-vf-newtopic span {
+  font-size: 20px;
+  color: var(--vf-accent);
+}
+
+/* Effet au survol */
+.sw-viewforum .sw-vf-breadcrumb a:hover,
+.sw-viewforum .sw-vf-more a:hover,
+.sw-viewforum .sw-vf-newtopic:hover {
+  color: var(--vf-accent) !important;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 780px) {
+  .sw-viewforum .sw-vf-toolbar {
+    width: calc(100% - 20px);
+    gap: 12px;
+  }
+
+  .sw-viewforum .sw-vf-breadcrumb,
+  .sw-viewforum .sw-vf-breadcrumb a,
+  .sw-viewforum .sw-vf-breadcrumb-trail,
+  .sw-viewforum .sw-vf-breadcrumb-trail a,
+  .sw-viewforum .sw-vf-more,
+  .sw-viewforum .sw-vf-newtopic {
+    font-size: 19px !important;
+  }
+}
