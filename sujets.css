@@ -1158,10 +1158,24 @@ body.songwon-dark
     width: calc(100% - 20px);
   }
 
-  .sw-topic-navigation,
-  .sw-topic-bottom-tools {
-    padding: 12px;
-  }
+/* Navigation intégrée au fond du forum */
+
+.sw-topic-navigation,
+.sw-topic-bottom-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 16px;
+  padding: 12px 4px;
+
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
 
   .sw-topic-view .sw-topic-post > .sw-topic-author,
   .sw-topic-view .sw-topic-post > .sw-topic-message {
@@ -1294,15 +1308,30 @@ body.songwon-dark .sw-posting {
 
 /* 16.3 — CARTES PRINCIPALES */
 
+
 .sw-posting .sw-posting-main,
 .sw-posting .sw-posting-actions {
   width: 100%;
+
   border: 0 !important;
   border-collapse: separate !important;
   border-spacing: 0 !important;
+
   background: var(--sp-paper) !important;
+
   box-shadow: none !important;
   box-sizing: border-box;
+}
+
+/* Fond des cellules de l'éditeur et de ses boutons */
+
+.sw-posting .sw-posting-main > tbody > tr > td,
+.sw-posting .sw-posting-actions > tbody > tr > td,
+.sw-posting .sw-posting-actions > tbody > tr > th {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 .sw-posting .sw-posting-main {
