@@ -132,4 +132,19 @@ html.sw-smileys-night select {
   border: 0 !important;
   border-radius: 6px !important;
 }
+/* SONGWON — FINITIONS DU PANNEAU DES SMILEYS */
+
+html.sw-smileys-day body,
+html.sw-smileys-day #sce_smilies_body,
+html.sw-smileys-day table,
+html.sw-smileys-day td {
+  background-color: #f8efdf !important;
+}
+
+html.sw-smileys-night body,
+html.sw-smileys-night #sce_smilies_body,
+html.sw-smileys-night table,
+html.sw-smileys-night td {
+  background-color: #392a24 !important;
+}
 
