@@ -399,31 +399,16 @@ body.songwon-dark .sw-posting .sw-pollbox #pollitems_show .row2 {
     background: #392a24 !important;
     color: #e9d9c8 !important;
 }
-/* =========================================
-   SONGWON — BANDEAUX DE L'ÉDITEUR
-   Police manuscrite Caveat
-   Jour + Nuit
-   ========================================= */
+/* SONGWON — Harmonisation du titre Sondage */
 
-/* Options, Calendrier et Outils SEO */
-#postingbox .thHead,
-#postingbox .thHead .gen,
-#postingbox .thHead .gen b,
-#seotools .thHead,
-#seotools .thHead .gen,
-#seotools .thHead .gen b,
-
-/* Ajouter un sondage */
-#pollitems .thHead,
-#pollitems .thHead .gen,
-#pollitems .thHead .gen b,
-#pollitems_show .thHead,
-#pollitems_show .thHead .gen,
-#pollitems_show .thHead .gen b {
-    font-family: "Caveat", cursive !important;
-    font-size: 28px !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
+#pollitems th.thHead .gen,
+#pollitems th.thHead .gen b,
+#pollitems_show th.thHead .gen,
+#pollitems_show th.thHead .gen b {
+    font-family: "Roboto", Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
 }
 
 
