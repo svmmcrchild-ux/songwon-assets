@@ -1,944 +1,188 @@
 /* SONGWON 1995 — SUJETS ET MESSAGES */
-/* Listes de sujets, affichage des forums, messages RP et reponse rapide. */
+/* Sections 13 bis et 14 harmonisées avec les cartes de l'accueil. */
 
-/* ==========================================
-   13 BIS — LISTE DES SUJETS
-   REGISTRE SONGWON 1995
-   ========================================== */
-
-.sw-topics,
-.sw-topics * {
-  box-sizing: border-box;
+/* 13 BIS + 14 — PALETTE JOUR / NUIT */
+.sw-viewforum {
+  --vf-card: rgba(235, 220, 198, .88);
+  --vf-card-hover: rgba(242, 229, 211, .94);
+  --vf-ink: #594336;
+  --vf-muted: #765f4e;
+  --vf-accent: #9b6546;
+  width: 100%;
+  color: var(--vf-ink);
+  font-family: "DM Sans", Arial, sans-serif;
 }
+body.songwon-dark .sw-viewforum {
+  --vf-card: rgba(67, 49, 41, .92);
+  --vf-card-hover: rgba(78, 58, 48, .96);
+  --vf-ink: #f0dfca;
+  --vf-muted: #d0b9a5;
+  --vf-accent: #dfa572;
+}
+.sw-viewforum *, .sw-viewforum *::before, .sw-viewforum *::after { box-sizing: border-box; }
 
-.sw-topics {
+/* Largeur cohérente pour tous les blocs ; pas de panneau extérieur */
+.sw-vf-toolbar, .sw-viewforum .sw-topics, .sw-vf-information,
+.sw-vf-bottom-tools, .sw-vf-legend {
   width: calc(100% - 48px);
   max-width: 1120px;
-  margin: 20px auto 24px;
-  padding: 12px;
-  background: rgba(235,220,198,.91);
-  border: 1px solid var(--sw-rule);
-  border-radius: 5px;
-  color: var(--sw-ink);
+  margin-left: auto;
+  margin-right: auto;
 }
-
-body.songwon-dark .sw-topics {
-  background: rgba(54,43,37,.94);
+.sw-viewforum .sw-topics, .sw-viewforum .sw-topics-list {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
+.sw-viewforum .sw-topics { padding: 0; margin-top: 18px; margin-bottom: 24px; color: var(--vf-ink); }
+.sw-topics-list { display: flex; flex-direction: column; gap: 18px; }
+.sw-topics-pagination { padding: 0 4px; text-align: right; font-size: 11px; color: var(--vf-muted); }
+.sw-topics-divider { padding: 8px 12px; font: 400 20px/1.4 "Schoolbell", cursive; color: var(--vf-accent); }
+.sw-topics-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 4px; font-size: 11px; }
+.sw-topics-bottom a, .sw-topics-pagination a { color: var(--vf-accent) !important; }
+.sw-topics-empty { padding: 22px; border-radius: 22px; background: var(--vf-card); color: var(--vf-muted); font: 400 20px "Caveat", cursive; text-align: center; }
+.sw-topics-spacer { height: 12px; }
 
-/* En-tête de la liste */
-
-.sw-topics-header {
-  padding: 17px 22px;
-  margin-bottom: 13px;
-  background: rgba(253,247,236,.99);
-  border-radius: 2px;
-}
-
-body.songwon-dark .sw-topics-header {
-  background: rgba(44,36,31,.99);
-}
-
-.sw-topics-meta {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 1.4px;
-  color: var(--sw-copper);
-}
-
-.sw-topics-heading {
-  margin: 10px 0 3px;
-  font-family: "Dry Brush", cursive !important;
-  font-size: 37px !important;
-  font-weight: normal !important;
-  line-height: 1.3;
-  color: var(--sw-ink);
-}
-
-.sw-topics-header p {
-  margin: 0;
-  font-family: "Caveat", cursive !important;
-  font-size: 22px;
-  font-style: normal;
-  line-height: 1.5;
-  color: var(--sw-secondary);
-}
-
-/* Conteneur des sujets */
-
-.sw-topics-list {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.sw-topics-pagination {
-  padding: 5px 10px;
-  text-align: right;
-  font-size: 11px;
-  color: var(--sw-secondary);
-}
-
-.sw-topics-divider {
-  padding: 9px 12px 6px;
-  border-bottom: 1px solid var(--sw-rule);
-  color: var(--sw-copper);
-  font: 400 20px/1.4 "Schoolbell", cursive;
-}
-
-/* Une ligne de sujet */
-
-.sw-topic-card {
+/* Chaque sujet = UNE carte, sans bordure ni panneau parent */
+.sw-viewforum .sw-topic-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 110px 160px;
   align-items: center;
   gap: 14px;
   min-width: 0;
-  padding: 15px 17px;
-  border: 1px solid var(--sw-rule);
-  border-radius: 3px;
-  background: rgba(244,232,213,.96);
-  box-shadow: 2px 3px 0 rgba(63,42,25,.06);
-  color: var(--sw-ink);
+  margin: 0;
+  padding: 22px 25px;
+  background: var(--vf-card);
+  color: var(--vf-ink);
+  border: 0;
+  outline: 0;
+  border-radius: 22px;
+  box-shadow: none;
   transition: background .2s ease;
 }
+.sw-viewforum .sw-topic-card:hover { background: var(--vf-card-hover); }
+.sw-topic-main { display: flex; align-items: flex-start; gap: 12px; min-width: 0; }
+.sw-topic-icon { flex: 0 0 23px; width: 23px; padding-top: 2px; }
+.sw-topic-icon img { max-width: 23px; max-height: 23px; object-fit: contain; }
+.sw-topic-information { flex: 1; min-width: 0; }
+.sw-topic-title-line { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
+.sw-topic-title { display: inline; margin: 0 !important; padding: 0 !important; font: 400 25px/1.35 "Schoolbell", cursive !important; }
+.sw-viewforum .sw-topic-title a { color: var(--vf-ink) !important; text-decoration: none; overflow-wrap: anywhere; }
+.sw-viewforum .sw-topic-title a:hover { color: var(--vf-accent) !important; }
+.sw-topic-custom-icon img { max-width: 18px; max-height: 18px; }
+.sw-topic-description { margin-top: 6px; font-size: 12px; line-height: 1.6; color: var(--vf-muted); }
+.sw-topic-details { display: flex; flex-wrap: wrap; gap: 5px 12px; margin-top: 8px; font-size: 11px; line-height: 1.5; color: var(--vf-muted); }
+.sw-viewforum .sw-topic-details a, .sw-viewforum .sw-topic-last-info a { color: var(--vf-accent) !important; }
+.sw-topic-statistics { display: flex; justify-content: center; gap: 16px; padding: 0 8px; font-family: "DM Sans", Arial, sans-serif; }
+.sw-topic-statistics > div { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.sw-topic-statistics strong { font: 400 18px/1 "DM Sans", Arial, sans-serif; color: var(--vf-ink); }
+.sw-topic-statistics span, .sw-topic-last-label { font-size: 10px; letter-spacing: .7px; color: var(--vf-accent); }
+.sw-topic-lastpost { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding-left: 10px; font-size: 11px; line-height: 1.6; color: var(--vf-muted); }
+.sw-topic-last-label { margin-bottom: 5px; }
+.sw-topic-last-avatar { display: block; margin-bottom: 5px; }
+.sw-topic-last-avatar img { width: 34px !important; height: 43px !important; object-fit: cover; border-radius: 5px; }
+.sw-topic-last-info { display: flex; flex-direction: column; overflow-wrap: anywhere; }
+.sw-topic-selection { grid-column: 1 / -1; text-align: right; padding-top: 5px; }
 
-body.songwon-dark .sw-topic-card {
-  background: rgba(65,51,42,.97);
-  box-shadow: 2px 3px 0 rgba(0,0,0,.12);
-}
-
-.sw-topic-card:hover {
-  background: var(--sw-sheet);
-}
-
-/* Titre et description */
-
-.sw-topic-main {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  min-width: 0;
-}
-
-.sw-topic-icon {
-  flex: 0 0 23px;
-  width: 23px;
-  padding-top: 2px;
-}
-
-.sw-topic-icon img {
-  max-width: 23px;
-  max-height: 23px;
-  object-fit: contain;
-}
-
-.sw-topic-information {
-  flex: 1;
-  min-width: 0;
-}
-
-.sw-topic-title-line {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.sw-topic-title {
-  display: inline;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-family: "Schoolbell", cursive !important;
-  font-size: 22px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 1.35 !important;
-}
-
-.sw-topic-title a {
-  font-family: "Schoolbell", cursive !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  color: var(--sw-ink) !important;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
-
-.sw-topic-title a:hover {
-  color: var(--sw-copper) !important;
-}
-
-.sw-topic-custom-icon img {
-  max-width: 18px;
-  max-height: 18px;
-}
-
-.sw-topic-description {
-  margin-top: 6px;
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--sw-secondary);
-}
-
-.sw-topic-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 12px;
-  margin-top: 8px;
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 10px;
-  line-height: 1.5;
-  color: var(--sw-secondary);
-}
-
-.sw-topic-details a {
-  color: var(--sw-copper) !important;
-}
-
-/* Compteurs */
-
-.sw-topic-statistics {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  padding: 0 10px;
-  border-left: 1px solid var(--sw-rule);
-  font-family: "DM Sans", Arial, sans-serif;
-}
-
-.sw-topic-statistics > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.sw-topic-statistics strong {
-  font: 400 17px/1 "DM Sans", Arial, sans-serif;
-  color: var(--sw-ink);
-}
-
-.sw-topic-statistics span {
-  font-size: 9px;
-  letter-spacing: .6px;
-  color: var(--sw-copper);
-}
-
-/* Dernier message */
-
-.sw-topic-lastpost {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  padding-left: 13px;
-  border-left: 1px solid var(--sw-rule);
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 11px;
-  line-height: 1.6;
-  color: var(--sw-secondary);
-}
-
-.sw-topic-last-label {
-  margin-bottom: 5px;
-  font-size: 9px;
-  letter-spacing: 1px;
-  color: var(--sw-copper);
-}
-
-.sw-topic-last-avatar {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.sw-topic-last-avatar img {
-  width: 34px !important;
-  height: 43px !important;
-  object-fit: cover;
-  border-radius: 3px;
-}
-
-.sw-topic-last-info {
-  display: flex;
-  flex-direction: column;
-  overflow-wrap: anywhere;
-}
-
-.sw-topic-last-info a {
-  color: var(--sw-ink) !important;
-}
-
-.sw-topic-last-info a:hover {
-  color: var(--sw-copper) !important;
-}
-
-/* Sélection pour la modération */
-
-.sw-topic-selection {
-  grid-column: 1 / -1;
-  text-align: right;
-  padding-top: 5px;
-}
-
-/* Pied de page et état vide */
-
-.sw-topics-empty {
-  padding: 24px;
-  text-align: center;
-  background: var(--sw-card);
-  border-radius: 3px;
-  font: 400 20px "Caveat", cursive;
-  color: var(--sw-secondary);
-}
-
-.sw-topics-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 12px 5px 4px;
-  font-size: 11px;
-}
-
-.sw-topics-bottom a,
-.sw-topics-pagination a {
-  color: var(--sw-copper) !important;
-}
-
-.sw-topics-footer {
-  padding: 13px 6px 2px;
-  text-align: right;
-  font: 500 17px "Caveat", cursive;
-  letter-spacing: .02em;
-  color: var(--sw-copper);
-}
-
-.sw-topics-footer span {
-  margin: 0 7px;
-}
-
-.sw-topics-spacer {
-  height: 12px;
-}
-
-/* Adaptation aux écrans étroits */
-
-@media (max-width: 950px) {
-  .sw-topic-card {
-    grid-template-columns: minmax(0, 1fr) 90px 130px;
-    gap: 10px;
-  }
-
-  .sw-topic-statistics {
-    gap: 10px;
-    padding: 0 5px;
-  }
-}
-
-@media (max-width: 780px) {
-  .sw-topics {
-    width: calc(100% - 20px);
-    padding: 9px;
-  }
-
-  .sw-topics-header {
-    padding: 15px;
-  }
-
-  .sw-topics-heading {
-    font-size: 30px !important;
-  }
-
-  .sw-topic-card {
-    grid-template-columns: minmax(0, 1fr) 105px;
-    padding: 12px;
-    gap: 12px;
-  }
-
-  .sw-topic-main {
-    grid-column: 1 / -1;
-  }
-
-  .sw-topic-statistics {
-    justify-content: flex-start;
-    border-left: none;
-    padding: 0 0 0 35px;
-  }
-
-  .sw-topic-lastpost {
-    padding-left: 12px;
-  }
-}
-
-@media (max-width: 420px) {
-  .sw-topic-card {
-    grid-template-columns: 1fr;
-  }
-
-  .sw-topic-statistics {
-    padding-left: 35px;
-  }
-
-  .sw-topic-lastpost {
-    border-left: none;
-    border-top: 1px solid var(--sw-rule);
-    padding: 10px 0 0 35px;
-  }
-}
-
-/* FIN DE LA PARTIE 3 */
-
-/* ==========================================
-   14 — HABILLAGE INTÉRIEUR DES FORUMS
-   SONGWON 1995
-   ========================================== */
-
-.sw-viewforum,
-.sw-viewforum * {
-  box-sizing: border-box;
-}
-
-.sw-viewforum {
-  width: 100%;
-  color: var(--sw-ink);
-  font-family: "DM Sans", Arial, sans-serif;
-}
-
-/* 14.1 — NAVIGATION ET FIL D'ARIANE */
-
+/* Navigation : une seule carte arrondie */
 .sw-vf-toolbar {
-  width: calc(100% - 48px);
-  max-width: 1120px;
-  margin: 16px auto 12px;
-  padding: 11px 17px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  background: var(--sw-sheet);
-  border: 1px solid var(--sw-rule);
-  border-radius: 5px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px; margin-top: 16px; margin-bottom: 12px;
+  padding: 17px 22px; background: var(--vf-card);
+  border: 0; border-radius: 22px; box-shadow: none;
 }
-
-.sw-vf-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  flex: 1;
-  min-width: 0;
-  font-size: 11px;
-  line-height: 1.6;
-  color: var(--sw-secondary);
+.sw-vf-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; flex: 1; min-width: 0; font-size: 12px; line-height: 1.6; color: var(--vf-muted); }
+.sw-vf-breadcrumb-trail { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 5px; min-width: 0; }
+.sw-viewforum .sw-vf-breadcrumb a, .sw-viewforum .sw-vf-breadcrumb-trail a,
+.sw-vf-breadcrumb .nav, .sw-vf-breadcrumb-trail .nav {
+  display: inline !important; width: auto !important; margin: 0 !important;
+  padding: 0 !important; color: var(--vf-ink) !important;
+  font-size: 12px; line-height: 1.6; text-decoration: none;
 }
-
-.sw-vf-breadcrumb-trail {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  min-width: 0;
+.sw-vf-breadcrumb br { display: none; }
+.sw-vf-actions { display: flex; align-items: center; flex-shrink: 0; gap: 12px; }
+.sw-vf-more { font-size: 11px; color: var(--vf-muted); }
+.sw-vf-more a { color: var(--vf-accent) !important; }
+.sw-viewforum .sw-vf-newtopic {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 36px; padding: 8px 15px;
+  background: var(--vf-card-hover); border: 0; border-radius: 13px;
+  color: var(--vf-ink) !important; font: 600 12px/1.4 "DM Sans", Arial, sans-serif;
+  text-decoration: none !important; white-space: nowrap;
 }
+.sw-viewforum .sw-vf-newtopic:hover { background: var(--vf-card); }
+.sw-vf-newtopic span { color: var(--vf-accent); font-size: 17px; }
 
-.sw-vf-breadcrumb a,
-.sw-vf-breadcrumb-trail a {
-  display: inline !important;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  color: var(--sw-ink) !important;
-  font-size: 11px;
-  line-height: 1.6;
-  text-decoration: none;
-}
-
-.sw-vf-breadcrumb a:hover,
-.sw-vf-breadcrumb-trail a:hover {
-  color: var(--sw-copper) !important;
-}
-
-.sw-vf-breadcrumb br {
-  display: none;
-}
-
-.sw-vf-breadcrumb .nav,
-.sw-vf-breadcrumb-trail .nav {
-  display: inline !important;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-.sw-vf-actions {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  gap: 12px;
-}
-
-.sw-vf-more {
-  font-size: 11px;
-  color: var(--sw-secondary);
-}
-
-.sw-vf-more a {
-  color: var(--sw-copper) !important;
-}
-
-/* 14.2 — BOUTON NOUVEAU SUJET */
-
-.sw-vf-newtopic {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 35px;
-  padding: 8px 15px;
-  background: var(--sw-sheet);
-  border: 1px solid var(--sw-copper);
-  border-radius: 4px;
-  color: var(--sw-ink) !important;
-  font: 500 12px/1.4 "DM Sans", Arial, sans-serif;
-  text-decoration: none !important;
-  white-space: nowrap;
-  transition: background .2s ease, color .2s ease;
-}
-
-.sw-vf-newtopic:hover {
-  background: var(--sw-card);
-  color: var(--sw-copper) !important;
-}
-
-.sw-vf-newtopic span {
-  color: var(--sw-copper);
-  font-size: 17px;
-}
-
-/* 14.3 — INFORMATIONS DU FORUM */
-
+/* Informations : UNE carte avec quatre rubriques sans sous-cadres */
 .sw-vf-information {
-  width: calc(100% - 48px);
-  max-width: 1120px;
-  margin: 14px auto;
-  padding: 12px;
-  background: var(--sw-page);
-  border: 1px solid var(--sw-rule);
-  border-radius: 5px;
+  margin-top: 22px; margin-bottom: 18px; padding: 23px 27px;
+  background: var(--vf-card); border: 0; border-radius: 22px; box-shadow: none;
 }
+.sw-vf-info-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 0; background: transparent; border: 0; border-radius: 0; }
+.sw-vf-eyebrow { display: block; font-size: 10px; letter-spacing: 1.3px; color: var(--vf-accent); }
+.sw-vf-info-heading h2 { margin: 4px 0 0; padding: 0; font: 400 25px/1.35 "Schoolbell", cursive !important; color: var(--vf-ink); }
+.sw-vf-markread { font-size: 11px; color: var(--vf-accent) !important; text-decoration: none; }
+.sw-vf-info-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 25px 35px; margin-top: 22px; }
+.sw-vf-info-item { min-width: 0; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.sw-vf-info-label { display: block; margin-bottom: 7px; font-size: 10px; letter-spacing: 1.1px; color: var(--vf-accent); }
+.sw-vf-info-text { font-size: 12px; line-height: 1.65; color: var(--vf-muted); overflow-wrap: anywhere; }
+.sw-vf-info-text a { color: var(--vf-ink) !important; }
+.sw-vf-info-text a:hover { color: var(--vf-accent) !important; }
+.sw-vf-info-text p { margin: 0 0 5px; }
+.sw-vf-info-text p:last-child { margin-bottom: 0; }
+.sw-vf-info-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 22px; padding: 0; border: 0; }
+.sw-vf-info-bottom .sw-vf-breadcrumb { flex: 1; }
+.sw-vf-collapse { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; color: var(--vf-accent) !important; text-decoration: none; white-space: nowrap; }
+.sw-vf-collapse img { width: 13px; height: 13px; object-fit: contain; }
+.sw-vf-info-closed { justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 0 0; font-size: 11px; color: var(--vf-muted); }
+.sw-vf-info-closed[style*="display: none"], .sw-vf-info-closed[style*="display:none"] { display: none !important; }
+.sw-vf-info-closed:not([style*="display:none"]):not([style*="display: none"]) { display: flex; }
 
-.sw-vf-info-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 13px 17px;
-  background: var(--sw-sheet);
-  border-radius: 3px;
-}
+/* Outils inférieurs : aucune boîte extérieure */
+.sw-vf-bottom-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-top: 13px; margin-bottom: 13px; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.sw-vf-bottom-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 20px; }
+.sw-vf-sort form, .sw-vf-jump { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin: 0; }
+.sw-vf-sort label, .sw-vf-jump label { font-size: 11px; color: var(--vf-muted); }
+.sw-vf-sort select, .sw-vf-jump select { max-width: 185px; min-height: 29px; padding: 4px 7px; background: var(--vf-card); color: var(--vf-ink); border: 0; border-radius: 9px; font-size: 11px; }
+.sw-vf-sort input[type="submit"], .sw-vf-jump input[type="submit"] { min-height: 29px; padding: 4px 10px; background: var(--vf-card); border: 0; border-radius: 9px; color: var(--vf-ink); font-size: 11px; cursor: pointer; }
 
-.sw-vf-eyebrow {
-  display: block;
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 1.3px;
-  color: var(--sw-copper);
-}
-
-.sw-vf-info-heading h2 {
-  margin: 4px 0 0;
-  padding: 0;
-  font-family: "Schoolbell", cursive !important;
-  font-size: 23px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 1.35;
-  color: var(--sw-ink);
-}
-
-.sw-vf-markread {
-  font-size: 11px;
-  color: var(--sw-copper) !important;
-  text-decoration: none;
-}
-
-.sw-vf-markread:hover {
-  color: var(--sw-ink) !important;
-}
-
-/* 14.4 — QUATRE FICHES D'INFORMATIONS */
-
-.sw-vf-info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.sw-vf-info-item {
-  min-width: 0;
-  padding: 12px 15px;
-  background: var(--sw-card);
-  border: 1px solid var(--sw-rule);
-  border-radius: 3px;
-  transition: background .2s ease;
-}
-
-.sw-vf-info-item:hover {
-  background: var(--sw-sheet);
-}
-
-.sw-vf-info-label {
-  display: block;
-  margin-bottom: 7px;
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 10px;
-  letter-spacing: 1.1px;
-  color: var(--sw-copper);
-}
-
-.sw-vf-info-text {
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 12px;
-  line-height: 1.65;
-  color: var(--sw-secondary);
-  overflow-wrap: anywhere;
-}
-
-.sw-vf-info-text a {
-  color: var(--sw-ink) !important;
-}
-
-.sw-vf-info-text a:hover {
-  color: var(--sw-copper) !important;
-}
-
-.sw-vf-info-text p {
-  margin: 0 0 5px;
-}
-
-.sw-vf-info-text p:last-child {
-  margin-bottom: 0;
-}
-
-/* 14.5 — BAS DU PANNEAU D'INFORMATIONS */
-
-.sw-vf-info-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px;
-  padding: 10px 5px 2px;
-  border-top: 1px solid var(--sw-rule);
-}
-
-.sw-vf-info-bottom .sw-vf-breadcrumb {
-  flex: 1;
-}
-
-.sw-vf-collapse {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  color: var(--sw-copper) !important;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.sw-vf-collapse:hover {
-  color: var(--sw-ink) !important;
-}
-
-.sw-vf-collapse img {
-  width: 13px;
-  height: 13px;
-  object-fit: contain;
-}
-
-.sw-vf-info-closed {
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 12px 6px 3px;
-  font-size: 11px;
-  color: var(--sw-secondary);
-}
-
-.sw-vf-info-closed[style*="display: none"],
-.sw-vf-info-closed[style*="display:none"] {
-  display: none !important;
-}
-
-.sw-vf-info-closed:not([style*="display:none"]):not([style*="display: none"]) {
-  display: flex;
-}
-
-/* 14.6 — OUTILS DE BAS DE PAGE */
-
-.sw-vf-bottom-tools {
-  width: calc(100% - 48px);
-  max-width: 1120px;
-  margin: 13px auto;
-  padding: 12px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-  background: var(--sw-sheet);
-  border: 1px solid var(--sw-rule);
-  border-radius: 5px;
-}
-
-.sw-vf-bottom-controls {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-}
-
-.sw-vf-sort form,
-.sw-vf-jump {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: 0;
-}
-
-.sw-vf-sort label,
-.sw-vf-jump label {
-  font-size: 11px;
-  color: var(--sw-secondary);
-}
-
-.sw-vf-sort select,
-.sw-vf-jump select {
-  max-width: 185px;
-  min-height: 29px;
-  padding: 4px 7px;
-  background: var(--sw-sheet);
-  color: var(--sw-ink);
-  border: 1px solid var(--sw-rule);
-  border-radius: 3px;
-  font-size: 11px;
-}
-
-.sw-vf-sort input[type="submit"],
-.sw-vf-jump input[type="submit"] {
-  min-height: 29px;
-  padding: 4px 10px;
-  background: var(--sw-card);
-  border: 1px solid var(--sw-rule);
-  border-radius: 3px;
-  color: var(--sw-ink);
-  font-size: 11px;
-  cursor: pointer;
-  transition: background .2s ease;
-}
-
-.sw-vf-sort input[type="submit"]:hover,
-.sw-vf-jump input[type="submit"]:hover {
-  background: var(--sw-sheet);
-}
-
-/* 14.7 — LÉGENDE REPLIABLE */
-
-.sw-vf-legend {
-  width: calc(100% - 48px);
-  max-width: 1120px;
-  margin: 15px auto 30px;
-  padding: 15px 18px;
-  background: var(--sw-page);
-  border: 1px solid var(--sw-rule);
-  border-radius: 5px;
-  color: var(--sw-ink);
-}
-
-.sw-vf-legend-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0;
-  padding: 2px 0;
-  border: none;
-  color: var(--sw-copper);
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 11px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.sw-vf-legend-heading::-webkit-details-marker {
-  display: none;
-}
-
-.sw-vf-legend-heading::marker {
-  content: "";
-}
-
-.sw-vf-legend-heading:hover {
-  color: var(--sw-ink);
-}
-
-.sw-vf-legend-hint {
-  font-size: 10px;
-  letter-spacing: 0;
-  color: var(--sw-secondary);
-}
-
-.sw-vf-legend-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 11px 20px;
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--sw-rule);
-}
-
-.sw-vf-legend-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--sw-secondary);
-}
-
-.sw-vf-legend-item img {
-  flex: 0 0 22px;
-  max-width: 22px;
-  max-height: 25px;
-  object-fit: contain;
-}
-
-/* 14.8 — ADAPTATION TABLETTES */
+/* Légende repliable : carte unique */
+.sw-vf-legend { margin-top: 15px; margin-bottom: 30px; padding: 16px 22px; background: var(--vf-card); border: 0; border-radius: 22px; color: var(--vf-ink); }
+.sw-vf-legend-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; border: 0; color: var(--vf-accent); font-size: 11px; letter-spacing: 1px; cursor: pointer; list-style: none; }
+.sw-vf-legend-heading::-webkit-details-marker { display: none; }
+.sw-vf-legend-heading::marker { content: ""; }
+.sw-vf-legend-hint { font-size: 10px; letter-spacing: 0; color: var(--vf-muted); }
+.sw-vf-legend-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 11px 20px; margin-top: 14px; padding-top: 14px; }
+.sw-vf-legend-item { display: flex; align-items: center; gap: 10px; min-width: 0; font-size: 11px; line-height: 1.5; color: var(--vf-muted); }
+.sw-vf-legend-item img { flex: 0 0 22px; max-width: 22px; max-height: 25px; object-fit: contain; }
 
 @media (max-width: 950px) {
-  .sw-vf-toolbar {
-    gap: 10px;
-  }
-
-  .sw-vf-legend-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sw-vf-bottom-controls {
-    gap: 10px;
-  }
+  .sw-viewforum .sw-topic-card { grid-template-columns: minmax(0,1fr) 90px 130px; gap: 10px; }
+  .sw-topic-statistics { gap: 10px; padding: 0 5px; }
+  .sw-vf-legend-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
-
-/* 14.9 — ADAPTATION MOBILES */
-
 @media (max-width: 780px) {
-  .sw-vf-toolbar,
-  .sw-vf-information,
-  .sw-vf-bottom-tools,
-  .sw-vf-legend {
-    width: calc(100% - 20px);
-  }
-
-  .sw-vf-toolbar {
-    align-items: flex-start;
-    padding: 12px;
-  }
-
-  .sw-vf-breadcrumb {
-    flex-basis: 100%;
-  }
-
-  .sw-vf-actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .sw-vf-info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sw-vf-info-heading {
-    padding: 12px 14px;
-  }
-
-  .sw-vf-info-item {
-    padding: 11px 13px;
-  }
-
-  .sw-vf-info-bottom {
-    align-items: flex-start;
-  }
-
-  .sw-vf-legend-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .sw-vf-bottom-tools {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .sw-vf-bottom-controls {
-    width: 100%;
-    align-items: flex-start;
-  }
+  .sw-vf-toolbar, .sw-viewforum .sw-topics, .sw-vf-information, .sw-vf-bottom-tools, .sw-vf-legend { width: calc(100% - 20px); }
+  .sw-vf-toolbar { align-items: flex-start; padding: 15px; }
+  .sw-vf-breadcrumb { flex-basis: 100%; }
+  .sw-vf-actions { width: 100%; justify-content: space-between; }
+  .sw-viewforum .sw-topic-card { grid-template-columns: minmax(0,1fr) 105px; padding: 18px; gap: 12px; }
+  .sw-topic-main { grid-column: 1 / -1; }
+  .sw-topic-statistics { justify-content: flex-start; padding-left: 35px; }
+  .sw-topic-lastpost { padding-left: 0; }
+  .sw-vf-info-grid { grid-template-columns: 1fr; gap: 20px; }
+  .sw-vf-information { padding: 20px; }
+  .sw-vf-bottom-tools { align-items: flex-start; flex-direction: column; }
+  .sw-vf-bottom-controls { width: 100%; align-items: flex-start; }
 }
-
-/* 14.10 — PETITS ÉCRANS */
-
 @media (max-width: 420px) {
-  .sw-vf-toolbar {
-    padding: 10px;
-  }
-
-  .sw-vf-newtopic {
-    font-size: 11px;
-  }
-
-  .sw-vf-info-heading {
-    align-items: flex-start;
-  }
-
-  .sw-vf-info-heading h2 {
-    font-size: 20px !important;
-  }
-
-  .sw-vf-legend {
-    padding: 12px;
-  }
-
-  .sw-vf-legend-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sw-vf-sort form,
-  .sw-vf-jump {
-    align-items: flex-start;
-  }
-
-  .sw-vf-sort select,
-  .sw-vf-jump select {
-    max-width: 160px;
-  }
+  .sw-viewforum .sw-topic-card { grid-template-columns: 1fr; }
+  .sw-topic-statistics { padding-left: 35px; }
+  .sw-topic-lastpost { padding-left: 35px; }
+  .sw-vf-legend-grid { grid-template-columns: 1fr; }
+  .sw-vf-sort select, .sw-vf-jump select { max-width: 160px; }
 }
-
-/* FIN DE LA SECTION 14 */
 
 /* ==========================================================
    15 — SONGWON 1995
@@ -1859,45 +1103,3 @@ body.songwon-dark .sw-topic-view {
 /* ==========================================================
    FIN DE LA FEUILLE CSS — SONGWON 1995
    ========================================================== */
-
-
-/* =========================================
-   SONGWON — CARTES SIMPLES
-   Harmonisation avec l'accueil
-   ========================================= */
-
-/* Suppression du grand panneau autour des sujets */
-.sw-topics,
-.sw-topics-list {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-}
-
-/* Une seule carte par sujet */
-.sw-topic-card {
-  background: rgba(67, 49, 41, 0.92) !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border-radius: 22px !important;
-  margin-bottom: 18px !important;
-  overflow: hidden;
-}
-
-/* Éviter les bordures décoratives internes */
-.sw-topic-card::before,
-.sw-topic-card::after {
-  display: none !important;
-}
-
-/* Pagination et pied de liste sans panneau */
-.sw-topics-pagination,
-.sw-topics-bottom,
-.sw-topics-footer {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
