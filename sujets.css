@@ -255,6 +255,9 @@ body.songwon-dark .sw-topic-view {
   outline-offset: 3px;
 }
 
+/* Navigation supérieure et inférieure
+   intégrée au décor de Songwon */
+
 .sw-topic-navigation,
 .sw-topic-bottom-tools {
   display: flex;
@@ -262,12 +265,14 @@ body.songwon-dark .sw-topic-view {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
+
   margin-bottom: 16px;
-  padding: 12px 17px;
-  background: var(--tp-outer);
-  border: 1px solid var(--tp-line);
-  border-radius: 5px;
-  box-shadow: 2px 3px 8px var(--tp-shadow);
+  padding: 12px 4px;
+
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .sw-topic-breadcrumb,
