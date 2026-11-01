@@ -268,3 +268,26 @@ body.songwon-dark .sceditor-container .sceditor-toolbar .sceditor-button.active 
     border-radius: 6px !important;
     overflow: hidden;
 }
+/* =========================================
+   SONGWON — BARRE AJOUTER UN SONDAGE
+   ========================================= */
+
+/* VERSION JOUR */
+body:not(.songwon-dark) .panel .h3,
+body:not(.songwon-dark) .panel .h3 a,
+body:not(.songwon-dark) #poll .h3,
+body:not(.songwon-dark) #poll .h3 a {
+    background-color: #ead3bc !important;
+    background-image: none !important;
+    color: #60483c !important;
+}
+
+/* VERSION NUIT */
+body.songwon-dark .panel .h3,
+body.songwon-dark .panel .h3 a,
+body.songwon-dark #poll .h3,
+body.songwon-dark #poll .h3 a {
+    background-color: #493329 !important;
+    background-image: none !important;
+    color: #f0d7bb !important;
+}
