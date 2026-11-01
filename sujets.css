@@ -1345,12 +1345,13 @@ body.songwon-dark .sw-posting {
 
 .sw-posting .sw-posting-main {
   padding: 18px 22px 0;
-  border-radius: 26px 26px 0 0;
+  border-radius: 26px;
 }
 
 .sw-posting .sw-posting-actions {
+  margin-top: 14px !important;
   padding: 0 22px 18px;
-  border-radius: 0 0 26px 26px;
+  border-radius: 26px !important;
 }
 
 /* Autres tableaux principaux Forumactif */
