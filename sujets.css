@@ -1859,3 +1859,45 @@ body.songwon-dark .sw-topic-view {
 /* ==========================================================
    FIN DE LA FEUILLE CSS — SONGWON 1995
    ========================================================== */
+
+
+/* =========================================
+   SONGWON — CARTES SIMPLES
+   Harmonisation avec l'accueil
+   ========================================= */
+
+/* Suppression du grand panneau autour des sujets */
+.sw-topics,
+.sw-topics-list {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Une seule carte par sujet */
+.sw-topic-card {
+  background: rgba(67, 49, 41, 0.92) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 22px !important;
+  margin-bottom: 18px !important;
+  overflow: hidden;
+}
+
+/* Éviter les bordures décoratives internes */
+.sw-topic-card::before,
+.sw-topic-card::after {
+  display: none !important;
+}
+
+/* Pagination et pied de liste sans panneau */
+.sw-topics-pagination,
+.sw-topics-bottom,
+.sw-topics-footer {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
