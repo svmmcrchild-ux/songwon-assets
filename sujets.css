@@ -2245,6 +2245,17 @@ body.songwon-dark form.sw-posting .sceditor-container textarea {
   background: #352821 !important;
   color: #f2d9bb !important;
 }
+/* =========================================
+   SONGWON — FICHE DE PERSONNAGE
+   Lisibilité des libellés en mode nuit
+   ========================================= */
 
+body.songwon-dark .postprofile .label,
+body.songwon-dark .postprofile .label span,
+body.songwon-dark .postprofile dt,
+body.songwon-dark .postprofile .profile-field,
+body.songwon-dark .postprofile .profile-field strong {
+    color: #d6bda7 !important;
+}
 
 
