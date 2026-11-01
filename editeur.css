@@ -88,3 +88,48 @@ body iframe[src*="smilies"] {
   border-radius: 12px !important;
   overflow: hidden;
 }
+
+/* ============================================
+   SMILEYS — RÈGLES INTERNES À L'IFRAME
+   ============================================ */
+
+html.sw-smileys-day {
+  --sw-editor-bg: #f8efdf;
+  --sw-editor-field: #faf3e9;
+  --sw-editor-accent: #dfc4a9;
+  --sw-editor-text: #604638;
+}
+
+html.sw-smileys-night {
+  --sw-editor-bg: #392a24;
+  --sw-editor-field: #30251f;
+  --sw-editor-accent: #765544;
+  --sw-editor-text: #e9d9c8;
+}
+
+html.sw-smileys-day,
+html.sw-smileys-night,
+html.sw-smileys-day body,
+html.sw-smileys-night body,
+html.sw-smileys-day #sce_smilies_body,
+html.sw-smileys-night #sce_smilies_body {
+  background: var(--sw-editor-bg) !important;
+  color: var(--sw-editor-text) !important;
+}
+
+html.sw-smileys-day #smilies_header,
+html.sw-smileys-night #smilies_header {
+  background: var(--sw-editor-accent) !important;
+  background-image: none !important;
+  color: var(--sw-editor-text) !important;
+  border: 0 !important;
+}
+
+html.sw-smileys-day select,
+html.sw-smileys-night select {
+  background: var(--sw-editor-field) !important;
+  color: var(--sw-editor-text) !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+}
+
