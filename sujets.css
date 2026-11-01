@@ -1620,3 +1620,72 @@ body.songwon-dark .sw-topic-view {
     font-size: 28px !important;
   }
 }
+/* ====================================================
+   SONGWON — FINITIONS DES SUJETS
+   Réponse rapide + boutons + nom du personnage
+   JOUR ET NUIT
+   ==================================================== */
+
+/* 1. NOM DU PERSONNAGE — DRY BRUSH */
+
+.sw-topic-view .sw-topic-author-name,
+.sw-topic-view .sw-topic-author-name a {
+  font-family: "SongwonDryBrush", "Dry Brush", cursive !important;
+  font-weight: normal !important;
+  color: var(--st-ink) !important;
+  text-decoration: none !important;
+}
+
+/* 2. RÉPONSE RAPIDE — SUPPRESSION DES FONDS BLANCS */
+
+.sw-topic-view .sw-topic-quickreply .submit-buttons,
+.sw-topic-view .sw-topic-quickreply .panel,
+.sw-topic-view .sw-topic-quickreply .inner,
+.sw-topic-view .sw-topic-quickreply .frm-buttons,
+.sw-topic-view .sw-topic-quickreply .quickreply-buttons {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Le conteneur de l'éditeur reste intégré
+   dans la carte de réponse rapide */
+
+.sw-topic-view .sw-topic-quickreply {
+  overflow: hidden;
+}
+
+/* 3. BOUTONS — VERSION JOUR */
+
+.sw-topic-view .sw-topic-quickreply input[type="submit"],
+.sw-topic-view .sw-topic-quickreply button[type="submit"],
+.sw-topic-view .sw-topic-quickreply .button1,
+.sw-topic-view .sw-topic-quickreply .button2 {
+  background: #d8b99c !important;
+  color: #503c30 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* 4. BOUTONS — VERSION NUIT */
+
+body.songwon-dark .sw-topic-view .sw-topic-quickreply input[type="submit"],
+body.songwon-dark .sw-topic-view .sw-topic-quickreply button[type="submit"],
+body.songwon-dark .sw-topic-view .sw-topic-quickreply .button1,
+body.songwon-dark .sw-topic-view .sw-topic-quickreply .button2 {
+  background: #6b4d3d !important;
+  color: #f0dfca !important;
+}
+
+/* 5. SURVOL DES BOUTONS */
+
+.sw-topic-view .sw-topic-quickreply input[type="submit"]:hover,
+.sw-topic-view .sw-topic-quickreply .button1:hover,
+.sw-topic-view .sw-topic-quickreply .button2:hover {
+  filter: brightness(1.08);
+  cursor: pointer;
+}
