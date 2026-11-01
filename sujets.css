@@ -1,3 +1,4 @@
+
 /* SONGWON 1995 — SUJETS ET MESSAGES */
 /* Sections 13 bis et 14 harmonisées avec les cartes de l'accueil. */
 
@@ -145,7 +146,7 @@ body.songwon-dark .sw-viewforum {
 .sw-vf-sort form, .sw-vf-jump { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin: 0; }
 .sw-vf-sort label, .sw-vf-jump label { font-size: 11px; color: var(--vf-muted); }
 .sw-vf-sort select, .sw-vf-jump select { max-width: 185px; min-height: 29px; padding: 4px 7px; background: var(--vf-card); color: var(--vf-ink); border: 0; border-radius: 9px; font-size: 11px; }
-.sw-vf-sort input[type="submit"], .sw-vf-jump input[type="submit"] { min-height: 29px; padding: 4px 10px; background: var(--vf-card); border: 0; border-radius: 9px; color: var(--vf-ink); font-size: 11px; cursor: pointer; }
+.sw-vf-sort input[type="submit"], .sw-vf-jump input[type="submit"] { min-height: 29px; padding: 4px 10px; background: var(--vf-card); color: var(--vf-ink); border: 0; border-radius: 9px; font-size: 11px; cursor: pointer; }
 
 /* Légende repliable : carte unique */
 .sw-vf-legend { margin-top: 15px; margin-bottom: 30px; padding: 16px 22px; background: var(--vf-card); border: 0; border-radius: 22px; color: var(--vf-ink); }
@@ -185,11 +186,10 @@ body.songwon-dark .sw-viewforum {
 }
 
 /* ==========================================================
-   15 — SONGWON 1995
-   SUJETS, PROFILS, MESSAGES ET RÉPONSE RAPIDE
+   15 — SONGWON 1995 | SUJETS ET MESSAGES
+   Règles regroupées : structure, profils, bulles, réponse rapide
+   Avatar original 400 × 620 — affichage 260 × 403 sans recadrage
    ========================================================== */
-
-/* 15.1 — PALETTE ET LARGEUR */
 
 .sw-topic-view {
   --tp-paper: #f3e8d8;
@@ -200,14 +200,19 @@ body.songwon-dark .sw-viewforum {
   --tp-muted: #806a5a;
   --tp-line: rgba(96,70,55,.18);
   --tp-shadow: rgba(66,43,28,.07);
-
   width: calc(100% - 48px);
   max-width: 1120px;
   min-width: 0;
   margin: 16px auto 30px;
-
   color: var(--tp-ink);
   font-family: "DM Sans", Arial, sans-serif;
+  --st-ink: #584236;
+  --st-muted: #896d5a;
+  --st-accent: #a66e4d;
+  --st-bubble: rgba(247, 231, 210, .88);
+  --st-profile: rgba(247, 231, 210, .88);
+  margin-top: 8px !important;
+  margin-bottom: 18px !important;
 }
 
 body.songwon-dark .sw-topic-view {
@@ -219,6 +224,11 @@ body.songwon-dark .sw-topic-view {
   --tp-muted: #c5ac96;
   --tp-line: rgba(240,223,202,.18);
   --tp-shadow: rgba(0,0,0,.12);
+  --st-ink: #f0dfca;
+  --st-muted: #d0b9a5;
+  --st-accent: #dfa572;
+  --st-bubble: rgba(67, 49, 41, .94);
+  --st-profile: rgba(67, 49, 41, .92);
 }
 
 .sw-topic-view *,
@@ -230,8 +240,6 @@ body.songwon-dark .sw-topic-view {
 .sw-topic-view a {
   text-decoration: none;
 }
-
-/* Préservation des couleurs des groupes Forumactif */
 
 .sw-topic-view .sw-topic-author-name a {
   color: inherit;
@@ -247,8 +255,6 @@ body.songwon-dark .sw-topic-view {
   outline-offset: 3px;
 }
 
-/* 15.2 — NAVIGATION */
-
 .sw-topic-navigation,
 .sw-topic-bottom-tools {
   display: flex;
@@ -256,10 +262,8 @@ body.songwon-dark .sw-topic-view {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-
   margin-bottom: 16px;
   padding: 12px 17px;
-
   background: var(--tp-outer);
   border: 1px solid var(--tp-line);
   border-radius: 5px;
@@ -301,15 +305,12 @@ body.songwon-dark .sw-topic-view {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-height: 35px;
   padding: 8px 15px;
-
   background: var(--tp-inner);
   color: var(--tp-ink) !important;
   border: 1px solid var(--tp-line);
   border-radius: 4px;
-
   font-family: "DM Sans", Arial, sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -326,17 +327,14 @@ body.songwon-dark .sw-topic-view {
   color: var(--tp-muted);
 }
 
-/* 15.3 — EN-TÊTE DU SUJET */
-
 .sw-topic-view .sw-topic-header {
-  margin: 0 0 20px;
-  padding: 20px 25px;
-  min-height: 0;
-
-  background: var(--tp-outer) !important;
-  border: 1px solid var(--tp-line) !important;
-  border-radius: 5px !important;
-  box-shadow: 2px 3px 9px var(--tp-shadow) !important;
+  margin: 0 0 12px !important;
+  padding: 8px 4px 10px !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .sw-topic-header-meta {
@@ -344,7 +342,6 @@ body.songwon-dark .sw-topic-view {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px 17px;
-
   margin-bottom: 11px;
   color: var(--tp-muted);
   font-size: 10px;
@@ -358,16 +355,14 @@ body.songwon-dark .sw-topic-view {
 }
 
 .sw-topic-view .sw-topic-header h1 {
-  margin: 0 0 13px !important;
+  margin: 0 0 5px !important;
   padding: 0 !important;
-
   font-family: "Dry Brush", cursive !important;
-  font-size: 36px !important;
+  font-size: 32px !important;
   font-weight: normal !important;
   font-style: normal !important;
-  line-height: 1.35 !important;
-
-  color: var(--tp-ink) !important;
+  line-height: 1.15 !important;
+  color: var(--st-ink) !important;
   text-shadow: none !important;
 }
 
@@ -384,10 +379,8 @@ body.songwon-dark .sw-topic-view {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-
   padding-top: 11px;
   border-top: 1px solid var(--tp-line);
-
   color: var(--tp-muted);
   font-size: 11px;
 }
@@ -405,12 +398,10 @@ body.songwon-dark .sw-topic-view {
   display: none;
 }
 
-/* 15.4 — STRUCTURE DES MESSAGES */
-
 .sw-topic-view .sw-topic-posts {
   display: flex;
   flex-direction: column;
-  gap: 23px;
+  gap: 15px !important;
   min-width: 0;
 }
 
@@ -419,16 +410,13 @@ body.songwon-dark .sw-topic-view {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: flex-start !important;
-
   gap: 18px !important;
   width: 100% !important;
   min-width: 0 !important;
-
   margin: 0 !important;
   padding: 0 !important;
   float: none !important;
   clear: both;
-
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -436,32 +424,26 @@ body.songwon-dark .sw-topic-view {
   overflow: visible !important;
 }
 
-/* 15.5 — PROFIL INDÉPENDANT */
+/* 15.5 — PROFIL DU PERSONNAGE */
 
 .sw-topic-view .sw-topic-post > .sw-topic-author {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-
   flex: 0 0 332px !important;
   align-self: flex-start !important;
-
   width: 332px !important;
   min-width: 332px !important;
   max-width: 332px !important;
   height: auto !important;
-
   margin: 0 !important;
-  padding: 18px 15px 21px !important;
-
+  padding: 17px 15px !important;
   float: none !important;
   position: relative !important;
-
-  background: var(--tp-outer) !important;
-  border: 1px solid var(--tp-line) !important;
-  border-radius: 5px !important;
-  box-shadow: 2px 3px 9px var(--tp-shadow) !important;
-
+  background: var(--st-profile) !important;
+  border: 0 !important;
+  border-radius: 25px !important;
+  box-shadow: none !important;
   text-align: center;
 }
 
@@ -470,14 +452,14 @@ body.songwon-dark .sw-topic-view {
 .sw-topic-view .sw-topic-author-name {
   width: 100%;
   margin: 0 0 14px;
-
-  font-family: "Schoolbell", cursive !important;
+  font-family: "SongwonDryBrush", "Dry Brush", cursive !important;
   font-size: 28px !important;
-  font-weight: 400 !important;
+  font-weight: normal !important;
   font-style: normal !important;
   line-height: 1.3;
   text-align: center;
   overflow-wrap: anywhere;
+  color: var(--st-ink) !important;
 }
 
 .sw-topic-author-name a {
@@ -485,22 +467,29 @@ body.songwon-dark .sw-topic-view {
   text-decoration: none !important;
 }
 
-/* 15.6 — AVATAR 300 × 400 */
+.sw-topic-view .sw-topic-author-name a {
+  font-family: "SongwonDryBrush", "Dry Brush", cursive !important;
+  font-weight: normal !important;
+  color: var(--st-ink) !important;
+  text-decoration: none !important;
+}
+
+/* 15.6 — AVATAR 260 × 403
+   Proportions de l'image originale : 400 × 620 */
 
 .sw-topic-view .sw-topic-profile-card {
   position: relative;
   display: block;
   flex: 0 0 auto;
-
-  width: 300px;
-  height: 400px;
+  width: 260px;
+  height: 403px;
   max-width: 100%;
   margin: 0 auto;
-
   overflow: hidden;
   isolation: isolate;
   background: var(--tp-ivory);
-  border-radius: 3px;
+  border: 0 !important;
+  border-radius: 17px !important;
   outline-offset: 3px;
 }
 
@@ -508,15 +497,13 @@ body.songwon-dark .sw-topic-view {
   position: absolute;
   inset: 0;
   z-index: 2;
-
   width: 100%;
   height: 100%;
   margin: 0;
-
   opacity: 1;
   visibility: visible;
   pointer-events: none;
-
+  border-radius: 17px !important;
   transition:
     opacity .5s ease,
     visibility 0s linear .5s;
@@ -524,17 +511,17 @@ body.songwon-dark .sw-topic-view {
 
 .sw-topic-view .sw-topic-author-avatar img {
   display: block;
-
   width: 100% !important;
   height: 100% !important;
   max-width: none !important;
-
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  border-radius: 3px;
+  border-radius: 17px !important;
 }
 
-/* 15.7 — INFORMATIONS DERRIÈRE L'AVATAR */
+/* ==========================================================
+   15.7 — INFORMATIONS DERRIÈRE L'AVATAR
+   ========================================================== */
 
 .sw-topic-view .sw-topic-profile-reveal {
   position: absolute;
@@ -543,13 +530,18 @@ body.songwon-dark .sw-topic-view {
 
   display: flex;
   flex-direction: column;
+
   padding: 18px;
   overflow: hidden;
 
   background: var(--tp-inner) !important;
   color: var(--tp-ink);
   text-align: left;
+
+  border-radius: 17px !important;
 }
+
+/* Titre de la fiche */
 
 .sw-topic-profile-reveal-title {
   flex: 0 0 auto;
@@ -566,6 +558,8 @@ body.songwon-dark .sw-topic-view {
   color: var(--tp-ink);
 }
 
+/* Contenu défilant de la fiche */
+
 .sw-topic-profile-reveal .sw-topic-author-profile {
   flex: 1 1 auto;
   min-height: 0;
@@ -579,8 +573,11 @@ body.songwon-dark .sw-topic-view {
   font-size: 11px;
   line-height: 1.7;
   text-align: left;
+
   scrollbar-width: thin;
 }
+
+/* Champs du personnage */
 
 .sw-topic-profile-field {
   padding: 8px 0;
@@ -588,14 +585,38 @@ body.songwon-dark .sw-topic-view {
   overflow-wrap: anywhere;
 }
 
+/* Champs RPG */
+
 .sw-topic-rpg-fields {
   padding-top: 10px;
   overflow-wrap: anywhere;
 }
 
+/* Images éventuelles dans la fiche */
+
 .sw-topic-profile-reveal img {
   max-width: 100%;
   height: auto;
+}
+
+/* Lisibilité des libellés en mode nuit */
+
+body.songwon-dark
+.sw-topic-profile-reveal
+.sw-topic-profile-field .label,
+
+body.songwon-dark
+.sw-topic-profile-reveal
+.sw-topic-profile-field .label span,
+
+body.songwon-dark
+.sw-topic-profile-reveal
+.sw-topic-profile-field .label strong,
+
+body.songwon-dark
+.sw-topic-profile-reveal
+.sw-topic-profile-field .label a {
+  color: #d6bda7 !important;
 }
 
 /* Fondu progressif au survol et au clavier */
@@ -607,7 +628,9 @@ body.songwon-dark .sw-topic-view {
   visibility: hidden;
 }
 
-/* 15.8 — RANG SOUS L'AVATAR */
+/* ==========================================================
+   15.8 — RANG SOUS L'AVATAR
+   ========================================================== */
 
 .sw-topic-view .sw-topic-author > .sw-topic-author-rank {
   display: flex !important;
@@ -619,6 +642,7 @@ body.songwon-dark .sw-topic-view {
   gap: 10px;
   width: 100%;
   min-height: 30px;
+
   margin: 17px 0 0 !important;
   padding: 0 4px !important;
 
@@ -626,7 +650,7 @@ body.songwon-dark .sw-topic-view {
   opacity: 1 !important;
   visibility: visible !important;
 
-  color: var(--tp-ink);
+  color: var(--st-ink);
   font-family: "Schoolbell", cursive !important;
   font-size: 19px !important;
   font-weight: 400 !important;
@@ -635,6 +659,8 @@ body.songwon-dark .sw-topic-view {
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
+
+/* Petites lignes décoratives autour du rang */
 
 .sw-topic-view .sw-topic-author > .sw-topic-author-rank::before,
 .sw-topic-view .sw-topic-author > .sw-topic-author-rank::after {
@@ -657,7 +683,9 @@ body.songwon-dark .sw-topic-view {
   vertical-align: middle;
 }
 
-/* 15.9 — PAPIER EXTÉRIEUR DU MESSAGE */
+/* ==========================================================
+   15.9 — BULLE PRINCIPALE DU MESSAGE
+   ========================================================== */
 
 .sw-topic-view .sw-topic-post > .sw-topic-message {
   display: flex !important;
@@ -669,18 +697,39 @@ body.songwon-dark .sw-topic-view {
   max-width: none !important;
 
   margin: 0 !important;
-  padding: 18px !important;
+  padding: 18px 22px !important;
+
   float: none !important;
   position: relative !important;
 
-  background: var(--tp-outer) !important;
-  color: var(--tp-ink);
-  border: 1px solid var(--tp-line) !important;
-  border-radius: 5px !important;
-  box-shadow: 2px 3px 9px var(--tp-shadow) !important;
+  background: var(--st-bubble) !important;
+  color: var(--st-ink) !important;
+
+  border: 0 !important;
+  border-radius: 25px !important;
+  box-shadow: none !important;
 }
 
-/* En-tête du message */
+/* Petite pointe de la bulle vers le profil */
+
+.sw-topic-view .sw-topic-post > .sw-topic-message::before {
+  content: "";
+  position: absolute;
+
+  top: 68px;
+  left: -17px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-right: 19px solid var(--st-bubble);
+}
+
+/* ==========================================================
+   15.10 — EN-TÊTE DU MESSAGE
+   ========================================================== */
 
 .sw-topic-message-header {
   display: flex;
@@ -690,26 +739,37 @@ body.songwon-dark .sw-topic-view {
   gap: 12px;
 
   padding: 1px 5px 15px;
-  border: 0;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 .sw-topic-message-meta {
   min-width: 0;
 }
 
+/* Sujet du message */
+
 .sw-topic-message-subject {
-  color: var(--tp-ink);
+  color: var(--st-ink) !important;
+
   font-family: "Schoolbell", cursive !important;
   font-size: 21px !important;
   font-weight: 400 !important;
   font-style: normal !important;
   line-height: 1.3;
+
   overflow-wrap: anywhere;
 }
 
+/* Date du message */
+
 .sw-topic-message-date {
   margin-top: 5px;
-  color: var(--tp-muted);
+
+  color: var(--st-muted) !important;
+
   font-family: "Caveat", cursive;
   font-size: 18px;
   letter-spacing: .01em;
@@ -720,6 +780,8 @@ body.songwon-dark .sw-topic-view {
   margin-right: 5px;
   vertical-align: middle;
 }
+
+/* Options : citer, éditer, supprimer, etc. */
 
 .sw-topic-message-options {
   display: flex;
@@ -733,7 +795,9 @@ body.songwon-dark .sw-topic-view {
   vertical-align: middle;
 }
 
-/* 15.10 — FEUILLE INTÉRIEURE DE LECTURE */
+/* ==========================================================
+   15.11 — CONTENU DU MESSAGE
+   ========================================================== */
 
 .sw-topic-view .sw-topic-message-content {
   display: block !important;
@@ -744,26 +808,45 @@ body.songwon-dark .sw-topic-view {
   max-width: 100%;
 
   margin: 0 !important;
-  padding: 26px 30px !important;
+  padding: 15px 12px !important;
+
   float: none !important;
 
-  background: var(--tp-inner) !important;
-  color: var(--tp-ink);
-  border: 1px solid var(--tp-line);
-  border-radius: 3px !important;
+  background: transparent !important;
+  color: var(--st-ink) !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 
   font-family: "DM Sans", Arial, sans-serif !important;
   font-size: 14px !important;
-  line-height: 1.9 !important;
+  line-height: 1.8 !important;
   text-align: left;
 }
+
+/* Texte du RP */
 
 .sw-topic-message-text {
   max-width: 800px;
   min-width: 0;
   margin: 0 auto;
+
   overflow-wrap: anywhere;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  color: var(--st-ink) !important;
+  line-height: 1.8;
 }
+
+.sw-topic-view .sw-topic-message-text p {
+  color: var(--st-ink) !important;
+}
+
+/* Images et tableaux */
 
 .sw-topic-message-text img,
 .sw-topic-message-content img {
@@ -775,6 +858,8 @@ body.songwon-dark .sw-topic-view {
   max-width: 100%;
 }
 
+/* Citations */
+
 .sw-topic-message-content blockquote,
 .sw-topic-message-content .quote {
   margin: 15px 0;
@@ -782,30 +867,43 @@ body.songwon-dark .sw-topic-view {
 
   background: var(--tp-paper);
   color: var(--tp-ink);
+
   border-left: 2px solid var(--tp-ink);
   border-radius: 3px;
 }
+
+/* Blocs de code */
 
 .sw-topic-message-content .codebox {
   max-width: 100%;
   overflow-x: auto;
 }
 
+/* Pièces jointes */
+
 .sw-topic-message-content .attachbox {
   max-width: 100%;
   padding: 12px;
+
   border: 1px solid var(--tp-line);
   background: var(--tp-paper);
   color: var(--tp-ink);
 }
 
+/* Signature */
+
 .sw-topic-message-content .signature_div {
   margin-top: 25px;
   padding-top: 16px;
+
   border-top: 1px solid var(--tp-line);
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-/* 15.11 — BAS DES MESSAGES */
+/* ==========================================================
+   15.12 — ÉDITION ET RÉACTIONS
+   ========================================================== */
 
 .sw-topic-edited {
   margin-top: 10px;
@@ -830,13 +928,16 @@ body.songwon-dark .sw-topic-view {
   cursor: pointer;
 }
 
+/* ==========================================================
+   15.13 — PIED DES MESSAGES
+   ========================================================== */
+
 .sw-topic-message-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-
   padding: 15px 5px 0;
   margin-top: 12px;
   border: 0;
@@ -858,7 +959,9 @@ body.songwon-dark .sw-topic-view {
   vertical-align: middle;
 }
 
-/* 15.12 — BAS DU SUJET */
+/* ==========================================================
+   15.14 — BLOCS INFÉRIEURS
+   ========================================================== */
 
 .sw-topic-bottom,
 .sw-topic-extra,
@@ -866,7 +969,6 @@ body.songwon-dark .sw-topic-view {
 .sw-topic-admin {
   margin-top: 20px;
   padding: 19px 24px;
-
   background: var(--tp-outer) !important;
   border: 1px solid var(--tp-line) !important;
   border-radius: 5px !important;
@@ -908,19 +1010,21 @@ body.songwon-dark .sw-topic-view {
   display: none;
 }
 
-/* 15.13 — RÉPONSE RAPIDE */
+/* ==========================================================
+   15.15 — RÉPONSE RAPIDE
+   ========================================================== */
 
 .sw-topic-view .sw-topic-quickreply {
   display: block;
   width: 100%;
   min-width: 0;
-  margin-top: 20px;
-  padding: 23px 27px 27px;
-
-  background: var(--tp-outer) !important;
-  border: 1px solid var(--tp-line) !important;
-  border-radius: 5px !important;
-  box-shadow: 2px 3px 9px var(--tp-shadow);
+  margin-top: 15px !important;
+  padding: 18px 22px 22px !important;
+  background: var(--st-profile) !important;
+  border: 0 !important;
+  border-radius: 25px !important;
+  box-shadow: none !important;
+  overflow: hidden;
 }
 
 .sw-topic-section-label {
@@ -937,8 +1041,6 @@ body.songwon-dark .sw-topic-view {
   font-size: 29px !important;
   font-weight: 400 !important;
 }
-
-/* Éditeur Forumactif */
 
 .sw-topic-quickreply form,
 .sw-topic-quickreply #quick_reply,
@@ -971,7 +1073,6 @@ body.songwon-dark .sw-topic-view {
   width: 100% !important;
   max-width: 100% !important;
   min-height: 220px;
-
   background: var(--tp-ivory);
   color: var(--tp-ink);
   border: 1px solid var(--tp-line);
@@ -986,17 +1087,17 @@ body.songwon-dark .sw-topic-view {
   max-width: 100%;
 }
 
+/* Boutons de la réponse rapide */
+
 .sw-topic-quickreply input[type="submit"],
 .sw-topic-quickreply input[type="button"],
 .sw-topic-quickreply button:not(.sceditor-button) {
   display: inline-block;
   padding: 9px 18px;
-
   background: var(--tp-ink) !important;
   color: var(--tp-ivory) !important;
   border: 1px solid var(--tp-ink) !important;
   border-radius: 4px !important;
-
   font-family: "DM Sans", Arial, sans-serif;
   font-size: 12px;
   cursor: pointer;
@@ -1009,6 +1110,8 @@ body.songwon-dark .sw-topic-view {
   opacity: .82;
 }
 
+/* Champs de formulaire */
+
 .sw-topic-view input[type="text"],
 .sw-topic-view select {
   max-width: 100%;
@@ -1016,8 +1119,6 @@ body.songwon-dark .sw-topic-view {
   color: var(--tp-ink);
   border: 1px solid var(--tp-line);
 }
-
-/* 15.14 — OUTILS ET MODÉRATION */
 
 .sw-topic-bottom-tools {
   margin-top: 20px;
@@ -1031,26 +1132,45 @@ body.songwon-dark .sw-topic-view {
   gap: 8px;
 }
 
-/* 15.15 — RESPONSIVE */
+/* ==========================================================
+   15.16 — ADAPTATION AUX PETITS ÉCRANS
+   ========================================================== */
+
+/* Tablettes et fenêtres étroites :
+   le profil passe au-dessus du message. */
 
 @media (max-width: 1000px) {
+
   .sw-topic-view .sw-topic-posts > .sw-topic-post {
     flex-direction: column !important;
+    align-items: stretch !important;
   }
 
   .sw-topic-view .sw-topic-post > .sw-topic-author {
     flex: 0 0 auto !important;
     width: 100% !important;
     min-width: 0 !important;
-    max-width: none !important;
+    max-width: 100% !important;
   }
 
   .sw-topic-view .sw-topic-post > .sw-topic-message {
+    flex: 1 1 auto !important;
     width: 100% !important;
+    max-width: 100% !important;
   }
+
+  /* La bulle n'a plus besoin de sa pointe. */
+
+  .sw-topic-view .sw-topic-post > .sw-topic-message::before {
+    display: none !important;
+  }
+
 }
 
+/* Tablettes et téléphones */
+
 @media (max-width: 780px) {
+
   .sw-topic-view {
     width: calc(100% - 20px);
   }
@@ -1059,1210 +1179,81 @@ body.songwon-dark .sw-topic-view {
   .sw-topic-bottom-tools {
     padding: 12px;
   }
-}
 
-@media (max-width: 600px) {
-  .sw-topic-view .sw-topic-header {
-    padding: 17px;
-  }
-
-  .sw-topic-view .sw-topic-header h1 {
-    font-size: 30px !important;
-  }
-
+  .sw-topic-view .sw-topic-post > .sw-topic-author,
   .sw-topic-view .sw-topic-post > .sw-topic-message {
-    padding: 10px !important;
-  }
-
-  .sw-topic-view .sw-topic-message-content {
-    padding: 20px 17px !important;
-    font-size: 13px !important;
-  }
-
-  .sw-topic-view .sw-topic-quickreply {
-    padding: 18px 13px;
-  }
-}
-
-@media (max-width: 360px) {
-  .sw-topic-view .sw-topic-profile-card {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 4;
-  }
-}
-
-/* Accessibilité : réduction des animations */
-
-@media (prefers-reduced-motion: reduce) {
-  .sw-topic-view .sw-topic-author-avatar {
-    transition: none !important;
-  }
-}
-
-/* ==========================================================
-   FIN DE LA FEUILLE CSS — SONGWON 1995
-   ========================================================== */
-/* ==========================================
-   SONGWON — NAVIGATION SUR PAPIER
-   Même style que les liens de l'accueil
-   JOUR + NUIT
-   ========================================== */
-
-/* Supprimer complètement la carte de navigation */
-.sw-viewforum .sw-vf-toolbar {
-  width: calc(100% - 48px);
-  max-width: 1120px;
-  margin: 15px auto 25px;
-  padding: 8px 0;
-
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Typographie manuscrite du fil d'Ariane */
-.sw-viewforum .sw-vf-breadcrumb,
-.sw-viewforum .sw-vf-breadcrumb a,
-.sw-viewforum .sw-vf-breadcrumb-trail,
-.sw-viewforum .sw-vf-breadcrumb-trail a {
-  font-family: "Caveat", cursive !important;
-  font-size: 23px !important;
-  font-weight: 400 !important;
-  line-height: 1.4 !important;
-  letter-spacing: 0 !important;
-  color: var(--vf-ink) !important;
-  text-decoration: none !important;
-}
-
-/* Liens de navigation à droite */
-.sw-viewforum .sw-vf-actions,
-.sw-viewforum .sw-vf-more,
-.sw-viewforum .sw-vf-more a,
-.sw-viewforum .sw-vf-newtopic {
-  font-family: "Caveat", cursive !important;
-  font-size: 23px !important;
-  font-weight: 400 !important;
-  color: var(--vf-ink) !important;
-}
-
-/* Nouveau sujet : plus de bouton */
-.sw-viewforum .sw-vf-newtopic {
-  min-height: 0;
-  padding: 0;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  text-decoration: none !important;
-}
-
-/* Petit crayon */
-.sw-viewforum .sw-vf-newtopic span {
-  font-size: 20px;
-  color: var(--vf-accent);
-}
-
-/* Effet au survol */
-.sw-viewforum .sw-vf-breadcrumb a:hover,
-.sw-viewforum .sw-vf-more a:hover,
-.sw-viewforum .sw-vf-newtopic:hover {
-  color: var(--vf-accent) !important;
-}
-
-/* Adaptation aux petits écrans */
-@media (max-width: 780px) {
-  .sw-viewforum .sw-vf-toolbar {
-    width: calc(100% - 20px);
-    gap: 12px;
-  }
-
-  .sw-viewforum .sw-vf-breadcrumb,
-  .sw-viewforum .sw-vf-breadcrumb a,
-  .sw-viewforum .sw-vf-breadcrumb-trail,
-  .sw-viewforum .sw-vf-breadcrumb-trail a,
-  .sw-viewforum .sw-vf-more,
-  .sw-viewforum .sw-vf-newtopic {
-    font-size: 19px !important;
-  }
-}
-/* =====================================================
-   SONGWON 1995 — INTÉRIEUR DES SUJETS
-   Navigation libre, titre sans panneau,
-   messages en bulles et profils arrondis
-   ===================================================== */
-
-/* 1. VARIABLES JOUR — valeurs par défaut */
-
-.sw-topic-view {
-  --st-ink: #584236;
-  --st-muted: #896d5a;
-  --st-accent: #a66e4d;
-  --st-bubble: rgba(247, 231, 210, .88);
-  --st-profile: rgba(247, 231, 210, .76);
-}
-
-/* 2. VARIABLES NUIT
-   Détection par le thème de la page */
-
-body:has(.sw-topic-view) .sw-topic-view {
-  color: var(--st-ink);
-}
-
-/* Ajouter la classe du thème nuit sur body
-   si elle existe dans ton système de bascule.
-   Ces sélecteurs couvrent plusieurs conventions. */
-
-body.night .sw-topic-view,
-body.nuit .sw-topic-view,
-body.dark .sw-topic-view,
-body.theme-night .sw-topic-view,
-html.night .sw-topic-view,
-html.nuit .sw-topic-view,
-html.dark .sw-topic-view,
-html.theme-night .sw-topic-view,
-[data-theme="night"] .sw-topic-view,
-[data-theme="dark"] .sw-topic-view {
-  --st-ink: #f0dfca;
-  --st-muted: #c8aa91;
-  --st-accent: #dfa572;
-  --st-bubble: rgba(70, 51, 43, .94);
-  --st-profile: rgba(70, 51, 43, .88);
-}
-
-/* 3. NAVIGATION — DIRECTEMENT SUR LE SCRAPBOOK */
-
-.sw-topic-view .sw-topic-navigation {
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  padding: 12px 4px !important;
-}
-
-.sw-topic-view .sw-topic-breadcrumb,
-.sw-topic-view .sw-topic-breadcrumb a,
-.sw-topic-view .sw-topic-breadcrumb span,
-.sw-topic-view .sw-topic-nav-actions,
-.sw-topic-view .sw-topic-button,
-.sw-topic-view .sw-topic-plus {
-  font-family: "Caveat", cursive !important;
-  font-size: 24px !important;
-  font-weight: 400 !important;
-  color: var(--st-ink) !important;
-}
-
-.sw-topic-view .sw-topic-button {
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  padding: 0 6px !important;
-  min-height: 0 !important;
-  text-decoration: none !important;
-}
-
-/* 4. TITRE DU SUJET — SUPPRESSION DU PANNEAU */
-
-.sw-topic-view .sw-topic-header {
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  padding: 20px 4px 24px !important;
-}
-
-.sw-topic-view .sw-topic-header h1 {
-  color: var(--st-ink) !important;
-}
-
-.sw-topic-view .sw-topic-header-meta {
-  color: var(--st-accent) !important;
-}
-
-.sw-topic-view .sw-topic-header-bottom {
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* 5. SUPPRESSION DES CADRES AUTOUR DES MESSAGES */
-
-.sw-topic-view .sw-topic-posts,
-.sw-topic-view .sw-topic-post {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* 6. FICHE DU PERSONNAGE */
-
-.sw-topic-view .sw-topic-author {
-  background: var(--st-profile) !important;
-  border: 0 !important;
-  border-radius: 24px !important;
-  box-shadow: none !important;
-}
-
-.sw-topic-view .sw-topic-profile-card {
-  border: 0 !important;
-  border-radius: 14px !important;
-}
-
-.sw-topic-view .sw-topic-author-avatar,
-.sw-topic-view .sw-topic-author-avatar img {
-  border-radius: 12px !important;
-}
-
-.sw-topic-view .sw-topic-author-name,
-.sw-topic-view .sw-topic-author-rank {
-  color: var(--st-ink);
-}
-
-/* 7. BULLE PRINCIPALE */
-
-.sw-topic-view .sw-topic-message {
-  position: relative;
-  background: var(--st-bubble) !important;
-  border: 0 !important;
-  border-radius: 26px !important;
-  box-shadow: none !important;
-  color: var(--st-ink) !important;
-}
-
-/* Petite pointe à gauche, dirigée vers le profil */
-
-.sw-topic-view .sw-topic-message::before {
-  content: "";
-  position: absolute;
-  top: 70px;
-  left: -17px;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  border-right: 19px solid var(--st-bubble);
-}
-
-/* 8. SUPPRESSION DU RECTANGLE INTÉRIEUR */
-
-.sw-topic-view .sw-topic-message-content,
-.sw-topic-view .sw-topic-message-text,
-.sw-topic-view .sw-topic-message .postbody {
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-.sw-topic-view .sw-topic-message-text {
-  color: var(--st-ink) !important;
-  line-height: 1.8;
-}
-
-/* 9. EN-TÊTE DU MESSAGE */
-
-.sw-topic-view .sw-topic-message-header {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-.sw-topic-view .sw-topic-message-subject {
-  color: var(--st-ink) !important;
-}
-
-.sw-topic-view .sw-topic-message-date {
-  color: var(--st-muted) !important;
-}
-
-/* 10. SIGNATURE ET BAS DE MESSAGE */
-
-.sw-topic-view .signature_div,
-.sw-topic-view .sw-topic-message-footer {
-  background: transparent !important;
-  border-left: 0 !important;
-  border-right: 0 !important;
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-}
-
-/* 11. LIENS */
-
-.sw-topic-view .sw-topic-breadcrumb a:hover,
-.sw-topic-view .sw-topic-button:hover {
-  color: var(--st-accent) !important;
-}
-
-/* 12. MOBILE */
-
-@media (max-width: 800px) {
-  .sw-topic-view .sw-topic-message::before {
-    display: none;
-  }
-
-  .sw-topic-view .sw-topic-message,
-  .sw-topic-view .sw-topic-author {
-    border-radius: 20px !important;
+    border-radius: 22px !important;
   }
 
   .sw-topic-view .sw-topic-breadcrumb,
   .sw-topic-view .sw-topic-breadcrumb a,
   .sw-topic-view .sw-topic-button {
-    font-size: 20px !important;
-  }
-}
-/* ==========================================================
-   SONGWON 1995 — AJUSTEMENTS DES SUJETS
-   Arrondis, espacements, typographie et palette jour/nuit
-   ========================================================== */
-
-/* 1. PALETTES CORRIGÉES */
-
-.sw-topic-view {
-  --st-ink: #584236;
-  --st-muted: #896d5a;
-  --st-accent: #a66e4d;
-  --st-bubble: rgba(247, 231, 210, .88);
-  --st-profile: rgba(247, 231, 210, .88);
-}
-
-body.songwon-dark .sw-topic-view {
-  --st-ink: #f0dfca;
-  --st-muted: #d0b9a5;
-  --st-accent: #dfa572;
-  --st-bubble: rgba(67, 49, 41, .94);
-  --st-profile: rgba(67, 49, 41, .92);
-}
-
-/* 2. RESSERRER LES ESPACEMENTS GÉNÉRAUX */
-
-.sw-topic-view {
-  margin-top: 8px !important;
-  margin-bottom: 18px !important;
-}
-
-.sw-topic-view .sw-topic-navigation {
-  margin-bottom: 4px !important;
-  padding: 5px 4px !important;
-}
-
-.sw-topic-view .sw-topic-header {
-  margin: 0 0 12px !important;
-  padding: 8px 4px 10px !important;
-  min-height: 0 !important;
-}
-
-.sw-topic-view .sw-topic-header-meta {
-  margin-bottom: 3px !important;
-}
-
-.sw-topic-view .sw-topic-header h1 {
-  margin: 0 0 5px !important;
-  font-size: 32px !important;
-  line-height: 1.15 !important;
-}
-
-.sw-topic-view .sw-topic-header-bottom {
-  padding-top: 3px !important;
-  margin-top: 0 !important;
-}
-
-.sw-topic-view .sw-topic-posts {
-  gap: 15px !important;
-}
-
-/* 3. PROFIL : ARRONDIS COMME SUR L'ACCUEIL */
-
-.sw-topic-view .sw-topic-post > .sw-topic-author {
-  border: 0 !important;
-  border-radius: 25px !important;
-  background: var(--st-profile) !important;
-  box-shadow: none !important;
-  padding: 17px 15px !important;
-}
-
-.sw-topic-view .sw-topic-profile-card,
-.sw-topic-view .sw-topic-author-avatar,
-.sw-topic-view .sw-topic-author-avatar img,
-.sw-topic-view .sw-topic-profile-reveal {
-  border-radius: 17px !important;
-}
-
-/* 4. BULLE : ARRONDIS PLUS MARQUÉS */
-
-.sw-topic-view .sw-topic-post > .sw-topic-message {
-  background: var(--st-bubble) !important;
-  border: 0 !important;
-  border-radius: 25px !important;
-  box-shadow: none !important;
-  padding: 18px 22px !important;
-  color: var(--st-ink) !important;
-}
-
-/* Pointe qui reprend exactement la couleur de la bulle */
-
-.sw-topic-view .sw-topic-post > .sw-topic-message::before {
-  content: "";
-  position: absolute;
-  top: 68px;
-  left: -17px;
-
-  width: 0;
-  height: 0;
-
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  border-right: 19px solid var(--st-bubble);
-}
-
-/* 5. TEXTE DU MESSAGE : LISIBILITÉ JOUR ET NUIT */
-
-.sw-topic-view .sw-topic-message-content {
-  padding: 15px 12px !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-
-  color: var(--st-ink) !important;
-  font-size: 14px !important;
-  line-height: 1.8 !important;
-}
-
-.sw-topic-view .sw-topic-message-text,
-.sw-topic-view .sw-topic-message-text p,
-.sw-topic-view .sw-topic-message-content .postbody {
-  color: var(--st-ink) !important;
-}
-
-.sw-topic-view .sw-topic-message-subject {
-  color: var(--st-ink) !important;
-}
-
-.sw-topic-view .sw-topic-message-date {
-  color: var(--st-muted) !important;
-}
-
-/* 6. BAS DU SUJET : TITRE PLUS PETIT, SANS CADRE */
-
-.sw-topic-view .sw-topic-bottom,
-.sw-topic-view .sw-topic-extra,
-.sw-topic-view .sw-topic-permissions,
-.sw-topic-view .sw-topic-admin {
-  padding: 12px 5px !important;
-  margin-top: 12px !important;
-
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-.sw-topic-view .sw-topic-bottom-title {
-  font-size: 21px !important;
-  line-height: 1.3 !important;
-  margin-bottom: 5px !important;
-}
-
-/* 7. RÉPONSE RAPIDE : CARTE ARRONDIE ET PLUS COMPACTE */
-
-.sw-topic-view .sw-topic-quickreply {
-  margin-top: 15px !important;
-  padding: 18px 22px 22px !important;
-
-  background: var(--st-profile) !important;
-  border: 0 !important;
-  border-radius: 25px !important;
-  box-shadow: none !important;
-}
-
-.sw-topic-view .sw-topic-quickreply h2 {
-  font-size: 24px !important;
-  line-height: 1.3 !important;
-  margin: 4px 0 13px !important;
-  color: var(--st-ink) !important;
-}
-
-.sw-topic-view .sw-topic-section-label {
-  color: var(--st-accent) !important;
-}
-
-/* 8. BOUTONS ET NAVIGATION INFÉRIEURE */
-
-.sw-topic-view .sw-topic-bottom-tools {
-  padding: 7px 4px !important;
-  margin-top: 10px !important;
-
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* 9. MOBILE */
-
-@media (max-width: 800px) {
-  .sw-topic-view .sw-topic-post > .sw-topic-message {
-    padding: 14px !important;
-    border-radius: 22px !important;
+    font-size: 15px !important;
   }
 
-  .sw-topic-view .sw-topic-post > .sw-topic-message::before {
-    display: none !important;
-  }
+}
 
-  .sw-topic-view .sw-topic-post > .sw-topic-author {
-    border-radius: 22px !important;
-  }
+/* Téléphones */
+
+@media (max-width: 600px) {
 
   .sw-topic-view .sw-topic-header h1 {
     font-size: 28px !important;
   }
-}
-/* ====================================================
-   SONGWON — FINITIONS DES SUJETS
-   Réponse rapide + boutons + nom du personnage
-   JOUR ET NUIT
-   ==================================================== */
 
-/* 1. NOM DU PERSONNAGE — DRY BRUSH */
-
-.sw-topic-view .sw-topic-author-name,
-.sw-topic-view .sw-topic-author-name a {
-  font-family: "SongwonDryBrush", "Dry Brush", cursive !important;
-  font-weight: normal !important;
-  color: var(--st-ink) !important;
-  text-decoration: none !important;
-}
-
-/* 2. RÉPONSE RAPIDE — SUPPRESSION DES FONDS BLANCS */
-
-.sw-topic-view .sw-topic-quickreply .submit-buttons,
-.sw-topic-view .sw-topic-quickreply .panel,
-.sw-topic-view .sw-topic-quickreply .inner,
-.sw-topic-view .sw-topic-quickreply .frm-buttons,
-.sw-topic-view .sw-topic-quickreply .quickreply-buttons {
-  background: transparent !important;
-  background-image: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Le conteneur de l'éditeur reste intégré
-   dans la carte de réponse rapide */
-
-.sw-topic-view .sw-topic-quickreply {
-  overflow: hidden;
-}
-
-/* 3. BOUTONS — VERSION JOUR */
-
-.sw-topic-view .sw-topic-quickreply input[type="submit"],
-.sw-topic-view .sw-topic-quickreply button[type="submit"],
-.sw-topic-view .sw-topic-quickreply .button1,
-.sw-topic-view .sw-topic-quickreply .button2 {
-  background: #d8b99c !important;
-  color: #503c30 !important;
-  border: none !important;
-  border-radius: 12px !important;
-  box-shadow: none !important;
-  font-family: "DM Sans", sans-serif !important;
-  font-weight: 600 !important;
-}
-
-/* 4. BOUTONS — VERSION NUIT */
-
-body.songwon-dark .sw-topic-view .sw-topic-quickreply input[type="submit"],
-body.songwon-dark .sw-topic-view .sw-topic-quickreply button[type="submit"],
-body.songwon-dark .sw-topic-view .sw-topic-quickreply .button1,
-body.songwon-dark .sw-topic-view .sw-topic-quickreply .button2 {
-  background: #6b4d3d !important;
-  color: #f0dfca !important;
-}
-
-/* 5. SURVOL DES BOUTONS */
-
-.sw-topic-view .sw-topic-quickreply input[type="submit"]:hover,
-.sw-topic-view .sw-topic-quickreply .button1:hover,
-.sw-topic-view .sw-topic-quickreply .button2:hover {
-  filter: brightness(1.08);
-  cursor: pointer;
-}
-/* ==============================================
-   SONGWON — FOND DES BOUTONS DE RÉPONSE RAPIDE
-   ============================================== */
-
-.sw-topic-view .sw-topic-quickreply form,
-.sw-topic-view .sw-topic-quickreply .submit-buttons,
-.sw-topic-view .sw-topic-quickreply .frm-buttons,
-.sw-topic-view .sw-topic-quickreply fieldset,
-.sw-topic-view .sw-topic-quickreply .panel,
-.sw-topic-view .sw-topic-quickreply .inner,
-.sw-topic-view .sw-topic-quickreply .sceditor-container + div {
-  background: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-}
-
-/* Conserver les arrondis de la carte */
-.sw-topic-view .sw-topic-quickreply {
-  border-radius: 25px !important;
-  overflow: hidden;
-}
-/* ==========================================
-   SONGWON — RÉPONSE RAPIDE
-   Suppression du fond blanc Forumactif
-   Versions jour et nuit
-   ========================================== */
-
-.sw-topic-quickreply form#quick_reply td.row2,
-.sw-topic-quickreply form#quick_reply td.row1,
-.sw-topic-quickreply form#quick_reply td.row2:hover,
-.sw-topic-quickreply form#quick_reply td.row1:hover {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-}
-/* ==========================================
-   SONGWON — ÉDITEUR DE RÉPONSE RAPIDE
-   ========================================== */
-
-/* Barre d'outils */
-.sw-topic-quickreply .sceditor-toolbar {
-    background: #ead8c3 !important;
-    border: none !important;
-    border-radius: 12px 12px 0 0 !important;
-    padding: 8px 10px !important;
-}
-
-/* Groupes de boutons */
-.sw-topic-quickreply .sceditor-group {
-    background: transparent !important;
-    border: none !important;
-    border-radius: 8px !important;
-    box-shadow: none !important;
-}
-
-/* Boutons de l'éditeur */
-.sw-topic-quickreply .sceditor-button {
-    border: none !important;
-    border-radius: 6px !important;
-    box-shadow: none !important;
-}
-
-/* Survol des boutons */
-.sw-topic-quickreply .sceditor-button:hover,
-.sw-topic-quickreply .sceditor-button.active {
-    background: rgba(139, 92, 62, .18) !important;
-}
-
-/* Conteneur de l'éditeur */
-.sw-topic-quickreply .sceditor-container {
-    background: #f8f2e8 !important;
-    border: 1px solid rgba(139, 92, 62, .16) !important;
-    border-radius: 12px !important;
-    overflow: hidden;
-    box-shadow: none !important;
-}
-
-/* Zone de rédaction */
-.sw-topic-quickreply .sceditor-container iframe,
-.sw-topic-quickreply .sceditor-container textarea {
-    background: #f8f2e8 !important;
-    color: #604638 !important;
-}
-
-/* ========== VERSION NUIT ========== */
-
-body.songwon-dark .sw-topic-quickreply .sceditor-toolbar {
-    background: #49372e !important;
-}
-
-body.songwon-dark .sw-topic-quickreply .sceditor-container {
-    background: #30251f !important;
-    border-color: rgba(220, 155, 105, .15) !important;
-}
-
-body.songwon-dark .sw-topic-quickreply .sceditor-container textarea {
-    background: #30251f !important;
-    color: #e9d9c8 !important;
-}
-
-body.songwon-dark .sw-topic-quickreply .sceditor-button:hover,
-body.songwon-dark .sw-topic-quickreply .sceditor-button.active {
-    background: rgba(220, 155, 105, .2) !important;
-}
-
-/* ==========================================
-   SONGWON 1995 — EDITEUR COMPLET
-   posting_body — phpBB2
-   ========================================== */
-
-/* PALETTE JOUR */
-
-body.songwon-light .sw-posting {
-  --sp-paper: rgba(250,239,222,.94);
-  --sp-paper-soft: rgba(255,249,239,.75);
-  --sp-ink: #62493d;
-  --sp-muted: #947564;
-  --sp-rule: rgba(123,84,60,.18);
-  --sp-button: #dfbea2;
-  --sp-button-ink: #50392f;
-}
-
-/* PALETTE NUIT */
-
-body.songwon-dark .sw-posting {
-  --sp-paper: rgba(64,45,37,.95);
-  --sp-paper-soft: rgba(49,36,30,.88);
-  --sp-ink: #f2d9bb;
-  --sp-muted: #d1b094;
-  --sp-rule: rgba(225,185,148,.20);
-  --sp-button: #805843;
-  --sp-button-ink: #fff0df;
-}
-
-/* STRUCTURE GENERALE */
-
-.sw-posting {
-  width: 100%;
-  color: var(--sp-ink);
-}
-
-.sw-posting > table:first-child {
-  margin: 0 0 12px;
-}
-
-.sw-posting .nav,
-.sw-posting .nav a {
-  color: var(--sp-ink) !important;
-}
-
-/* CARTE PRINCIPALE */
-
-.sw-posting .sw-posting-main {
-  width: 100%;
-  border: 0 !important;
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  border-radius: 26px 26px 0 0;
-  overflow: hidden;
-  background: var(--sp-paper) !important;
-  padding: 18px 22px 0;
-  box-sizing: border-box;
-}
-
-/* TITRE DE L'EDITEUR */
-
-.sw-posting .sw-posting-main
-> tbody > tr > th.thHead {
-  background: transparent !important;
-  border: 0 !important;
-  color: var(--sp-ink) !important;
-  text-align: left;
-  padding: 7px 12px 18px !important;
-  height: auto !important;
-  font-family: Schoolbell, cursive !important;
-  font-size: 29px !important;
-  font-weight: normal !important;
-}
-
-/* CELLULES */
-
-.sw-posting .sw-posting-main
-> tbody > tr > td.row1,
-
-.sw-posting .sw-posting-main
-> tbody > tr > td.row2 {
-  background: transparent !important;
-  border: 0 !important;
-  border-top: 1px solid var(--sp-rule) !important;
-  color: var(--sp-ink) !important;
-  padding: 12px !important;
-  vertical-align: top;
-}
-
-.sw-posting .sw-posting-main
-> tbody > tr > td.row1 {
-  width: 19%;
-}
-
-/* TEXTES */
-
-.sw-posting .gen,
-.sw-posting .genmed,
-.sw-posting .gensmall,
-.sw-posting .postbody,
-.sw-posting label {
-  color: var(--sp-ink);
-}
-
-/* LIBELLES DES CHAMPS */
-
-.sw-posting .sw-posting-main
-> tbody > tr > td.row1 b,
-
-.sw-posting .sw-posting-main
-> tbody > tr > td.row1 strong {
-  font-family: Schoolbell, cursive;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-/* CHAMPS DE SAISIE */
-
-.sw-posting input.post,
-.sw-posting textarea.post,
-.sw-posting select,
-.sw-posting .sceditor-container {
-  max-width: 100%;
-  box-sizing: border-box;
-  background: var(--sp-paper-soft) !important;
-  color: var(--sp-ink) !important;
-  border: 1px solid var(--sp-rule) !important;
-  border-radius: 10px !important;
-}
-
-.sw-posting input.post {
-  min-height: 36px;
-  padding: 7px 10px;
-}
-
-.sw-posting input[name="subject"],
-.sw-posting input[name="description"],
-.sw-posting input[name="edit_reason"] {
-  width: min(100%, 650px) !important;
-}
-
-/* ZONE DE REDACTION */
-
-.sw-posting textarea#text_editor_textarea {
-  width: 100% !important;
-  min-height: 340px;
-  padding: 14px;
-}
-
-/* EDITEUR SCEDITOR */
-
-.sw-posting .sceditor-container {
-  overflow: hidden;
-}
-
-.sw-posting .sceditor-toolbar {
-  background: var(--sp-paper) !important;
-  border-bottom: 1px solid var(--sp-rule) !important;
-}
-
-.sw-posting .sceditor-container textarea {
-  background: var(--sp-paper-soft) !important;
-  color: var(--sp-ink) !important;
-}
-
-/* SMILEYS */
-
-.sw-posting #smileyContainer {
-  background: transparent !important;
-  border: 0 !important;
-}
-
-.sw-posting #smileyContainer img {
-  max-width: 100%;
-}
-
-/* ZONE DES BOUTONS */
-
-.sw-posting .sw-posting-actions {
-  width: 100%;
-  border: 0 !important;
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  background: var(--sp-paper) !important;
-  border-radius: 0 0 26px 26px;
-  overflow: hidden;
-  padding: 0 22px 18px;
-  box-sizing: border-box;
-}
-
-.sw-posting .sw-posting-actions .catBottom {
-  background: transparent !important;
-  border: 0 !important;
-  padding: 16px 10px !important;
-  height: auto !important;
-}
-
-/* BOUTONS */
-
-.sw-posting input.liteoption,
-.sw-posting input.mainoption,
-.sw-posting input[type="submit"],
-.sw-posting input[type="button"] {
-  background: var(--sp-button) !important;
-  color: var(--sp-button-ink) !important;
-  border: 0 !important;
-  border-radius: 12px !important;
-  padding: 9px 16px !important;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 600;
-}
-
-/* PANNEAUX ANNEXES */
-
-.sw-posting #optionsitems,
-.sw-posting #optionsitems_show,
-.sw-posting #rolldice,
-.sw-posting #rolldice_show,
-.sw-posting #attachment,
-.sw-posting #attachment_show,
-.sw-posting #attachments,
-.sw-posting #calendaritems,
-.sw-posting #calendaritems_show,
-.sw-posting #seotools,
-.sw-posting #seotools_show {
-  background: var(--sp-paper) !important;
-  border-radius: 22px;
-  margin: 12px 0;
-  overflow: hidden;
-  padding: 8px 16px;
-  color: var(--sp-ink);
-}
-
-/* SUPPRESSION DES FONDS ET CADRES INTERNES */
-
-.sw-posting #optionsitems .forumline,
-.sw-posting #optionsitems_show .forumline,
-.sw-posting #rolldice .forumline,
-.sw-posting #rolldice_show .forumline,
-.sw-posting #attachment .forumline,
-.sw-posting #attachment_show .forumline,
-.sw-posting #attachments .forumline,
-.sw-posting #calendaritems .forumline,
-.sw-posting #calendaritems_show .forumline,
-.sw-posting #seotools .forumline,
-.sw-posting #seotools_show .forumline {
-  background: transparent !important;
-  border: 0 !important;
-}
-
-/* TITRES DES PANNEAUX */
-
-.sw-posting #optionsitems th,
-.sw-posting #optionsitems_show th,
-.sw-posting #rolldice th,
-.sw-posting #rolldice_show th,
-.sw-posting #attachment th,
-.sw-posting #attachment_show th,
-.sw-posting #attachments th,
-.sw-posting #calendaritems th,
-.sw-posting #calendaritems_show th,
-.sw-posting #seotools th,
-.sw-posting #seotools_show th {
-  background: transparent !important;
-  border: 0 !important;
-  color: var(--sp-ink) !important;
-  font-family: Schoolbell, cursive;
-  font-size: 22px;
-  font-weight: normal;
-  padding: 8px;
-}
-
-/* CELLULES DES PANNEAUX */
-
-.sw-posting #optionsitems .row1,
-.sw-posting #optionsitems .row2,
-.sw-posting #optionsitems_show .row1,
-.sw-posting #optionsitems_show .row2,
-.sw-posting #rolldice_show .row1,
-.sw-posting #attachment_show .row1,
-.sw-posting #attachment_show .row2,
-.sw-posting #attachments .row1,
-.sw-posting #attachments .row2,
-.sw-posting #calendaritems_show .row1,
-.sw-posting #calendaritems_show .row2,
-.sw-posting #seotools_show .row1,
-.sw-posting #seotools_show .row2 {
-  background: transparent !important;
-  color: var(--sp-ink) !important;
-  border: 0 !important;
-  padding: 8px;
-}
-
-/* ADAPTATION PETITS ECRANS */
-
-@media (max-width: 760px) {
-
-  .sw-posting .sw-posting-main {
-    padding: 10px 8px 0;
+  .sw-topic-view .sw-topic-post > .sw-topic-message {
+    padding: 14px !important;
   }
 
-  .sw-posting .sw-posting-actions {
-    padding: 0 8px 12px;
+  .sw-topic-view .sw-topic-message-content {
+    padding: 15px 10px !important;
+    font-size: 13px !important;
   }
 
-  .sw-posting .sw-posting-main
-  > tbody > tr > td.row1 {
-    width: 26%;
+  .sw-topic-view .sw-topic-quickreply {
+    padding: 18px 13px !important;
   }
 
-  .sw-posting .sw-posting-main
-  > tbody > tr > th.thHead {
-    font-size: 24px !important;
+  .sw-topic-message-header {
+    align-items: flex-start;
+  }
+
+  .sw-topic-message-options {
+    justify-content: flex-start;
   }
 
 }
 
+/* Avatar : réduction proportionnelle si nécessaire.
+   400 / 620 = 20 / 31 */
 
-/* ==========================================
-   SONGWON — CORRECTION FONDS EDITEUR
-   ========================================== */
+@media (max-width: 360px) {
 
-/* JOUR */
-body:not(.songwon-dark) form.sw-posting {
-  --sp-paper: rgba(250,239,222,.97);
-  --sp-paper-soft: #fbf4e9;
-  --sp-ink: #62493d;
-  --sp-rule: rgba(123,84,60,.15);
+  .sw-topic-view .sw-topic-profile-card {
+    width: min(260px, 100%);
+    height: auto;
+    aspect-ratio: 20 / 31;
+  }
+
 }
 
-/* NUIT */
-body.songwon-dark form.sw-posting {
-  --sp-paper: rgba(64,45,37,.97);
-  --sp-paper-soft: #352821;
-  --sp-ink: #f2d9bb;
-  --sp-rule: rgba(225,185,148,.18);
+/* ==========================================================
+   15.17 — ACCESSIBILITÉ
+   ========================================================== */
+
+/* Le profil reste consultable au clavier. */
+
+.sw-topic-profile-card:focus-visible {
+  outline: 2px solid var(--st-accent);
+  outline-offset: 4px;
 }
 
-/* Fond principal de l'éditeur */
-form.sw-posting > table.forumline {
-  background: var(--sp-paper) !important;
-  border: none !important;
-  border-radius: 26px !important;
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  overflow: hidden;
-  padding: 18px !important;
-  margin-bottom: 14px;
+/* Respect des préférences de réduction des animations. */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sw-topic-view .sw-topic-author-avatar {
+    transition: none !important;
+  }
+
 }
-
-/* Cellules et titres */
-form.sw-posting > table.forumline th,
-form.sw-posting > table.forumline td.row1,
-form.sw-posting > table.forumline td.row2,
-form.sw-posting > table.forumline td.row3,
-form.sw-posting > table.forumline td.catBottom {
-  background: transparent !important;
-  border: none !important;
-  color: var(--sp-ink) !important;
-}
-
-/* Champs de texte */
-form.sw-posting input.post,
-form.sw-posting textarea.post,
-form.sw-posting textarea#text_editor_textarea {
-  background: var(--sp-paper-soft) !important;
-  color: var(--sp-ink) !important;
-  border: 1px solid var(--sp-rule) !important;
-  border-radius: 10px !important;
-  padding: 10px !important;
-}
-
-/* Conteneur de l'éditeur */
-form.sw-posting .sceditor-container {
-  background: var(--sp-paper-soft) !important;
-  border: 1px solid var(--sp-rule) !important;
-  border-radius: 12px !important;
-  overflow: hidden;
-}
-
-/* Barre d'outils */
-form.sw-posting .sceditor-toolbar {
-  background: var(--sp-paper) !important;
-  border-bottom: 1px solid var(--sp-rule) !important;
-}
-
-/* Zone de rédaction en mode source */
-form.sw-posting .sceditor-container textarea {
-  background: var(--sp-paper-soft) !important;
-  color: var(--sp-ink) !important;
-}
-
-/* Intégration des panneaux secondaires */
-form.sw-posting .forumline {
-  color: var(--sp-ink);
-}
-
-/* ==========================================
-   SONGWON — FINITIONS EDITEUR
-   ========================================== */
-
-/* PANNEAU DES SMILEYS */
-
-form.sw-posting #smileyContainer,
-form.sw-posting #smileyContainer iframe,
-form.sw-posting #smileyContainer > div {
-  background: transparent !important;
-  border: none !important;
-}
-
-form.sw-posting #smileyContainer {
-  border-radius: 14px !important;
-  overflow: hidden;
-  max-height: 290px;
-}
-
-/* ZONE DE REDACTION */
-
-form.sw-posting #text_editor_textarea,
-form.sw-posting .sceditor-container textarea {
-  font-family: "DM Sans", Arial, sans-serif !important;
-  font-size: 15px !important;
-  line-height: 1.65 !important;
-  padding: 15px !important;
-}
-
-/* CHAMPS ET ESPACEMENTS */
-
-form.sw-posting .sw-posting-main > tbody > tr > td.row1,
-form.sw-posting .sw-posting-main > tbody > tr > td.row2 {
-  padding-top: 9px !important;
-  padding-bottom: 9px !important;
-}
-
-/* CHAMP RAISON */
-
-form.sw-posting input[name="edit_reason"] {
-  min-height: 36px;
-}
-
-/* VERSION NUIT */
-
-body.songwon-dark form.sw-posting #smileyContainer {
-  background: rgba(49,36,30,.65) !important;
-}
-
-body.songwon-dark form.sw-posting .sceditor-container textarea {
-  background: #352821 !important;
-  color: #f2d9bb !important;
-}
-/* =========================================
-   SONGWON — FICHE DE PERSONNAGE
-   Lisibilité des informations — MODE NUIT
-   ========================================= */
-
-body.songwon-dark .sw-topic-profile-reveal
-.sw-topic-profile-field .label,
-
-body.songwon-dark .sw-topic-profile-reveal
-.sw-topic-profile-field .label span,
-
-body.songwon-dark .sw-topic-profile-reveal
-.sw-topic-profile-field .label strong,
-
-body.songwon-dark .sw-topic-profile-reveal
-.sw-topic-profile-field .label a {
-
-    color: #d6bda7 !important;
-}
-
-
