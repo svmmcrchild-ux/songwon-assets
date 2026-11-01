@@ -430,14 +430,14 @@ body.songwon-dark .sw-topic-view {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  flex: 0 0 332px !important;
+  flex: 0 0 296px !important;
   align-self: flex-start !important;
-  width: 332px !important;
-  min-width: 332px !important;
-  max-width: 332px !important;
+  width: 296px !important;
+  min-width: 296px !important;
+   max-width: 296px !important;
   height: auto !important;
   margin: 0 !important;
-  padding: 17px 15px !important;
+  padding: 17px 18px !important;
   float: none !important;
   position: relative !important;
   background: var(--st-profile) !important;
@@ -708,23 +708,6 @@ body.songwon-dark
   border: 0 !important;
   border-radius: 25px !important;
   box-shadow: none !important;
-}
-
-/* Petite pointe de la bulle vers le profil */
-
-.sw-topic-view .sw-topic-post > .sw-topic-message::before {
-  content: "";
-  position: absolute;
-
-  top: 68px;
-  left: -17px;
-
-  width: 0;
-  height: 0;
-
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  border-right: 19px solid var(--st-bubble);
 }
 
 /* ==========================================================
