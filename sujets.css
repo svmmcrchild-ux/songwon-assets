@@ -1257,3 +1257,374 @@ body.songwon-dark
   }
 
 }
+
+/* ==========================================================
+   16 — SONGWON 1995 | EDITEUR COMPLET
+   posting_body — phpBB2
+   ========================================================== */
+
+/* 16.1 — PALETTE JOUR / NUIT */
+
+body:not(.songwon-dark) .sw-posting {
+  --sp-paper: rgba(250,239,222,.97);
+  --sp-paper-soft: #fbf4e9;
+  --sp-ink: #62493d;
+  --sp-muted: #947564;
+  --sp-rule: rgba(123,84,60,.15);
+  --sp-button: #dfbea2;
+  --sp-button-ink: #50392f;
+}
+
+body.songwon-dark .sw-posting {
+  --sp-paper: rgba(64,45,37,.97);
+  --sp-paper-soft: #352821;
+  --sp-ink: #f2d9bb;
+  --sp-muted: #d1b094;
+  --sp-rule: rgba(225,185,148,.18);
+  --sp-button: #805843;
+  --sp-button-ink: #fff0df;
+}
+
+/* 16.2 — STRUCTURE GENERALE */
+
+.sw-posting {
+  width: 100%;
+  min-width: 0;
+  color: var(--sp-ink);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.sw-posting *,
+.sw-posting *::before,
+.sw-posting *::after {
+  box-sizing: border-box;
+}
+
+.sw-posting > table:first-child {
+  margin-bottom: 12px;
+}
+
+.sw-posting .nav,
+.sw-posting .nav a {
+  color: var(--sp-ink) !important;
+}
+
+/* 16.3 — CARTES PRINCIPALES */
+
+.sw-posting .sw-posting-main,
+.sw-posting .sw-posting-actions {
+  width: 100%;
+  border: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  background: var(--sp-paper) !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+.sw-posting .sw-posting-main {
+  padding: 18px 22px 0;
+  border-radius: 26px 26px 0 0;
+}
+
+.sw-posting .sw-posting-actions {
+  padding: 0 22px 18px;
+  border-radius: 0 0 26px 26px;
+}
+
+/* Autres tableaux principaux Forumactif */
+
+form.sw-posting > table.forumline:not(.sw-posting-main):not(.sw-posting-actions) {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 18px;
+  background: var(--sp-paper) !important;
+  border: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 26px !important;
+  box-shadow: none !important;
+}
+
+/* 16.4 — TITRE DE L'EDITEUR */
+
+.sw-posting .sw-posting-main > tbody > tr > th.thHead {
+  height: auto !important;
+  padding: 7px 12px 18px !important;
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--sp-ink) !important;
+  text-align: left;
+  font-family: "Schoolbell", cursive !important;
+  font-size: 29px !important;
+  font-weight: 400 !important;
+}
+
+/* 16.5 — CELLULES ET LIBELLES */
+
+.sw-posting .sw-posting-main > tbody > tr > td.row1,
+.sw-posting .sw-posting-main > tbody > tr > td.row2 {
+  padding: 9px 12px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--sp-rule) !important;
+  color: var(--sp-ink) !important;
+  vertical-align: top;
+}
+
+.sw-posting .sw-posting-main > tbody > tr > td.row1 {
+  width: 19%;
+}
+
+.sw-posting .gen,
+.sw-posting .genmed,
+.sw-posting .gensmall,
+.sw-posting .postbody,
+.sw-posting label {
+  color: var(--sp-ink);
+}
+
+.sw-posting .sw-posting-main > tbody > tr > td.row1 b,
+.sw-posting .sw-posting-main > tbody > tr > td.row1 strong {
+  font-family: "Schoolbell", cursive;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+form.sw-posting > table.forumline th,
+form.sw-posting > table.forumline td.row1,
+form.sw-posting > table.forumline td.row2,
+form.sw-posting > table.forumline td.row3,
+form.sw-posting > table.forumline td.catBottom {
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--sp-ink) !important;
+}
+
+/* 16.6 — CHAMPS DE SAISIE */
+
+.sw-posting input.post,
+.sw-posting textarea.post,
+.sw-posting select {
+  max-width: 100%;
+  background: var(--sp-paper-soft) !important;
+  color: var(--sp-ink) !important;
+  border: 1px solid var(--sp-rule) !important;
+  border-radius: 10px !important;
+}
+
+.sw-posting input.post {
+  min-height: 36px;
+  padding: 7px 10px !important;
+}
+
+.sw-posting input[name="subject"],
+.sw-posting input[name="description"],
+.sw-posting input[name="edit_reason"] {
+  width: min(100%, 650px) !important;
+}
+
+.sw-posting input[name="edit_reason"] {
+  min-height: 36px;
+}
+
+/* 16.7 — ZONE DE REDACTION */
+
+.sw-posting textarea#text_editor_textarea {
+  width: 100% !important;
+  min-height: 340px;
+  padding: 15px !important;
+  background: var(--sp-paper-soft) !important;
+  color: var(--sp-ink) !important;
+  border: 1px solid var(--sp-rule) !important;
+  border-radius: 10px !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+}
+
+/* 16.8 — SCEDITOR */
+
+.sw-posting .sceditor-container {
+  max-width: 100%;
+  background: var(--sp-paper-soft) !important;
+  border: 1px solid var(--sp-rule) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.sw-posting .sceditor-toolbar {
+  background: var(--sp-paper) !important;
+  border-bottom: 1px solid var(--sp-rule) !important;
+}
+
+.sw-posting .sceditor-container textarea {
+  background: var(--sp-paper-soft) !important;
+  color: var(--sp-ink) !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  padding: 15px !important;
+}
+
+/* 16.9 — SMILEYS */
+
+.sw-posting #smileyContainer,
+.sw-posting #smileyContainer > div,
+.sw-posting #smileyContainer iframe {
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.sw-posting #smileyContainer {
+  max-height: 290px;
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+
+.sw-posting #smileyContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+body.songwon-dark .sw-posting #smileyContainer {
+  background: rgba(49,36,30,.65) !important;
+}
+
+/* 16.10 — BOUTONS */
+
+.sw-posting .sw-posting-actions .catBottom {
+  height: auto !important;
+  padding: 16px 10px !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.sw-posting input.liteoption,
+.sw-posting input.mainoption,
+.sw-posting input[type="submit"],
+.sw-posting input[type="button"] {
+  padding: 9px 16px !important;
+  background: var(--sp-button) !important;
+  color: var(--sp-button-ink) !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .2s ease;
+}
+
+.sw-posting input.liteoption:hover,
+.sw-posting input.mainoption:hover,
+.sw-posting input[type="submit"]:hover,
+.sw-posting input[type="button"]:hover {
+  opacity: .85;
+}
+
+/* 16.11 — PANNEAUX ANNEXES
+   Options, dés, pièces jointes, calendrier, SEO */
+
+.sw-posting #optionsitems,
+.sw-posting #optionsitems_show,
+.sw-posting #rolldice,
+.sw-posting #rolldice_show,
+.sw-posting #attachment,
+.sw-posting #attachment_show,
+.sw-posting #attachments,
+.sw-posting #calendaritems,
+.sw-posting #calendaritems_show,
+.sw-posting #seotools,
+.sw-posting #seotools_show {
+  margin: 12px 0;
+  padding: 8px 16px;
+  background: var(--sp-paper) !important;
+  color: var(--sp-ink);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.sw-posting #optionsitems .forumline,
+.sw-posting #optionsitems_show .forumline,
+.sw-posting #rolldice .forumline,
+.sw-posting #rolldice_show .forumline,
+.sw-posting #attachment .forumline,
+.sw-posting #attachment_show .forumline,
+.sw-posting #attachments .forumline,
+.sw-posting #calendaritems .forumline,
+.sw-posting #calendaritems_show .forumline,
+.sw-posting #seotools .forumline,
+.sw-posting #seotools_show .forumline {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* Titres des panneaux */
+
+.sw-posting #optionsitems th,
+.sw-posting #optionsitems_show th,
+.sw-posting #rolldice th,
+.sw-posting #rolldice_show th,
+.sw-posting #attachment th,
+.sw-posting #attachment_show th,
+.sw-posting #attachments th,
+.sw-posting #calendaritems th,
+.sw-posting #calendaritems_show th,
+.sw-posting #seotools th,
+.sw-posting #seotools_show th {
+  padding: 8px;
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--sp-ink) !important;
+  font-family: "Schoolbell", cursive;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* Cellules des panneaux */
+
+.sw-posting #optionsitems .row1,
+.sw-posting #optionsitems .row2,
+.sw-posting #optionsitems_show .row1,
+.sw-posting #optionsitems_show .row2,
+.sw-posting #rolldice_show .row1,
+.sw-posting #attachment_show .row1,
+.sw-posting #attachment_show .row2,
+.sw-posting #attachments .row1,
+.sw-posting #attachments .row2,
+.sw-posting #calendaritems_show .row1,
+.sw-posting #calendaritems_show .row2,
+.sw-posting #seotools_show .row1,
+.sw-posting #seotools_show .row2 {
+  padding: 8px;
+  background: transparent !important;
+  border: 0 !important;
+  color: var(--sp-ink) !important;
+}
+
+/* 16.12 — RESPONSIVE */
+
+@media (max-width: 760px) {
+
+  .sw-posting .sw-posting-main {
+    padding: 10px 8px 0;
+  }
+
+  .sw-posting .sw-posting-actions {
+    padding: 0 8px 12px;
+  }
+
+  .sw-posting .sw-posting-main > tbody > tr > td.row1 {
+    width: 26%;
+  }
+
+  .sw-posting .sw-posting-main > tbody > tr > th.thHead {
+    font-size: 24px !important;
+  }
+
+  form.sw-posting > table.forumline:not(.sw-posting-main):not(.sw-posting-actions) {
+    padding: 10px;
+  }
+
+}
