@@ -1689,3 +1689,24 @@ body.songwon-dark .sw-topic-view .sw-topic-quickreply .button2 {
   filter: brightness(1.08);
   cursor: pointer;
 }
+/* ==============================================
+   SONGWON — FOND DES BOUTONS DE RÉPONSE RAPIDE
+   ============================================== */
+
+.sw-topic-view .sw-topic-quickreply form,
+.sw-topic-view .sw-topic-quickreply .submit-buttons,
+.sw-topic-view .sw-topic-quickreply .frm-buttons,
+.sw-topic-view .sw-topic-quickreply fieldset,
+.sw-topic-view .sw-topic-quickreply .panel,
+.sw-topic-view .sw-topic-quickreply .inner,
+.sw-topic-view .sw-topic-quickreply .sceditor-container + div {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Conserver les arrondis de la carte */
+.sw-topic-view .sw-topic-quickreply {
+  border-radius: 25px !important;
+  overflow: hidden;
+}
