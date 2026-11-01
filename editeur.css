@@ -227,3 +227,44 @@ body.songwon-dark .sceditor-button:hover,
 body.songwon-dark .sceditor-button.active {
     background: #86604b !important;
 }
+/* =========================================
+   SONGWON — BOUTONS DE L'ÉDITEUR
+   Suppression des fonds gris Forumactif
+   ========================================= */
+
+/* VERSION JOUR */
+
+body:not(.songwon-dark) .sceditor-container .sceditor-toolbar .sceditor-group,
+body:not(.songwon-dark) .sceditor-container .sceditor-toolbar .sceditor-button {
+    background-color: #f2dfca !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-color: #dec5ac !important;
+}
+
+body:not(.songwon-dark) .sceditor-container .sceditor-toolbar .sceditor-button:hover,
+body:not(.songwon-dark) .sceditor-container .sceditor-toolbar .sceditor-button.active {
+    background-color: #dfbea3 !important;
+}
+
+/* VERSION NUIT */
+
+body.songwon-dark .sceditor-container .sceditor-toolbar .sceditor-group,
+body.songwon-dark .sceditor-container .sceditor-toolbar .sceditor-button {
+    background-color: #624638 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-color: #785443 !important;
+}
+
+body.songwon-dark .sceditor-container .sceditor-toolbar .sceditor-button:hover,
+body.songwon-dark .sceditor-container .sceditor-toolbar .sceditor-button.active {
+    background-color: #86604b !important;
+}
+
+/* Arrondis des groupes */
+
+.sceditor-container .sceditor-toolbar .sceditor-group {
+    border-radius: 6px !important;
+    overflow: hidden;
+}
