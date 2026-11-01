@@ -2112,3 +2112,84 @@ body.songwon-dark .sw-posting {
 
 }
 
+
+/* ==========================================
+   SONGWON — CORRECTION FONDS EDITEUR
+   ========================================== */
+
+/* JOUR */
+body:not(.songwon-dark) form.sw-posting {
+  --sp-paper: rgba(250,239,222,.97);
+  --sp-paper-soft: #fbf4e9;
+  --sp-ink: #62493d;
+  --sp-rule: rgba(123,84,60,.15);
+}
+
+/* NUIT */
+body.songwon-dark form.sw-posting {
+  --sp-paper: rgba(64,45,37,.97);
+  --sp-paper-soft: #352821;
+  --sp-ink: #f2d9bb;
+  --sp-rule: rgba(225,185,148,.18);
+}
+
+/* Fond principal de l'éditeur */
+form.sw-posting > table.forumline {
+  background: var(--sp-paper) !important;
+  border: none !important;
+  border-radius: 26px !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden;
+  padding: 18px !important;
+  margin-bottom: 14px;
+}
+
+/* Cellules et titres */
+form.sw-posting > table.forumline th,
+form.sw-posting > table.forumline td.row1,
+form.sw-posting > table.forumline td.row2,
+form.sw-posting > table.forumline td.row3,
+form.sw-posting > table.forumline td.catBottom {
+  background: transparent !important;
+  border: none !important;
+  color: var(--sp-ink) !important;
+}
+
+/* Champs de texte */
+form.sw-posting input.post,
+form.sw-posting textarea.post,
+form.sw-posting textarea#text_editor_textarea {
+  background: var(--sp-paper-soft) !important;
+  color: var(--sp-ink) !important;
+  border: 1px solid var(--sp-rule) !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+}
+
+/* Conteneur de l'éditeur */
+form.sw-posting .sceditor-container {
+  background: var(--sp-paper-soft) !important;
+  border: 1px solid var(--sp-rule) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+/* Barre d'outils */
+form.sw-posting .sceditor-toolbar {
+  background: var(--sp-paper) !important;
+  border-bottom: 1px solid var(--sp-rule) !important;
+}
+
+/* Zone de rédaction en mode source */
+form.sw-posting .sceditor-container textarea {
+  background: var(--sp-paper-soft) !important;
+  color: var(--sp-ink) !important;
+}
+
+/* Intégration des panneaux secondaires */
+form.sw-posting .forumline {
+  color: var(--sp-ink);
+}
+
+
