@@ -1793,3 +1793,72 @@ body.songwon-dark .sw-topic-quickreply .sceditor-button:hover,
 body.songwon-dark .sw-topic-quickreply .sceditor-button.active {
     background: rgba(220, 155, 105, .2) !important;
 }
+/* ==========================================
+   SONGWON — ÉDITEUR DE RÉPONSE RAPIDE
+   ========================================== */
+
+/* Barre d'outils */
+.sw-topic-quickreply .sceditor-toolbar {
+    background: #ead8c3 !important;
+    border: none !important;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 8px 10px !important;
+}
+
+/* Groupes de boutons */
+.sw-topic-quickreply .sceditor-group {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+/* Boutons de l'éditeur */
+.sw-topic-quickreply .sceditor-button {
+    border: none !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+}
+
+/* Survol des boutons */
+.sw-topic-quickreply .sceditor-button:hover,
+.sw-topic-quickreply .sceditor-button.active {
+    background: rgba(139, 92, 62, .18) !important;
+}
+
+/* Conteneur de l'éditeur */
+.sw-topic-quickreply .sceditor-container {
+    background: #f8f2e8 !important;
+    border: 1px solid rgba(139, 92, 62, .16) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: none !important;
+}
+
+/* Zone de rédaction */
+.sw-topic-quickreply .sceditor-container iframe,
+.sw-topic-quickreply .sceditor-container textarea {
+    background: #f8f2e8 !important;
+    color: #604638 !important;
+}
+
+/* ========== VERSION NUIT ========== */
+
+body.songwon-dark .sw-topic-quickreply .sceditor-toolbar {
+    background: #49372e !important;
+}
+
+body.songwon-dark .sw-topic-quickreply .sceditor-container {
+    background: #30251f !important;
+    border-color: rgba(220, 155, 105, .15) !important;
+}
+
+body.songwon-dark .sw-topic-quickreply .sceditor-container textarea {
+    background: #30251f !important;
+    color: #e9d9c8 !important;
+}
+
+body.songwon-dark .sw-topic-quickreply .sceditor-button:hover,
+body.songwon-dark .sw-topic-quickreply .sceditor-button.active {
+    background: rgba(220, 155, 105, .2) !important;
+}
