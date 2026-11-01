@@ -177,4 +177,53 @@ html.sw-smileys-night td {
   background: #392a24 !important;
   color: #e9d9c8 !important;
 }
+/* =========================================
+   SONGWON — BARRE D'OUTILS DE L'ÉDITEUR
+   ========================================= */
 
+/* VERSION JOUR */
+
+body:not(.songwon-dark) .sceditor-toolbar {
+    background: #ead3bc !important;
+    border-color: #d9b99d !important;
+}
+
+body:not(.songwon-dark) .sceditor-group {
+    background: #f5e7d6 !important;
+    border: 1px solid #d9b99d !important;
+    border-radius: 7px !important;
+}
+
+body:not(.songwon-dark) .sceditor-button {
+    background: transparent !important;
+    border-radius: 5px !important;
+}
+
+body:not(.songwon-dark) .sceditor-button:hover,
+body:not(.songwon-dark) .sceditor-button.active {
+    background: #dfbea3 !important;
+}
+
+
+/* VERSION NUIT */
+
+body.songwon-dark .sceditor-toolbar {
+    background: #4d352b !important;
+    border-color: #67483a !important;
+}
+
+body.songwon-dark .sceditor-group {
+    background: #624638 !important;
+    border: 1px solid #785443 !important;
+    border-radius: 7px !important;
+}
+
+body.songwon-dark .sceditor-button {
+    background: transparent !important;
+    border-radius: 5px !important;
+}
+
+body.songwon-dark .sceditor-button:hover,
+body.songwon-dark .sceditor-button.active {
+    background: #86604b !important;
+}
