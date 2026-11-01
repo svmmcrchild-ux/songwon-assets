@@ -1710,3 +1710,17 @@ body.songwon-dark .sw-topic-view .sw-topic-quickreply .button2 {
   border-radius: 25px !important;
   overflow: hidden;
 }
+/* ==========================================
+   SONGWON — RÉPONSE RAPIDE
+   Suppression du fond blanc Forumactif
+   Versions jour et nuit
+   ========================================== */
+
+.sw-topic-quickreply form#quick_reply td.row2,
+.sw-topic-quickreply form#quick_reply td.row1,
+.sw-topic-quickreply form#quick_reply td.row2:hover,
+.sw-topic-quickreply form#quick_reply td.row1:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
