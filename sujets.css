@@ -1066,8 +1066,12 @@ body.songwon-dark
   max-width: 100% !important;
 }
 
+/* Cellules de la réponse rapide Forumactif */
+
 .sw-topic-quickreply td {
   max-width: 100%;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 /* Boutons de la réponse rapide */
