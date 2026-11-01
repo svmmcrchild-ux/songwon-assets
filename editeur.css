@@ -147,4 +147,34 @@ html.sw-smileys-night table,
 html.sw-smileys-night td {
   background-color: #392a24 !important;
 }
+/* ==========================================
+   SONGWON — CORRECTION SMILEYS JOUR / NUIT
+   ========================================== */
+
+/* VERSION JOUR */
+html.sw-smileys-day #smilies_header {
+  background: #dfc4a9 !important;
+}
+
+html.sw-smileys-day #sce_smilies_body,
+html.sw-smileys-day body,
+html.sw-smileys-day table,
+html.sw-smileys-day td {
+  background: #f8efdf !important;
+}
+
+/* VERSION NUIT */
+html.sw-smileys-night #smilies_header {
+  background: #49352c !important;
+  background-image: none !important;
+  color: #e9d9c8 !important;
+}
+
+html.sw-smileys-night #sce_smilies_body,
+html.sw-smileys-night body,
+html.sw-smileys-night table,
+html.sw-smileys-night td {
+  background: #392a24 !important;
+  color: #e9d9c8 !important;
+}
 
