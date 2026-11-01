@@ -268,140 +268,136 @@ body.songwon-dark .sceditor-container .sceditor-toolbar .sceditor-button.active 
     border-radius: 6px !important;
     overflow: hidden;
 }
-/* =========================================
-   SONGWON — AJOUTER UN SONDAGE
-   Barres natives phpBB2
-   ========================================= */
 
-/* JOUR */
-body:not(.songwon-dark) td.catHead,
-body:not(.songwon-dark) td.cat,
-body:not(.songwon-dark) td.catBottom {
-    background: #ead3bc !important;
-    background-image: none !important;
-    border-color: #d9b99d !important;
-    color: #60483c !important;
-}
+/* ==============================================
+   SONGWON 1995 — PANNEAU SONDAGE
+   Harmonisation avec Options / Calendrier / SEO
+   ============================================== */
 
-/* NUIT */
-body.songwon-dark td.catHead,
-body.songwon-dark td.cat,
-body.songwon-dark td.catBottom {
-    background: #493329 !important;
-    background-image: none !important;
-    border-color: #67483a !important;
-    color: #f0d7bb !important;
-}
+/* Structure générale */
 
-/* Texte des barres */
-td.catHead,
-td.catHead a,
-td.cat,
-td.cat a {
-    color: inherit !important;
-}
-/* ==================================================
-   SONGWON 1995 — SONDAGES
-   Compatible thème JOUR / NUIT
-   ================================================== */
-
-
-/* --------------------------------------------------
-   STRUCTURE COMMUNE
-   -------------------------------------------------- */
-
-.sw-pollbox {
+.sw-posting .sw-pollbox {
     width: 100%;
-    margin: 16px 0;
+    margin: 12px 0;
+    padding: 0;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    min-height: 0 !important;
+    overflow: visible !important;
 }
 
-.sw-pollbox table {
+/* Les deux états du sondage */
+
+.sw-posting .sw-pollbox #pollitems,
+.sw-posting .sw-pollbox #pollitems_show {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 22px;
+    overflow: hidden;
 }
 
-.sw-pollbox th,
-.sw-pollbox td {
-    background-image: none !important;
+/* Tableaux Forumactif */
+
+.sw-posting .sw-pollbox .forumline {
+    width: 100% !important;
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    background: transparent !important;
+    margin: 0 !important;
 }
 
-.sw-pollbox th,
-.sw-pollbox .thHead,
-.sw-pollbox .thSides,
-.sw-pollbox .thTop,
-.sw-pollbox .catHead,
-.sw-pollbox .catTitle {
-    border-radius: 10px;
-    font-weight: 600;
-    text-align: center;
-}
+/* En-tête : même hauteur et même présentation */
 
-.sw-pollbox a {
-    text-decoration: none;
-}
-
-
-/* --------------------------------------------------
-   VERSION JOUR
-   -------------------------------------------------- */
-
-body:not(.songwon-dark) .sw-pollbox th,
-body:not(.songwon-dark) .sw-pollbox .thHead,
-body:not(.songwon-dark) .sw-pollbox .thSides,
-body:not(.songwon-dark) .sw-pollbox .thTop,
-body:not(.songwon-dark) .sw-pollbox .catHead,
-body:not(.songwon-dark) .sw-pollbox .catTitle {
-    background: #ead3bc !important;
-    background-image: none !important;
-    color: #60483c !important;
-    border-color: #d9b99d !important;
-}
-
-body:not(.songwon-dark) .sw-pollbox th a,
-body:not(.songwon-dark) .sw-pollbox .catTitle a {
-    color: #60483c !important;
-}
-
-
-/* --------------------------------------------------
-   VERSION NUIT
-   -------------------------------------------------- */
-
-body.songwon-dark .sw-pollbox th,
-body.songwon-dark .sw-pollbox .thHead,
-body.songwon-dark .sw-pollbox .thSides,
-body.songwon-dark .sw-pollbox .thTop,
-body.songwon-dark .sw-pollbox .catHead,
-body.songwon-dark .sw-pollbox .catTitle {
-    background: #493329 !important;
-    background-image: none !important;
-    color: #f0d7bb !important;
-    border-color: #67483a !important;
-}
-
-body.songwon-dark .sw-pollbox th a,
-body.songwon-dark .sw-pollbox .catTitle a {
-    color: #f0d7bb !important;
-}
-/* =========================================
-   SONGWON — BARRE AJOUTER UN SONDAGE
-   COULEUR + HAUTEUR
-   ========================================= */
-
-/* Version jour */
-body:not(.songwon-dark) #poll,
-body:not(.songwon-dark) #poll .forumline,
-body:not(.songwon-dark) #poll .thHead,
-body:not(.songwon-dark) #poll .catHead {
-    background: #f8efdf !important;
-    background-image: none !important;
-}
-
-/* Hauteur identique aux autres barres */
-#poll .thHead,
-#poll .catHead {
-    height: 64px !important;
+.sw-posting .sw-pollbox .forumline > tbody > tr > th.thHead {
+    height: 60px !important;
+    padding: 8px 16px !important;
+    border: 0 !important;
+    vertical-align: middle !important;
     box-sizing: border-box !important;
+    background-image: none !important;
+}
+
+/* Tableau intérieur de l'en-tête */
+
+.sw-posting .sw-pollbox th.thHead > table {
+    width: 100% !important;
+    height: 44px !important;
+    border: 0 !important;
+    border-spacing: 0 !important;
+    background: transparent !important;
+}
+
+.sw-posting .sw-pollbox th.thHead > table td {
+    background: transparent !important;
+    border: 0 !important;
     vertical-align: middle !important;
 }
+
+/* Typographie du titre */
+
+.sw-posting .sw-pollbox th.thHead .gen,
+.sw-posting .sw-pollbox th.thHead b {
+    font-family: "Schoolbell", cursive !important;
+    font-size: 22px !important;
+    font-weight: normal !important;
+    line-height: 1.4 !important;
+}
+
+/* VERSION JOUR */
+
+body:not(.songwon-dark) .sw-posting .sw-pollbox #pollitems,
+body:not(.songwon-dark) .sw-posting .sw-pollbox #pollitems_show {
+    background: #f8efdf !important;
+}
+
+body:not(.songwon-dark) .sw-posting .sw-pollbox th.thHead {
+    background: #f8efdf !important;
+    color: #604638 !important;
+}
+
+body:not(.songwon-dark) .sw-posting .sw-pollbox th.thHead .gen,
+body:not(.songwon-dark) .sw-posting .sw-pollbox th.thHead b {
+    color: #604638 !important;
+}
+
+/* VERSION NUIT */
+
+body.songwon-dark .sw-posting .sw-pollbox #pollitems,
+body.songwon-dark .sw-posting .sw-pollbox #pollitems_show {
+    background: #392a24 !important;
+}
+
+body.songwon-dark .sw-posting .sw-pollbox th.thHead {
+    background: #392a24 !important;
+    color: #e9d9c8 !important;
+}
+
+body.songwon-dark .sw-posting .sw-pollbox th.thHead .gen,
+body.songwon-dark .sw-posting .sw-pollbox th.thHead b {
+    color: #e9d9c8 !important;
+}
+
+/* Contenu du sondage lorsqu'il est ouvert */
+
+.sw-posting .sw-pollbox #pollitems_show .row1,
+.sw-posting .sw-pollbox #pollitems_show .row2 {
+    border: 0 !important;
+    padding: 10px 14px !important;
+}
+
+body:not(.songwon-dark) .sw-posting .sw-pollbox #pollitems_show .row1,
+body:not(.songwon-dark) .sw-posting .sw-pollbox #pollitems_show .row2 {
+    background: #f8efdf !important;
+    color: #604638 !important;
+}
+
+body.songwon-dark .sw-posting .sw-pollbox #pollitems_show .row1,
+body.songwon-dark .sw-posting .sw-pollbox #pollitems_show .row2 {
+    background: #392a24 !important;
+    color: #e9d9c8 !important;
+}
+
+
