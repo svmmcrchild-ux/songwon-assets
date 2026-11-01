@@ -384,3 +384,24 @@ body.songwon-dark .sw-pollbox th a,
 body.songwon-dark .sw-pollbox .catTitle a {
     color: #f0d7bb !important;
 }
+/* =========================================
+   SONGWON — BARRE AJOUTER UN SONDAGE
+   COULEUR + HAUTEUR
+   ========================================= */
+
+/* Version jour */
+body:not(.songwon-dark) #poll,
+body:not(.songwon-dark) #poll .forumline,
+body:not(.songwon-dark) #poll .thHead,
+body:not(.songwon-dark) #poll .catHead {
+    background: #f8efdf !important;
+    background-image: none !important;
+}
+
+/* Hauteur identique aux autres barres */
+#poll .thHead,
+#poll .catHead {
+    height: 64px !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+}
