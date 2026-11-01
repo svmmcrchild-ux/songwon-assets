@@ -300,3 +300,87 @@ td.cat,
 td.cat a {
     color: inherit !important;
 }
+/* ==================================================
+   SONGWON 1995 — SONDAGES
+   Compatible thème JOUR / NUIT
+   ================================================== */
+
+
+/* --------------------------------------------------
+   STRUCTURE COMMUNE
+   -------------------------------------------------- */
+
+.sw-pollbox {
+    width: 100%;
+    margin: 16px 0;
+}
+
+.sw-pollbox table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.sw-pollbox th,
+.sw-pollbox td {
+    background-image: none !important;
+}
+
+.sw-pollbox th,
+.sw-pollbox .thHead,
+.sw-pollbox .thSides,
+.sw-pollbox .thTop,
+.sw-pollbox .catHead,
+.sw-pollbox .catTitle {
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sw-pollbox a {
+    text-decoration: none;
+}
+
+
+/* --------------------------------------------------
+   VERSION JOUR
+   -------------------------------------------------- */
+
+body:not(.songwon-dark) .sw-pollbox th,
+body:not(.songwon-dark) .sw-pollbox .thHead,
+body:not(.songwon-dark) .sw-pollbox .thSides,
+body:not(.songwon-dark) .sw-pollbox .thTop,
+body:not(.songwon-dark) .sw-pollbox .catHead,
+body:not(.songwon-dark) .sw-pollbox .catTitle {
+    background: #ead3bc !important;
+    background-image: none !important;
+    color: #60483c !important;
+    border-color: #d9b99d !important;
+}
+
+body:not(.songwon-dark) .sw-pollbox th a,
+body:not(.songwon-dark) .sw-pollbox .catTitle a {
+    color: #60483c !important;
+}
+
+
+/* --------------------------------------------------
+   VERSION NUIT
+   -------------------------------------------------- */
+
+body.songwon-dark .sw-pollbox th,
+body.songwon-dark .sw-pollbox .thHead,
+body.songwon-dark .sw-pollbox .thSides,
+body.songwon-dark .sw-pollbox .thTop,
+body.songwon-dark .sw-pollbox .catHead,
+body.songwon-dark .sw-pollbox .catTitle {
+    background: #493329 !important;
+    background-image: none !important;
+    color: #f0d7bb !important;
+    border-color: #67483a !important;
+}
+
+body.songwon-dark .sw-pollbox th a,
+body.songwon-dark .sw-pollbox .catTitle a {
+    color: #f0d7bb !important;
+}
