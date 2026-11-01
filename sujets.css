@@ -2192,4 +2192,59 @@ form.sw-posting .forumline {
   color: var(--sp-ink);
 }
 
+/* ==========================================
+   SONGWON — FINITIONS EDITEUR
+   ========================================== */
+
+/* PANNEAU DES SMILEYS */
+
+form.sw-posting #smileyContainer,
+form.sw-posting #smileyContainer iframe,
+form.sw-posting #smileyContainer > div {
+  background: transparent !important;
+  border: none !important;
+}
+
+form.sw-posting #smileyContainer {
+  border-radius: 14px !important;
+  overflow: hidden;
+  max-height: 290px;
+}
+
+/* ZONE DE REDACTION */
+
+form.sw-posting #text_editor_textarea,
+form.sw-posting .sceditor-container textarea {
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  padding: 15px !important;
+}
+
+/* CHAMPS ET ESPACEMENTS */
+
+form.sw-posting .sw-posting-main > tbody > tr > td.row1,
+form.sw-posting .sw-posting-main > tbody > tr > td.row2 {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
+
+/* CHAMP RAISON */
+
+form.sw-posting input[name="edit_reason"] {
+  min-height: 36px;
+}
+
+/* VERSION NUIT */
+
+body.songwon-dark form.sw-posting #smileyContainer {
+  background: rgba(49,36,30,.65) !important;
+}
+
+body.songwon-dark form.sw-posting .sceditor-container textarea {
+  background: #352821 !important;
+  color: #f2d9bb !important;
+}
+
+
 
