@@ -1187,3 +1187,229 @@ body.songwon-dark .sw-topic-view {
     font-size: 19px !important;
   }
 }
+/* =====================================================
+   SONGWON 1995 — INTÉRIEUR DES SUJETS
+   Navigation libre, titre sans panneau,
+   messages en bulles et profils arrondis
+   ===================================================== */
+
+/* 1. VARIABLES JOUR — valeurs par défaut */
+
+.sw-topic-view {
+  --st-ink: #584236;
+  --st-muted: #896d5a;
+  --st-accent: #a66e4d;
+  --st-bubble: rgba(247, 231, 210, .88);
+  --st-profile: rgba(247, 231, 210, .76);
+}
+
+/* 2. VARIABLES NUIT
+   Détection par le thème de la page */
+
+body:has(.sw-topic-view) .sw-topic-view {
+  color: var(--st-ink);
+}
+
+/* Ajouter la classe du thème nuit sur body
+   si elle existe dans ton système de bascule.
+   Ces sélecteurs couvrent plusieurs conventions. */
+
+body.night .sw-topic-view,
+body.nuit .sw-topic-view,
+body.dark .sw-topic-view,
+body.theme-night .sw-topic-view,
+html.night .sw-topic-view,
+html.nuit .sw-topic-view,
+html.dark .sw-topic-view,
+html.theme-night .sw-topic-view,
+[data-theme="night"] .sw-topic-view,
+[data-theme="dark"] .sw-topic-view {
+  --st-ink: #f0dfca;
+  --st-muted: #c8aa91;
+  --st-accent: #dfa572;
+  --st-bubble: rgba(70, 51, 43, .94);
+  --st-profile: rgba(70, 51, 43, .88);
+}
+
+/* 3. NAVIGATION — DIRECTEMENT SUR LE SCRAPBOOK */
+
+.sw-topic-view .sw-topic-navigation {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 12px 4px !important;
+}
+
+.sw-topic-view .sw-topic-breadcrumb,
+.sw-topic-view .sw-topic-breadcrumb a,
+.sw-topic-view .sw-topic-breadcrumb span,
+.sw-topic-view .sw-topic-nav-actions,
+.sw-topic-view .sw-topic-button,
+.sw-topic-view .sw-topic-plus {
+  font-family: "Caveat", cursive !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: var(--st-ink) !important;
+}
+
+.sw-topic-view .sw-topic-button {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 6px !important;
+  min-height: 0 !important;
+  text-decoration: none !important;
+}
+
+/* 4. TITRE DU SUJET — SUPPRESSION DU PANNEAU */
+
+.sw-topic-view .sw-topic-header {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 20px 4px 24px !important;
+}
+
+.sw-topic-view .sw-topic-header h1 {
+  color: var(--st-ink) !important;
+}
+
+.sw-topic-view .sw-topic-header-meta {
+  color: var(--st-accent) !important;
+}
+
+.sw-topic-view .sw-topic-header-bottom {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 5. SUPPRESSION DES CADRES AUTOUR DES MESSAGES */
+
+.sw-topic-view .sw-topic-posts,
+.sw-topic-view .sw-topic-post {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 6. FICHE DU PERSONNAGE */
+
+.sw-topic-view .sw-topic-author {
+  background: var(--st-profile) !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+  box-shadow: none !important;
+}
+
+.sw-topic-view .sw-topic-profile-card {
+  border: 0 !important;
+  border-radius: 14px !important;
+}
+
+.sw-topic-view .sw-topic-author-avatar,
+.sw-topic-view .sw-topic-author-avatar img {
+  border-radius: 12px !important;
+}
+
+.sw-topic-view .sw-topic-author-name,
+.sw-topic-view .sw-topic-author-rank {
+  color: var(--st-ink);
+}
+
+/* 7. BULLE PRINCIPALE */
+
+.sw-topic-view .sw-topic-message {
+  position: relative;
+  background: var(--st-bubble) !important;
+  border: 0 !important;
+  border-radius: 26px !important;
+  box-shadow: none !important;
+  color: var(--st-ink) !important;
+}
+
+/* Petite pointe à gauche, dirigée vers le profil */
+
+.sw-topic-view .sw-topic-message::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: -17px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-right: 19px solid var(--st-bubble);
+}
+
+/* 8. SUPPRESSION DU RECTANGLE INTÉRIEUR */
+
+.sw-topic-view .sw-topic-message-content,
+.sw-topic-view .sw-topic-message-text,
+.sw-topic-view .sw-topic-message .postbody {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.sw-topic-view .sw-topic-message-text {
+  color: var(--st-ink) !important;
+  line-height: 1.8;
+}
+
+/* 9. EN-TÊTE DU MESSAGE */
+
+.sw-topic-view .sw-topic-message-header {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.sw-topic-view .sw-topic-message-subject {
+  color: var(--st-ink) !important;
+}
+
+.sw-topic-view .sw-topic-message-date {
+  color: var(--st-muted) !important;
+}
+
+/* 10. SIGNATURE ET BAS DE MESSAGE */
+
+.sw-topic-view .signature_div,
+.sw-topic-view .sw-topic-message-footer {
+  background: transparent !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 11. LIENS */
+
+.sw-topic-view .sw-topic-breadcrumb a:hover,
+.sw-topic-view .sw-topic-button:hover {
+  color: var(--st-accent) !important;
+}
+
+/* 12. MOBILE */
+
+@media (max-width: 800px) {
+  .sw-topic-view .sw-topic-message::before {
+    display: none;
+  }
+
+  .sw-topic-view .sw-topic-message,
+  .sw-topic-view .sw-topic-author {
+    border-radius: 20px !important;
+  }
+
+  .sw-topic-view .sw-topic-breadcrumb,
+  .sw-topic-view .sw-topic-breadcrumb a,
+  .sw-topic-view .sw-topic-button {
+    font-size: 20px !important;
+  }
+}
