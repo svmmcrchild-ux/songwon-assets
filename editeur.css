@@ -1,0 +1,90 @@
+
+/* ============================================
+   SONGWON 1995 — ÉDITEUR
+   JOUR / NUIT
+   ============================================ */
+
+/* PALETTE JOUR */
+
+body:not(.songwon-dark) {
+  --sw-editor-bg: #f8efdf;
+  --sw-editor-field: #faf3e9;
+  --sw-editor-toolbar: #f2e4d1;
+  --sw-editor-accent: #dfc4a9;
+  --sw-editor-text: #604638;
+  --sw-editor-border: rgba(115, 79, 54, .15);
+}
+
+/* PALETTE NUIT */
+
+body.songwon-dark {
+  --sw-editor-bg: #392a24;
+  --sw-editor-field: #30251f;
+  --sw-editor-toolbar: #49352c;
+  --sw-editor-accent: #765544;
+  --sw-editor-text: #e9d9c8;
+  --sw-editor-border: rgba(220, 155, 105, .20);
+}
+
+/* FORMULAIRE PRINCIPAL */
+
+body form[action*="/post"] .forumline,
+body form[action*="/post"] .post {
+  background: var(--sw-editor-bg) !important;
+  color: var(--sw-editor-text) !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+}
+
+/* CHAMPS */
+
+body form[action*="/post"] input[type="text"],
+body form[action*="/post"] textarea,
+body form[action*="/post"] select {
+  background: var(--sw-editor-field) !important;
+  color: var(--sw-editor-text) !important;
+  border: 1px solid var(--sw-editor-border) !important;
+  border-radius: 12px !important;
+}
+
+/* SCEDITOR */
+
+body .sceditor-container {
+  background: var(--sw-editor-field) !important;
+  border: 1px solid var(--sw-editor-border) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+
+body .sceditor-toolbar,
+body .sceditor-container .sceditor-toolbar {
+  background: var(--sw-editor-toolbar) !important;
+  border-bottom: 1px solid var(--sw-editor-border) !important;
+}
+
+body .sceditor-container textarea {
+  background: var(--sw-editor-field) !important;
+  color: var(--sw-editor-text) !important;
+}
+
+/* BOUTONS */
+
+body form[action*="/post"] input[type="submit"],
+body form[action*="/post"] input[type="button"] {
+  background: var(--sw-editor-accent) !important;
+  color: var(--sw-editor-text) !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  padding: 9px 18px !important;
+  cursor: pointer;
+}
+
+/* SMILEYS : CONTENEUR EXTÉRIEUR */
+
+body #smiley-box,
+body #smiley-box iframe,
+body iframe[src*="smilies"] {
+  border: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
