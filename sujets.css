@@ -1662,16 +1662,29 @@ body.songwon-dark .sw-posting #smileyContainer {
 
 }
 
+/* ==========================================================
+   SONGWON 1995 — ICÔNES DE CONTACT DES SUJETS
+   Versions jour / nuit
+   ========================================================== */
 
-/* SONGWON 1995 — ICÔNES DE CONTACT DES SUJETS */
+/* Disposition générale */
 
-.sw-topic-message-footer .sw-topic-contact {
+.sw-topic-view .sw-topic-message-footer .sw-topic-contact {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.sw-topic-message-footer .sw-topic-contact a {
+/* Masquer le contact e-mail */
+
+.sw-topic-view .sw-topic-contact a[href*="mode=email"] {
+  display: none !important;
+}
+
+/* Liens des icônes */
+
+.sw-topic-view .sw-topic-contact a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1679,73 +1692,74 @@ body.songwon-dark .sw-posting #smileyContainer {
   height: 28px;
 }
 
-.sw-topic-message-footer .sw-topic-contact a img {
+/* Dimensions des images */
+
+.sw-topic-view .sw-topic-contact a img {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 24px !important;
+  height: 24px !important;
   object-fit: contain;
 }
 
-/* SONGWON — Statut En ligne */
+/* Statut En ligne */
 
-.sw-topic-message-footer img.i_icon_online {
+.sw-topic-view .sw-topic-contact img.i_icon_online {
+  display: block;
   width: 32px !important;
   height: 32px !important;
   object-fit: contain;
-  display: block;
-}
-}
-/* SONGWON 1995 — Masquer définitivement l'e-mail */
-
-.sw-topic-view .sw-topic-message-footer
-.sw-topic-contact a[href*="mode=email"] {
-  display: none !important;
 }
 
-/* SONGWON 1995 — ICÔNES DE CONTACT, MODE NUIT */
+/* ==========================================================
+   MODE NUIT — REMPLACEMENT DES IMAGES
+   ========================================================== */
+
+/* Profil */
+
+body.songwon-dark .sw-topic-view
+.sw-topic-contact img.i_icon_profile {
+  box-sizing: border-box;
+  width: 24px !important;
+  height: 24px !important;
+  padding: 24px 0 0 24px !important;
+  background: url("https://svmmcrchild-ux.github.io/songwon-assets/profil-nuit.png")
+    center / contain no-repeat !important;
+}
+
+/* Message privé */
+
+body.songwon-dark .sw-topic-view
+.sw-topic-contact img.i_icon_pm {
+  box-sizing: border-box;
+  width: 24px !important;
+  height: 24px !important;
+  padding: 24px 0 0 24px !important;
+  background: url("https://svmmcrchild-ux.github.io/songwon-assets/enveloppe-fermee-nuit.png")
+    center / contain no-repeat !important;
+}
 
 /* Site web */
-body.songwon-dark .sw-topic-contact img.i_icon_www {
-  content: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png") !important;
+
+body.songwon-dark .sw-topic-view
+.sw-topic-contact img.i_icon_www {
+  box-sizing: border-box;
+  width: 24px !important;
+  height: 24px !important;
+  padding: 24px 0 0 24px !important;
+  background: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png")
+    center / contain no-repeat !important;
 }
 
 /* En ligne */
-body.songwon-dark .sw-topic-contact img.i_icon_online {
-  content: url("https://svmmcrchild-ux.github.io/songwon-assets/en-ligne-nuit.png") !important;
-}
 
-/* SONGWON 1995 — ICÔNES DE CONTACT JOUR / NUIT */
-
-/* Masquer l'e-mail */
-.sw-topic-view .sw-topic-contact a[href*="mode=email"] {
-  display: none !important;
-}
-
-/* Dimensions des icônes */
-.sw-topic-view .sw-topic-contact img.i_icon_www,
-.sw-topic-view .sw-topic-contact img.i_icon_online {
-  width: 32px !important;
-  height: 32px !important;
-  object-fit: contain;
-}
-
-/* Mode nuit : remplacer visuellement les images */
-body.songwon-dark .sw-topic-view .sw-topic-contact img.i_icon_www {
-  background: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png")
-    center / contain no-repeat !important;
+body.songwon-dark .sw-topic-view
+.sw-topic-contact img.i_icon_online {
   box-sizing: border-box;
-  padding: 32px 0 0 32px !important;
   width: 32px !important;
   height: 32px !important;
-}
-
-body.songwon-dark .sw-topic-view .sw-topic-contact img.i_icon_online {
+  padding: 32px 0 0 32px !important;
   background: url("https://svmmcrchild-ux.github.io/songwon-assets/en-ligne-nuit.png")
     center / contain no-repeat !important;
-  box-sizing: border-box;
-  padding: 32px 0 0 32px !important;
-  width: 32px !important;
-  height: 32px !important;
 }
 
 
