@@ -907,14 +907,25 @@ body.songwon-dark
   margin-top: 12px;
 }
 
+
 .sw-topic-likes .rep-button {
-  padding: 6px 11px;
-  border: 1px solid var(--tp-line);
-  border-radius: 4px;
-  background: var(--tp-inner);
-  color: var(--tp-ink);
+  padding: 5px 12px;
+  border: 1px solid var(--st-accent);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--st-ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
   cursor: pointer;
+  box-shadow: none;
+  transition: background .2s ease, border-color .2s ease;
 }
+
+.sw-topic-likes .rep-button:hover {
+  background: var(--st-profile);
+}
+
 
 /* ==========================================================
    15.13 — PIED DES MESSAGES
