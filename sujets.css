@@ -1714,5 +1714,40 @@ body.songwon-dark .sw-topic-contact img.i_icon_online {
   content: url("https://svmmcrchild-ux.github.io/songwon-assets/en-ligne-nuit.png") !important;
 }
 
+/* SONGWON 1995 — ICÔNES DE CONTACT JOUR / NUIT */
+
+/* Masquer l'e-mail */
+.sw-topic-view .sw-topic-contact a[href*="mode=email"] {
+  display: none !important;
+}
+
+/* Dimensions des icônes */
+.sw-topic-view .sw-topic-contact img.i_icon_www,
+.sw-topic-view .sw-topic-contact img.i_icon_online {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain;
+}
+
+/* Mode nuit : remplacer visuellement les images */
+body.songwon-dark .sw-topic-view .sw-topic-contact img.i_icon_www {
+  background: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png")
+    center / contain no-repeat !important;
+  box-sizing: border-box;
+  padding: 32px 0 0 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+body.songwon-dark .sw-topic-view .sw-topic-contact img.i_icon_online {
+  background: url("https://svmmcrchild-ux.github.io/songwon-assets/en-ligne-nuit.png")
+    center / contain no-repeat !important;
+  box-sizing: border-box;
+  padding: 32px 0 0 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+
 
 
