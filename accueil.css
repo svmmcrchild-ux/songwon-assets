@@ -324,3 +324,153 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
   object-position: center !important;
 }
 
+
+/* ==========================================
+   SONGWON — BOUTONS DES GROUPES DU QEEL
+   ========================================== */
+
+/* Conteneur des boutons */
+.sw-groups-buttons-section {
+  margin-top: 14px !important;
+  padding-top: 0 !important;
+}
+
+/* Trois boutons sur une ligne */
+.sw-groups-buttons-section .sw-residents-groups-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Apparence des boutons */
+.sw-groups-buttons-section a.sw-residents-group-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 76px !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 14px 20px !important;
+  box-sizing: border-box !important;
+
+  background: rgba(67, 43, 31, 0.88) !important;
+  border: 1px solid rgba(232, 205, 177, 0.4) !important;
+  border-radius: 12px !important;
+
+  color: #f3dfca !important;
+  text-decoration: none !important;
+  box-shadow: 0 3px 8px rgba(20, 10, 5, 0.18) !important;
+
+  cursor: pointer !important;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+/* Suppression des anciens cadres photographiques */
+.sw-groups-buttons-section .sw-residents-group-image {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex: 0 0 auto !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Icones Lucide */
+.sw-groups-buttons-section .sw-residents-group-image svg {
+  display: block !important;
+  width: 30px !important;
+  height: 30px !important;
+  max-width: none !important;
+  max-height: none !important;
+
+  color: #e8cdb1 !important;
+  stroke: currentColor !important;
+  fill: none !important;
+  filter: none !important;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease !important;
+}
+
+/* Nom des groupes */
+.sw-groups-buttons-section .sw-residents-group-name {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  color: #f3dfca !important;
+  text-align: center !important;
+  text-decoration: none !important;
+}
+
+/* Survol */
+.sw-groups-buttons-section a.sw-residents-group-card:hover {
+  background: rgba(91, 56, 42, 0.96) !important;
+  border-color: #d89478 !important;
+  box-shadow: 0 6px 14px rgba(20, 10, 5, 0.28) !important;
+  transform: translateY(-3px) !important;
+}
+
+.sw-groups-buttons-section a.sw-residents-group-card:hover svg {
+  color: #d89478 !important;
+  transform: scale(1.1) !important;
+}
+
+.sw-groups-buttons-section a.sw-residents-group-card:hover
+.sw-residents-group-name {
+  color: #f3dfca !important;
+}
+
+/* Navigation au clavier */
+.sw-groups-buttons-section a.sw-residents-group-card:focus-visible {
+  outline: 2px solid #d89478 !important;
+  outline-offset: 3px !important;
+}
+
+/* Affichage mobile */
+@media (max-width: 650px) {
+  .sw-groups-buttons-section .sw-residents-groups-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .sw-groups-buttons-section a.sw-residents-group-card {
+    min-height: 64px !important;
+  }
+}
+
+
