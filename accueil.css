@@ -300,3 +300,27 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
   .sw-panel-content { grid-template-columns: 140px minmax(0,1fr); }
   .sw-panel-description { height: 105px; min-height: 105px; }
 }
+
+
+/* ==========================================
+   SONGWON — AVATAR DU DERNIER HABITANT
+   ========================================== */
+
+.sw-residents-newcomer-avatar {
+  width: 120px !important;
+  height: 150px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  padding: 7px !important;
+}
+
+.sw-residents-newcomer-avatar img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
