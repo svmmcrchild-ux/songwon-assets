@@ -1,3 +1,4 @@
+
 /* SONGWON 1995 — NAVIGATION */
 /* Barre de navigation vintage et icones jour/nuit. */
 
@@ -66,13 +67,23 @@ a.mainmenu[href*="logout"] {
   background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/deconnexion-jour.png") !important;
 }
 
+a.mainmenu[href*="register"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/inscrire-jour.png") !important;
+}
+
+a.mainmenu[href*="login"]:not([href*="logout"]) {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/connexion-jour.png") !important;
+}
+
 /* Dimensions des icônes */
 
 a.mainmenu[href*="search"],
 a.mainmenu[href*="memberlist"],
 a.mainmenu[href*="profile"],
 a.mainmenu[href*="privmsg"],
-a.mainmenu[href*="logout"] {
+a.mainmenu[href*="logout"],
+a.mainmenu[href*="register"],
+a.mainmenu[href*="login"]:not([href*="logout"]) {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
@@ -90,7 +101,9 @@ a.mainmenu[href*="search"] img,
 a.mainmenu[href*="memberlist"] img,
 a.mainmenu[href*="profile"] img,
 a.mainmenu[href*="privmsg"] img,
-a.mainmenu[href*="logout"] img {
+a.mainmenu[href*="logout"] img,
+a.mainmenu[href*="register"] img,
+a.mainmenu[href*="login"]:not([href*="logout"]) img {
   display: none !important;
 }
 
@@ -114,4 +127,12 @@ body.songwon-dark a.mainmenu[href*="privmsg"] {
 
 body.songwon-dark a.mainmenu[href*="logout"] {
   background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/deconnexion-nuit.png") !important;
+}
+
+body.songwon-dark a.mainmenu[href*="register"] {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/inscrire-nuit.png") !important;
+}
+
+body.songwon-dark a.mainmenu[href*="login"]:not([href*="logout"]) {
+  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/connexion-nuit.png") !important;
 }
