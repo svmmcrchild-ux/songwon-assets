@@ -473,4 +473,24 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
   }
 }
 
+/* ==========================================
+   SONGWON — DERNIER HABITANT
+   ========================================== */
+
+/* Phrase de bienvenue */
+.sw-residents-newcomer-name {
+  font-family: 'Caveat', cursive !important;
+  font-size: 26px !important;
+  line-height: 1.2 !important;
+}
+
+/* Nom du dernier inscrit */
+.sw-residents-newcomer-name a {
+  display: block !important;
+  font-family: 'Schoolbell', cursive !important;
+  font-size: 24px !important;
+  font-weight: normal !important;
+  margin-top: 4px !important;
+}
+
 
