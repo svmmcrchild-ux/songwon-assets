@@ -1695,10 +1695,10 @@ body.songwon-dark .sw-posting #smileyContainer {
   display: block;
 }
 }
-/* SONGWON — Masquer le contact e-mail */
+/* SONGWON 1995 — Masquer définitivement l'e-mail */
 
-.sw-topic-message-footer .sw-topic-contact
-a[href*="mode=email"] {
+.sw-topic-view .sw-topic-message-footer
+.sw-topic-contact a[href*="mode=email"] {
   display: none !important;
 }
 
