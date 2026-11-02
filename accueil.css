@@ -494,3 +494,44 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
 }
 
 
+/* ==========================================
+   SONGWON — GROUPES : MODE JOUR
+   ========================================== */
+
+/* Boutons clairs, assortis aux cartes du QEEL */
+body:not(.songwon-night) .sw-groups-buttons-section
+a.sw-residents-group-card {
+  background: rgba(248, 237, 219, 0.94) !important;
+  border: 1px solid rgba(139, 100, 77, 0.45) !important;
+  color: #654738 !important;
+  box-shadow: 0 3px 8px rgba(77, 48, 30, 0.12) !important;
+}
+
+/* Noms des groupes */
+body:not(.songwon-night) .sw-groups-buttons-section
+.sw-residents-group-name {
+  color: #654738 !important;
+}
+
+/* Icônes */
+body:not(.songwon-night) .sw-groups-buttons-section
+.sw-residents-group-image svg {
+  color: #a16d54 !important;
+}
+
+/* Survol : terracotta doux */
+body:not(.songwon-night) .sw-groups-buttons-section
+a.sw-residents-group-card:hover {
+  background: #ead1b8 !important;
+  border-color: #b87c60 !important;
+  box-shadow: 0 5px 12px rgba(77, 48, 30, 0.18) !important;
+}
+
+/* Icônes au survol */
+body:not(.songwon-night) .sw-groups-buttons-section
+a.sw-residents-group-card:hover svg {
+  color: #9d513d !important;
+}
+
+
+
