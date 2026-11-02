@@ -1694,19 +1694,6 @@ body.songwon-dark .sw-posting #smileyContainer {
   object-fit: contain;
   display: block;
 }
-
-/* Version nuit — site web */
-
-body.songwon-dark .sw-topic-message-footer
-.sw-topic-contact a[href*="www"] img {
-  content: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png");
-}
-
-/* SONGWON — Icône Site web, mode nuit */
-
-body.songwon-dark
-.sw-topic-message-footer img.i_icon_www {
-  content: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png");
 }
 /* SONGWON — Masquer le contact e-mail */
 
@@ -1714,5 +1701,18 @@ body.songwon-dark
 a[href*="mode=email"] {
   display: none !important;
 }
+
+/* SONGWON 1995 — ICÔNES DE CONTACT, MODE NUIT */
+
+/* Site web */
+body.songwon-dark .sw-topic-contact img.i_icon_www {
+  content: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png") !important;
+}
+
+/* En ligne */
+body.songwon-dark .sw-topic-contact img.i_icon_online {
+  content: url("https://svmmcrchild-ux.github.io/songwon-assets/en-ligne-nuit.png") !important;
+}
+
 
 
