@@ -1661,3 +1661,35 @@ body.songwon-dark .sw-posting #smileyContainer {
   }
 
 }
+
+
+/* SONGWON 1995 — ICÔNES DE CONTACT DES SUJETS */
+
+.sw-topic-message-footer .sw-topic-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sw-topic-message-footer .sw-topic-contact a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.sw-topic-message-footer .sw-topic-contact a img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Version nuit — site web */
+
+body.songwon-dark .sw-topic-message-footer
+.sw-topic-contact a[href*="www"] img {
+  content: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png");
+}
+
