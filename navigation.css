@@ -1,138 +1,112 @@
 
-/* SONGWON 1995 — NAVIGATION */
-/* Barre de navigation vintage et icones jour/nuit. */
+/* SONGWON 1995 — NAVIGATION FIXE ET TRANSPARENTE */
 
-/* 04 — NAVIGATION VINTAGE */
-
-a.mainmenu,
-a.mainmenu:hover,
-body.songwon-dark a.mainmenu,
-body.songwon-dark a.mainmenu:hover {
-  background-color: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  text-decoration: none !important;
-  color: inherit;
-  margin: 2px;
-  padding: 0;
+#sw-fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  min-height: 54px;
+  padding: 7px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+  background: transparent;
+  pointer-events: none;
 }
 
-#page-header .mainmenu,
-#page-header .gen,
-#page-header .gensmall {
-  text-align: center;
+#sw-nav-primary,
+#sw-nav-account {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
 }
 
-#page-header .mainmenu {
-  display: inline-block;
-}
-
-#page-header .headerbar + .navbar,
-#page-header .navlinks,
-#page-header td:has(a.mainmenu) {
-  text-align: center !important;
-}
-
-/* Boutons inutiles */
-
-a.mainmenu[href="/"],
-a.mainmenu[href^="/calendar"],
-a.mainmenu[href^="/images"],
-a.mainmenu[href^="/discover"],
-a.mainmenu[href^="/faq"],
-a.mainmenu[href^="/groups"] {
-  display: none !important;
-}
-
-/* Images de navigation — jour */
-
-a.mainmenu[href*="search"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/rechercher-jour.png") !important;
-}
-
-a.mainmenu[href*="memberlist"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/membres-jour.png") !important;
-}
-
-a.mainmenu[href*="profile"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/profil-jour.png") !important;
-}
-
-a.mainmenu[href*="privmsg"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/enveloppe-fermee-jour.png") !important;
-}
-
-a.mainmenu[href*="logout"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/deconnexion-jour.png") !important;
-}
-
-a.mainmenu[href*="register"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/inscrire-jour.png") !important;
-}
-
-a.mainmenu[href*="login"]:not([href*="logout"]) {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/connexion-jour.png") !important;
-}
-
-/* Dimensions des icônes */
-
-a.mainmenu[href*="search"],
-a.mainmenu[href*="memberlist"],
-a.mainmenu[href*="profile"],
-a.mainmenu[href*="privmsg"],
-a.mainmenu[href*="logout"],
-a.mainmenu[href*="register"],
-a.mainmenu[href*="login"]:not([href*="logout"]) {
-  display: inline-flex !important;
+#sw-fixed-nav .sw-nav-link {
+  position: relative;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  font-size: 0 !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 48px 48px !important;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: #f5e7d4;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(30,18,12,.7);
+  filter: drop-shadow(0 1px 2px rgba(30,18,12,.65));
+  transition:
+    color .18s ease,
+    background .18s ease,
+    transform .18s ease;
 }
 
-/* Anciennes icônes Forumactif */
-
-a.mainmenu[href*="search"] img,
-a.mainmenu[href*="memberlist"] img,
-a.mainmenu[href*="profile"] img,
-a.mainmenu[href*="privmsg"] img,
-a.mainmenu[href*="logout"] img,
-a.mainmenu[href*="register"] img,
-a.mainmenu[href*="login"]:not([href*="logout"]) img {
-  display: none !important;
+#sw-fixed-nav .sw-nav-link:hover,
+#sw-fixed-nav .sw-nav-link:focus-visible {
+  color: #e6a18a;
+  background: rgba(63,42,32,.32);
+  transform: translateY(-1px);
+  outline-offset: 2px;
 }
 
-/* Images de navigation — nuit */
-
-body.songwon-dark a.mainmenu[href*="search"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/rechercher-nuit.png") !important;
+#sw-fixed-nav .sw-nav-link svg {
+  display: block;
+  flex: none;
 }
 
-body.songwon-dark a.mainmenu[href*="memberlist"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/membres-nuit.png") !important;
+#sw-fixed-nav .sw-nav-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
-body.songwon-dark a.mainmenu[href*="profile"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/profil-nuit.png") !important;
+#sw-nav-native {
+  display: none;
 }
 
-body.songwon-dark a.mainmenu[href*="privmsg"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/enveloppe-fermee-nuit.png") !important;
+/* Espace réservé au-dessus de la bannière */
+
+body {
+  padding-top: 58px !important;
 }
 
-body.songwon-dark a.mainmenu[href*="logout"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/deconnexion-nuit.png") !important;
-}
+/* Adaptation aux petits écrans */
 
-body.songwon-dark a.mainmenu[href*="register"] {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/inscrire-nuit.png") !important;
-}
+@media (max-width: 650px) {
+  #sw-fixed-nav {
+    padding: 6px 8px;
+    gap: 4px;
+    min-height: 46px;
+  }
 
-body.songwon-dark a.mainmenu[href*="login"]:not([href*="logout"]) {
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/connexion-nuit.png") !important;
+  #sw-nav-primary,
+  #sw-nav-account {
+    gap: 1px;
+  }
+
+  #sw-fixed-nav .sw-nav-link {
+    width: 31px;
+    height: 34px;
+  }
+
+  #sw-fixed-nav .sw-nav-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  body {
+    padding-top: 48px !important;
+  }
 }
