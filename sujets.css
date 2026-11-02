@@ -1693,3 +1693,12 @@ body.songwon-dark .sw-topic-message-footer
   content: url("https://svmmcrchild-ux.github.io/songwon-assets/site-web-nuit.png");
 }
 
+/* SONGWON — Masquer le contact e-mail */
+
+.sw-topic-contact a[href^="mailto:"],
+.sw-topic-contact a[href*="mode=email"],
+.sw-topic-contact a[href*="mode=email"] img {
+  display: none !important;
+}
+
+
