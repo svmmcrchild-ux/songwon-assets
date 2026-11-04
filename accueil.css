@@ -533,5 +533,37 @@ a.sw-residents-group-card:hover svg {
   color: #9d513d !important;
 }
 
+/* ==========================================
+   SONGWON — GROUPES EN MODE NUIT
+   ========================================== */
+
+body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card {
+  background: rgba(67, 43, 31, 0.88) !important;
+  border: 1px solid rgba(232, 205, 177, 0.40) !important;
+  color: #f3dfca !important;
+  box-shadow: 0 3px 8px rgba(20, 10, 5, 0.18) !important;
+}
+
+body.songwon-dark .sw-groups-buttons-section .sw-residents-group-name {
+  color: #f3dfca !important;
+}
+
+body.songwon-dark .sw-groups-buttons-section .sw-residents-group-image svg {
+  color: #e8cdb1 !important;
+}
+
+/* Survol des groupes en mode nuit */
+
+body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card:hover {
+  background: rgba(91, 56, 42, 0.96) !important;
+  border-color: #d89478 !important;
+  box-shadow: 0 6px 14px rgba(20, 10, 5, 0.28) !important;
+}
+
+body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card:hover svg {
+  color: #d89478 !important;
+}
+
+
 
 
