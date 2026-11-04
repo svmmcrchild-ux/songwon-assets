@@ -2031,3 +2031,66 @@ body.songwon-dark
 @media (max-width: 760px) {
   .sw-viewforum .sw-topic-card { padding: 12px 14px; }
 }
+
+
+/* ==========================================================
+   17 — VUE SUJET : LUCIDE, RÉACTIONS ET NAVIGATION ÉPURÉE
+   ========================================================== */
+.sw-topic-view .sw-topic-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 12px;
+  padding: 10px 4px;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.sw-topic-view .sw-topic-bottom-title { display: none; }
+.sw-topic-view .sw-topic-bottom-links { gap: 12px; }
+.sw-topic-view .sw-topic-bottom .sw-topic-pagination { margin: 0; }
+.sw-topic-view .sw-topic-watch { font-size: 12px; }
+.sw-topic-view .sw-topic-message-options { gap: 8px; }
+.sw-topic-view .sw-lucide-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  color: var(--st-ink) !important;
+  vertical-align: middle;
+}
+.sw-topic-view .sw-lucide-link > img { display: none !important; }
+.sw-topic-view .sw-lucide { width: 19px; height: 19px; flex: none; }
+.sw-topic-view .sw-lucide-link:hover { color: var(--st-accent) !important; }
+.sw-topic-view .sw-topic-contact .sw-lucide-original { display: none !important; }
+.sw-topic-view .sw-topic-contact > .sw-lucide { color: var(--st-accent); }
+.sw-topic-view .sw-topic-likes { gap: 9px; }
+.sw-topic-view .sw-topic-likes .sw-reaction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 34px;
+  min-height: 32px;
+  padding: 5px 8px;
+  color: var(--st-ink);
+  border: 1px solid var(--st-accent);
+  border-radius: 10px;
+  background: transparent;
+}
+.sw-topic-view .sw-reaction-icon { display: inline-flex; align-items: center; }
+.sw-topic-view .sw-reaction-count:empty { display: none; }
+.sw-topic-view .sw-reaction .sw-lucide { width: 18px; height: 18px; }
+.sw-topic-view .sw-reaction:hover { background: var(--st-profile); }
+.sw-topic-view .sw-lucide-link:focus-visible,
+.sw-topic-view .sw-reaction:focus-visible {
+  outline: 2px solid var(--st-accent);
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .sw-topic-view .sw-topic-bottom { align-items: flex-start; }
+}
