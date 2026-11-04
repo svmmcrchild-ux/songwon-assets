@@ -1,7 +1,6 @@
-/* SONGWON 1995 — SUJETS.CSS | VERSION NETTOYÉE
-   Nettoyage conservateur : doublons certains et déclarations écrasées.
-   Les sélecteurs potentiellement liés aux templates Forumactif sont conservés.
-   Vérifier visuellement les pages viewforum, viewtopic et posting_body.
+/* SONGWON 1995 — SUJETS.CSS | AUDIT VIEWFORUM + TOPICS_LIST_BOX
+   Disposition compacte flex conservée ; anciennes grilles retirées.
+   Sections viewtopic et posting préservées en attente de leurs templates.
 */
 
 /* SONGWON 1995 — SUJETS ET MESSAGES */
@@ -52,13 +51,9 @@ body.songwon-dark .sw-viewforum {
 
 /* Chaque sujet = UNE carte, sans bordure ni panneau parent */
 .sw-viewforum .sw-topic-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 110px 160px;
+  display: flex;
   align-items: center;
-  gap: 14px;
   min-width: 0;
-  margin: 0;
-  padding: 22px 25px;
   background: var(--vf-card);
   color: var(--vf-ink);
   border: 0;
@@ -89,7 +84,7 @@ body.songwon-dark .sw-viewforum {
 .sw-topic-last-avatar { display: block; margin-bottom: 5px; }
 .sw-topic-last-avatar img { width: 34px !important; height: 43px !important; object-fit: cover; border-radius: 5px; }
 .sw-topic-last-info { display: flex; flex-direction: column; overflow-wrap: anywhere; }
-.sw-topic-selection { grid-column: 1 / -1; text-align: right; padding-top: 5px; }
+.sw-topic-selection { text-align: right; padding-top: 5px; }
 
 /* Navigation : une seule carte arrondie */
 .sw-vf-toolbar {
@@ -164,7 +159,6 @@ body.songwon-dark .sw-viewforum {
 .sw-vf-legend-item img { flex: 0 0 22px; max-width: 22px; max-height: 25px; object-fit: contain; }
 
 @media (max-width: 950px) {
-  .sw-viewforum .sw-topic-card { grid-template-columns: minmax(0,1fr) 90px 130px; gap: 10px; }
   .sw-topic-statistics { gap: 10px; padding: 0 5px; }
   .sw-vf-legend-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
@@ -173,9 +167,6 @@ body.songwon-dark .sw-viewforum {
   .sw-vf-toolbar { align-items: flex-start; padding: 15px; }
   .sw-vf-breadcrumb { flex-basis: 100%; }
   .sw-vf-actions { width: 100%; justify-content: space-between; }
-  .sw-viewforum .sw-topic-card { grid-template-columns: minmax(0,1fr) 105px; padding: 18px; gap: 12px; }
-  .sw-topic-main { grid-column: 1 / -1; }
-  .sw-topic-statistics { justify-content: flex-start; padding-left: 35px; }
   .sw-topic-lastpost { padding-left: 0; }
   .sw-vf-info-grid { grid-template-columns: 1fr; gap: 20px; }
   .sw-vf-information { padding: 20px; }
@@ -183,9 +174,6 @@ body.songwon-dark .sw-viewforum {
   .sw-vf-bottom-controls { width: 100%; align-items: flex-start; }
 }
 @media (max-width: 420px) {
-  .sw-viewforum .sw-topic-card { grid-template-columns: 1fr; }
-  .sw-topic-statistics { padding-left: 35px; }
-  .sw-topic-lastpost { padding-left: 35px; }
   .sw-vf-legend-grid { grid-template-columns: 1fr; }
   .sw-vf-sort select, .sw-vf-jump select { max-width: 160px; }
 }
@@ -1749,7 +1737,8 @@ body.songwon-dark .sw-topic-view
   flex-wrap: wrap;
   gap: 8px;
 
-  margin: 0 0 14px;
+  max-width: 1194px;
+  margin: 0 auto 14px;
   padding: 8px 4px;
 
   background: transparent !important;
@@ -2002,34 +1991,3 @@ body.songwon-dark
     flex: 1 1 160px;
   }
 }
-/* Fil d'Ariane placé avant les sous-forums */
-body .sw-vf-breadcrumb-top {
-  max-width: 1194px;
-  margin: 0 auto 14px;
-  padding: 8px 4px;
-  box-sizing: border-box;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  font-family: "Caveat", cursive;
-  font-size: 21px;
-  line-height: 1.3;
-}
-
-body:not(.songwon-dark) .sw-vf-breadcrumb-top {
-  color: #674b3d;
-}
-
-body.songwon-dark .sw-vf-breadcrumb-top {
-  color: #f0ddc7;
-}
-
-body:not(.songwon-dark) .sw-vf-breadcrumb-top a {
-  color: #9d664c;
-}
-
-body.songwon-dark .sw-vf-breadcrumb-top a {
-  color: #dca27c;
-}
-
-
