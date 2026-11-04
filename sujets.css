@@ -41,7 +41,7 @@ body.songwon-dark .sw-viewforum {
   box-shadow: none;
 }
 .sw-viewforum .sw-topics { padding: 0; margin-top: 18px; margin-bottom: 24px; color: var(--vf-ink); }
-.sw-topics-list { display: flex; flex-direction: column; gap: 18px; }
+.sw-topics-list { display: flex; flex-direction: column; gap: 12px; }
 .sw-topics-pagination { padding: 0 4px; text-align: right; font-size: 11px; color: var(--vf-muted); }
 .sw-topics-divider { padding: 8px 12px; font: 400 20px/1.4 "Schoolbell", cursive; color: var(--vf-accent); }
 .sw-topics-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 4px; font-size: 11px; }
@@ -68,7 +68,7 @@ body.songwon-dark .sw-viewforum {
 .sw-topic-icon img { max-width: 23px; max-height: 23px; object-fit: contain; }
 .sw-topic-information { flex: 1; min-width: 0; }
 .sw-topic-title-line { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
-.sw-topic-title { display: inline; margin: 0 !important; padding: 0 !important; font: 400 25px/1.35 "Schoolbell", cursive !important; }
+.sw-topic-title { display: inline; margin: 0 !important; padding: 0 !important; font: 400 18px/1.25 "Schoolbell", cursive !important; }
 .sw-viewforum .sw-topic-title a { color: var(--vf-ink) !important; text-decoration: none; overflow-wrap: anywhere; }
 .sw-viewforum .sw-topic-title a:hover { color: var(--vf-accent) !important; }
 .sw-topic-custom-icon img { max-width: 18px; max-height: 18px; }
@@ -122,7 +122,7 @@ body.songwon-dark .sw-viewforum {
 }
 .sw-vf-info-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 0; background: transparent; border: 0; border-radius: 0; }
 .sw-vf-eyebrow { display: block; font-size: 10px; letter-spacing: 1.3px; color: var(--vf-accent); }
-.sw-vf-info-heading h2 { margin: 4px 0 0; padding: 0; font: 400 25px/1.35 "Schoolbell", cursive !important; color: var(--vf-ink); }
+.sw-vf-info-heading h2 { margin: 4px 0 0; padding: 0; font: 400 18px/1.25 "Schoolbell", cursive !important; color: var(--vf-ink); }
 .sw-vf-markread { font-size: 11px; color: var(--vf-accent) !important; text-decoration: none; }
 .sw-vf-info-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 25px 35px; margin-top: 22px; }
 .sw-vf-info-item { min-width: 0; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
@@ -1824,14 +1824,14 @@ body.songwon-dark
 .sw-viewforum .sw-topic-card {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
 
-  min-height: 90px;
+  min-height: 78px;
   height: auto;
   box-sizing: border-box;
 
-  margin: 0 0 12px;
-  padding: 14px 20px;
+  margin: 0;
+  padding: 9px 16px;
 }
 
 /* Partie principale : titre et auteur */
@@ -1845,16 +1845,21 @@ body.songwon-dark
 
 /* Icône du sujet */
 .sw-viewforum .sw-topic-icon {
-  flex: 0 0 24px;
-  width: 24px;
-  height: 24px;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .sw-viewforum .sw-topic-icon img {
   display: block;
-  max-width: 24px;
-  max-height: 24px;
+  max-width: 18px;
+  max-height: 18px;
   object-fit: contain;
+}
+
+/* Harmonisation des pictogrammes de sujet Forumactif : plus de bleu vif */
+.sw-viewforum .sw-topic-icon img {
+  filter: grayscale(1) sepia(.7) saturate(1.5) hue-rotate(335deg);
 }
 
 /* Informations */
@@ -1869,8 +1874,8 @@ body.songwon-dark
   padding: 0;
 
   font-family: "Schoolbell", cursive;
-  font-size: 22px;
-  line-height: 1.15;
+  font-size: 18px;
+  line-height: 1.25;
 }
 
 /* Auteur et informations secondaires */
@@ -1914,7 +1919,7 @@ body.songwon-dark
 }
 
 .sw-viewforum .sw-topic-statistics strong {
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -1931,7 +1936,7 @@ body.songwon-dark
   min-width: 0;
   gap: 9px;
   position: relative;
-  padding-top: 13px;
+  padding-top: 10px;
 }
 
 .sw-viewforum .sw-topic-last-label {
@@ -2018,12 +2023,12 @@ body.songwon-dark
   gap: 14px;
 }
 .sw-viewforum .sw-topic-card {
-  min-height: 90px;
-  padding: 10px 18px;
-  gap: 14px;
+  min-height: 78px;
+  padding: 9px 16px;
+  gap: 12px;
 }
 .sw-viewforum .sw-topic-lastpost {
-  padding-top: 11px;
+  padding-top: 10px;
 }
 .sw-viewforum .sw-topic-last-avatar,
 .sw-viewforum .sw-topic-last-avatar img {
