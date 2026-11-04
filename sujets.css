@@ -1991,3 +1991,43 @@ body.songwon-dark
     flex: 1 1 160px;
   }
 }
+
+/* ==========================================================
+   AJUSTEMENT — LISTE COMPACTE ET ACTIONS SANS CADRE
+   ========================================================== */
+.sw-viewforum .sw-vf-toolbar {
+  width: calc(100% - 48px);
+  max-width: 1120px;
+  min-height: 0;
+  margin: 8px auto 12px;
+  padding: 0;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.sw-viewforum .sw-vf-actions {
+  justify-content: flex-start;
+  width: auto;
+  gap: 14px;
+}
+.sw-viewforum .sw-topic-card {
+  min-height: 90px;
+  padding: 10px 18px;
+  gap: 14px;
+}
+.sw-viewforum .sw-topic-lastpost {
+  padding-top: 11px;
+}
+.sw-viewforum .sw-topic-last-avatar,
+.sw-viewforum .sw-topic-last-avatar img {
+  margin-bottom: 0;
+}
+.sw-viewforum .sw-topics-list { gap: 12px; }
+@media (max-width: 780px) {
+  .sw-viewforum .sw-vf-toolbar { width: calc(100% - 20px); }
+  .sw-viewforum .sw-vf-actions { width: auto; justify-content: flex-start; }
+}
+@media (max-width: 760px) {
+  .sw-viewforum .sw-topic-card { padding: 12px 14px; }
+}
