@@ -283,14 +283,17 @@ body.songwon-dark .sw-topic-view {
   color: var(--tp-muted);
 }
 
+/* SONGWON — Fil d'Ariane, style correspondance */
+.sw-topic-breadcrumb,
 .sw-topic-breadcrumb a,
-.sw-topic-breadcrumb .nav {
-  display: inline !important;
-  width: auto !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: 11px !important;
-  line-height: 1.7;
+.sw-topic-breadcrumb .nav,
+.sw-topic-breadcrumb span {
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  line-height: 1.8 !important;
 }
 
 .sw-topic-breadcrumb br {
