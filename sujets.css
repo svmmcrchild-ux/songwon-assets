@@ -2034,7 +2034,8 @@ body.songwon-dark
 
 
 /* ==========================================================
-   17 — VUE SUJET : LUCIDE, RÉACTIONS ET NAVIGATION ÉPURÉE
+   17 — VUE SUJET : ICÔNES ET RÉACTIONS (VERSION CONSOLIDÉE)
+   Couleurs pilotées par --st-ink / --st-accent (sections 15).
    ========================================================== */
 .sw-topic-view .sw-topic-bottom {
   display: flex;
@@ -2054,6 +2055,8 @@ body.songwon-dark
 .sw-topic-view .sw-topic-bottom .sw-topic-pagination { margin: 0; }
 .sw-topic-view .sw-topic-watch { font-size: 12px; }
 .sw-topic-view .sw-topic-message-options { gap: 8px; }
+
+/* Actions Lucide (message et contact) */
 .sw-topic-view .sw-lucide-link {
   display: inline-flex;
   align-items: center;
@@ -2063,29 +2066,76 @@ body.songwon-dark
   color: var(--st-ink) !important;
   vertical-align: middle;
 }
-.sw-topic-view .sw-lucide-link > img { display: none !important; }
+.sw-topic-view .sw-lucide-link > img,
+.sw-topic-view .sw-topic-contact .sw-lucide-original { display: none !important; }
 .sw-topic-view .sw-lucide { width: 19px; height: 19px; flex: none; }
 .sw-topic-view .sw-lucide-link:hover { color: var(--st-accent) !important; }
-.sw-topic-view .sw-topic-contact .sw-lucide-original { display: none !important; }
-.sw-topic-view .sw-topic-contact > .sw-lucide { color: var(--st-accent); }
+.sw-topic-view .sw-topic-contact > .sw-lucide { color: var(--st-ink); }
+
+/* Réactions : sans cadre, teinte jour/nuit et accent au survol */
 .sw-topic-view .sw-topic-likes { gap: 9px; }
-.sw-topic-view .sw-topic-likes .sw-reaction {
+.sw-topic-view .sw-topic-likes button.sw-reaction {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  min-width: 34px;
-  min-height: 32px;
-  padding: 5px 8px;
-  color: var(--st-ink);
-  border: 1px solid var(--st-accent);
-  border-radius: 10px;
-  background: transparent;
+  min-width: 28px;
+  min-height: 30px;
+  padding: 6px !important;
+  color: var(--st-ink) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer;
 }
-.sw-topic-view .sw-reaction-icon { display: inline-flex; align-items: center; }
+.sw-topic-view .sw-topic-likes button.sw-reaction:hover {
+  color: var(--st-accent) !important;
+  background: transparent !important;
+}
+.sw-topic-view .sw-reaction-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: transparent !important;
+}
 .sw-topic-view .sw-reaction-count:empty { display: none; }
-.sw-topic-view .sw-reaction .sw-lucide { width: 18px; height: 18px; }
-.sw-topic-view .sw-reaction:hover { background: var(--st-profile); }
+.sw-topic-view .sw-topic-likes button.sw-reaction svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  background: transparent !important;
+}
+.sw-topic-view .sw-topic-likes button.sw-reaction svg path {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+}
+
+/* Présence en ligne : même palette que les autres contacts */
+.sw-topic-view .sw-topic-contact .sw-topic-online-lucide {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  color: var(--st-ink) !important;
+}
+.sw-topic-view .sw-topic-online-lucide img { display: none !important; }
+.sw-topic-view .sw-topic-online-lucide svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  stroke: currentColor !important;
+}
+.sw-topic-view .sw-topic-online-lucide:not(:has(img)) { display: none !important; }
+
 .sw-topic-view .sw-lucide-link:focus-visible,
 .sw-topic-view .sw-reaction:focus-visible {
   outline: 2px solid var(--st-accent);
@@ -2094,101 +2144,3 @@ body.songwon-dark
 @media (max-width: 600px) {
   .sw-topic-view .sw-topic-bottom { align-items: flex-start; }
 }
-
-
-/* Réactions : affichage des icônes Lucide */
-.sw-topic-likes button.sw-reaction {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  color: #e8c3a3;
-}
-
-.sw-topic-likes button.sw-reaction .sw-reaction-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  background: transparent !important;
-}
-
-.sw-topic-likes button.sw-reaction .sw-reaction-icon svg {
-  display: block !important;
-  width: 18px !important;
-  height: 18px !important;
-  fill: none !important;
-  stroke: currentColor !important;
-  stroke-width: 1.8;
-  background: transparent !important;
-}
-
-/* SONGWON — INDICATEUR EN LIGNE LUCIDE */
-
-.sw-topic-contact .sw-topic-online-lucide {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  color: var(--st-ink, currentColor);
-}
-
-/* Masquer l'ancienne image Forumactif */
-.sw-topic-online-lucide img {
-  display: none !important;
-}
-
-.sw-topic-online-lucide svg {
-  display: block;
-  width: 18px;
-  height: 18px;
-}
-.sw-topic-online-lucide:not(:has(img)) {
-  display: none !important;
-}
-
-/* SONGWON — Correction des tracés Lucide des réactions */
-.sw-topic-likes button.sw-reaction svg path {
-  fill: none !important;
-  stroke: currentColor !important;
-  stroke-width: 1.8 !important;
-}
-
-
-/* SONGWON — Réactions sans cadre */
-.sw-topic-likes button.sw-reaction {
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 6px !important;
-  cursor: pointer;
-}
-
-.sw-topic-likes button.sw-reaction:hover {
-  background: transparent !important;
-  color: #e8c3a3;
-}
-/* Réactions : couleur héritée du thème */
-.sw-topic-likes button.sw-reaction {
-  color: inherit !important;
-}
-
-.sw-topic-likes button.sw-reaction svg,
-.sw-topic-likes button.sw-reaction svg path {
-  stroke: currentColor !important;
-}
-
-/* Icône En ligne : couleur héritée */
-.sw-topic-contact .sw-lucide,
-.sw-topic-contact .sw-lucide svg {
-  color: inherit;
-  stroke: currentColor;
-}
-
-
-
-
