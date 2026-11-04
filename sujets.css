@@ -2094,4 +2094,27 @@ body.songwon-dark
 @media (max-width: 600px) {
   .sw-topic-view .sw-topic-bottom { align-items: flex-start; }
 }
-/* Test de sauvegarde Songwon */
+/* SONGWON — INDICATEUR EN LIGNE LUCIDE */
+
+.sw-topic-contact .sw-topic-online-lucide {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  color: var(--st-ink, currentColor);
+}
+
+/* Masquer l'ancienne image Forumactif */
+.sw-topic-online-lucide img {
+  display: none !important;
+}
+
+.sw-topic-online-lucide svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+
