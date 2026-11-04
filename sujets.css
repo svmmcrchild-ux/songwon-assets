@@ -2116,5 +2116,8 @@ body.songwon-dark
   width: 18px;
   height: 18px;
 }
+.sw-topic-online-lucide:not(:has(img)) {
+  display: none !important;
+}
 
 
