@@ -2153,7 +2153,7 @@ body.songwon-dark
 /* SONGWON — Correction des tracés Lucide des réactions */
 .sw-topic-likes button.sw-reaction svg path {
   fill: none !important;
-  stroke: #e8c3a3 !important;
+  stroke: currentColor !important;
   stroke-width: 1.8 !important;
 }
 
