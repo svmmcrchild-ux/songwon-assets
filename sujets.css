@@ -255,10 +255,10 @@ body.songwon-dark .sw-topic-view {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 
-  margin-bottom: 16px;
-  padding: 12px 4px;
+  margin-bottom: 12px;
+  padding: 6px 4px;
 
   background: transparent !important;
   border: none !important;
@@ -289,11 +289,11 @@ body.songwon-dark .sw-topic-view {
 .sw-topic-breadcrumb .nav,
 .sw-topic-breadcrumb span {
   font-family: "DM Sans", sans-serif !important;
-  font-size: 12px !important;
+  font-size: 11px !important;
   font-weight: 500 !important;
-  letter-spacing: 2px !important;
+  letter-spacing: 1.2px !important;
   text-transform: uppercase !important;
-  line-height: 1.8 !important;
+  line-height: 1.5 !important;
 }
 
 .sw-topic-breadcrumb br {
@@ -304,8 +304,8 @@ body.songwon-dark .sw-topic-view {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 35px;
-  padding: 8px 15px;
+  min-height: 32px;
+  padding: 6px 11px;
   background: var(--tp-inner);
   color: var(--tp-ink) !important;
   border: 1px solid var(--tp-line);
@@ -1169,10 +1169,16 @@ body.songwon-dark
     border-radius: 22px !important;
   }
 
+  /* Conserver une navigation discrète sur les petits écrans. */
   .sw-topic-view .sw-topic-breadcrumb,
   .sw-topic-view .sw-topic-breadcrumb a,
+  .sw-topic-view .sw-topic-breadcrumb .nav,
+  .sw-topic-view .sw-topic-breadcrumb span {
+    font-size: 11px !important;
+  }
+
   .sw-topic-view .sw-topic-button {
-    font-size: 15px !important;
+    font-size: 11px !important;
   }
 
 }
