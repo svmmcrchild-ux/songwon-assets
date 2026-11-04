@@ -2026,6 +2026,35 @@ body.songwon-dark
     flex: 1 1 160px;
   }
 }
+/* Fil d'Ariane placé avant les sous-forums */
+body .sw-vf-breadcrumb-top {
+  max-width: 1194px;
+  margin: 0 auto 14px;
+  padding: 8px 4px;
+  box-sizing: border-box;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-family: "Caveat", cursive;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+body:not(.songwon-dark) .sw-vf-breadcrumb-top {
+  color: #674b3d;
+}
+
+body.songwon-dark .sw-vf-breadcrumb-top {
+  color: #f0ddc7;
+}
+
+body:not(.songwon-dark) .sw-vf-breadcrumb-top a {
+  color: #9d664c;
+}
+
+body.songwon-dark .sw-vf-breadcrumb-top a {
+  color: #dca27c;
+}
 
 
 
