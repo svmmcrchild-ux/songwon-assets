@@ -2158,4 +2158,21 @@ body.songwon-dark
 }
 
 
+/* SONGWON — Réactions sans cadre */
+.sw-topic-likes button.sw-reaction {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 6px !important;
+  cursor: pointer;
+}
+
+.sw-topic-likes button.sw-reaction:hover {
+  background: transparent !important;
+  color: #e8c3a3;
+}
+
+
+
 
