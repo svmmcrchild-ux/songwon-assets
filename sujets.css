@@ -2094,6 +2094,36 @@ body.songwon-dark
 @media (max-width: 600px) {
   .sw-topic-view .sw-topic-bottom { align-items: flex-start; }
 }
+
+
+/* Réactions : affichage des icônes Lucide */
+.sw-topic-likes button.sw-reaction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  color: #e8c3a3;
+}
+
+.sw-topic-likes button.sw-reaction .sw-reaction-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: transparent !important;
+}
+
+.sw-topic-likes button.sw-reaction .sw-reaction-icon svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8;
+  background: transparent !important;
+}
+
 /* SONGWON — INDICATEUR EN LIGNE LUCIDE */
 
 .sw-topic-contact .sw-topic-online-lucide {
