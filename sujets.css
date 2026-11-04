@@ -1,3 +1,8 @@
+/* SONGWON 1995 — SUJETS.CSS | VERSION NETTOYÉE
+   Nettoyage conservateur : doublons certains et déclarations écrasées.
+   Les sélecteurs potentiellement liés aux templates Forumactif sont conservés.
+   Vérifier visuellement les pages viewforum, viewtopic et posting_body.
+*/
 
 /* SONGWON 1995 — SUJETS ET MESSAGES */
 /* Sections 13 bis et 14 harmonisées avec les cartes de l'accueil. */
@@ -203,7 +208,7 @@ body.songwon-dark .sw-viewforum {
   width: calc(100% - 48px);
   max-width: 1120px;
   min-width: 0;
-  margin: 16px auto 30px;
+  margin: 8px auto 18px !important;
   color: var(--tp-ink);
   font-family: "DM Sans", Arial, sans-serif;
   --st-ink: #584236;
@@ -211,8 +216,6 @@ body.songwon-dark .sw-viewforum {
   --st-accent: #a66e4d;
   --st-bubble: rgba(247, 231, 210, .88);
   --st-profile: rgba(247, 231, 210, .88);
-  margin-top: 8px !important;
-  margin-bottom: 18px !important;
 }
 
 body.songwon-dark .sw-topic-view {
@@ -1162,12 +1165,6 @@ body.songwon-dark
     max-width: 100% !important;
   }
 
-  /* La bulle n'a plus besoin de sa pointe. */
-
-  .sw-topic-view .sw-topic-post > .sw-topic-message::before {
-    display: none !important;
-  }
-
 }
 
 /* Tablettes et téléphones */
@@ -1178,24 +1175,6 @@ body.songwon-dark
     width: calc(100% - 20px);
   }
 
-/* Navigation intégrée au fond du forum */
-
-.sw-topic-navigation,
-.sw-topic-bottom-tools {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-
-  margin-bottom: 16px;
-  padding: 12px 4px;
-
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
 
   .sw-topic-view .sw-topic-post > .sw-topic-author,
   .sw-topic-view .sw-topic-post > .sw-topic-message {
@@ -1670,9 +1649,6 @@ body.songwon-dark .sw-posting #smileyContainer {
 /* Disposition générale */
 
 .sw-topic-view .sw-topic-message-footer .sw-topic-contact {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -2055,9 +2031,5 @@ body:not(.songwon-dark) .sw-vf-breadcrumb-top a {
 body.songwon-dark .sw-vf-breadcrumb-top a {
   color: #dca27c;
 }
-
-
-
-
 
 
