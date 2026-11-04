@@ -362,12 +362,9 @@ body.songwon-dark .sw-topic-view {
   text-shadow: none !important;
 }
 
+/* SONGWON — Masquer la cloche Push dans le titre */
 .sw-topic-header #push-bell {
-  display: inline-block;
-  margin-left: 9px;
-  transform: scale(.7);
-  transform-origin: center;
-  vertical-align: middle;
+  display: none !important;
 }
 
 .sw-topic-header-bottom {
