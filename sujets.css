@@ -2144,3 +2144,10 @@ body.songwon-dark
 @media (max-width: 600px) {
   .sw-topic-view .sw-topic-bottom { align-items: flex-start; }
 }
+/* SONGWON — Couleurs des réactions jour/nuit */
+.sw-topic-likes button.sw-reaction svg,
+.sw-topic-likes button.sw-reaction svg path {
+  color: inherit !important;
+  stroke: currentColor !important;
+  fill: none !important;
+}
