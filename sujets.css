@@ -2172,6 +2172,22 @@ body.songwon-dark
   background: transparent !important;
   color: #e8c3a3;
 }
+/* Réactions : couleur héritée du thème */
+.sw-topic-likes button.sw-reaction {
+  color: inherit !important;
+}
+
+.sw-topic-likes button.sw-reaction svg,
+.sw-topic-likes button.sw-reaction svg path {
+  stroke: currentColor !important;
+}
+
+/* Icône En ligne : couleur héritée */
+.sw-topic-contact .sw-lucide,
+.sw-topic-contact .sw-lucide svg {
+  color: inherit;
+  stroke: currentColor;
+}
 
 
 
