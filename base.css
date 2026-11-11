@@ -45,3 +45,88 @@ body.songwon-dark a:not([style*="color"]):not([class*="username"]) {color:#d59b9
 body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {color:#f2e3cf;}
 .bodyline,.bodylinewidth {background:transparent !important;}
 #songwon-theme-toggle {width:42px;height:42px;padding:0 !important;border-radius:50%;font-size:23px !important;line-height:42px;text-align:center;}
+
+
+/* =========================================
+   SONGWON — HEADER TYPOGRAPHIQUE
+   ========================================= */
+
+#songwon-header.sw-header-minimal {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 430px;
+  margin: 0 auto 38px;
+  padding: 95px 20px 55px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#songwon-header .sw-header-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+
+  width: 100%;
+  text-decoration: none !important;
+}
+
+#songwon-header .sw-header-year {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #F2E3CF !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.85);
+}
+
+#songwon-header .sw-header-title {
+  display: block;
+  max-width: 100%;
+  padding: 24px 48px 28px;
+
+  font-family: "Dry Brush", cursive;
+  font-size: clamp(38px, 5vw, 70px);
+  font-weight: normal;
+  line-height: 1.2;
+
+  color: #F2E3CF !important;
+  background: rgba(39,26,24,.96);
+  border: 1px solid rgba(213,155,159,.4);
+  border-radius: 100px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.25);
+}
+
+#songwon-header .sw-header-quote {
+  display: block;
+  font-family: "Caveat", cursive;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #F2E3CF !important;
+  text-shadow: 0 2px 9px rgba(0,0,0,.95);
+}
+
+/* Adaptation aux petits écrans */
+
+@media (max-width: 700px) {
+  #songwon-header.sw-header-minimal {
+    min-height: 310px;
+    padding: 85px 12px 35px;
+  }
+
+  #songwon-header .sw-header-title {
+    padding: 20px 24px;
+    font-size: clamp(30px, 7vw, 44px);
+  }
+
+  #songwon-header .sw-header-quote {
+    font-size: 23px;
+  }
+}
