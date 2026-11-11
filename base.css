@@ -1,6 +1,20 @@
-/* SONGWON — BASE : polices, fonds et couleurs */
+
+/* ==========================================
+   WHEN THE LIGHTS GO OUT — SONGWON 1995
+   BASE.CSS
+   Polices, fonds, couleurs et mode jour/nuit
+   ========================================== */
+
+
+/* ==========================================
+   01 — POLICES
+   ========================================== */
+
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap");
-/* Police manuscrite Dry Brush */
+
+
+/* Dry Brush — grands titres */
+
 @font-face {
   font-family: "Dry Brush";
   src: url("https://svmmcrchild-ux.github.io/songwon-assets/Dry%20Brush.ttf") format("truetype");
@@ -9,58 +23,104 @@
   font-display: swap;
 }
 
-/* Nom exact utilisé dans les titres de l’accueil. */
+
+/* Schoolbell — titres et éléments manuscrits */
+
 @font-face {
   font-family: "Schoolbell Songwon";
+  src: url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2");
-}
-/* Même fichier, pour les titres utilisant simplement Schoolbell. */
-@font-face {
-  font-family: "Schoolbell";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2");
 }
 
-/* 01 — FONDS JOUR ET NUIT */
+@font-face {
+  font-family: "Schoolbell";
+  src: url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+/* ==========================================
+   02 — FOND GENERAL ET VARIABLES JOUR
+   ========================================== */
 
 body {
   background-color: #e9ddc9 !important;
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/fond-jour.png") !important;
-  background-position: center, bottom !important;
+
+  background-image:
+    url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
+
+  background-position: center top !important;
   background-size: 100% auto !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
 
+  /* Variables du thème jour */
+
   --sw-page: rgba(224, 209, 187, .24);
   --sw-sheet: rgba(250, 242, 229, .58);
   --sw-card: rgba(255, 249, 239, .35);
+
   --sw-ink: #503b30;
   --sw-secondary: #786454;
   --sw-copper: #a16d50;
+
   --sw-rule: rgba(128, 91, 63, .23);
   --sw-shadow: rgba(42, 25, 15, .10);
 }
 
+
+/* ==========================================
+   03 — MODE NUIT
+   ========================================== */
+
 body.songwon-dark {
   background-color: #302820 !important;
-  background-image: url("https://svmmcrchild-ux.github.io/songwon-assets/fond-nuit.png") !important;
+
+  background-image:
+    linear-gradient(
+      rgba(174, 132, 96, .22),
+      rgba(174, 132, 96, .22)
+    ),
+    url("https://svmmcrchild-ux.github.io/songwon-assets/fond-nuit.png") !important;
+
+  background-position:
+    center center,
+    center 40px !important;
+
+  background-size:
+    auto,
+    100% auto !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat !important;
+
+  background-attachment:
+    fixed,
+    fixed !important;
+
+  /* Variables du thème nuit */
 
   --sw-page: rgba(43, 24, 16, .30);
   --sw-sheet: rgba(64, 37, 26, .58);
   --sw-card: rgba(77, 45, 31, .37);
+
   --sw-ink: #f2d9b9;
   --sw-secondary: #d1b094;
   --sw-copper: #e4a56e;
+
   --sw-rule: rgba(220, 155, 105, .24);
   --sw-shadow: rgba(0, 0, 0, .19);
 }
 
-/* 02 — TEXTES GENERAUX */
+
+/* ==========================================
+   04 — TEXTES GENERAUX : MODE JOUR
+   ========================================== */
 
 body:not(.songwon-dark),
 body:not(.songwon-dark) .bodyline,
@@ -69,13 +129,20 @@ body:not(.songwon-dark) .forumline {
   color: #493a30 !important;
 }
 
-body:not(.songwon-dark) a:not([style*="color"]):not([class*="gensmall"]):not([class*="username"]) {
+body:not(.songwon-dark)
+a:not([style*="color"]):not([class*="gensmall"]):not([class*="username"]) {
   color: #80533f;
 }
 
-body:not(.songwon-dark) a:hover:not([style*="color"]):not([class*="username"]) {
+body:not(.songwon-dark)
+a:hover:not([style*="color"]):not([class*="username"]) {
   color: #b16d4d;
 }
+
+
+/* ==========================================
+   05 — TEXTES GENERAUX : MODE NUIT
+   ========================================== */
 
 body.songwon-dark,
 body.songwon-dark .bodyline,
@@ -84,52 +151,47 @@ body.songwon-dark .forumline {
   color: #eadcc8 !important;
 }
 
-body.songwon-dark a:not([style*="color"]):not([class*="username"]) {
+body.songwon-dark
+a:not([style*="color"]):not([class*="username"]) {
   color: #e8c49d;
 }
 
-body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {
+body.songwon-dark
+a:hover:not([style*="color"]):not([class*="username"]) {
   color: #fff0d5;
 }
+
+
+/* ==========================================
+   06 — TRANSPARENCE DES CONTENEURS
+   ========================================== */
 
 .bodyline,
 .bodylinewidth {
   background: transparent !important;
 }
 
-/* 03 — BOUTON JOUR / NUIT */
+
+/* ==========================================
+   07 — BOUTON JOUR / NUIT
+   ========================================== */
 
 #songwon-theme-toggle {
   width: 42px;
   height: 42px;
+
   padding: 0 !important;
+
   border-radius: 50%;
+
   font-size: 23px !important;
   line-height: 42px;
+
   text-align: center;
 }
 
-/* SONGWON — Fonds illustrés jour et nuit */
-body:not(.songwon-dark) {
-  background-image:
-    linear-gradient(rgba(250,245,236,.20), rgba(250,245,236,.20)),
-    url("https://svmmcrchild-ux.github.io/songwon-assets/fond-jour.png") !important;
 
-  background-position: background-position: center center, center 40px !important;
-  background-size: auto, 100% auto !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-}
-
-body.songwon-dark {
-  background-image:
-    linear-gradient(rgba(174,132,96,.22), rgba(174,132,96,.22)),
-    url("https://svmmcrchild-ux.github.io/songwon-assets/fond-nuit.png") !important;
-
-  background-position: background-position: center center, center 40px !important;
-  background-size: auto, 100% auto !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-}
-
-
+/* ==========================================
+   FIN — BASE.CSS
+   WHEN THE LIGHTS GO OUT
+   ========================================== */
