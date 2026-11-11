@@ -6,14 +6,14 @@
 
 /* 01 — PALETTE ET BASE */
 .sw-home, .sw-archive, .sw-residents, .sw-archive-bottomline, .sw-index-tools, .sw-index-utilities {
-  --sw-paper: rgba(236,231,220,.94);
-  --sw-sheet: rgba(248,245,238,.94);
-  --sw-note: rgba(188,179,163,.48);
-  --sw-ink: #34332f;
-  --sw-muted: #69665f;
-  --sw-line: rgba(76,74,68,.26);
-  --sw-shadow: rgba(32,31,29,.13);
-  --sw-accent: #79624f;
+  --sw-paper: rgba(232,217,197,.96);
+  --sw-sheet: rgba(246,234,216,.96);
+  --sw-note: rgba(197,173,150,.48);
+  --sw-ink: #382820;
+  --sw-muted: #755d4d;
+  --sw-line: rgba(105,75,57,.27);
+  --sw-shadow: rgba(49,31,23,.15);
+  --sw-accent: #854b51;
   color: var(--sw-ink);
   font-family: "DM Sans", Arial, sans-serif;
   width: calc(100% - 48px);
@@ -24,14 +24,14 @@
 body.songwon-dark .sw-home, body.songwon-dark .sw-archive,
 body.songwon-dark .sw-residents, body.songwon-dark .sw-archive-bottomline,
 body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
-  --sw-paper: rgba(34,35,35,.94);
-  --sw-sheet: rgba(48,49,48,.95);
-  --sw-note: rgba(102,100,92,.52);
-  --sw-ink: #ece8df;
-  --sw-muted: #b8b2a6;
-  --sw-line: rgba(220,215,205,.26);
+  --sw-paper: rgba(52,37,31,.96);
+  --sw-sheet: rgba(67,47,39,.96);
+  --sw-note: rgba(112,87,75,.52);
+  --sw-ink: #f2e3cf;
+  --sw-muted: #d4bba4;
+  --sw-line: rgba(211,177,151,.27);
   --sw-shadow: rgba(0,0,0,.23);
-  --sw-accent: #c0ad92;
+  --sw-accent: #d59b9f;
 }
 .sw-home *, .sw-archive *, .sw-residents *, .sw-archive-bottomline * { box-sizing: border-box; }
 .sw-home a, .sw-archive a, .sw-residents a, .sw-archive-bottomline a {
@@ -153,7 +153,7 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
 .sw-archive-category-title a,
 .sw-residents-section-title h2,
 .sw-residents-groups-heading h3 {
-  text-shadow: 0 1px 2px rgba(248,245,238,.9), 0 0 15px rgba(248,245,238,.7);
+  text-shadow: 0 1px 2px rgba(242,227,207,.95), 0 0 15px rgba(242,227,207,.8);
 }
 body.songwon-dark .sw-archive-category-title a,
 body.songwon-dark .sw-residents-section-title h2,
@@ -377,11 +377,11 @@ body.songwon-dark .sw-residents-groups-heading h3 {
   padding: 14px 20px !important;
   box-sizing: border-box !important;
 
-  background: rgba(42, 43, 43, 0.94) !important;
-  border: 1px solid rgba(215, 210, 199, 0.38) !important;
+  background: rgba(52, 37, 31, 0.96) !important;
+  border: 1px solid rgba(211, 177, 151, 0.38) !important;
   border-radius: 12px !important;
 
-  color: #ece8df !important;
+  color: #f2e3cf !important;
   text-decoration: none !important;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22) !important;
 
@@ -425,7 +425,7 @@ body.songwon-dark .sw-residents-groups-heading h3 {
   max-width: none !important;
   max-height: none !important;
 
-  color: #c0ad92 !important;
+  color: #d59b9f !important;
   stroke: currentColor !important;
   fill: none !important;
   filter: none !important;
@@ -448,32 +448,32 @@ body.songwon-dark .sw-residents-groups-heading h3 {
   border: none !important;
   box-shadow: none !important;
 
-  color: #ece8df !important;
+  color: #f2e3cf !important;
   text-align: center !important;
   text-decoration: none !important;
 }
 
 /* Survol */
 .sw-groups-buttons-section a.sw-residents-group-card:hover {
-  background: rgba(64, 65, 63, 0.98) !important;
-  border-color: #d4b99a !important;
+  background: rgba(76, 51, 42, 0.98) !important;
+  border-color: #d59b9f !important;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.32) !important;
   transform: translateY(-3px) !important;
 }
 
 .sw-groups-buttons-section a.sw-residents-group-card:hover svg {
-  color: #d4b99a !important;
+  color: #d59b9f !important;
   transform: scale(1.1) !important;
 }
 
 .sw-groups-buttons-section a.sw-residents-group-card:hover
 .sw-residents-group-name {
-  color: #ece8df !important;
+  color: #f2e3cf !important;
 }
 
 /* Navigation au clavier */
 .sw-groups-buttons-section a.sw-residents-group-card:focus-visible {
-  outline: 2px solid #d4b99a !important;
+  outline: 2px solid #d59b9f !important;
   outline-offset: 3px !important;
 }
 
@@ -517,36 +517,36 @@ body.songwon-dark .sw-residents-groups-heading h3 {
 /* Boutons clairs, assortis aux cartes du QEEL */
 body:not(.songwon-dark) .sw-groups-buttons-section
 a.sw-residents-group-card {
-  background: rgba(236, 231, 220, 0.94) !important;
-  border: 1px solid rgba(87, 82, 75, 0.40) !important;
-  color: #34332f !important;
-  box-shadow: 0 3px 8px rgba(32, 31, 29, 0.12) !important;
+  background: rgba(232, 217, 197, 0.96) !important;
+  border: 1px solid rgba(105, 75, 57, 0.40) !important;
+  color: #382820 !important;
+  box-shadow: 0 3px 8px rgba(49, 31, 23, 0.12) !important;
 }
 
 /* Noms des groupes */
 body:not(.songwon-dark) .sw-groups-buttons-section
 .sw-residents-group-name {
-  color: #34332f !important;
+  color: #382820 !important;
 }
 
 /* Icônes */
 body:not(.songwon-dark) .sw-groups-buttons-section
 .sw-residents-group-image svg {
-  color: #79624f !important;
+  color: #854b51 !important;
 }
 
 /* Survol : terracotta doux */
 body:not(.songwon-dark) .sw-groups-buttons-section
 a.sw-residents-group-card:hover {
-  background: #ddd6c8 !important;
-  border-color: #9a8975 !important;
+  background: #e1cbb2 !important;
+  border-color: #a8786b !important;
   box-shadow: 0 5px 12px rgba(32, 31, 29, 0.18) !important;
 }
 
 /* Icônes au survol */
 body:not(.songwon-dark) .sw-groups-buttons-section
 a.sw-residents-group-card:hover svg {
-  color: #665443 !important;
+  color: #854b51 !important;
 }
 
 /* ==========================================
@@ -554,28 +554,28 @@ a.sw-residents-group-card:hover svg {
    ========================================== */
 
 body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card {
-  background: rgba(42, 43, 43, 0.94) !important;
-  border: 1px solid rgba(215, 210, 199, 0.38) !important;
-  color: #ece8df !important;
+  background: rgba(52, 37, 31, 0.96) !important;
+  border: 1px solid rgba(211, 177, 151, 0.38) !important;
+  color: #f2e3cf !important;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22) !important;
 }
 
 body.songwon-dark .sw-groups-buttons-section .sw-residents-group-name {
-  color: #ece8df !important;
+  color: #f2e3cf !important;
 }
 
 body.songwon-dark .sw-groups-buttons-section .sw-residents-group-image svg {
-  color: #c0ad92 !important;
+  color: #d59b9f !important;
 }
 
 /* Survol des groupes en mode nuit */
 
 body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card:hover {
-  background: rgba(64, 65, 63, 0.98) !important;
-  border-color: #d4b99a !important;
+  background: rgba(76, 51, 42, 0.98) !important;
+  border-color: #d59b9f !important;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.32) !important;
 }
 
 body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card:hover svg {
-  color: #d4b99a !important;
+  color: #d59b9f !important;
 }
