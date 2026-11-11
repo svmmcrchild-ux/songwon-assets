@@ -78,8 +78,8 @@ body {
     no-repeat !important;
 
   background-attachment:
-    scroll,
-    scroll !important;
+  fixed,
+  fixed !important;
 
 
   /* Variables du thème jour */
@@ -130,8 +130,8 @@ body.songwon-dark {
     no-repeat !important;
 
   background-attachment:
-    scroll,
-    scroll !important;
+  fixed,
+  fixed !important;
 
 
   /* Variables du thème nuit */
