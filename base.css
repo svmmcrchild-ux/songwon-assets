@@ -130,3 +130,45 @@ body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {color:
     font-size: 23px;
   }
 }
+
+/* =========================================
+   SONGWON — HEADER JOUR / NUIT
+   ========================================= */
+
+/* JOUR — papier patiné */
+body:not(.songwon-dark) #songwon-header .sw-header-title {
+  background: rgba(246,234,216,.96) !important;
+  color: #382820 !important;
+  border-color: rgba(133,75,81,.40) !important;
+  box-shadow: 0 12px 35px rgba(49,31,23,.18);
+}
+
+body:not(.songwon-dark) #songwon-header .sw-header-year {
+  color: #382820 !important;
+  text-shadow: 0 1px 6px rgba(246,234,216,.9);
+}
+
+body:not(.songwon-dark) #songwon-header .sw-header-quote {
+  color: #382820 !important;
+  text-shadow:
+    0 1px 5px rgba(246,234,216,.95),
+    0 0 12px rgba(246,234,216,.85);
+}
+
+/* NUIT — chocolat profond */
+body.songwon-dark #songwon-header .sw-header-title {
+  background: rgba(39,26,24,.96) !important;
+  color: #F2E3CF !important;
+  border-color: rgba(213,155,159,.40) !important;
+}
+
+body.songwon-dark #songwon-header .sw-header-year {
+  color: #F2E3CF !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.85);
+}
+
+body.songwon-dark #songwon-header .sw-header-quote {
+  color: #F2E3CF !important;
+  text-shadow: 0 2px 9px rgba(0,0,0,.95);
+}
+
