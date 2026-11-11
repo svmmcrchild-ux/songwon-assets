@@ -1,18 +1,19 @@
 /* WHEN THE LIGHTS GO OUT — SONGWON 1995
    ACCUEIL : module, categories, forums, QEEL, raccourcis
    Remplace integralement l'ancien accueil.css.
-   N'affecte ni la banniere ni le fond global. */
+   Ne gere pas la grande banniere : sa suppression se fait dans le template/header.
+   Conserve le fond global defini dans base.css. */
 
 /* 01 — PALETTE ET BASE */
 .sw-home, .sw-archive, .sw-residents, .sw-archive-bottomline, .sw-index-tools, .sw-index-utilities {
-  --sw-paper: rgba(248,238,221,.94);
-  --sw-sheet: rgba(255,249,239,.91);
-  --sw-note: rgba(232,210,182,.58);
-  --sw-ink: #604536;
-  --sw-muted: #90735c;
-  --sw-line: rgba(108,75,49,.23);
-  --sw-shadow: rgba(70,42,24,.12);
-  --sw-accent: #a16e4d;
+  --sw-paper: rgba(236,231,220,.94);
+  --sw-sheet: rgba(248,245,238,.94);
+  --sw-note: rgba(188,179,163,.48);
+  --sw-ink: #34332f;
+  --sw-muted: #69665f;
+  --sw-line: rgba(76,74,68,.26);
+  --sw-shadow: rgba(32,31,29,.13);
+  --sw-accent: #79624f;
   color: var(--sw-ink);
   font-family: "DM Sans", Arial, sans-serif;
   width: calc(100% - 48px);
@@ -23,14 +24,14 @@
 body.songwon-dark .sw-home, body.songwon-dark .sw-archive,
 body.songwon-dark .sw-residents, body.songwon-dark .sw-archive-bottomline,
 body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
-  --sw-paper: rgba(64,48,39,.95);
-  --sw-sheet: rgba(48,37,31,.94);
-  --sw-note: rgba(109,78,59,.58);
-  --sw-ink: #f1dfc9;
-  --sw-muted: #c6a88c;
-  --sw-line: rgba(235,208,174,.23);
+  --sw-paper: rgba(34,35,35,.94);
+  --sw-sheet: rgba(48,49,48,.95);
+  --sw-note: rgba(102,100,92,.52);
+  --sw-ink: #ece8df;
+  --sw-muted: #b8b2a6;
+  --sw-line: rgba(220,215,205,.26);
   --sw-shadow: rgba(0,0,0,.23);
-  --sw-accent: #d8a579;
+  --sw-accent: #c0ad92;
 }
 .sw-home *, .sw-archive *, .sw-residents *, .sw-archive-bottomline * { box-sizing: border-box; }
 .sw-home a, .sw-archive a, .sw-residents a, .sw-archive-bottomline a {
@@ -46,11 +47,14 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
 }
 
 /* 02 — MODULE D'ACCUEIL */
+/* Titre discret de remplacement, si .sw-home-title existe dans le HTML. */
 .sw-home { margin-top: 20px; margin-bottom: 38px; }
 .sw-home-title {
   margin: 0 0 13px;
   text-align: center;
-  font: 400 30px/1.25 "Dry Brush", cursive;
+  font: 400 25px/1.35 "Caveat", cursive;
+  color: var(--sw-ink);
+  letter-spacing: .015em;
 }
 .sw-home-content { min-width: 0; }
 .sw-pa, .sw-pa * { box-sizing: border-box; }
@@ -144,6 +148,18 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
 .sw-pa-partners { align-self: stretch; min-height: 100%; display: flex; flex-direction: column; }
 .sw-pa-partners-content { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .sw-pa-partners-content img { max-width: 100%; height: auto; }
+
+/* Lisibilite des titres sur la photographie, sans cadre opaque. */
+.sw-archive-category-title a,
+.sw-residents-section-title h2,
+.sw-residents-groups-heading h3 {
+  text-shadow: 0 1px 2px rgba(248,245,238,.9), 0 0 15px rgba(248,245,238,.7);
+}
+body.songwon-dark .sw-archive-category-title a,
+body.songwon-dark .sw-residents-section-title h2,
+body.songwon-dark .sw-residents-groups-heading h3 {
+  text-shadow: 0 2px 4px rgba(0,0,0,.8), 0 0 18px rgba(0,0,0,.55);
+}
 
 /* 03 — CATEGORIES ET FORUMS */
 .sw-archive { margin-top: 0; margin-bottom: 32px; }
@@ -361,13 +377,13 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
   padding: 14px 20px !important;
   box-sizing: border-box !important;
 
-  background: rgba(67, 43, 31, 0.88) !important;
-  border: 1px solid rgba(232, 205, 177, 0.4) !important;
+  background: rgba(42, 43, 43, 0.94) !important;
+  border: 1px solid rgba(215, 210, 199, 0.38) !important;
   border-radius: 12px !important;
 
-  color: #f3dfca !important;
+  color: #ece8df !important;
   text-decoration: none !important;
-  box-shadow: 0 3px 8px rgba(20, 10, 5, 0.18) !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22) !important;
 
   cursor: pointer !important;
 
@@ -409,7 +425,7 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
   max-width: none !important;
   max-height: none !important;
 
-  color: #e8cdb1 !important;
+  color: #c0ad92 !important;
   stroke: currentColor !important;
   fill: none !important;
   filter: none !important;
@@ -432,32 +448,32 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
   border: none !important;
   box-shadow: none !important;
 
-  color: #f3dfca !important;
+  color: #ece8df !important;
   text-align: center !important;
   text-decoration: none !important;
 }
 
 /* Survol */
 .sw-groups-buttons-section a.sw-residents-group-card:hover {
-  background: rgba(91, 56, 42, 0.96) !important;
-  border-color: #d89478 !important;
-  box-shadow: 0 6px 14px rgba(20, 10, 5, 0.28) !important;
+  background: rgba(64, 65, 63, 0.98) !important;
+  border-color: #d4b99a !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.32) !important;
   transform: translateY(-3px) !important;
 }
 
 .sw-groups-buttons-section a.sw-residents-group-card:hover svg {
-  color: #d89478 !important;
+  color: #d4b99a !important;
   transform: scale(1.1) !important;
 }
 
 .sw-groups-buttons-section a.sw-residents-group-card:hover
 .sw-residents-group-name {
-  color: #f3dfca !important;
+  color: #ece8df !important;
 }
 
 /* Navigation au clavier */
 .sw-groups-buttons-section a.sw-residents-group-card:focus-visible {
-  outline: 2px solid #d89478 !important;
+  outline: 2px solid #d4b99a !important;
   outline-offset: 3px !important;
 }
 
@@ -499,38 +515,38 @@ body.songwon-dark .sw-index-tools, body.songwon-dark .sw-index-utilities {
    ========================================== */
 
 /* Boutons clairs, assortis aux cartes du QEEL */
-body:not(.songwon-night) .sw-groups-buttons-section
+body:not(.songwon-dark) .sw-groups-buttons-section
 a.sw-residents-group-card {
-  background: rgba(248, 237, 219, 0.94) !important;
-  border: 1px solid rgba(139, 100, 77, 0.45) !important;
-  color: #654738 !important;
-  box-shadow: 0 3px 8px rgba(77, 48, 30, 0.12) !important;
+  background: rgba(236, 231, 220, 0.94) !important;
+  border: 1px solid rgba(87, 82, 75, 0.40) !important;
+  color: #34332f !important;
+  box-shadow: 0 3px 8px rgba(32, 31, 29, 0.12) !important;
 }
 
 /* Noms des groupes */
-body:not(.songwon-night) .sw-groups-buttons-section
+body:not(.songwon-dark) .sw-groups-buttons-section
 .sw-residents-group-name {
-  color: #654738 !important;
+  color: #34332f !important;
 }
 
 /* Icônes */
-body:not(.songwon-night) .sw-groups-buttons-section
+body:not(.songwon-dark) .sw-groups-buttons-section
 .sw-residents-group-image svg {
-  color: #a16d54 !important;
+  color: #79624f !important;
 }
 
 /* Survol : terracotta doux */
-body:not(.songwon-night) .sw-groups-buttons-section
+body:not(.songwon-dark) .sw-groups-buttons-section
 a.sw-residents-group-card:hover {
-  background: #ead1b8 !important;
-  border-color: #b87c60 !important;
-  box-shadow: 0 5px 12px rgba(77, 48, 30, 0.18) !important;
+  background: #ddd6c8 !important;
+  border-color: #9a8975 !important;
+  box-shadow: 0 5px 12px rgba(32, 31, 29, 0.18) !important;
 }
 
 /* Icônes au survol */
-body:not(.songwon-night) .sw-groups-buttons-section
+body:not(.songwon-dark) .sw-groups-buttons-section
 a.sw-residents-group-card:hover svg {
-  color: #9d513d !important;
+  color: #665443 !important;
 }
 
 /* ==========================================
@@ -538,32 +554,28 @@ a.sw-residents-group-card:hover svg {
    ========================================== */
 
 body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card {
-  background: rgba(67, 43, 31, 0.88) !important;
-  border: 1px solid rgba(232, 205, 177, 0.40) !important;
-  color: #f3dfca !important;
-  box-shadow: 0 3px 8px rgba(20, 10, 5, 0.18) !important;
+  background: rgba(42, 43, 43, 0.94) !important;
+  border: 1px solid rgba(215, 210, 199, 0.38) !important;
+  color: #ece8df !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22) !important;
 }
 
 body.songwon-dark .sw-groups-buttons-section .sw-residents-group-name {
-  color: #f3dfca !important;
+  color: #ece8df !important;
 }
 
 body.songwon-dark .sw-groups-buttons-section .sw-residents-group-image svg {
-  color: #e8cdb1 !important;
+  color: #c0ad92 !important;
 }
 
 /* Survol des groupes en mode nuit */
 
 body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card:hover {
-  background: rgba(91, 56, 42, 0.96) !important;
-  border-color: #d89478 !important;
-  box-shadow: 0 6px 14px rgba(20, 10, 5, 0.28) !important;
+  background: rgba(64, 65, 63, 0.98) !important;
+  border-color: #d4b99a !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.32) !important;
 }
 
 body.songwon-dark .sw-groups-buttons-section a.sw-residents-group-card:hover svg {
-  color: #d89478 !important;
+  color: #d4b99a !important;
 }
-
-
-
-
