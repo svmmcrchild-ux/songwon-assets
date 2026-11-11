@@ -1,54 +1,138 @@
-/* SONGWON — BASE.CSS | Beige patine et chocolat profond */
+
+/* SONGWON — BASE.CSS | Beige patiné et chocolat profond */
+
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Schoolbell&display=swap");
-@font-face { font-family:"Dry Brush"; src:url("https://svmmcrchild-ux.github.io/songwon-assets/Dry%20Brush.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
-@font-face { font-family:"Schoolbell Songwon"; src:url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2"); font-style:normal; font-weight:400; font-display:swap; }
 
-/* JOUR — photographie fixe et fondu chaud */
+@font-face {
+  font-family: "Dry Brush";
+  src: url("https://svmmcrchild-ux.github.io/songwon-assets/Dry%20Brush.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Schoolbell Songwon";
+  src: url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* =========================================
+   SONGWON — MODE JOUR
+   ========================================= */
+
 body {
- --sw-page:rgba(232,217,197,.30);
- --sw-sheet:rgba(232,217,197,.96);
- --sw-card:rgba(246,234,216,.96);
- --sw-ink:#382820;
- --sw-secondary:#755d4d;
- --sw-copper:#854b51;
- --sw-rule:rgba(105,75,57,.27);
- --sw-shadow:rgba(49,31,23,.15);
- background-color:#e8d9c5 !important;
- background-image:linear-gradient(to bottom,rgba(232,217,197,0) 0%,rgba(232,217,197,.08) 38%,rgba(232,217,197,.55) 72%,#e8d9c5 100%),url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
- background-position:center center,center top !important;
- background-size:100% 100%,cover !important;
- background-repeat:no-repeat,no-repeat !important;
- background-attachment:fixed,fixed !important;
-}
-/* NUIT — chocolat et creme */
-body.songwon-dark {
- --sw-page:rgba(52,37,31,.40);
- --sw-sheet:rgba(52,37,31,.96);
- --sw-card:rgba(67,47,39,.96);
- --sw-ink:#f2e3cf;
- --sw-secondary:#d4bba4;
- --sw-copper:#d59b9f;
- --sw-rule:rgba(211,177,151,.27);
- --sw-shadow:rgba(0,0,0,.30);
- background-color:#34251f !important;
- background-image:linear-gradient(to bottom,rgba(52,37,31,.12) 0%,rgba(52,37,31,.24) 38%,rgba(52,37,31,.75) 72%,#34251f 100%),url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
- background-position:center center,center top !important;
- background-size:100% 100%,cover !important;
- background-repeat:no-repeat,no-repeat !important;
- background-attachment:fixed,fixed !important;
-}
-body:not(.songwon-dark),body:not(.songwon-dark) .bodyline,body:not(.songwon-dark) .bodylinewidth,body:not(.songwon-dark) .forumline {color:#382820 !important;}
-body.songwon-dark,body.songwon-dark .bodyline,body.songwon-dark .bodylinewidth,body.songwon-dark .forumline {color:#f2e3cf !important;}
-body:not(.songwon-dark) a:not([style*="color"]):not([class*="gensmall"]):not([class*="username"]) {color:#854b51;}
-body:not(.songwon-dark) a:hover:not([style*="color"]):not([class*="username"]) {color:#a35f65;}
-body.songwon-dark a:not([style*="color"]):not([class*="username"]) {color:#d59b9f;}
-body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {color:#f2e3cf;}
-.bodyline,.bodylinewidth {background:transparent !important;}
-#songwon-theme-toggle {width:42px;height:42px;padding:0 !important;border-radius:50%;font-size:23px !important;line-height:42px;text-align:center;}
+  --sw-page: rgba(232,217,197,.30);
+  --sw-sheet: rgba(232,217,197,.96);
+  --sw-card: rgba(246,234,216,.96);
+  --sw-ink: #382820;
+  --sw-secondary: #755d4d;
+  --sw-copper: #854b51;
+  --sw-rule: rgba(105,75,57,.27);
+  --sw-shadow: rgba(49,31,23,.15);
 
+  background-color: #e8d9c5 !important;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(232,217,197,0) 0%,
+      rgba(232,217,197,.08) 38%,
+      rgba(232,217,197,.55) 72%,
+      #e8d9c5 100%
+    ),
+    url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
+
+  background-position: center center, center top !important;
+  background-size: 100% 100%, cover !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed !important;
+}
+
+/* =========================================
+   SONGWON — MODE NUIT
+   ========================================= */
+
+body.songwon-dark {
+  --sw-page: rgba(52,37,31,.40);
+  --sw-sheet: rgba(52,37,31,.96);
+  --sw-card: rgba(67,47,39,.96);
+  --sw-ink: #f2e3cf;
+  --sw-secondary: #d4bba4;
+  --sw-copper: #d59b9f;
+  --sw-rule: rgba(211,177,151,.27);
+  --sw-shadow: rgba(0,0,0,.30);
+
+  background-color: #34251f !important;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(52,37,31,.12) 0%,
+      rgba(52,37,31,.24) 38%,
+      rgba(52,37,31,.75) 72%,
+      #34251f 100%
+    ),
+    url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
+
+  background-position: center center, center top !important;
+  background-size: 100% 100%, cover !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed !important;
+}
+
+/* =========================================
+   COULEURS GÉNÉRALES
+   ========================================= */
+
+body:not(.songwon-dark),
+body:not(.songwon-dark) .bodyline,
+body:not(.songwon-dark) .bodylinewidth,
+body:not(.songwon-dark) .forumline {
+  color: #382820 !important;
+}
+
+body.songwon-dark,
+body.songwon-dark .bodyline,
+body.songwon-dark .bodylinewidth,
+body.songwon-dark .forumline {
+  color: #f2e3cf !important;
+}
+
+body:not(.songwon-dark) a:not([style*="color"]):not([class*="gensmall"]):not([class*="username"]) {
+  color: #854b51;
+}
+
+body:not(.songwon-dark) a:hover:not([style*="color"]):not([class*="username"]) {
+  color: #a35f65;
+}
+
+body.songwon-dark a:not([style*="color"]):not([class*="username"]) {
+  color: #d59b9f;
+}
+
+body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {
+  color: #f2e3cf;
+}
+
+.bodyline,
+.bodylinewidth {
+  background: transparent !important;
+}
+
+#songwon-theme-toggle {
+  width: 42px;
+  height: 42px;
+  padding: 0 !important;
+  border-radius: 50%;
+  font-size: 23px !important;
+  line-height: 42px;
+  text-align: center;
+}
 
 /* =========================================
    SONGWON — HEADER TYPOGRAPHIQUE
+   Sans rectangle derrière le titre
    ========================================= */
 
 #songwon-header.sw-header-minimal {
@@ -75,6 +159,8 @@ body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {color:
   text-decoration: none !important;
 }
 
+/* Petite inscription SONGWON — 1995 */
+
 #songwon-header .sw-header-year {
   display: block;
   font-family: "DM Sans", sans-serif;
@@ -82,26 +168,27 @@ body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {color:
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #F2E3CF !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,.85);
 }
+
+/* Grand titre directement sur la photographie */
 
 #songwon-header .sw-header-title {
   display: block;
   max-width: 100%;
-  padding: 24px 48px 28px;
+  padding: 0;
 
   font-family: "Dry Brush", cursive;
   font-size: clamp(38px, 5vw, 70px);
   font-weight: normal;
   line-height: 1.2;
 
-  color: #F2E3CF !important;
-  background: rgba(39,26,24,.96);
-  border: 1px solid rgba(213,155,159,.4);
-  border-radius: 100px;
-  box-shadow: 0 12px 35px rgba(0,0,0,.25);
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
+
+/* Phrase sous le titre */
 
 #songwon-header .sw-header-quote {
   display: block;
@@ -109,38 +196,17 @@ body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {color:
   font-size: 27px;
   font-weight: 500;
   line-height: 1.4;
-  color: #F2E3CF !important;
-  text-shadow: 0 2px 9px rgba(0,0,0,.95);
-}
-
-/* Adaptation aux petits écrans */
-
-@media (max-width: 700px) {
-  #songwon-header.sw-header-minimal {
-    min-height: 310px;
-    padding: 85px 12px 35px;
-  }
-
-  #songwon-header .sw-header-title {
-    padding: 20px 24px;
-    font-size: clamp(30px, 7vw, 44px);
-  }
-
-  #songwon-header .sw-header-quote {
-    font-size: 23px;
-  }
 }
 
 /* =========================================
-   SONGWON — HEADER JOUR / NUIT
+   HEADER — COULEURS JOUR
    ========================================= */
 
-/* JOUR — papier patiné */
 body:not(.songwon-dark) #songwon-header .sw-header-title {
-  background: rgba(246,234,216,.96) !important;
   color: #382820 !important;
-  border-color: rgba(133,75,81,.40) !important;
-  box-shadow: 0 12px 35px rgba(49,31,23,.18);
+  text-shadow:
+    0 1px 5px rgba(246,234,216,.95),
+    0 0 12px rgba(246,234,216,.85);
 }
 
 body:not(.songwon-dark) #songwon-header .sw-header-year {
@@ -155,11 +221,15 @@ body:not(.songwon-dark) #songwon-header .sw-header-quote {
     0 0 12px rgba(246,234,216,.85);
 }
 
-/* NUIT — chocolat profond */
+/* =========================================
+   HEADER — COULEURS NUIT
+   ========================================= */
+
 body.songwon-dark #songwon-header .sw-header-title {
-  background: rgba(39,26,24,.96) !important;
   color: #F2E3CF !important;
-  border-color: rgba(213,155,159,.40) !important;
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.85),
+    0 0 15px rgba(0,0,0,.45);
 }
 
 body.songwon-dark #songwon-header .sw-header-year {
@@ -172,3 +242,23 @@ body.songwon-dark #songwon-header .sw-header-quote {
   text-shadow: 0 2px 9px rgba(0,0,0,.95);
 }
 
+/* =========================================
+   ADAPTATION AUX PETITS ÉCRANS
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  #songwon-header.sw-header-minimal {
+    min-height: 310px;
+    padding: 85px 12px 35px;
+  }
+
+  #songwon-header .sw-header-title {
+    padding: 0;
+    font-size: clamp(30px, 7vw, 44px);
+  }
+
+  #songwon-header .sw-header-quote {
+    font-size: 23px;
+  }
+}
