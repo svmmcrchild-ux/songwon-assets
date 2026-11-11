@@ -2,7 +2,8 @@
 /* ==========================================
    WHEN THE LIGHTS GO OUT — SONGWON 1995
    BASE.CSS
-   Polices, fonds, couleurs et mode jour/nuit
+   Polices, fond photographique, couleurs
+   et système jour / nuit
    ========================================== */
 
 
@@ -10,10 +11,10 @@
    01 — POLICES
    ========================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Schoolbell&display=swap");
 
 
-/* Dry Brush — grands titres */
+/* Dry Brush */
 
 @font-face {
   font-family: "Dry Brush";
@@ -24,7 +25,7 @@
 }
 
 
-/* Schoolbell — titres et éléments manuscrits */
+/* Schoolbell — nom utilisé dans l'accueil */
 
 @font-face {
   font-family: "Schoolbell Songwon";
@@ -34,29 +35,52 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Schoolbell";
-  src: url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 
 /* ==========================================
-   02 — FOND GENERAL ET VARIABLES JOUR
+   02 — VARIABLES ET FOND : MODE JOUR
    ========================================== */
 
 body {
+  /* Couleur de raccordement du fondu */
   background-color: #e9ddc9 !important;
 
+  /*
+     Le dégradé est placé au-dessus de la photo.
+     Il devient progressivement opaque pour
+     masquer l'image et rejoindre le fond beige.
+
+     Les deux couches occupent 1100px de haut.
+     Au-delà, la couleur unie prend le relais.
+  */
+
   background-image:
+    linear-gradient(
+      to bottom,
+      rgba(233, 221, 201, 0) 0%,
+      rgba(233, 221, 201, 0) 30%,
+      rgba(233, 221, 201, .15) 45%,
+      rgba(233, 221, 201, .45) 60%,
+      rgba(233, 221, 201, .80) 78%,
+      #e9ddc9 100%
+    ),
     url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
 
-  background-position: center top !important;
-  background-size: 100% auto !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
+  background-position:
+    center top,
+    center top !important;
+
+  background-size:
+    100% 1100px,
+    100% auto !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat !important;
+
+  background-attachment:
+    scroll,
+    scroll !important;
+
 
   /* Variables du thème jour */
 
@@ -75,6 +99,7 @@ body {
 
 /* ==========================================
    03 — MODE NUIT
+   Même photographie, fondu sombre
    ========================================== */
 
 body.songwon-dark {
@@ -82,17 +107,22 @@ body.songwon-dark {
 
   background-image:
     linear-gradient(
-      rgba(174, 132, 96, .22),
-      rgba(174, 132, 96, .22)
+      to bottom,
+      rgba(48, 40, 32, .10) 0%,
+      rgba(48, 40, 32, .15) 30%,
+      rgba(48, 40, 32, .35) 45%,
+      rgba(48, 40, 32, .65) 60%,
+      rgba(48, 40, 32, .90) 78%,
+      #302820 100%
     ),
-    url("https://svmmcrchild-ux.github.io/songwon-assets/fond-nuit.png") !important;
+    url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
 
   background-position:
-    center center,
-    center 40px !important;
+    center top,
+    center top !important;
 
   background-size:
-    auto,
+    100% 1100px,
     100% auto !important;
 
   background-repeat:
@@ -100,8 +130,9 @@ body.songwon-dark {
     no-repeat !important;
 
   background-attachment:
-    fixed,
-    fixed !important;
+    scroll,
+    scroll !important;
+
 
   /* Variables du thème nuit */
 
@@ -181,12 +212,10 @@ a:hover:not([style*="color"]):not([class*="username"]) {
   height: 42px;
 
   padding: 0 !important;
-
   border-radius: 50%;
 
   font-size: 23px !important;
   line-height: 42px;
-
   text-align: center;
 }
 
