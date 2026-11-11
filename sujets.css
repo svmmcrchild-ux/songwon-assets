@@ -2141,3 +2141,28 @@ body.songwon-dark .sw-topic-likes .sw-reaction {
   box-shadow: none !important;
 }
 
+/* SONGWON — Réactions : neutraliser l'orange Forumactif */
+
+body:not(.songwon-dark) .sw-topic-likes .rep-button svg,
+body:not(.songwon-dark) .sw-topic-likes .rep-button i {
+  color: #854b51 !important;
+}
+
+body.songwon-dark .sw-topic-likes .rep-button svg,
+body.songwon-dark .sw-topic-likes .rep-button i {
+  color: #d59b9f !important;
+}
+
+/* Les tracés SVG héritent de cette couleur */
+.sw-topic-likes .rep-button svg,
+.sw-topic-likes .rep-button svg path {
+  stroke: currentColor !important;
+}
+
+/* Aucun contour autour des boutons */
+.sw-topic-likes .rep-button {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
