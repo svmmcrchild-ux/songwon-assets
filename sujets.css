@@ -1,28 +1,24 @@
-/* SONGWON 1995 — SUJETS.CSS | AUDIT VIEWFORUM + TOPICS_LIST_BOX
-   Disposition compacte flex conservée ; anciennes grilles retirées.
-   Sections viewtopic et posting préservées en attente de leurs templates.
-*/
 
 /* SONGWON 1995 — SUJETS ET MESSAGES */
 /* Sections 13 bis et 14 harmonisées avec les cartes de l'accueil. */
 
 /* 13 BIS + 14 — PALETTE JOUR / NUIT */
 .sw-viewforum {
-  --vf-card: rgba(235, 220, 198, .88);
-  --vf-card-hover: rgba(242, 229, 211, .94);
-  --vf-ink: #594336;
-  --vf-muted: #765f4e;
-  --vf-accent: #9b6546;
+  --vf-card: var(--sw-sheet);
+  --vf-card-hover: var(--sw-card);
+  --vf-ink: var(--sw-ink);
+  --vf-muted: var(--sw-secondary);
+  --vf-accent: var(--sw-copper);
   width: 100%;
   color: var(--vf-ink);
   font-family: "DM Sans", Arial, sans-serif;
 }
 body.songwon-dark .sw-viewforum {
-  --vf-card: rgba(67, 49, 41, .92);
-  --vf-card-hover: rgba(78, 58, 48, .96);
-  --vf-ink: #f0dfca;
-  --vf-muted: #d0b9a5;
-  --vf-accent: #dfa572;
+  --vf-card: var(--sw-sheet);
+  --vf-card-hover: var(--sw-card);
+  --vf-ink: var(--sw-ink);
+  --vf-muted: var(--sw-secondary);
+  --vf-accent: var(--sw-copper);
 }
 .sw-viewforum *, .sw-viewforum *::before, .sw-viewforum *::after { box-sizing: border-box; }
 
@@ -41,7 +37,7 @@ body.songwon-dark .sw-viewforum {
   box-shadow: none;
 }
 .sw-viewforum .sw-topics { padding: 0; margin-top: 18px; margin-bottom: 24px; color: var(--vf-ink); }
-.sw-topics-list { display: flex; flex-direction: column; gap: 12px; }
+.sw-topics-list { display: flex; flex-direction: column; gap: 18px; }
 .sw-topics-pagination { padding: 0 4px; text-align: right; font-size: 11px; color: var(--vf-muted); }
 .sw-topics-divider { padding: 8px 12px; font: 400 20px/1.4 "Schoolbell", cursive; color: var(--vf-accent); }
 .sw-topics-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 4px; font-size: 11px; }
@@ -51,9 +47,13 @@ body.songwon-dark .sw-viewforum {
 
 /* Chaque sujet = UNE carte, sans bordure ni panneau parent */
 .sw-viewforum .sw-topic-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px 160px;
   align-items: center;
+  gap: 14px;
   min-width: 0;
+  margin: 0;
+  padding: 22px 25px;
   background: var(--vf-card);
   color: var(--vf-ink);
   border: 0;
@@ -65,10 +65,10 @@ body.songwon-dark .sw-viewforum {
 .sw-viewforum .sw-topic-card:hover { background: var(--vf-card-hover); }
 .sw-topic-main { display: flex; align-items: flex-start; gap: 12px; min-width: 0; }
 .sw-topic-icon { flex: 0 0 23px; width: 23px; padding-top: 2px; }
-.sw-topic-icon img { max-width: 23px; max-height: 23px; object-fit: contain; }
+.sw-topic-icon img { max-width: 23px; max-height: 23px; object-fit: cover; }
 .sw-topic-information { flex: 1; min-width: 0; }
 .sw-topic-title-line { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
-.sw-topic-title { display: inline; margin: 0 !important; padding: 0 !important; font: 400 18px/1.25 "Schoolbell", cursive !important; }
+.sw-topic-title { display: inline; margin: 0 !important; padding: 0 !important; font: 400 25px/1.35 "Schoolbell", cursive !important; }
 .sw-viewforum .sw-topic-title a { color: var(--vf-ink) !important; text-decoration: none; overflow-wrap: anywhere; }
 .sw-viewforum .sw-topic-title a:hover { color: var(--vf-accent) !important; }
 .sw-topic-custom-icon img { max-width: 18px; max-height: 18px; }
@@ -84,7 +84,7 @@ body.songwon-dark .sw-viewforum {
 .sw-topic-last-avatar { display: block; margin-bottom: 5px; }
 .sw-topic-last-avatar img { width: 34px !important; height: 43px !important; object-fit: cover; border-radius: 5px; }
 .sw-topic-last-info { display: flex; flex-direction: column; overflow-wrap: anywhere; }
-.sw-topic-selection { text-align: right; padding-top: 5px; }
+.sw-topic-selection { grid-column: 1 / -1; text-align: right; padding-top: 5px; }
 
 /* Navigation : une seule carte arrondie */
 .sw-vf-toolbar {
@@ -122,7 +122,7 @@ body.songwon-dark .sw-viewforum {
 }
 .sw-vf-info-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 0; background: transparent; border: 0; border-radius: 0; }
 .sw-vf-eyebrow { display: block; font-size: 10px; letter-spacing: 1.3px; color: var(--vf-accent); }
-.sw-vf-info-heading h2 { margin: 4px 0 0; padding: 0; font: 400 18px/1.25 "Schoolbell", cursive !important; color: var(--vf-ink); }
+.sw-vf-info-heading h2 { margin: 4px 0 0; padding: 0; font: 400 25px/1.35 "Schoolbell", cursive !important; color: var(--vf-ink); }
 .sw-vf-markread { font-size: 11px; color: var(--vf-accent) !important; text-decoration: none; }
 .sw-vf-info-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 25px 35px; margin-top: 22px; }
 .sw-vf-info-item { min-width: 0; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
@@ -135,7 +135,7 @@ body.songwon-dark .sw-viewforum {
 .sw-vf-info-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 22px; padding: 0; border: 0; }
 .sw-vf-info-bottom .sw-vf-breadcrumb { flex: 1; }
 .sw-vf-collapse { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; color: var(--vf-accent) !important; text-decoration: none; white-space: nowrap; }
-.sw-vf-collapse img { width: 13px; height: 13px; object-fit: contain; }
+.sw-vf-collapse img { width: 13px; height: 13px; object-fit: cover; }
 .sw-vf-info-closed { justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 0 0; font-size: 11px; color: var(--vf-muted); }
 .sw-vf-info-closed[style*="display: none"], .sw-vf-info-closed[style*="display:none"] { display: none !important; }
 .sw-vf-info-closed:not([style*="display:none"]):not([style*="display: none"]) { display: flex; }
@@ -156,9 +156,10 @@ body.songwon-dark .sw-viewforum {
 .sw-vf-legend-hint { font-size: 10px; letter-spacing: 0; color: var(--vf-muted); }
 .sw-vf-legend-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 11px 20px; margin-top: 14px; padding-top: 14px; }
 .sw-vf-legend-item { display: flex; align-items: center; gap: 10px; min-width: 0; font-size: 11px; line-height: 1.5; color: var(--vf-muted); }
-.sw-vf-legend-item img { flex: 0 0 22px; max-width: 22px; max-height: 25px; object-fit: contain; }
+.sw-vf-legend-item img { flex: 0 0 22px; max-width: 22px; max-height: 25px; object-fit: cover; }
 
 @media (max-width: 950px) {
+  .sw-viewforum .sw-topic-card { grid-template-columns: minmax(0,1fr) 90px 130px; gap: 10px; }
   .sw-topic-statistics { gap: 10px; padding: 0 5px; }
   .sw-vf-legend-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
@@ -167,6 +168,9 @@ body.songwon-dark .sw-viewforum {
   .sw-vf-toolbar { align-items: flex-start; padding: 15px; }
   .sw-vf-breadcrumb { flex-basis: 100%; }
   .sw-vf-actions { width: 100%; justify-content: space-between; }
+  .sw-viewforum .sw-topic-card { grid-template-columns: minmax(0,1fr) 105px; padding: 18px; gap: 12px; }
+  .sw-topic-main { grid-column: 1 / -1; }
+  .sw-topic-statistics { justify-content: flex-start; padding-left: 35px; }
   .sw-topic-lastpost { padding-left: 0; }
   .sw-vf-info-grid { grid-template-columns: 1fr; gap: 20px; }
   .sw-vf-information { padding: 20px; }
@@ -174,6 +178,9 @@ body.songwon-dark .sw-viewforum {
   .sw-vf-bottom-controls { width: 100%; align-items: flex-start; }
 }
 @media (max-width: 420px) {
+  .sw-viewforum .sw-topic-card { grid-template-columns: 1fr; }
+  .sw-topic-statistics { padding-left: 35px; }
+  .sw-topic-lastpost { padding-left: 35px; }
   .sw-vf-legend-grid { grid-template-columns: 1fr; }
   .sw-vf-sort select, .sw-vf-jump select { max-width: 160px; }
 }
@@ -185,41 +192,43 @@ body.songwon-dark .sw-viewforum {
    ========================================================== */
 
 .sw-topic-view {
-  --tp-paper: #f3e8d8;
-  --tp-outer: rgba(243,232,216,.96);
-  --tp-ivory: #faf5ec;
-  --tp-inner: rgba(250,245,236,.99);
-  --tp-ink: #604637;
-  --tp-muted: #806a5a;
-  --tp-line: rgba(96,70,55,.18);
-  --tp-shadow: rgba(66,43,28,.07);
+  --tp-paper: #e8d9c5;
+  --tp-outer: var(--sw-sheet);
+  --tp-ivory: #f6ead8;
+  --tp-inner: var(--sw-card);
+  --tp-ink: var(--sw-ink);
+  --tp-muted: var(--sw-secondary);
+  --tp-line: var(--sw-rule);
+  --tp-shadow: var(--sw-shadow);
   width: calc(100% - 48px);
   max-width: 1120px;
   min-width: 0;
-  margin: 8px auto 18px !important;
+  margin: 16px auto 30px;
   color: var(--tp-ink);
   font-family: "DM Sans", Arial, sans-serif;
-  --st-ink: #584236;
-  --st-muted: #896d5a;
-  --st-accent: #a66e4d;
-  --st-bubble: rgba(247, 231, 210, .88);
-  --st-profile: rgba(247, 231, 210, .88);
+  --st-ink: var(--sw-ink);
+  --st-muted: var(--sw-secondary);
+  --st-accent: var(--sw-copper);
+  --st-bubble: var(--sw-card);
+  --st-profile: var(--sw-sheet);
+  margin-top: 8px !important;
+  margin-bottom: 18px !important;
 }
 
 body.songwon-dark .sw-topic-view {
-  --tp-paper: #40332c;
-  --tp-outer: rgba(64,51,44,.96);
-  --tp-ivory: #302720;
-  --tp-inner: rgba(48,39,32,.99);
-  --tp-ink: #f0dfca;
-  --tp-muted: #c5ac96;
-  --tp-line: rgba(240,223,202,.18);
-  --tp-shadow: rgba(0,0,0,.12);
-  --st-ink: #f0dfca;
-  --st-muted: #d0b9a5;
-  --st-accent: #dfa572;
-  --st-bubble: rgba(67, 49, 41, .94);
-  --st-profile: rgba(67, 49, 41, .92);
+  --tp-paper: #34251f;
+  --tp-outer: var(--sw-sheet);
+  --tp-ivory: #432f27;
+  --tp-inner: var(--sw-card);
+  --tp-ink: var(--sw-ink);
+  --tp-muted: var(--sw-secondary);
+  --tp-line: var(--sw-rule);
+  --tp-shadow: var(--sw-shadow);
+  --st-ink: var(--sw-ink);
+  --st-muted: var(--sw-secondary);
+  --st-accent: var(--sw-copper);
+  --st-bubble: var(--sw-card);
+  --st-profile: var(--sw-sheet);
 }
 
 .sw-topic-view *,
@@ -255,10 +264,10 @@ body.songwon-dark .sw-topic-view {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 
-  margin-bottom: 12px;
-  padding: 6px 4px;
+  margin-bottom: 16px;
+  padding: 12px 4px;
 
   background: transparent !important;
   border: none !important;
@@ -283,17 +292,14 @@ body.songwon-dark .sw-topic-view {
   color: var(--tp-muted);
 }
 
-/* SONGWON — Fil d'Ariane, style correspondance */
-.sw-topic-breadcrumb,
 .sw-topic-breadcrumb a,
-.sw-topic-breadcrumb .nav,
-.sw-topic-breadcrumb span {
-  font-family: "DM Sans", sans-serif !important;
+.sw-topic-breadcrumb .nav {
+  display: inline !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
   font-size: 11px !important;
-  font-weight: 500 !important;
-  letter-spacing: 1.2px !important;
-  text-transform: uppercase !important;
-  line-height: 1.5 !important;
+  line-height: 1.7;
 }
 
 .sw-topic-breadcrumb br {
@@ -304,8 +310,8 @@ body.songwon-dark .sw-topic-view {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 32px;
-  padding: 6px 11px;
+  min-height: 35px;
+  padding: 8px 15px;
   background: var(--tp-inner);
   color: var(--tp-ink) !important;
   border: 1px solid var(--tp-line);
@@ -365,9 +371,12 @@ body.songwon-dark .sw-topic-view {
   text-shadow: none !important;
 }
 
-/* SONGWON — Masquer la cloche Push dans le titre */
 .sw-topic-header #push-bell {
-  display: none !important;
+  display: inline-block;
+  margin-left: 9px;
+  transform: scale(.7);
+  transform-origin: center;
+  vertical-align: middle;
 }
 
 .sw-topic-header-bottom {
@@ -510,7 +519,7 @@ body.songwon-dark .sw-topic-view {
   width: 100% !important;
   height: 100% !important;
   max-width: none !important;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 17px !important;
 }
@@ -1153,6 +1162,12 @@ body.songwon-dark
     max-width: 100% !important;
   }
 
+  /* La bulle n'a plus besoin de sa pointe. */
+
+  .sw-topic-view .sw-topic-post > .sw-topic-message::before {
+    display: none !important;
+  }
+
 }
 
 /* Tablettes et téléphones */
@@ -1163,22 +1178,34 @@ body.songwon-dark
     width: calc(100% - 20px);
   }
 
+/* Navigation intégrée au fond du forum */
+
+.sw-topic-navigation,
+.sw-topic-bottom-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 16px;
+  padding: 12px 4px;
+
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
 
   .sw-topic-view .sw-topic-post > .sw-topic-author,
   .sw-topic-view .sw-topic-post > .sw-topic-message {
     border-radius: 22px !important;
   }
 
-  /* Conserver une navigation discrète sur les petits écrans. */
   .sw-topic-view .sw-topic-breadcrumb,
   .sw-topic-view .sw-topic-breadcrumb a,
-  .sw-topic-view .sw-topic-breadcrumb .nav,
-  .sw-topic-view .sw-topic-breadcrumb span {
-    font-size: 11px !important;
-  }
-
   .sw-topic-view .sw-topic-button {
-    font-size: 11px !important;
+    font-size: 15px !important;
   }
 
 }
@@ -1256,23 +1283,23 @@ body.songwon-dark
 /* 16.1 — PALETTE JOUR / NUIT */
 
 body:not(.songwon-dark) .sw-posting {
-  --sp-paper: rgba(250,239,222,.97);
-  --sp-paper-soft: #fbf4e9;
-  --sp-ink: #62493d;
-  --sp-muted: #947564;
-  --sp-rule: rgba(123,84,60,.15);
-  --sp-button: #dfbea2;
-  --sp-button-ink: #50392f;
+  --sp-paper: var(--sw-sheet);
+  --sp-paper-soft: #f6ead8;
+  --sp-ink: var(--sw-ink);
+  --sp-muted: var(--sw-secondary);
+  --sp-rule: var(--sw-rule);
+  --sp-button: #d9bba0;
+  --sp-button-ink: #382820;
 }
 
 body.songwon-dark .sw-posting {
-  --sp-paper: rgba(64,45,37,.97);
-  --sp-paper-soft: #352821;
-  --sp-ink: #f2d9bb;
-  --sp-muted: #d1b094;
-  --sp-rule: rgba(225,185,148,.18);
-  --sp-button: #805843;
-  --sp-button-ink: #fff0df;
+  --sp-paper: var(--sw-sheet);
+  --sp-paper-soft: #432f27;
+  --sp-ink: var(--sw-ink);
+  --sp-muted: var(--sw-secondary);
+  --sp-rule: var(--sw-rule);
+  --sp-button: #705044;
+  --sp-button-ink: #f2e3cf;
 }
 
 /* 16.2 — STRUCTURE GENERALE */
@@ -1643,6 +1670,9 @@ body.songwon-dark .sw-posting #smileyContainer {
 /* Disposition générale */
 
 .sw-topic-view .sw-topic-message-footer .sw-topic-contact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -1668,7 +1698,7 @@ body.songwon-dark .sw-posting #smileyContainer {
   display: block;
   width: 24px !important;
   height: 24px !important;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Statut En ligne */
@@ -1677,7 +1707,7 @@ body.songwon-dark .sw-posting #smileyContainer {
   display: block;
   width: 32px !important;
   height: 32px !important;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* ==========================================================
@@ -1743,8 +1773,7 @@ body.songwon-dark .sw-topic-view
   flex-wrap: wrap;
   gap: 8px;
 
-  max-width: 1194px;
-  margin: 0 auto 14px;
+  margin: 0 0 14px;
   padding: 8px 4px;
 
   background: transparent !important;
@@ -1824,14 +1853,14 @@ body.songwon-dark
 .sw-viewforum .sw-topic-card {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
 
-  min-height: 78px;
+  min-height: 90px;
   height: auto;
   box-sizing: border-box;
 
-  margin: 0;
-  padding: 9px 16px;
+  margin: 0 0 12px;
+  padding: 14px 20px;
 }
 
 /* Partie principale : titre et auteur */
@@ -1845,21 +1874,16 @@ body.songwon-dark
 
 /* Icône du sujet */
 .sw-viewforum .sw-topic-icon {
-  flex: 0 0 18px;
-  width: 18px;
-  height: 18px;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .sw-viewforum .sw-topic-icon img {
   display: block;
-  max-width: 18px;
-  max-height: 18px;
-  object-fit: contain;
-}
-
-/* Harmonisation des pictogrammes de sujet Forumactif : plus de bleu vif */
-.sw-viewforum .sw-topic-icon img {
-  filter: grayscale(1) sepia(.7) saturate(1.5) hue-rotate(335deg);
+  max-width: 24px;
+  max-height: 24px;
+  object-fit: cover;
 }
 
 /* Informations */
@@ -1874,8 +1898,8 @@ body.songwon-dark
   padding: 0;
 
   font-family: "Schoolbell", cursive;
-  font-size: 18px;
-  line-height: 1.25;
+  font-size: 22px;
+  line-height: 1.15;
 }
 
 /* Auteur et informations secondaires */
@@ -1919,7 +1943,7 @@ body.songwon-dark
 }
 
 .sw-viewforum .sw-topic-statistics strong {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1;
 }
 
@@ -1936,7 +1960,7 @@ body.songwon-dark
   min-width: 0;
   gap: 9px;
   position: relative;
-  padding-top: 10px;
+  padding-top: 13px;
 }
 
 .sw-viewforum .sw-topic-last-label {
@@ -2002,163 +2026,51 @@ body.songwon-dark
     flex: 1 1 160px;
   }
 }
-
-/* ==========================================================
-   AJUSTEMENT — LISTE COMPACTE ET ACTIONS SANS CADRE
-   ========================================================== */
-.sw-viewforum .sw-vf-toolbar {
-  width: calc(100% - 48px);
-  max-width: 1120px;
-  min-height: 0;
-  margin: 8px auto 12px;
-  padding: 0;
+/* Fil d'Ariane placé avant les sous-forums */
+body .sw-vf-breadcrumb-top {
+  max-width: 1194px;
+  margin: 0 auto 14px;
+  padding: 8px 4px;
+  box-sizing: border-box;
   background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-family: "Caveat", cursive;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+body:not(.songwon-dark) .sw-vf-breadcrumb-top {
+  color: #674b3d;
+}
+
+body.songwon-dark .sw-vf-breadcrumb-top {
+  color: #f0ddc7;
+}
+
+body:not(.songwon-dark) .sw-vf-breadcrumb-top a {
+  color: #9d664c;
+}
+
+body.songwon-dark .sw-vf-breadcrumb-top a {
+  color: #dca27c;
+}
+
+
+
+
+
+
+
+/* SONGWON — AVATAR SANS CADRE VISIBLE */
+.sw-topic-view .sw-topic-profile-card,
+.sw-topic-view .sw-topic-author-avatar,
+.sw-topic-view .sw-topic-author-avatar img {
   border: 0 !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
 }
-.sw-viewforum .sw-vf-actions {
-  justify-content: flex-start;
-  width: auto;
-  gap: 14px;
-}
-.sw-viewforum .sw-topic-card {
-  min-height: 78px;
-  padding: 9px 16px;
-  gap: 12px;
-}
-.sw-viewforum .sw-topic-lastpost {
-  padding-top: 10px;
-}
-.sw-viewforum .sw-topic-last-avatar,
-.sw-viewforum .sw-topic-last-avatar img {
-  margin-bottom: 0;
-}
-.sw-viewforum .sw-topics-list { gap: 12px; }
-@media (max-width: 780px) {
-  .sw-viewforum .sw-vf-toolbar { width: calc(100% - 20px); }
-  .sw-viewforum .sw-vf-actions { width: auto; justify-content: flex-start; }
-}
-@media (max-width: 760px) {
-  .sw-viewforum .sw-topic-card { padding: 12px 14px; }
-}
-
-
-/* ==========================================================
-   17 — VUE SUJET : ICÔNES ET RÉACTIONS (VERSION CONSOLIDÉE)
-   Couleurs pilotées par --st-ink / --st-accent (sections 15).
-   ========================================================== */
-.sw-topic-view .sw-topic-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin-top: 12px;
-  padding: 10px 4px;
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-.sw-topic-view .sw-topic-bottom-title { display: none; }
-.sw-topic-view .sw-topic-bottom-links { gap: 12px; }
-.sw-topic-view .sw-topic-bottom .sw-topic-pagination { margin: 0; }
-.sw-topic-view .sw-topic-watch { font-size: 12px; }
-.sw-topic-view .sw-topic-message-options { gap: 8px; }
-
-/* Actions Lucide (message et contact) */
-.sw-topic-view .sw-lucide-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 27px;
-  height: 27px;
-  color: var(--st-ink) !important;
-  vertical-align: middle;
-}
-.sw-topic-view .sw-lucide-link > img,
-.sw-topic-view .sw-topic-contact .sw-lucide-original { display: none !important; }
-.sw-topic-view .sw-lucide { width: 19px; height: 19px; flex: none; }
-.sw-topic-view .sw-lucide-link:hover { color: var(--st-accent) !important; }
-.sw-topic-view .sw-topic-contact > .sw-lucide { color: var(--st-ink); }
-
-/* Réactions : sans cadre, teinte jour/nuit et accent au survol */
-.sw-topic-view .sw-topic-likes { gap: 9px; }
-.sw-topic-view .sw-topic-likes button.sw-reaction {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  min-width: 28px;
-  min-height: 30px;
-  padding: 6px !important;
-  color: var(--st-ink) !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  cursor: pointer;
-}
-.sw-topic-view .sw-topic-likes button.sw-reaction:hover {
-  color: var(--st-accent) !important;
-  background: transparent !important;
-}
-.sw-topic-view .sw-reaction-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  background: transparent !important;
-}
-.sw-topic-view .sw-reaction-count:empty { display: none; }
-.sw-topic-view .sw-topic-likes button.sw-reaction svg {
-  display: block !important;
-  width: 18px !important;
-  height: 18px !important;
-  fill: none !important;
-  stroke: currentColor !important;
-  stroke-width: 1.8 !important;
-  background: transparent !important;
-}
-.sw-topic-view .sw-topic-likes button.sw-reaction svg path {
-  fill: none !important;
-  stroke: currentColor !important;
-  stroke-width: 1.8 !important;
-}
-
-/* Présence en ligne : même palette que les autres contacts */
-.sw-topic-view .sw-topic-contact .sw-topic-online-lucide {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 24px;
-  height: 24px;
-  color: var(--st-ink) !important;
-}
-.sw-topic-view .sw-topic-online-lucide img { display: none !important; }
-.sw-topic-view .sw-topic-online-lucide svg {
-  display: block;
-  width: 18px;
-  height: 18px;
-  stroke: currentColor !important;
-}
-.sw-topic-view .sw-topic-online-lucide:not(:has(img)) { display: none !important; }
-
-.sw-topic-view .sw-lucide-link:focus-visible,
-.sw-topic-view .sw-reaction:focus-visible {
-  outline: 2px solid var(--st-accent);
-  outline-offset: 3px;
-}
-@media (max-width: 600px) {
-  .sw-topic-view .sw-topic-bottom { align-items: flex-start; }
-}
-/* SONGWON — Couleurs des réactions jour/nuit */
-.sw-topic-likes button.sw-reaction svg,
-.sw-topic-likes button.sw-reaction svg path {
-  color: inherit !important;
-  stroke: currentColor !important;
-  fill: none !important;
+.sw-topic-view .sw-topic-author-avatar img {
+  padding: 0 !important;
+  margin: 0 !important;
+  object-fit: cover !important;
 }
