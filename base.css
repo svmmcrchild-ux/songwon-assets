@@ -1,160 +1,47 @@
-
-/* ==========================================
-   SONGWON — BASE.CSS
-   Palette 03 : Les secrets de 1995
-   ========================================== */
-
-/* 01 — POLICES */
-
+/* SONGWON — BASE.CSS | Beige patine et chocolat profond */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Schoolbell&display=swap");
+@font-face { font-family:"Dry Brush"; src:url("https://svmmcrchild-ux.github.io/songwon-assets/Dry%20Brush.ttf") format("truetype"); font-style:normal; font-weight:400; font-display:swap; }
+@font-face { font-family:"Schoolbell Songwon"; src:url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2"); font-style:normal; font-weight:400; font-display:swap; }
 
-@font-face {
-  font-family: "Dry Brush";
-  src: url("https://svmmcrchild-ux.github.io/songwon-assets/Dry%20Brush.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Schoolbell Songwon";
-  src: url("https://fonts.gstatic.com/s/schoolbell/v18/92zQtBZWOrcgoe-fgnJIZxUa60ZpbiU.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-/* 02 — COULEURS DU MODE JOUR */
-
+/* JOUR — photographie fixe et fondu chaud */
 body {
-  --sw-page: rgba(237, 228, 216, .28);
-  --sw-sheet: rgba(237, 228, 216, .91);
-  --sw-card: rgba(255, 241, 223, .88);
-
-  --sw-ink: #302421;
-  --sw-secondary: #695650;
-  --sw-copper: #843f46;
-
-  --sw-rule: rgba(132, 63, 70, .24);
-  --sw-shadow: rgba(48, 36, 33, .15);
-
-  background-color: #ede4d8 !important;
-
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(237, 228, 216, 0) 0%,
-      rgba(237, 228, 216, .08) 38%,
-      rgba(237, 228, 216, .55) 72%,
-      #ede4d8 100%
-    ),
-    url("https://svmmcrchild-ux.github.io/songwon-assets/Fond_Songwon_Forum.jpg") !important;
-
-  background-position:
-    center center,
-    center top !important;
-
-  background-size:
-    100% 100%,
-    cover !important;
-
-  background-repeat:
-    no-repeat,
-    no-repeat !important;
-
-  background-attachment:
-    fixed,
-    fixed !important;
+ --sw-page:rgba(232,217,197,.30);
+ --sw-sheet:rgba(232,217,197,.96);
+ --sw-card:rgba(246,234,216,.96);
+ --sw-ink:#382820;
+ --sw-secondary:#755d4d;
+ --sw-copper:#854b51;
+ --sw-rule:rgba(105,75,57,.27);
+ --sw-shadow:rgba(49,31,23,.15);
+ background-color:#e8d9c5 !important;
+ background-image:linear-gradient(to bottom,rgba(232,217,197,0) 0%,rgba(232,217,197,.08) 38%,rgba(232,217,197,.55) 72%,#e8d9c5 100%),url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
+ background-position:center center,center top !important;
+ background-size:100% 100%,cover !important;
+ background-repeat:no-repeat,no-repeat !important;
+ background-attachment:fixed,fixed !important;
 }
-
-/* 03 — COULEURS DU MODE NUIT */
-
+/* NUIT — chocolat et creme */
 body.songwon-dark {
-  --sw-page: rgba(48, 36, 33, .36);
-  --sw-sheet: rgba(48, 36, 33, .92);
-  --sw-card: rgba(61, 44, 40, .91);
-
-  --sw-ink: #fff1df;
-  --sw-secondary: #d2b9a9;
-  --sw-copper: #d9969c;
-
-  --sw-rule: rgba(182, 155, 139, .28);
-  --sw-shadow: rgba(0, 0, 0, .30);
-
-  background-color: #302421 !important;
-
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(48, 36, 33, .12) 0%,
-      rgba(48, 36, 33, .24) 38%,
-      rgba(48, 36, 33, .75) 72%,
-      #302421 100%
-    ),
-    url("https://svmmcrchild-ux.github.io/songwon-assets/Fond_Songwon_Forum.jpg") !important;
-
-  background-position:
-    center center,
-    center top !important;
-
-  background-size:
-    100% 100%,
-    cover !important;
-
-  background-repeat:
-    no-repeat,
-    no-repeat !important;
-
-  background-attachment:
-    fixed,
-    fixed !important;
+ --sw-page:rgba(52,37,31,.40);
+ --sw-sheet:rgba(52,37,31,.96);
+ --sw-card:rgba(67,47,39,.96);
+ --sw-ink:#f2e3cf;
+ --sw-secondary:#d4bba4;
+ --sw-copper:#d59b9f;
+ --sw-rule:rgba(211,177,151,.27);
+ --sw-shadow:rgba(0,0,0,.30);
+ background-color:#34251f !important;
+ background-image:linear-gradient(to bottom,rgba(52,37,31,.12) 0%,rgba(52,37,31,.24) 38%,rgba(52,37,31,.75) 72%,#34251f 100%),url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg") !important;
+ background-position:center center,center top !important;
+ background-size:100% 100%,cover !important;
+ background-repeat:no-repeat,no-repeat !important;
+ background-attachment:fixed,fixed !important;
 }
-
-/* 04 — TEXTES GÉNÉRAUX */
-
-body:not(.songwon-dark),
-body:not(.songwon-dark) .bodyline,
-body:not(.songwon-dark) .bodylinewidth,
-body:not(.songwon-dark) .forumline {
-  color: #302421 !important;
-}
-
-body.songwon-dark,
-body.songwon-dark .bodyline,
-body.songwon-dark .bodylinewidth,
-body.songwon-dark .forumline {
-  color: #fff1df !important;
-}
-
-body:not(.songwon-dark) a:not([style*="color"]):not([class*="gensmall"]):not([class*="username"]) {
-  color: #843f46;
-}
-
-body:not(.songwon-dark) a:hover:not([style*="color"]):not([class*="username"]) {
-  color: #a45760;
-}
-
-body.songwon-dark a:not([style*="color"]):not([class*="username"]) {
-  color: #d9969c;
-}
-
-body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {
-  color: #fff1df;
-}
-
-.bodyline,
-.bodylinewidth {
-  background: transparent !important;
-}
-
-/* 05 — BOUTON JOUR / NUIT */
-
-#songwon-theme-toggle {
-  width: 42px;
-  height: 42px;
-  padding: 0 !important;
-  border-radius: 50%;
-  font-size: 23px !important;
-  line-height: 42px;
-  text-align: center;
-}
+body:not(.songwon-dark),body:not(.songwon-dark) .bodyline,body:not(.songwon-dark) .bodylinewidth,body:not(.songwon-dark) .forumline {color:#382820 !important;}
+body.songwon-dark,body.songwon-dark .bodyline,body.songwon-dark .bodylinewidth,body.songwon-dark .forumline {color:#f2e3cf !important;}
+body:not(.songwon-dark) a:not([style*="color"]):not([class*="gensmall"]):not([class*="username"]) {color:#854b51;}
+body:not(.songwon-dark) a:hover:not([style*="color"]):not([class*="username"]) {color:#a35f65;}
+body.songwon-dark a:not([style*="color"]):not([class*="username"]) {color:#d59b9f;}
+body.songwon-dark a:hover:not([style*="color"]):not([class*="username"]) {color:#f2e3cf;}
+.bodyline,.bodylinewidth {background:transparent !important;}
+#songwon-theme-toggle {width:42px;height:42px;padding:0 !important;border-radius:50%;font-size:23px !important;line-height:42px;text-align:center;}
