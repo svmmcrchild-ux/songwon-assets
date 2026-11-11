@@ -2094,3 +2094,50 @@ body.songwon-dark .sw-vf-breadcrumb-top a {
   stroke-width: 1.8 !important;
 }
 
+/* Réactions — supprimer le cadre des boutons */
+
+.sw-topic-likes button.sw-reaction {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 6px !important;
+}
+
+.sw-topic-likes button.sw-reaction:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* SONGWON — Réactions : couleurs jour et nuit */
+
+body:not(.songwon-dark) .sw-topic-likes .sw-reaction {
+  color: #854b51 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.songwon-dark .sw-topic-likes .sw-reaction {
+  color: #d59b9f !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Les icônes suivent la couleur du bouton */
+.sw-topic-likes .sw-reaction svg,
+.sw-topic-likes .sw-reaction svg path {
+  stroke: currentColor !important;
+}
+
+/* État actif et survol */
+.sw-topic-likes .sw-reaction:hover,
+.sw-topic-likes .sw-reaction.active,
+.sw-topic-likes .sw-reaction[aria-pressed="true"] {
+  color: var(--sw-copper) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
