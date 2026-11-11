@@ -2074,3 +2074,23 @@ body.songwon-dark .sw-vf-breadcrumb-top a {
   margin: 0 !important;
   object-fit: cover !important;
 }
+
+
+
+/* SONGWON — Correction des icônes cœur et fantôme */
+
+.sw-topic-likes button.sw-reaction .sw-reaction-icon svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  background: transparent !important;
+}
+
+.sw-topic-likes button.sw-reaction svg path {
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+}
+
