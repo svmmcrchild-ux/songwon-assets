@@ -3001,19 +3001,42 @@ body {
 }
 
 
-/* ==========================================
-   AVATAR DU DERNIER POSTEUR
-   ========================================== */
+
+/* SONGWON - AVATAR DU DERNIER POSTEUR */
+
+.sw-panel-last-avatar {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border: 1px solid var(--sw-line);
+  border-radius: 4px;
+  background: var(--sw-sheet);
+}
 
 .sw-panel-last-avatar .lastpost-avatar img {
   display: block;
-  width: 55px !important;
-  height: 68px !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
-  border: 3px solid var(--sw-sheet);
-  border-radius: 3px;
-  box-shadow: 2px 3px 5px var(--sw-shadow);
+  object-position: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
+
+.sw-panel-last-avatar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(232, 217, 197, 0.25);
+  pointer-events: none;
+}
+
+[data-color-scheme="dark"] .sw-panel-last-avatar::after {
+  background: rgba(48, 39, 32, 0.35);
+}
+
 
 
 /* ==========================================
