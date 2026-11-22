@@ -1501,7 +1501,9 @@ a.groups:last-child {
 
 /* Titre du sujet */
 .topictitle {
-  font-size: var(--medium-size);
+  font-family: "Schoolbell", cursive;
+  font-size: 20px;
+  font-weight: 400;
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
