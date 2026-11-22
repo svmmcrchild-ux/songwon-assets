@@ -3576,3 +3576,6 @@ body {
 [data-color-scheme="dark"] .sw-footer-admin a:hover {
   background: #44362d;
 }
+.sw-topics-sheet {
+  outline: 5px solid red !important;
+}
