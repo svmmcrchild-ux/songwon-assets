@@ -1463,7 +1463,6 @@ a.groups:last-child {
 
 /* Feuille commune contenant les sujets */
 .sw-topics-sheet {
-  background: var(--sw-qeel-paper) !important;
   border-radius: 15px;
   overflow: hidden;
   padding: 10px 20px;
@@ -2823,7 +2822,6 @@ body {
   gap: 9px;
   min-width: 0;
   padding: 15px 17px 12px;
-  background: var(--sw-paper) !important;
   border: 1px solid var(--sw-line);
   border-radius: 7px 16px 6px 14px;
   box-shadow: 3px 5px 0 var(--sw-shadow);
@@ -2831,6 +2829,12 @@ body {
 
 .sw-forum-panel:nth-child(odd) {
   border-radius: 15px 6px 14px 7px;
+}
+
+/* Couleur unique des cartes de forums et des listes de sujets. */
+.sw-forum-panel,
+.sw-topics-sheet {
+  background-color: var(--sw-qeel-paper) !important;
 }
 
 
