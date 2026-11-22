@@ -535,6 +535,15 @@ summary {
 .links_bar:empty {
   display: none;
 }
+/* Typographie des commandes des forums */
+.links_bar a,
+.links_bar .buttons,
+.links_bar .right {
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: none;
+}
 
 /* Liens speciaux */
 .specials_links a,
