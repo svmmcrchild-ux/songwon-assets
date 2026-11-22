@@ -3944,293 +3944,310 @@ body {
   padding: 0 !important;
 }
 
-/* WHEN THE LIGHTS GO OUT — INTÉRIEUR DES SUJETS
-   ModernBB / Blank Theme */
+/* ==========================================================
+   SONGWON 1995 — INTERIEUR DES SUJETS
+   Reprise du design du forum original
+   ========================================================== */
 
-/* 1. Palette propre aux sujets */
+/* Palette jour */
 :root {
-  --sw-topic-paper: #e8d9c5;
-  --sw-topic-sheet: #f6ead8;
-  --sw-topic-profile: #e3d0ba;
-  --sw-topic-ink: #382820;
-  --sw-topic-muted: #755d4d;
-  --sw-topic-line: rgba(105,75,57,.28);
-  --sw-topic-shadow: rgba(49,31,23,.16);
-  --sw-topic-accent: #854b51;
-}
-[data-color-scheme="dark"] {
-  --sw-topic-paper: #34251f;
-  --sw-topic-sheet: #432f27;
-  --sw-topic-profile: #392820;
-  --sw-topic-ink: #f2e3cf;
-  --sw-topic-muted: #d4bba4;
-  --sw-topic-line: rgba(211,177,151,.28);
-  --sw-topic-shadow: rgba(0,0,0,.27);
-  --sw-topic-accent: #d59b9f;
+  --sw-post-profile: rgba(239, 224, 202, .96);
+  --sw-post-sheet: rgba(255, 245, 227, .91);
+  --sw-post-ink: #382820;
+  --sw-post-muted: #755d4d;
+  --sw-post-line: rgba(117, 93, 77, .25);
 }
 
-/* 2. Cadre des messages */
+/* Palette nuit */
+[data-color-scheme="dark"] {
+  --sw-post-profile: rgba(48, 37, 31, .96);
+  --sw-post-sheet: rgba(52, 40, 33, .92);
+  --sw-post-ink: #f6ead8;
+  --sw-post-muted: #d5b9a1;
+  --sw-post-line: rgba(213, 185, 161, .25);
+}
+
+/* TITRE DU SUJET */
+
 .container:has(> .page-title) {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
   padding: 0 !important;
-  overflow: visible;
-}
-.container > .page-title {
-  margin: 0 0 20px !important;
-  padding: 18px 25px 17px !important;
-  background: var(--sw-topic-paper) !important;
-  color: var(--sw-topic-ink) !important;
-  border: 1px solid var(--sw-topic-line) !important;
-  border-radius: 6px 16px 7px 14px !important;
-  box-shadow: 3px 5px 0 var(--sw-topic-shadow) !important;
-  text-align: left !important;
-  font: 400 clamp(23px,2.6vw,31px)/1.3 "Schoolbell Songwon", "Schoolbell", cursive !important;
-  overflow-wrap: anywhere;
 }
 
-/* 3. Chaque message devient une fiche indépendante */
+.container > .page-title {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 12px 0 !important;
+  margin: 20px 0 25px !important;
+  text-align: left !important;
+  color: var(--sw-post-ink) !important;
+  font: 400 26px/1.4 "Schoolbell", cursive !important;
+}
+
+/* STRUCTURE : DEUX BLOCS SEPARES */
+
 .post.post_row {
   display: grid !important;
-  grid-template-columns: minmax(205px,235px) minmax(0,1fr) !important;
-  grid-template-areas: "details details" "profile message" !important;
-  gap: 0 !important;
-  margin: 0 0 24px !important;
-  padding: 0 !important;
-  min-width: 0;
-  background: var(--sw-topic-paper) !important;
-  color: var(--sw-topic-ink) !important;
-  border: 1px solid var(--sw-topic-line) !important;
-  border-radius: 7px 17px 7px 15px !important;
-  box-shadow: 3px 5px 0 var(--sw-topic-shadow) !important;
-  overflow: hidden;
-}
-.post.post_row:nth-of-type(even) {
-  border-radius: 16px 7px 14px 7px !important;
-}
-.post.post_row, .post.post_row * { box-sizing: border-box; }
+  grid-template-columns: 285px minmax(0, 1fr) !important;
+  grid-template-rows: auto 1fr !important;
+  grid-template-areas:
+    "profile details"
+    "profile message" !important;
+  column-gap: 20px !important;
+  row-gap: 0 !important;
 
-/* 4. En-tête : date, commandes et réactions */
-.post.post_row > .post_details {
-  grid-area: details;
-  display: flex !important;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 15px;
-  min-height: 57px;
-  margin: 0 !important;
-  padding: 11px 18px !important;
-  background: var(--sw-topic-sheet) !important;
-  border: 0 !important;
-  border-bottom: 1px solid var(--sw-topic-line) !important;
-  color: var(--sw-topic-ink) !important;
-}
-.post.post_row .post_date {
-  display: inline-flex;
-  flex: 1 1 200px;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 5px;
-  min-width: 0;
-  color: var(--sw-topic-muted) !important;
-  font-size: 12px;
-}
-.post.post_row .post_date a {
-  color: var(--sw-topic-accent) !important;
-  font-weight: 700;
-}
-.post.post_row .post_date time {
-  color: var(--sw-topic-muted) !important;
-}
-.post.post_row .profile-icons {
-  display: flex !important;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 12px;
-  margin: 0 0 0 auto !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-.post.post_row .profile-icons li {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-.post.post_row .profile-icons a {
-  color: var(--sw-topic-accent) !important;
-  text-decoration: none !important;
-  font-size: 12px;
-  font-weight: 600;
-}
-.post.post_row .profile-icons a:hover {
-  text-decoration: underline !important;
-}
-.post.post_row .like_button {
-  margin: 0 !important;
-}
-.post.post_row .like_button .rep-button {
-  padding: 7px 12px !important;
-  border: 1px solid var(--sw-topic-line) !important;
-  border-radius: 6px !important;
-  background: var(--sw-topic-paper) !important;
-  color: var(--sw-topic-ink) !important;
+  background: transparent !important;
+  border: none !important;
   box-shadow: none !important;
-  cursor: pointer;
+  border-radius: 0 !important;
+  overflow: visible !important;
+
+  margin: 0 0 35px !important;
+  padding: 0 !important;
+  align-items: stretch;
 }
 
-/* 5. Profil latéral */
+/* FICHE DE PROFIL */
+
 .post.post_row > .post_profile {
   grid-area: profile;
-  width: auto !important;
+  align-self: start;
+
+  width: 100% !important;
   min-width: 0 !important;
   max-width: none !important;
   float: none !important;
+
+  background: var(--sw-post-profile) !important;
+  border: none !important;
+  border-radius: 24px !important;
+  box-shadow: none !important;
+
+  padding: 22px 18px 28px !important;
   margin: 0 !important;
-  padding: 20px 14px 22px !important;
-  background: var(--sw-topic-profile) !important;
-  border: 0 !important;
-  border-right: 1px solid var(--sw-topic-line) !important;
-  color: var(--sw-topic-ink) !important;
   text-align: center;
+  color: var(--sw-post-ink) !important;
 }
+
+/* Pseudonyme */
 .post.post_row .post_pseudo,
 .post.post_row .post_pseudo a {
-  color: var(--sw-topic-ink) !important;
-  font: 400 23px/1.25 "Schoolbell Songwon", "Schoolbell", cursive !important;
-  text-decoration: none;
-  overflow-wrap: anywhere;
+  display: block;
+  color: var(--sw-post-ink) !important;
+  font-family: "Dry Brush", "Schoolbell", cursive !important;
+  font-size: 29px !important;
+  font-weight: 400 !important;
+  line-height: 1.4;
+  text-decoration: none !important;
 }
+
+/* Rang */
 .post.post_row .post_rank {
-  color: var(--sw-topic-muted) !important;
-  font-size: 11px;
+  color: var(--sw-post-muted) !important;
+  font-size: 12px;
+  font-weight: 400;
 }
+
+/* Photographie */
 .post.post_row .post_avatar {
   width: 100%;
-  max-width: 205px;
-  margin: 13px auto 10px !important;
-  padding: 5px;
-  background: var(--sw-topic-sheet) !important;
-  border: 1px solid var(--sw-topic-line) !important;
-  box-shadow: 2px 3px 0 var(--sw-topic-shadow);
-  border-radius: 3px;
+  max-width: 265px;
+  margin: 18px auto 15px !important;
+  padding: 7px !important;
+
+  background: rgba(255, 250, 240, .7) !important;
+  border: none !important;
+  border-radius: 9px !important;
+  box-shadow: none !important;
   line-height: 0;
 }
+
 .post.post_row .post_avatar img {
   display: block;
   width: 100% !important;
   height: auto !important;
-  max-height: 280px;
+  max-height: none !important;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 1px;
-}
-.post.post_row .presence {
-  color: var(--sw-topic-muted) !important;
-}
-.post.post_row .post_userinfo {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--sw-topic-line);
-  text-align: left;
-  color: var(--sw-topic-ink) !important;
-  font-size: 12px;
-  line-height: 1.65;
-  overflow-wrap: anywhere;
-}
-.post.post_row .user_field {
-  margin: 0 0 5px;
-}
-.post.post_row .field_label {
-  color: var(--sw-topic-muted) !important;
-  font-weight: 600;
-}
-.post.post_row .field_content {
-  color: var(--sw-topic-ink) !important;
-}
-.post.post_row .post_contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--sw-topic-line);
-}
-.post.post_row .post_contact a {
-  color: var(--sw-topic-accent) !important;
+  border-radius: 3px;
 }
 
-/* 6. Corps du message */
+/* Informations complémentaires */
+.post.post_row .post_userinfo {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--sw-post-line);
+  color: var(--sw-post-ink) !important;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.post.post_row .post_userinfo a,
+.post.post_row .post_contact a {
+  color: var(--sw-post-muted) !important;
+}
+
+.post.post_row .presence {
+  color: var(--sw-post-muted) !important;
+}
+
+/* FEUILLE DU MESSAGE */
+
+/* En-tête placé dans la colonne de droite */
+.post.post_row > .post_details {
+  grid-area: details;
+
+  display: flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+
+  background: var(--sw-post-sheet) !important;
+  color: var(--sw-post-ink) !important;
+  border: none !important;
+  border-radius: 24px 24px 0 0 !important;
+
+  margin: 0 !important;
+  padding: 22px 32px 8px !important;
+  min-height: 0 !important;
+  width: 100% !important;
+}
+
+/* Date manuscrite */
+.post.post_row .post_date {
+  flex: 1 1 220px;
+  color: var(--sw-post-muted) !important;
+  font-family: "Caveat", cursive !important;
+  font-size: 19px !important;
+  font-weight: 400;
+}
+
+.post.post_row .post_date a,
+.post.post_row .post_date time {
+  color: var(--sw-post-muted) !important;
+}
+
+/* Commandes discrètes */
+.post.post_row .profile-icons {
+  display: flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.post.post_row .profile-icons li {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.post.post_row .profile-icons a {
+  color: var(--sw-post-muted) !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Réactions */
+.post.post_row .like_button {
+  margin: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.post.post_row .rep-button {
+  background: transparent !important;
+  border: 1px solid var(--sw-post-line) !important;
+  border-radius: 6px !important;
+  color: var(--sw-post-muted) !important;
+  padding: 5px 9px !important;
+  box-shadow: none !important;
+}
+
+/* Corps de la feuille */
 .post.post_row > .post_message {
   grid-area: message;
+
   display: block !important;
-  width: auto !important;
+  width: 100% !important;
   min-width: 0 !important;
   max-width: none !important;
   float: none !important;
+
+  background: var(--sw-post-sheet) !important;
+  color: var(--sw-post-ink) !important;
+  border: none !important;
+  border-radius: 0 0 24px 24px !important;
+  box-shadow: none !important;
+
   margin: 0 !important;
-  padding: 29px clamp(22px,3vw,46px) 35px !important;
-  background: var(--sw-topic-paper) !important;
-  border: 0 !important;
-  color: var(--sw-topic-ink) !important;
-  font: 400 14px/1.85 "DM Sans", Arial, sans-serif;
+  padding: 25px 36px 45px !important;
+
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
   overflow-wrap: anywhere;
 }
-.post.post_row .post_message > div:first-child {
-  min-height: 150px;
-}
+
 .post.post_row .post_message p {
-  margin: 0 0 1.15em;
+  margin: 0 0 1.3em;
 }
-.post.post_row .post_message a {
-  color: var(--sw-topic-accent);
-}
+
 .post.post_row .post_message img {
   max-width: 100%;
   height: auto;
 }
-.post.post_row .post_message blockquote {
-  margin: 16px 0;
-  padding: 12px 17px;
-  border-left: 3px solid var(--sw-topic-accent);
-  background: var(--sw-topic-sheet);
-  color: var(--sw-topic-ink);
+
+.post.post_row .post_message a {
+  color: var(--accentClr);
 }
+
+/* Signature */
 .post.post_row .signature_div {
-  margin-top: 32px !important;
+  margin-top: 35px !important;
   padding-top: 18px !important;
-  border-top: 1px dashed var(--sw-topic-line) !important;
-  color: var(--sw-topic-muted);
+  border-top: 1px solid var(--sw-post-line) !important;
 }
 
-/* 7. Réponse rapide */
+/* REPONSE RAPIDE */
+
 .container.quickreply {
-  background: var(--sw-topic-paper) !important;
-  color: var(--sw-topic-ink) !important;
-  border: 1px solid var(--sw-topic-line) !important;
-  border-radius: 7px 16px 7px 14px !important;
-  box-shadow: 3px 5px 0 var(--sw-topic-shadow) !important;
-  padding: 16px !important;
-  margin: 22px 0 !important;
+  background: var(--sw-post-sheet) !important;
+  color: var(--sw-post-ink) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 22px !important;
 }
 
-/* 8. Écrans étroits */
+/* ADAPTATION MOBILE */
+
 @media (max-width: 760px) {
   .post.post_row {
-    grid-template-columns: minmax(0,1fr) !important;
-    grid-template-areas: "details" "profile" "message" !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "profile"
+      "details"
+      "message" !important;
+    row-gap: 0 !important;
   }
+
   .post.post_row > .post_profile {
-    border-right: 0 !important;
-    border-bottom: 1px solid var(--sw-topic-line) !important;
+    margin-bottom: 18px !important;
   }
+
   .post.post_row .post_avatar {
-    max-width: 180px;
+    max-width: 220px;
   }
+
+  .post.post_row > .post_details {
+    padding: 20px 20px 8px !important;
+  }
+
   .post.post_row > .post_message {
-    padding: 24px 19px 30px !important;
-  }
-  .post.post_row .profile-icons {
-    margin-left: 0 !important;
+    padding: 22px 20px 35px !important;
   }
 }
