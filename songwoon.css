@@ -1467,14 +1467,10 @@ a.groups:last-child {
 
 /* Feuille commune contenant les sujets */
 .sw-topics-sheet {
-  background: rgba(232, 217, 197, 0.96);
-  border-radius: 15px;
-  overflow: hidden;
-  padding: 10px 20px;
-}
-
-[data-color-scheme="dark"] .sw-topics-sheet {
-  background: rgba(67, 47, 39, 0.96);
+    background: var(--sw-paper);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px 20px;
 }
 
 /* Une ligne par sujet */
