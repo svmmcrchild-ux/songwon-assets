@@ -6,6 +6,10 @@
  *** Tutoriel pour utiliser les variables
  *** https://blankthemerpg.forumactif.com/t139-utiliser-les-variables-css ***/
 
+/* SONGWON - CHARGEMENT DE SCHOOLBELL */
+
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
 /* SONGWON - MODE CLAIR */
 :root {
   color-scheme: light;
@@ -3091,10 +3095,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
-/* SONGWON - CHARGEMENT DE SCHOOLBELL */
-
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 
 /* ==========================================
    SONGWON - LIENS DE GESTION AVANT LE QEEL
