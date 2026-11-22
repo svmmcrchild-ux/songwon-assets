@@ -1461,7 +1461,7 @@ a.groups:last-child {
 
 /* Une ligne par sujet */
 .sw-topics-sheet .topicslist_row {
-  background: transparent;
+  background: transparent !important;
   border-radius: 0;
   padding: 15px 10px;
   margin: 0;
