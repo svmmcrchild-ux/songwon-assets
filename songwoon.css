@@ -1451,20 +1451,30 @@ a.groups:last-child {
   padding: 10px;
 }
 
-/* Ligne d'un sujet */
-.topicslist_row {
+/* Feuille commune contenant les sujets */
+.sw-topics-sheet {
   background: var(--neutral);
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+/* Une ligne par sujet */
+.sw-topics-sheet .topicslist_row {
+  background: transparent;
+  border-radius: 0;
+  padding: 15px 10px;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
+  border-bottom: 1px solid var(--neutralDark);
 }
 
-.topicslist_row:last-child {
-  margin-bottom: 0;
+/* Pas de séparateur après le dernier sujet */
+.sw-topics-sheet .topicslist_row:last-child {
+  border-bottom: none;
 }
 
 /* Image de statut */
