@@ -3927,3 +3927,19 @@ body {
   border: 2px solid var(--sw-pa-sheet) !important;
   border-radius: 50% !important;
 }
+
+/* SONGWON — Panneau d'accueil sans cadre extérieur */
+
+.panel.introduction.sw-home {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.panel.introduction.sw-home .mes-txt {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
