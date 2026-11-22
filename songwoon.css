@@ -3576,6 +3576,46 @@ body {
 [data-color-scheme="dark"] .sw-footer-admin a:hover {
   background: #44362d;
 }
+/* ==========================================
+   SONGWON — HARMONISATION DES ENCADRÉS
+   Sous-forums et listes de sujets
+   ========================================== */
+
+/* MODE JOUR */
+.sw-archive {
+  --sw-paper: #e8d9c5;
+  --sw-sheet: #f6ead8;
+  --sw-ink: #382820;
+  --sw-muted: #755d4d;
+  --sw-line: rgba(105, 75, 57, 0.27);
+  --sw-shadow: rgba(49, 31, 23, 0.15);
+}
+
+/* MODE NUIT */
+[data-color-scheme="dark"] .sw-archive {
+  --sw-paper: #34251f;
+  --sw-sheet: #432f27;
+  --sw-ink: #f2e3cf;
+  --sw-muted: #d4bba4;
+  --sw-line: rgba(211, 177, 151, 0.27);
+  --sw-shadow: rgba(0, 0, 0, 0.23);
+}
+
+/* ENCADRÉS — MODE JOUR */
+.sw-archive .sw-forum-panel,
 .sw-topics-sheet {
-  outline: 5px solid red !important;
+  background: #e8d9c5 !important;
+  color: #382820;
+}
+
+/* ENCADRÉS — MODE NUIT */
+[data-color-scheme="dark"] .sw-archive .sw-forum-panel,
+[data-color-scheme="dark"] .sw-topics-sheet {
+  background: #34251f !important;
+  color: #f2e3cf;
+}
+
+/* LIGNES DE SUJETS : PAS DE FOND SUPPLÉMENTAIRE */
+.sw-topics-sheet .topicslist_row {
+  background: transparent !important;
 }
