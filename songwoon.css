@@ -4246,3 +4246,45 @@ body {
     padding: 22px 20px 35px !important;
   }
 }
+
+/* Réactions Songwon — Lucide */
+
+.post.post_row .sw-reactions {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+}
+
+.post.post_row .sw-reaction {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent !important;
+  border: none !important;
+  padding: 4px !important;
+  color: var(--sw-post-muted) !important;
+  cursor: pointer;
+  box-shadow: none !important;
+  font-size: 12px;
+}
+
+.post.post_row .sw-reaction svg {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.post.post_row .sw-reaction:hover {
+  color: var(--sw-topic-accent, #854b51) !important;
+}
+
+.post.post_row .sw-reaction-label {
+  display: none;
+}
+
+.post.post_row .sw-reaction-count {
+  font-size: 11px;
+}
