@@ -1467,7 +1467,7 @@ a.groups:last-child {
 
 /* Feuille commune contenant les sujets */
 .sw-topics-sheet {
-  background: rgba(246, 234, 216, 0.96);
+  background: var(--neutral);
   border-radius: 15px;
   overflow: hidden;
   padding: 10px 20px;
