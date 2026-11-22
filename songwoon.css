@@ -3591,3 +3591,292 @@ body {
     filter: none !important;
     backdrop-filter: none !important;
 }
+
+/* ==========================================
+   SONGWON — PANNEAU D'ACCUEIL
+   Adaptation ModernBB / Blank Theme
+   ========================================== */
+
+.sw-home {
+  --sw-pa-paper: #e8d9c5;
+  --sw-pa-sheet: #f6ead8;
+  --sw-pa-note: #c5ad96;
+  --sw-pa-ink: #382820;
+  --sw-pa-line: rgba(105,75,57,.27);
+  --sw-pa-shadow: rgba(49,31,23,.15);
+  --sw-pa-accent: #854b51;
+
+  margin: 20px auto 38px;
+  color: var(--sw-pa-ink);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+[data-color-scheme="dark"] .sw-home {
+  --sw-pa-paper: #34251f;
+  --sw-pa-sheet: #432f27;
+  --sw-pa-note: #70574b;
+  --sw-pa-ink: #f2e3cf;
+  --sw-pa-line: rgba(211,177,151,.27);
+  --sw-pa-shadow: rgba(0,0,0,.23);
+  --sw-pa-accent: #d59b9f;
+}
+
+.sw-home,
+.sw-home * {
+  box-sizing: border-box;
+}
+
+.sw-home-content {
+  min-width: 0;
+}
+
+.sw-pa {
+  display: grid;
+  grid-template-columns: minmax(0,4.4fr) minmax(155px,1fr);
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  color: var(--sw-pa-ink);
+}
+
+.sw-pa-main {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 15px;
+  min-width: 0;
+}
+
+.sw-pa-top {
+  display: grid;
+  grid-template-columns: minmax(0,1.5fr) minmax(0,1fr);
+  gap: 15px;
+}
+
+.sw-pa-middle {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 12px;
+}
+
+.sw-pa-bottom {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.55fr);
+  gap: 15px;
+}
+
+.sw-pa section,
+.sw-pa aside {
+  position: relative;
+  min-width: 0;
+  padding: 17px 16px 18px;
+  background: var(--sw-pa-paper);
+  border: 1px solid var(--sw-pa-line);
+  border-radius: 5px 15px 7px 13px;
+  box-shadow:
+    3px 5px 0 var(--sw-pa-shadow),
+    0 9px 23px rgba(0,0,0,.035);
+}
+
+.sw-pa section:nth-child(even) {
+  border-radius: 13px 5px 14px 6px;
+}
+
+.sw-pa h3 {
+  margin: 0 0 11px !important;
+  padding: 0 0 8px !important;
+  border-bottom: 1px dashed var(--sw-pa-line);
+  color: var(--sw-pa-ink) !important;
+  font: 400 22px/1.2 "Schoolbell Songwon",
+       "Schoolbell", cursive !important;
+}
+
+.sw-pa a {
+  color: var(--sw-pa-ink) !important;
+  text-decoration: none;
+}
+
+.sw-pa a:hover {
+  color: var(--sw-pa-accent) !important;
+}
+
+.sw-pa-context-text,
+.sw-pa-news-content,
+.sw-pa-picture-content,
+.sw-pa-links-content,
+.sw-pa-annexes-content,
+.sw-pa-partners-content {
+  font: 400 12px/1.75 "DM Sans", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.sw-pa-context,
+.sw-pa-topsites {
+  min-height: 170px;
+}
+
+.sw-pa-topsites-list {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  justify-items: center;
+  gap: 8px;
+}
+
+.sw-pa-topsites-list a {
+  display: grid;
+  place-items: center;
+  width: min(100%,48px);
+  aspect-ratio: 1;
+  border: 1px dashed var(--sw-pa-line);
+  border-radius: 50%;
+  background: var(--sw-pa-sheet);
+  text-align: center;
+  font: 500 9px/1.2 "DM Sans", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.sw-pa-middle > section {
+  min-height: 180px;
+}
+
+.sw-pa-picture-content {
+  min-height: 95px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--sw-pa-note);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sw-pa-picture-content img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sw-pa-links-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sw-pa-links-content a {
+  border-bottom: 1px dotted var(--sw-pa-line);
+  padding-bottom: 5px;
+}
+
+.sw-pa-bottom > section {
+  min-height: 156px;
+}
+
+.sw-pa-staff-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+}
+
+.sw-pa-staff-member {
+  min-height: 74px;
+  padding: 9px 5px;
+  text-align: center;
+  background: var(--sw-pa-sheet);
+  border: 1px dashed var(--sw-pa-line);
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.sw-pa-staff-member img {
+  display: block;
+  width: 55px;
+  height: 70px;
+  object-fit: cover;
+  margin: 0 auto 6px;
+}
+
+.sw-pa-wanted-list {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 9px;
+  justify-items: center;
+}
+
+.sw-pa-wanted-avatar {
+  display: block;
+  width: 48px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sw-pa-note);
+  border: 2px solid var(--sw-pa-sheet);
+  box-shadow: 0 2px 5px var(--sw-pa-shadow);
+  overflow: hidden;
+}
+
+.sw-pa-wanted-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sw-pa-partners {
+  align-self: stretch;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sw-pa-partners-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.sw-pa-partners-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adaptation aux écrans plus étroits */
+
+@media (max-width: 1020px) {
+  .sw-pa {
+    grid-template-columns: minmax(0,1fr) 160px;
+  }
+
+  .sw-pa-middle {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 780px) {
+  .sw-pa {
+    grid-template-columns: 1fr;
+  }
+
+  .sw-pa-partners {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sw-pa-top,
+  .sw-pa-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .sw-pa-middle {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .sw-pa section,
+  .sw-pa aside {
+    padding: 14px 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .sw-pa-middle {
+    grid-template-columns: 1fr;
+  }
+}
