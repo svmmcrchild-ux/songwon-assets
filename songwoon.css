@@ -3880,3 +3880,50 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================
+   SONGWON — CORRECTION DES CARTES D'ACCUEIL
+   ========================================== */
+
+/* Retirer le grand fond du message d'accueil */
+.sw-home,
+.sw-home-content,
+.sw-pa,
+.sw-pa-main,
+.sw-pa-top,
+.sw-pa-middle,
+.sw-pa-bottom {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Restaurer les cartes individuelles */
+.sw-home .sw-pa section,
+.sw-home .sw-pa aside {
+  background: var(--sw-pa-paper) !important;
+  border: 1px solid var(--sw-pa-line) !important;
+  border-radius: 5px 15px 7px 13px !important;
+  box-shadow: 3px 5px 0 var(--sw-pa-shadow) !important;
+}
+
+/* Restaurer les cercles des top-sites */
+.sw-home .sw-pa-topsites-list a {
+  display: grid !important;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: var(--sw-pa-sheet) !important;
+  border: 1px dashed var(--sw-pa-line) !important;
+  border-radius: 50% !important;
+}
+
+/* Restaurer les emplacements des scénarios */
+.sw-home .sw-pa-wanted-avatar {
+  display: block !important;
+  width: 48px;
+  height: 48px;
+  background: var(--sw-pa-note) !important;
+  border: 2px solid var(--sw-pa-sheet) !important;
+  border-radius: 50% !important;
+}
