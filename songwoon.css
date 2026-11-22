@@ -25,7 +25,7 @@
   color-scheme: light;
 
   --header: none;
-  --sw-qeel-paper: rgba(232, 217, 197, 0.96);
+  --sw-qeel-paper: #e8d9c5;
 
   --neutral: #f6ead8;
   --neutralDark: #e8d9c5;
@@ -59,7 +59,7 @@
   color-scheme: dark;
 
   --header: none;
-  --sw-qeel-paper: rgba(52, 37, 31, 0.96);
+  --sw-qeel-paper: #34251f;
 
   --neutral: #302720;
   --neutralDark: #241d19;
@@ -1463,14 +1463,10 @@ a.groups:last-child {
 
 /* Feuille commune contenant les sujets */
 .sw-topics-sheet {
-  background: rgba(232, 217, 197, 0.96);
+  background: var(--sw-qeel-paper) !important;
   border-radius: 15px;
   overflow: hidden;
   padding: 10px 20px;
-}
-
-[data-color-scheme="dark"] .sw-topics-sheet {
-  background: rgba(52, 37, 31, 0.96);
 }
 
 /* Une ligne par sujet */
@@ -2746,8 +2742,8 @@ body {
    ========================================== */
 
 .sw-archive {
-  --sw-paper: rgba(232, 217, 197, 0.96);
-  --sw-sheet: rgba(246, 234, 216, 0.96);
+  --sw-paper: var(--sw-qeel-paper);
+  --sw-sheet: #f6ead8;
   --sw-ink: #382820;
   --sw-muted: #755d4d;
   --sw-line: rgba(105, 75, 57, 0.27);
@@ -2761,8 +2757,8 @@ body {
 
 /* Palette du mode nuit */
 [data-color-scheme="dark"] .sw-archive {
-  --sw-paper: rgba(52, 37, 31, 0.96);
-  --sw-sheet: rgba(67, 47, 39, 0.96);
+  --sw-paper: var(--sw-qeel-paper);
+  --sw-sheet: #432f27;
   --sw-ink: #f2e3cf;
   --sw-muted: #d4bba4;
   --sw-line: rgba(211, 177, 151, 0.27);
@@ -2827,7 +2823,7 @@ body {
   gap: 9px;
   min-width: 0;
   padding: 15px 17px 12px;
-  background: var(--sw-paper);
+  background: var(--sw-paper) !important;
   border: 1px solid var(--sw-line);
   border-radius: 7px 16px 6px 14px;
   box-shadow: 3px 5px 0 var(--sw-shadow);
@@ -3575,47 +3571,4 @@ body {
 
 [data-color-scheme="dark"] .sw-footer-admin a:hover {
   background: #44362d;
-}
-/* ==========================================
-   SONGWON — HARMONISATION DES ENCADRÉS
-   Sous-forums et listes de sujets
-   ========================================== */
-
-/* MODE JOUR */
-.sw-archive {
-  --sw-paper: #e8d9c5;
-  --sw-sheet: #f6ead8;
-  --sw-ink: #382820;
-  --sw-muted: #755d4d;
-  --sw-line: rgba(105, 75, 57, 0.27);
-  --sw-shadow: rgba(49, 31, 23, 0.15);
-}
-
-/* MODE NUIT */
-[data-color-scheme="dark"] .sw-archive {
-  --sw-paper: #34251f;
-  --sw-sheet: #432f27;
-  --sw-ink: #f2e3cf;
-  --sw-muted: #d4bba4;
-  --sw-line: rgba(211, 177, 151, 0.27);
-  --sw-shadow: rgba(0, 0, 0, 0.23);
-}
-
-/* ENCADRÉS — MODE JOUR */
-.sw-archive .sw-forum-panel,
-.sw-topics-sheet {
-  background: #e8d9c5 !important;
-  color: #382820;
-}
-
-/* ENCADRÉS — MODE NUIT */
-[data-color-scheme="dark"] .sw-archive .sw-forum-panel,
-[data-color-scheme="dark"] .sw-topics-sheet {
-  background: #34251f !important;
-  color: #f2e3cf;
-}
-
-/* LIGNES DE SUJETS : PAS DE FOND SUPPLÉMENTAIRE */
-.sw-topics-sheet .topicslist_row {
-  background: transparent !important;
 }
