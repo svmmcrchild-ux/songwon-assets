@@ -3576,3 +3576,18 @@ body {
 [data-color-scheme="dark"] .sw-footer-admin a:hover {
   background: #44362d;
 }
+/* SONGWON — FOND DES SUJETS */
+
+.sw-topics-sheet {
+    background-color: var(--sw-qeel-paper) !important;
+    opacity: 1 !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+}
+
+.sw-topics-sheet .topicslist_row {
+    background: transparent !important;
+    opacity: 1 !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+}
