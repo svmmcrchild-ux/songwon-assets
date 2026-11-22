@@ -1,3 +1,13 @@
+/* ============================================================================
+   WHEN THE LIGHTS GO OUT — SONGWON 1995
+   Feuille de style unifiée — 22 novembre 2026
+   Source : CSS du forum transmis par l’utilisatrice.
+
+   Conserve : Blank Theme, photographie, jour/nuit, navigation, catégories,
+   forums, avatars, sujets, profils, notifications, Switcheroo et QEEL.
+   Nettoyage : sélecteurs vides, marqueur de test, palette QEEL harmonisée.
+   ============================================================================ */
+
 /****** STRUCTURE DU FORUM -----------------------------------------------------------
  ****** Elements du forum qui definissent sa structure et sa hierachie sur toutes les pages
  ****** (ne les RENOMMEZ PAS, ils sont generaux aux pages Web ou a Forumactif) ------- ******/
@@ -15,6 +25,7 @@
   color-scheme: light;
 
   --header: none;
+  --sw-qeel-paper: rgba(232, 217, 197, 0.96);
 
   --neutral: #f6ead8;
   --neutralDark: #e8d9c5;
@@ -48,6 +59,7 @@
   color-scheme: dark;
 
   --header: none;
+  --sw-qeel-paper: rgba(52, 37, 31, 0.96);
 
   --neutral: #302720;
   --neutralDark: #241d19;
@@ -87,16 +99,10 @@ body {
 }
 
 /* SCROLLBAR */
-::-webkit-scrollbar {}
-
-::-webkit-scrollbar-track {}
-
-::-webkit-scrollbar-thumb {}
-
 /* STRUCTURE PRINCIPALE */
 .main_forum {
   width: 1200px;
-max-width: calc(100% - 40px);
+  max-width: calc(100% - 40px);
   margin: 20px auto;
   padding: 20px;
   background: var(--neutral);
@@ -434,9 +440,6 @@ body#sce_smilies_body {
 /* ==========================================
    PAGINATION
    ========================================== */
-
-.pagination {}
-
 /* Liens vers les pages */
 .pagination span a {
   font-size: var(--little-size);
@@ -1189,9 +1192,6 @@ a.mainmenu img {
 /* ==========================================
    PAGE D'ACCUEIL - STRUCTURE DE BASE
    ========================================== */
-
-.introduction {}
-
 /* Categories de Blank Theme */
 .category {
   background: var(--neutralDark);
@@ -1360,11 +1360,7 @@ a.groups:last-child {
 }
 
 /* Colonne centrale */
-.qeel-middle {}
-
 /* Nombre de membres connectes */
-#total_users {}
-
 /* Liste des membres connectes */
 #online_users {
   height: 95px;
@@ -1949,8 +1945,6 @@ a.fa-mention {
    ========================================== */
 
 /* Mentions des utilisateurs */
-.mentiontag {}
-
 /* Conteneur des blocs code, spoiler et hide */
 .codebox {
   display: block;
@@ -1999,9 +1993,6 @@ div.cont_code {
 /* ==========================================
    SPOILERS
    ========================================== */
-
-.hidebox.spoiler {}
-
 /* Spoiler ferme */
 .spoiler_content {
   display: none;
@@ -2065,8 +2056,6 @@ blockquote cite a {
 }
 
 /* Informations generales */
-.profile_infos {}
-
 /* Moyens de contact */
 .profile_contact {
   display: flex;
@@ -2577,7 +2566,6 @@ body {
 }
 
 
-
 /* ==========================================
    TRANSPARENCE DES CONTENEURS
    ========================================== */
@@ -3032,7 +3020,6 @@ body {
 }
 
 
-
 /* SONGWON - AVATAR DU DERNIER POSTEUR */
 
 .sw-panel-last-avatar {
@@ -3071,7 +3058,6 @@ body {
 [data-color-scheme="dark"] .sw-panel-last-avatar::after {
   background: rgba(48, 39, 32, 0.35);
 }
-
 
 
 /* ==========================================
@@ -3295,7 +3281,7 @@ body {
 .sw-residents-card {
   min-width: 0;
   padding: 22px;
-  background: #e8d9c5;
+  background: var(--sw-qeel-paper);
   border: 1px solid #b9a38c;
   border-radius: 4px;
   box-sizing: border-box;
@@ -3319,7 +3305,7 @@ body {
   gap: 12px;
   min-height: 115px;
   padding: 20px;
-  background: #e8d9c5;
+  background: var(--sw-qeel-paper);
   border: 1px solid #b9a38c;
   border-radius: 4px;
   box-sizing: border-box;
@@ -3499,7 +3485,7 @@ body {
 
 [data-color-scheme="dark"] .sw-residents-card,
 [data-color-scheme="dark"] .sw-residents-group-card {
-  background: #302720;
+  background: var(--sw-qeel-paper);
   border-color: #58463a;
   color: #f6ead8;
 }
@@ -3590,9 +3576,3 @@ body {
 [data-color-scheme="dark"] .sw-footer-admin a:hover {
   background: #44362d;
 }
-
-/* TEST SONGWON - CSS EXTERNE */
-html {
-  --songwon-github-test: actif;
-}
-
