@@ -1,3 +1,13 @@
+/*
+ * Nettoyage conservateur — 23 novembre 2026
+ * - Correction du recto de l’avatar : aucun cadre, image non recadrée.
+ * - Conservation du verso, des réactions, des media queries et des thèmes.
+ * - Suppression du correctif d’avatar isolé en fin de fichier,
+ *   intégré désormais à la section de la fiche de profil.
+ * Les autres sélecteurs répétés ont été préservés : certains sont
+ * des compléments ou des surcharges contextuelles nécessaires.
+ */
+
 /* ============================================================================
    WHEN THE LIGHTS GO OUT — SONGWON 1995
    Feuille de style unifiée — 22 novembre 2026
@@ -4020,7 +4030,7 @@ body {
 .sw-character-faceclaim { font: 12px/1.5 "DM Sans",Arial,sans-serif; color: var(--sw-post-muted); margin: 5px 0 12px; }
 .sw-character-flip { position: relative; width: 100%; aspect-ratio: 400/620; margin: 0 auto 14px; cursor: pointer; border-radius: 8px; outline-offset: 3px; }
 .sw-character-flip:focus-visible { outline: 2px solid var(--accentClr); }
-
+/* Carte recto-verso : dimensions communes, habillage distinct. */
 .post.post_row .sw-character-front.post_avatar,
 .sw-character-back {
   position: absolute;
@@ -4028,16 +4038,20 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  border-radius: 0;
-  background: transparent !important;
-  box-shadow: none !important;
   overflow: hidden;
   backface-visibility: hidden;
   transition: opacity .25s ease;
 }
 
+/* Recto : photographie entière, sans encadrement crème. */
+.post.post_row .sw-character-flip .sw-character-front.post_avatar {
+  max-width: none !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
 .post.post_row .sw-character-front.post_avatar img {
   display: block;
   width: 100% !important;
@@ -4045,11 +4059,16 @@ body {
   max-height: none !important;
   aspect-ratio: 400 / 620;
   object-fit: contain;
-  border: none !important;
+  border: 0 !important;
   border-radius: 0;
   box-shadow: none !important;
 }
 
+/* Verso : conserve son fond et son défilement propres. */
+.sw-character-back {
+  border-radius: 8px;
+  background: var(--sw-post-sheet) !important;
+}
 .sw-character-back { opacity: 0; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 17px 12px !important; overflow-y: auto; }
 .sw-character-flip:hover .sw-character-back, .sw-character-flip:focus-within .sw-character-back, .sw-character-flip.sw-flipped .sw-character-back { opacity: 1; pointer-events: auto; }
 .sw-character-flip:hover .sw-character-front, .sw-character-flip:focus-within .sw-character-front, .sw-character-flip.sw-flipped .sw-character-front { opacity: 0; }
@@ -4324,5 +4343,4 @@ body {
 .post.post_row .sw-reaction-count {
   font-size: 11px;
 }
-/* Le recto de la carte conserve les dimensions du conteneur de retournement. */
-.post.post_row .sw-character-flip .sw-character-front.post_avatar { max-width: none !important; }
+
