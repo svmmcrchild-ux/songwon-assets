@@ -4474,3 +4474,10 @@ body {
 .sw-character-links .sw-character-icon:hover { background:var(--sw-post-sheet); color:var(--accentClr); }
 .sw-character-links .sw-character-icon svg { width:21px; height:21px; display:block; flex-shrink:0; }
 .sw-character-links [hidden] { display:none !important; }
+
+.sw-new-topic {
+  font-family: "Caveat", cursive !important;
+  font-size: 25px !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+}
