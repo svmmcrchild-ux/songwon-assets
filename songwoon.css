@@ -4527,3 +4527,19 @@ body {
   align-items: center;
   justify-content: center;
 }
+/* SONGWON — Resserrement du verso de la fiche personnage */
+
+.sw-character-player {
+  margin-bottom: 8px !important;
+  padding-bottom: 0 !important;
+}
+
+.sw-character-stats {
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+  padding-top: 0 !important;
+}
+
+.sw-character-links {
+  margin-top: 0 !important;
+}
