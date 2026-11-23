@@ -4481,3 +4481,31 @@ body {
   font-weight: 400 !important;
   text-transform: none !important;
 }
+/* SONGWON — Alignement des zones cliquables des réactions */
+
+.post.post_row .fa_like_div.sw-reactions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.post.post_row .sw-reaction {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.post.post_row .sw-reaction svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
