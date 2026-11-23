@@ -4469,4 +4469,8 @@ body {
 .post.post_row .sw-reaction-count {
   font-size: 11px;
 }
-
+/* SONGWON — Icônes Lucide des liens du verso */
+.sw-character-links .sw-character-icon { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; padding:5px; border-radius:7px; color:var(--sw-post-ink); transition:background .2s,color .2s; }
+.sw-character-links .sw-character-icon:hover { background:var(--sw-post-sheet); color:var(--accentClr); }
+.sw-character-links .sw-character-icon svg { width:21px; height:21px; display:block; flex-shrink:0; }
+.sw-character-links [hidden] { display:none !important; }
