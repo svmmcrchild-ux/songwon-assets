@@ -4020,12 +4020,36 @@ body {
 .sw-character-faceclaim { font: 12px/1.5 "DM Sans",Arial,sans-serif; color: var(--sw-post-muted); margin: 5px 0 12px; }
 .sw-character-flip { position: relative; width: 100%; aspect-ratio: 400/620; margin: 0 auto 14px; cursor: pointer; border-radius: 8px; outline-offset: 3px; }
 .sw-character-flip:focus-visible { outline: 2px solid var(--accentClr); }
-.post.post_row .sw-character-front.post_avatar, .sw-character-back {
-  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0 !important;
-  padding: 6px !important; border-radius: 8px; background: var(--sw-post-sheet) !important;
-  overflow: hidden; backface-visibility: hidden; transition: opacity .25s ease;
+
+.post.post_row .sw-character-front.post_avatar,
+.sw-character-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: opacity .25s ease;
 }
-.post.post_row .sw-character-front.post_avatar img { display: block; width: 100% !important; height: 100% !important; max-height: none !important; aspect-ratio: 400/620; object-fit: cover; border-radius: 4px; }
+
+.post.post_row .sw-character-front.post_avatar img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  aspect-ratio: 400 / 620;
+  object-fit: contain;
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+}
+
 .sw-character-back { opacity: 0; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 17px 12px !important; overflow-y: auto; }
 .sw-character-flip:hover .sw-character-back, .sw-character-flip:focus-within .sw-character-back, .sw-character-flip.sw-flipped .sw-character-back { opacity: 1; pointer-events: auto; }
 .sw-character-flip:hover .sw-character-front, .sw-character-flip:focus-within .sw-character-front, .sw-character-flip.sw-flipped .sw-character-front { opacity: 0; }
