@@ -4148,20 +4148,73 @@ body {
   font-weight: 500;
 }
 
-/* Réactions */
-.post.post_row .like_button {
+/* ==================================================
+   SONGWON — REACTIONS : COEUR ET FANTOME
+   ================================================== */
+
+.post.post_row .sw-reactions {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
   margin: 0 !important;
-  flex-grow: 0 !important;
+  padding: 0 !important;
+  flex: 0 0 auto;
 }
 
-.post.post_row .rep-button {
+.post.post_row .sw-reactions .sw-reaction {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
   background: transparent !important;
-  border: 1px solid var(--sw-post-line) !important;
-  border-radius: 6px !important;
   color: var(--sw-post-muted) !important;
-  padding: 5px 9px !important;
+  border: 0 !important;
+  border-radius: 5px !important;
   box-shadow: none !important;
+
+  margin: 0 !important;
+  padding: 5px 3px !important;
+
+  font: 500 12px/1.4 "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+  transition: color .2s ease, opacity .2s ease;
 }
+
+.post.post_row .sw-reaction svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+}
+
+.post.post_row .sw-reaction-label {
+  display: inline;
+}
+
+.post.post_row .sw-reaction-love:hover,
+.post.post_row .sw-reaction-fear:hover {
+  color: var(--sw-post-ink) !important;
+  opacity: .8;
+}
+
+.post.post_row .sw-reaction:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Petit écran */
+@media (max-width: 760px) {
+  .post.post_row .sw-reactions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
 
 /* Corps de la feuille */
 .post.post_row > .post_message {
