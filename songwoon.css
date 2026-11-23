@@ -4509,3 +4509,7 @@ body {
   height: 20px;
   pointer-events: none;
 }
+/* SONGWON — Masquer le champ Genre dans l'édition du profil */
+#ucp dl:has(#profile_field_16_-7) {
+  display: none !important;
+}
