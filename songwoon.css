@@ -4005,90 +4005,49 @@ body {
   align-items: stretch;
 }
 
-/* FICHE DE PROFIL */
-
-.post.post_row > .post_profile {
-  grid-area: profile;
-  align-self: start;
-
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  float: none !important;
-
-  background: var(--sw-post-profile) !important;
-  border: none !important;
-  border-radius: 24px !important;
-  box-shadow: none !important;
-
-  padding: 22px 18px 28px !important;
-  margin: 0 !important;
-  text-align: center;
-  color: var(--sw-post-ink) !important;
+/* FICHE DE PROFIL — SONGWON (profil et verso) */
+.post.post_row > .post_profile.sw-character {
+  grid-area: profile; align-self: start; width: 100% !important;
+  min-width: 0 !important; max-width: none !important; float: none !important;
+  background: var(--sw-post-profile) !important; border: 0 !important;
+  border-radius: 24px !important; padding: 20px 16px 24px !important;
+  margin: 0 !important; text-align: center; color: var(--sw-post-ink);
 }
-
-/* Pseudonyme */
-.post.post_row .post_pseudo,
-.post.post_row .post_pseudo a {
-  display: block;
-  color: var(--sw-post-ink) !important;
-  font-family: "Dry Brush", "Schoolbell", cursive !important;
-  font-size: 29px !important;
-  font-weight: 400 !important;
-  line-height: 1.4;
-  text-decoration: none !important;
+.sw-character-heading .post_pseudo, .sw-character-heading .post_pseudo a {
+  display: block; font: 400 29px/1.3 "Dry Brush","Schoolbell",cursive !important;
+  color: var(--sw-post-ink) !important; text-decoration: none;
 }
-
-/* Rang */
-.post.post_row .post_rank {
-  color: var(--sw-post-muted) !important;
-  font-size: 12px;
-  font-weight: 400;
+.sw-character-faceclaim { font: 12px/1.5 "DM Sans",Arial,sans-serif; color: var(--sw-post-muted); margin: 5px 0 12px; }
+.sw-character-flip { position: relative; width: 100%; aspect-ratio: 400/620; margin: 0 auto 14px; cursor: pointer; border-radius: 8px; outline-offset: 3px; }
+.sw-character-flip:focus-visible { outline: 2px solid var(--accentClr); }
+.post.post_row .sw-character-front.post_avatar, .sw-character-back {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0 !important;
+  padding: 6px !important; border-radius: 8px; background: var(--sw-post-sheet) !important;
+  overflow: hidden; backface-visibility: hidden; transition: opacity .25s ease;
 }
-
-/* Photographie */
-.post.post_row .post_avatar {
-  width: 100%;
-  max-width: 265px;
-  margin: 18px auto 15px !important;
-  padding: 7px !important;
-
-  background: rgba(255, 250, 240, .7) !important;
-  border: none !important;
-  border-radius: 9px !important;
-  box-shadow: none !important;
-  line-height: 0;
-}
-
-.post.post_row .post_avatar img {
-  display: block;
-  width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: 3px;
-}
-
-/* Informations complémentaires */
-.post.post_row .post_userinfo {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--sw-post-line);
-  color: var(--sw-post-ink) !important;
-  font-size: 12px;
-  line-height: 1.7;
-  text-align: left;
-}
-
-.post.post_row .post_userinfo a,
-.post.post_row .post_contact a {
-  color: var(--sw-post-muted) !important;
-}
-
-.post.post_row .presence {
-  color: var(--sw-post-muted) !important;
-}
+.post.post_row .sw-character-front.post_avatar img { display: block; width: 100% !important; height: 100% !important; max-height: none !important; aspect-ratio: 400/620; object-fit: cover; border-radius: 4px; }
+.sw-character-back { opacity: 0; pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 17px 12px !important; overflow-y: auto; }
+.sw-character-flip:hover .sw-character-back, .sw-character-flip:focus-within .sw-character-back, .sw-character-flip.sw-flipped .sw-character-back { opacity: 1; pointer-events: auto; }
+.sw-character-flip:hover .sw-character-front, .sw-character-flip:focus-within .sw-character-front, .sw-character-flip.sw-flipped .sw-character-front { opacity: 0; }
+.sw-character-pictures { display: flex; justify-content: center; gap: 7px; width: 100%; }
+.sw-character-pictures img { width: 29%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 2px solid var(--sw-post-profile); }
+.sw-character-player { display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
+.sw-character-player strong { font: 400 22px "Schoolbell",cursive; }
+.sw-character-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 11px; }
+.sw-character-links, .sw-character-extralinks { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+.sw-character-links img { max-width: 20px; max-height: 20px; }
+.sw-character-extralinks a { font-size: 11px; border-bottom: 1px dotted var(--sw-post-line); color: var(--sw-post-muted); }
+.sw-character-rank { display: block; font-size: 12px; color: var(--sw-post-muted); margin: 7px auto 12px; }
+.sw-character-rank img { max-width: 100%; height: auto; }
+.sw-character-warnings { margin-top: 13px; padding: 12px; background: var(--sw-post-sheet); border: 1px solid var(--sw-post-line); border-radius: 9px; text-align: left; }
+.sw-character-warnings-title { font: 400 19px "Schoolbell",cursive; border-bottom: 1px dashed var(--sw-post-line); padding-bottom: 5px; margin-bottom: 7px; }
+.sw-character-warnings-body { max-height: 110px; overflow-y: auto; overflow-wrap: anywhere; font-size: 12px; line-height: 1.6; }
+.sw-character-source { margin-top: 12px; font-size: 11px; text-align: left; }
+.sw-character-source .user_field[hidden] { display: none !important; }
+.sw-character-source .user_field { padding: 3px 0; border-bottom: 1px dotted var(--sw-post-line); }
+.sw-character-source .field_label { font-weight: 600; }
+.sw-character-source .field_separator { display: none; }
+@media (max-width: 760px) { .post.post_row .sw-character-flip { max-width: 240px; } }
 
 /* FEUILLE DU MESSAGE */
 
@@ -4341,3 +4300,5 @@ body {
 .post.post_row .sw-reaction-count {
   font-size: 11px;
 }
+/* Le recto de la carte conserve les dimensions du conteneur de retournement. */
+.post.post_row .sw-character-flip .sw-character-front.post_avatar { max-width: none !important; }
