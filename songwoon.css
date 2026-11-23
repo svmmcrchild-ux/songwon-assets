@@ -4513,15 +4513,17 @@ body {
 #ucp dl:has(#profile_field_16_-7) {
   display: none !important;
 }
-/* SONGWON — Six liens sur une seule ligne */
+/* SONGWON — Liens du profil : 3 colonnes × 2 lignes */
 .sw-character-links {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  gap: 14px 8px;
 }
 
 .sw-character-links .sw-character-icon {
-  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
