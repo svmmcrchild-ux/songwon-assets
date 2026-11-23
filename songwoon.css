@@ -4513,3 +4513,15 @@ body {
 #ucp dl:has(#profile_field_16_-7) {
   display: none !important;
 }
+/* SONGWON — Six liens sur une seule ligne */
+.sw-character-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sw-character-links .sw-character-icon {
+  flex: 0 0 auto;
+}
