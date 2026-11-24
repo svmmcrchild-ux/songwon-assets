@@ -3637,6 +3637,21 @@ body {
 }
 .sw-viewforum .sw-vf-header { text-align:center; margin: 0 0 18px; }
 .sw-viewforum .sw-vf-title { margin:0; padding:0; background:none; font:600 42px/1.2 "Caveat", cursive !important; letter-spacing:0.5px; text-transform:none !important; color:var(--contrast); }
+/* Fil d'Ariane — même traitement que les dates des sujets */
+.sw-viewforum .sw-vf-breadcrumb {
+  margin: 3px 0 0;
+  font: 400 11px/1.5 "DM Sans", Arial, sans-serif !important;
+  color: var(--contrastLight);
+  text-align: center;
+}
+.sw-viewforum .sw-vf-breadcrumb a,
+.sw-viewforum .sw-vf-breadcrumb a * {
+  font: inherit !important;
+  color: inherit !important;
+  text-decoration: none;
+}
+.sw-viewforum .sw-vf-breadcrumb a:hover { text-decoration: underline; }
+.sw-viewforum .sw-vf-breadcrumb .sw-breadcrumb-separator { margin: 0 5px; opacity: .8; }
 .sw-viewforum .sw-vf-subforums .sw-archive { margin:0 0 16px; padding:0; }
 .sw-viewforum .sw-vf-subforums .sw-archive-category,
 .sw-viewforum .sw-vf-subforums .sw-index-tools { display:none !important; }
