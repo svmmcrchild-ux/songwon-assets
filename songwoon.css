@@ -3055,6 +3055,7 @@ body {
 }
 
 .sw-panel-last-avatar::after,
+.sw-viewforum .topicslist-avatar-lastpost::after,
 .sw-residents-newcomer-avatar::after {
   content: "";
   position: absolute;
@@ -3064,6 +3065,7 @@ body {
 }
 
 [data-color-scheme="dark"] .sw-panel-last-avatar::after,
+[data-color-scheme="dark"] .sw-viewforum .topicslist-avatar-lastpost::after,
 [data-color-scheme="dark"] .sw-residents-newcomer-avatar::after {
   background: rgba(48, 39, 32, 0.35);
 }
@@ -3689,6 +3691,8 @@ body {
 .sw-viewforum .topicslist-description { border:0; padding:3px 0 0; font-size:11px; font-style:italic; overflow-wrap:anywhere; }
 .sw-viewforum .topicslist-stats, .sw-viewforum .topicslist-lastpost { display:flex; flex-direction:column; gap:3px; font-size:11px; color:var(--contrastLight); }
 .sw-viewforum .topicslist-lastpost { width:auto; min-width:0; overflow-wrap:anywhere; }
+.sw-viewforum .topicslist-avatar-lastpost { position:relative; width:44px; height:44px; overflow:hidden; border-radius:50%; }
+.sw-viewforum .topicslist-avatar-lastpost:not(:has(img))::after { display:none; }
 .sw-viewforum .topicslist-avatar-lastpost img { display:block; width:44px !important; height:44px !important; object-fit:cover; border-radius:50%; }
 .sw-viewforum .sw-panel-stats { font-size:11px; color:var(--contrastLight); }
 .sw-viewforum .sw-panel-last-text a,
