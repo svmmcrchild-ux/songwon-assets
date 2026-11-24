@@ -3242,13 +3242,22 @@ body {
    SONGWON - QEEL : PICTOGRAMMES DES GROUPES
    ========================================== */
 
-.sw-residents-group-image {
+/* Cartes des groupes */
+
+.sw-residents-group-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
+  gap: 6px;
+  min-height: 80px;
+  padding: 8px 20px;
+  background: var(--sw-qeel-paper);
+  border: 1px solid rgba(105,75,57,.27);
+  border-radius: 5px 15px 7px 13px;
+  box-shadow: 3px 5px 0 rgba(49,31,23,.15), 0 9px 23px rgba(0,0,0,.035);
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 .sw-residents-group-image svg {
