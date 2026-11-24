@@ -3622,6 +3622,73 @@ body {
 }
 
 /* ==========================================
+   SONGWON — INTERIEUR DES FORUMS
+   Styles limités au template viewforum_body
+   ========================================== */
+.sw-viewforum {
+  --vf-paper: var(--sw-qeel-paper);
+  --vf-line: rgba(105,75,57,.27);
+  --vf-shadow: rgba(49,31,23,.15);
+  width: 100%; min-width: 0; color: var(--contrast);
+}
+[data-color-scheme="dark"] .sw-viewforum {
+  --vf-line: rgba(211,177,151,.27);
+  --vf-shadow: rgba(0,0,0,.23);
+}
+.sw-viewforum .sw-vf-header { text-align:center; margin: 0 0 18px; }
+.sw-viewforum .sw-vf-title { margin:0; padding:0; background:none; font:400 34px/1.3 "Dry Brush", "Schoolbell", cursive !important; color:var(--contrast); }
+.sw-viewforum .sw-vf-subforums .sw-archive { margin:0 0 16px; }
+.sw-viewforum .sw-vf-subforums .sw-archive-category,
+.sw-viewforum .sw-vf-subforums .sw-index-tools { display:none !important; }
+.sw-viewforum .sw-vf-subforums:not(:has(.sw-forum-panel)) { display:none; }
+.sw-viewforum .sw-vf-subforums .sw-archive-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
+.sw-viewforum .sw-forum-panel { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,32%); gap:4px 20px; padding:12px 16px; }
+.sw-viewforum .sw-panel-heading { grid-column:1; grid-row:1; border:0; padding:0; }
+.sw-viewforum .sw-panel-title { font-size:23px !important; }
+.sw-viewforum .sw-panel-content { grid-column:1; grid-row:2; display:block; }
+.sw-viewforum .sw-panel-description { height:auto; min-height:0; padding:0; background:none; border:0; overflow:visible; }
+.sw-viewforum .sw-panel-description img { display:none; }
+.sw-viewforum .sw-panel-information { padding:0; }
+.sw-viewforum .sw-panel-subforums a { display:inline-block; margin:3px 10px 0 0; padding:0; }
+.sw-viewforum .sw-panel-footer { grid-column:2; grid-row:1 / span 2; align-items:center; align-self:center; margin:0; padding:0 0 0 12px; border:0; border-left:1px solid var(--vf-line); }
+.sw-viewforum .sw-panel-last-label { display:none; }
+.sw-viewforum .sw-panel-last-avatar { width:44px; height:44px; }
+.sw-viewforum .sw-vf-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin:14px 0 10px; }
+.sw-viewforum .sw-new-topic { display:inline-block; padding:3px 15px; background:var(--vf-paper); color:var(--accentClr); border:1px solid var(--vf-line); border-radius:5px 12px 5px 10px; }
+.sw-viewforum .sw-vf-watch { margin-left:auto; font-size:11px; }
+.sw-viewforum .sw-vf-watch a { margin-left:8px; }
+.sw-viewforum .sw-topics-sheet { display:grid; gap:10px; padding:0; border:0; overflow:visible; background:transparent !important; }
+.sw-viewforum .sw-topics-sheet .topicslist_row { display:grid; grid-template-columns:30px minmax(0,1fr) 90px 44px minmax(115px,19%); align-items:center; gap:12px; padding:12px 15px; margin:0; background:var(--vf-paper) !important; border:1px solid var(--vf-line); border-radius:15px 6px 14px 7px; box-shadow:3px 5px 0 var(--vf-shadow); }
+.sw-viewforum .sw-topics-sheet .topicslist_row:last-child { border-bottom:1px solid var(--vf-line); }
+.sw-viewforum .topicslist-img { width:30px; height:30px; background:none; display:grid; place-items:center; }
+.sw-viewforum .topicslist-img img { max-width:100%; max-height:100%; object-fit:contain; }
+.sw-viewforum .topicslist_infos { min-width:0; }
+.sw-viewforum .topictitle { max-width:none; white-space:normal; overflow-wrap:anywhere; display:inline; color:var(--contrast); }
+.sw-viewforum .topictitle:hover { color:var(--accentClr); }
+.sw-viewforum .topic-type { font-size:10px; color:var(--accentClr); }
+.sw-viewforum .topic-type:empty { display:none; }
+.sw-viewforum .sw-topic-meta { display:flex; flex-wrap:wrap; gap:4px 10px; font-size:11px; color:var(--contrastLight); }
+.sw-viewforum .topicslist-description { border:0; padding:3px 0 0; font-size:11px; font-style:italic; overflow-wrap:anywhere; }
+.sw-viewforum .topicslist-stats, .sw-viewforum .topicslist-lastpost { display:flex; flex-direction:column; gap:3px; font-size:11px; color:var(--contrastLight); }
+.sw-viewforum .topicslist-lastpost { width:auto; min-width:0; overflow-wrap:anywhere; }
+.sw-viewforum .topicslist-avatar-lastpost img { display:block; width:44px !important; height:44px !important; object-fit:cover; border-radius:50%; }
+.sw-viewforum .topic_separator { height:1px; margin:4px 0; background:var(--vf-line); }
+.sw-viewforum .sw-topics-empty, .sw-viewforum .sw-vf-rules { padding:14px; background:var(--vf-paper); border:1px solid var(--vf-line); border-radius:7px 15px; }
+.sw-viewforum .sw-topics-empty { text-align:center; }
+.sw-viewforum .sw-vf-rules { margin-bottom:15px; }
+.sw-viewforum .sw-vf-rules-image { max-width:100%; }
+.sw-viewforum .sw-vf-pagination { text-align:right; margin:15px 0; }
+.sw-viewforum .sw-vf-pagination:empty { display:none; }
+@media (max-width:700px) {
+  .sw-viewforum .sw-forum-panel { grid-template-columns:minmax(0,1fr); }
+  .sw-viewforum .sw-panel-footer { grid-column:1; grid-row:auto; border-left:0; border-top:1px solid var(--vf-line); padding:8px 0 0; }
+  .sw-viewforum .sw-topics-sheet .topicslist_row { grid-template-columns:26px minmax(0,1fr) 44px; gap:8px; }
+  .sw-viewforum .topicslist-stats { grid-column:2; grid-row:2; flex-direction:row; text-align:left; }
+  .sw-viewforum .topicslist-avatar-lastpost { grid-column:3; grid-row:1; }
+  .sw-viewforum .topicslist-lastpost { grid-column:2 / -1; grid-row:3; }
+}
+
+/* ==========================================
    SONGWON — PANNEAU D'ACCUEIL
    Adaptation ModernBB / Blank Theme
    ========================================== */
