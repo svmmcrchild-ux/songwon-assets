@@ -4230,6 +4230,23 @@ body {
 .sw-character-warnings-body:focus {
   filter: blur(0);
 }
+/* SONGWON — Crédits graphiques */
+.sw-character-credits {
+  margin: 10px 0 0;
+  font-size: 10px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--sw-post-muted);
+  overflow-wrap: anywhere;
+}
+
+.sw-character-credits:empty {
+  display: none;
+}
+
+.sw-character-credits:not(:empty)::before {
+  content: "© ";
+}
 .sw-character-source { margin-top: 12px; font-size: 11px; text-align: left; }
 .sw-character-source .user_field[hidden] { display: none !important; }
 .sw-character-source .user_field { padding: 3px 0; border-bottom: 1px dotted var(--sw-post-line); }
