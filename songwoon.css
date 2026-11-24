@@ -4589,17 +4589,17 @@ body {
   width: min(900px, 94vw);
   max-width: 100%;
   margin: 0 auto;
-  --sw-profile-portrait-h: clamp(200px, calc(100dvh - 330px), 420px);
+  --sw-profile-portrait-h: clamp(180px, calc(100dvh - 380px), 310px);
   background: var(--sw-post-profile) !important;
   color: var(--sw-post-ink);
   font: 400 12px/1.4 "DM Sans", Arial, sans-serif;
 }
 .sw-profile *, .sw-profile *::before, .sw-profile *::after { box-sizing: border-box; }
-.sw-profile-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 4px; border-bottom: 1px solid var(--sw-post-line); }
-.sw-profile .sw-profile-name, .sw-profile-name a, .sw-profile-name span { font: 400 28px/1.1 "Dry Brush", "Schoolbell", cursive !important; color: var(--sw-post-ink) !important; text-align: left; margin: 0 0 3px; }
+.sw-profile-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 2px; border-bottom: 1px solid var(--sw-post-line); }
+.sw-profile .sw-profile-name, .sw-profile-name a, .sw-profile-name span { font: 400 28px/1.1 "Dry Brush", "Schoolbell", cursive !important; color: var(--sw-post-ink) !important; text-align: left; margin: 0 0 1px; }
 .sw-profile-identity-details { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: 400 16px/1.2 "Caveat", cursive; color: var(--sw-post-muted); }
 .sw-profile-identity-details > :empty { display: none; }
-.sw-profile-search { margin-top: 3px; font-size: 11px; }
+.sw-profile-search { margin-top: 1px; font-size: 11px; }
 .sw-profile-search a { color: var(--sw-post-muted); }
 .sw-profile-search > span { margin: 0 6px; }
 .sw-profile-pictures { display: flex; gap: 10px; }
@@ -4612,7 +4612,7 @@ body {
 .sw-profile-main { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,calc(var(--sw-profile-portrait-h) * 400 / 620)) minmax(0,1fr); gap: 10px; align-items: start; }
 .sw-profile-panel { min-width: 0; padding: 5px 10px; background: var(--sw-post-sheet); border: 1px solid var(--sw-post-line); border-radius: 5px; }
 .sw-profile h2 { font: 400 19px/1.2 "Schoolbell", cursive !important; color: var(--sw-post-ink); text-align: center; margin: 0 0 3px; padding: 0 0 2px; border-bottom: 1px solid var(--sw-post-line); background: none; }
-.sw-profile h3 { font: 400 16px/1.2 "Caveat", cursive !important; color: var(--sw-post-muted); margin: 0; background: none; }
+.sw-profile h3 { font: 400 16px/1.2 "Caveat", cursive !important; color: var(--sw-post-muted); margin: 0; padding: 0 0 3px; background: none; }
 .sw-profile-character, .sw-profile-player { height: var(--sw-profile-portrait-h); display: flex; flex-direction: column; }
 .sw-profile-scroll { min-height: 0; overflow-y: auto; overflow-wrap: anywhere; scrollbar-width: thin; }
 .sw-profile-field { padding: 2px 0; border-bottom: 1px dotted var(--sw-post-line); }
@@ -4628,7 +4628,7 @@ body {
 .sw-profile-credits:not(:empty)::before { content: "© "; }
 .sw-profile-universe { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin-top: 5px; }
 .sw-profile-universe .sw-profile-scroll { height: 40px; }
-.sw-profile-warnings, .sw-profile-additional { margin-top: 4px; padding: 3px 10px; background: var(--sw-post-sheet); border: 1px solid var(--sw-post-line); border-radius: 5px; }
+.sw-profile-warnings, .sw-profile-additional { margin-top: 3px; padding: 3px 10px; background: var(--sw-post-sheet); border: 1px solid var(--sw-post-line); border-radius: 5px; }
 .sw-profile-warnings-body { max-height: 20px; overflow-y: auto; overflow-wrap: anywhere; filter: blur(4px); transition: filter .25s; cursor: help; }
 .sw-profile-warnings-body:hover, .sw-profile-warnings-body:focus { filter: none; }
 .sw-profile-additional > h2 { display: none; }
@@ -4636,7 +4636,7 @@ body {
 .sw-profile-stat { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 8px; }
 .sw-profile-stat > span { color: var(--sw-post-muted); }
 .sw-profile-dialogue { min-height: 20px; min-width: 24px; }
-.sw-profile-status { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 3px; font-size: 11px; color: var(--sw-post-muted); }
+.sw-profile-status { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 1px; font-size: 11px; color: var(--sw-post-muted); }
 /* Sources natives conservées visibles jusqu'à validation du JavaScript. */
 .sw-profile .sw-profile-source { height: auto; max-height: none; overflow: visible; }
 .sw-profile .sw-profile-contact-source { float: none; justify-content: center; margin-top: 12px; }
