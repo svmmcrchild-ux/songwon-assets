@@ -3661,6 +3661,7 @@ body {
 .sw-viewforum .sw-vf-subforums .sw-archive-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
 .sw-viewforum .sw-forum-panel { display:grid; grid-template-columns:minmax(0,1fr) calc(23% + 69px); gap:4px 12px; padding:12px 15px; box-sizing:border-box; width:100%; }
 .sw-viewforum .sw-panel-heading { grid-column:1; grid-row:1; border:0; padding:0; }
+.sw-viewforum .sw-panel-folder { display:grid; place-items:center; flex:0 0 22px; color:var(--contrast); }
 .sw-viewforum .sw-panel-title { font-size:23px !important; }
 .sw-viewforum .sw-panel-content { grid-column:1; grid-row:2; display:block; }
 .sw-viewforum .sw-panel-description { height:auto; min-height:0; padding:0; background:none; border:0; overflow:visible; font-size:13px; line-height:1.65; overflow-wrap:anywhere; color:var(--contrastLight); }
@@ -3671,7 +3672,7 @@ body {
 .sw-viewforum .sw-panel-footer-details { grid-column:2; grid-row:1; }
 .sw-viewforum .sw-panel-last-avatar { grid-column:1; grid-row:1; }
 .sw-viewforum .sw-panel-last-label { display:none; }
-.sw-viewforum .sw-panel-last-avatar { width:44px; height:44px; }
+.sw-viewforum .sw-panel-last-avatar { width:44px; height:44px; border:0; isolation:isolate; }
 .sw-viewforum .sw-vf-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin:14px 0 10px; }
 .sw-viewforum .sw-new-topic { display:inline-flex; align-items:center; min-height:30px; box-sizing:border-box; font-size:20px !important; line-height:1.1; padding:3px 11px; background:var(--vf-paper); color:var(--accentClr); border:1px solid var(--vf-line); border-radius:5px 12px 5px 10px; }
 .sw-viewforum .sw-vf-watch { margin-left:auto; font-size:11px; }
@@ -3681,6 +3682,11 @@ body {
 .sw-viewforum .sw-topics-sheet .topicslist_row:last-child { border-bottom:1px solid var(--vf-line); }
 .sw-viewforum .topicslist-img { width:30px; height:30px; background:none; display:grid; place-items:center; }
 .sw-viewforum .topicslist-img img { max-width:100%; max-height:100%; object-fit:contain; }
+/* Pictogrammes SVG — statuts et liens */
+.sw-viewforum .sw-status-icon { display:inline-block; width:18px; height:18px; flex-shrink:0; vertical-align:middle; color:var(--contrast); }
+.sw-viewforum .sw-status-icon.sw-status-new { color:var(--accentClr); }
+.sw-viewforum .sw-topic-heading .sw-status-participated { width:14px; height:14px; margin-inline-start:6px; color:var(--contrastLight); }
+.sw-viewforum .sw-latest-link .sw-status-latest { width:14px; height:14px; margin-inline-start:4px; color:inherit; }
 .sw-viewforum .topicslist_infos { min-width:0; }
 .sw-viewforum .topictitle { max-width:none; white-space:normal; overflow-wrap:anywhere; display:inline; color:var(--contrast); }
 .sw-viewforum .topictitle:hover { color:var(--accentClr); }
@@ -3691,8 +3697,11 @@ body {
 .sw-viewforum .topicslist-description { border:0; padding:3px 0 0; font-size:11px; font-style:italic; overflow-wrap:anywhere; }
 .sw-viewforum .topicslist-stats, .sw-viewforum .topicslist-lastpost { display:flex; flex-direction:column; gap:3px; font-size:11px; color:var(--contrastLight); }
 .sw-viewforum .topicslist-lastpost { width:auto; min-width:0; overflow-wrap:anywhere; }
-.sw-viewforum .topicslist-avatar-lastpost { position:relative; width:44px; height:44px; overflow:hidden; border-radius:50%; }
-.sw-viewforum .topicslist-avatar-lastpost:not(:has(img))::after { display:none; }
+.sw-viewforum .topicslist-avatar-lastpost { position:relative; width:44px; height:44px; overflow:hidden; border-radius:50%; isolation:isolate; }
+.sw-viewforum .topicslist-avatar-lastpost::after,
+.sw-viewforum .sw-panel-last-avatar::after { z-index:2; }
+.sw-viewforum .topicslist-avatar-lastpost:not(:has(img))::after,
+.sw-viewforum .sw-panel-last-avatar:not(:has(img))::after { display:none; }
 .sw-viewforum .topicslist-avatar-lastpost img { display:block; width:44px !important; height:44px !important; object-fit:cover; border-radius:50%; }
 .sw-viewforum .sw-panel-stats { font-size:11px; color:var(--contrastLight); }
 .sw-viewforum .sw-panel-last-text a,
