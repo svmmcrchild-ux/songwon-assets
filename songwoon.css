@@ -4651,3 +4651,17 @@ body {
 
 /* Même largeur dans la fenêtre Wombat. */
 .wombat-aside .sw-profile { width: 100%; margin: 0; }
+
+/* Profil complet — Images circulaires */
+.sw-profile-pictures > div,
+.sw-profile-pictures img {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sw-profile-pictures img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
