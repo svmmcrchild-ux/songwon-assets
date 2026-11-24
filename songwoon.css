@@ -3054,7 +3054,8 @@ body {
   box-shadow: none;
 }
 
-.sw-panel-last-avatar::after {
+.sw-panel-last-avatar::after,
+.sw-residents-newcomer-avatar::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -3062,7 +3063,8 @@ body {
   pointer-events: none;
 }
 
-[data-color-scheme="dark"] .sw-panel-last-avatar::after {
+[data-color-scheme="dark"] .sw-panel-last-avatar::after,
+[data-color-scheme="dark"] .sw-residents-newcomer-avatar::after {
   background: rgba(48, 39, 32, 0.35);
 }
 
@@ -3398,6 +3400,7 @@ body {
 /* Avatar circulaire du dernier habitant */
 
 .sw-residents-newcomer-avatar {
+  position: relative;
   width: 160px;
   height: 160px;
   margin: 0 auto 14px;
