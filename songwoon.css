@@ -2644,55 +2644,57 @@ body::after {
   text-align: center;
 }
 
-/* Ouverture immersive uniquement sur l'index (présence du QEEL). */
-body:has(.sw-residents-group-card) .songwon-header {
+/* Ouverture immersive — index identifié par le QEEL ou les catégories. */
+body:has(.sw-residents, .sw-archive) .songwon-header {
+  box-sizing: border-box;
   height: calc(100vh - 55px - var(--sw-frame-bottom));
   height: calc(100dvh - 55px - var(--sw-frame-bottom));
   align-items: flex-end;
-  padding: 24px 12px clamp(42px, 9vh, 100px);
+  padding: 24px 12px clamp(42px, 12vh, 130px);
 }
 
 .songwon-header-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   max-width: 100%;
-  padding: 20px clamp(16px, 4vw, 48px);
-  background: var(--sw-glass);
-  border: 1px solid var(--sw-glass-line);
-  border-radius: 16px 5px 16px 5px;
-  box-shadow: var(--sw-soft-shadow);
-  backdrop-filter: blur(6px);
+  padding: 12px 16px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .songwon-header-title {
-  font-family: "Bricolage Grotesque", Arial, sans-serif;
-  font-size: clamp(26px, 4vw, 58px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -.035em;
+  font-family: "Dry Brush", cursive;
+  font-size: clamp(38px, 6vw, 86px);
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
   color: var(--contrast);
-  text-shadow: none;
   -webkit-text-stroke: 0;
 }
 
-.songwon-header-title::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  margin-top: 12px;
-  background: var(--sw-frequency);
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .songwon-header-title {
+    background: linear-gradient(110deg, #36565c, #537b80 35%, #ad6355 85%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 2px rgba(238,235,228,.95)) drop-shadow(0 0 7px rgba(238,235,228,.8));
+  }
+  [data-color-scheme="dark"] .songwon-header-title {
+    background-image: linear-gradient(110deg, #9bbfc1, #eeebe4 45%, #d49a89);
+    filter: drop-shadow(0 2px 3px rgba(23,35,38,.95)) drop-shadow(0 0 8px rgba(23,35,38,.85));
+  }
 }
 
 .songwon-header-subtitle {
   font-family: "Caveat", cursive;
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(18px, 2vw, 26px);
   letter-spacing: 1px;
   color: var(--contrast);
-  text-shadow: none;
-  -webkit-text-stroke: 0;
+  text-shadow: 0 1px 4px var(--neutral), 0 0 9px var(--neutral), 0 0 15px var(--neutral);
 }
 
 
