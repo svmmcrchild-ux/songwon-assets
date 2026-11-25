@@ -4567,3 +4567,19 @@ html[data-color-scheme="dark"] .sw-account-page,html[data-color-scheme="dark"].s
 .sw-account-page .sw-account-topic-icon svg { width:20px; height:20px; }
 .sw-account-page .sw-account-empty { text-align:center; padding:20px!important; color:var(--sw-edit-muted); }
 @media(max-width:800px){ .sw-account-page .sw-pref-grid,.sw-account-page .profil_editavatar fieldset { grid-template-columns:1fr; } .sw-account-page .profil_editavatar fieldset > dl { grid-column:1!important; grid-row:auto!important; } .sw-account-page .ucp-main .panel { overflow-x:auto; } }
+
+/* V35 — équilibre des préférences et grille amis / ignorés */
+.sw-account-page .sw-pref-grid { align-items:stretch; }
+.sw-account-page .sw-pref-left { display:flex; flex-direction:column; gap:12px; min-width:0; }
+.sw-account-page .sw-pref-grid .sw-account-card { margin-bottom:0; }
+.sw-account-page .sw-pref-left .sw-account-card { flex:1 0 auto; display:flex; flex-direction:column; }
+.sw-account-page .sw-pref-left .sw-account-card dl { flex:1 0 auto; display:flex; flex-direction:column; justify-content:center; }
+.sw-account-page .sw-pref-language { grid-column:1/-1; }
+.sw-account-page .profil_preferences .sw-pref-language dl { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:12px; align-items:center; }
+.sw-account-page .sw-friends-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-items:stretch; }
+.sw-account-page .sw-friends-card { min-width:0; padding:16px; background:var(--sw-edit-panel); border:1px solid var(--sw-edit-line); border-radius:8px 20px 8px 16px; }
+.sw-account-page .ucp-main .sw-friends-card > .panel { background:transparent!important; border:0!important; padding:0!important; margin:0; }
+.sw-account-page .sw-friends-card dl { margin:8px 0; }
+.sw-account-page .sw-friends-card :is(dt,dd) { float:none!important; width:auto!important; margin:0 0 6px!important; }
+.sw-account-page .sw-friends-card input[type=text] { max-width:100%; }
+@media(max-width:800px){ .sw-account-page .sw-friends-grid { grid-template-columns:1fr; } .sw-account-page .profil_preferences .sw-pref-language dl { grid-template-columns:1fr; } }
