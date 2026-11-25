@@ -32,6 +32,12 @@
   --sw-petrol: #537b80;
   --sw-terracotta: #ad6355;
 
+  /* Fréquences perdues — dégradés signatures */
+  --sw-frequency: linear-gradient(110deg, #537b80 0%, #b4a99d 50%, #ad6355 100%);
+  --sw-frequency-day: linear-gradient(110deg, #c9c3b9, #eeebe4, #bd958d);
+  --sw-frequency-night: linear-gradient(110deg, #36565c, #537b80, #ad6355);
+  --sw-frequency-surface: var(--sw-frequency-day);
+
   --header: none;
   --sw-qeel-paper: #ded9d0;
 
@@ -65,6 +71,7 @@
 /* SONGWON - MODE NUIT */
 [data-color-scheme="dark"] {
   color-scheme: dark;
+  --sw-frequency-surface: var(--sw-frequency-night);
 
   --header: none;
   --sw-qeel-paper: #243438;
@@ -2832,12 +2839,13 @@ body::after {
 }
 
 .sw-archive-category::after {
-  content: "✦   ·   ✦";
+  content: "";
   display: block;
-  margin: 4px auto 0;
-  color: var(--sw-muted);
-  font-size: 9px;
-  letter-spacing: 8px;
+  width: 84px;
+  height: 3px;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  background: var(--sw-frequency);
 }
 
 
@@ -2877,7 +2885,8 @@ body::after {
   gap: 9px;
   min-width: 0;
   padding-bottom: 6px;
-  border-bottom: 1px dashed var(--sw-line);
+  border-bottom: 1px solid transparent;
+  border-image: var(--sw-frequency) 1;
 }
 
 /* Icone du forum */
@@ -3349,6 +3358,10 @@ body::after {
   min-height: 115px;
   padding: 20px;
   background: var(--sw-qeel-paper);
+  background-image: var(--sw-frequency-surface);
+  background-size: 100% 3px;
+  background-position: bottom;
+  background-repeat: no-repeat;
   border: 1px solid rgba(83,123,128,.27);
   border-radius: 5px 15px 7px 13px;
   box-shadow: 3px 5px 0 rgba(41,44,44,.15), 0 9px 23px rgba(0,0,0,.035);
@@ -3406,6 +3419,11 @@ body::after {
   font-size: 16px;
   color: #41676c;
   margin-bottom: 8px;
+  padding-bottom: 5px;
+  background-image: var(--sw-frequency);
+  background-size: 48px 2px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
 }
 
 .sw-residents-card h3 {
@@ -3538,7 +3556,7 @@ body::after {
 
 [data-color-scheme="dark"] .sw-residents-card,
 [data-color-scheme="dark"] .sw-residents-group-card {
-  background: var(--sw-qeel-paper);
+  background-color: var(--sw-qeel-paper);
   border-color: rgba(189,149,141,.27);
   box-shadow: 3px 5px 0 rgba(0,0,0,.23), 0 9px 23px rgba(0,0,0,.035);
   color: #eeebe4;
@@ -3683,7 +3701,7 @@ body::after {
 .sw-viewforum .sw-vf-subforums:not(:has(.sw-forum-panel)) { display:none; }
 .sw-viewforum .sw-vf-subforums .sw-archive-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
 .sw-viewforum .sw-forum-panel { display:grid; grid-template-columns:minmax(0,1fr) calc(23% + 69px); gap:4px 12px; padding:12px 15px; box-sizing:border-box; width:100%; }
-.sw-viewforum .sw-panel-heading { grid-column:1; grid-row:1; border:0; padding:0; }
+.sw-viewforum .sw-panel-heading { grid-column:1; grid-row:1; border:0; border-image:none; padding:0; }
 .sw-viewforum .sw-panel-folder { display:grid; place-items:center; flex:0 0 22px; color:var(--contrast); }
 .sw-viewforum .sw-panel-title { font-size:23px !important; }
 .sw-viewforum .sw-panel-content { grid-column:1; grid-row:2; display:block; }
@@ -3846,7 +3864,8 @@ body::after {
 .sw-pa h3 {
   margin: 0 0 11px !important;
   padding: 0 0 8px !important;
-  border-bottom: 1px dashed var(--sw-pa-line);
+  border-bottom: 1px solid transparent;
+  border-image: var(--sw-frequency) 1;
   color: var(--sw-pa-ink) !important;
   font: 600 22px/1.2 "Bricolage Grotesque", Arial, sans-serif !important;
 }
