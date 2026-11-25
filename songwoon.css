@@ -4469,3 +4469,31 @@ body:has(.sw-topic-page) .songwon-header-subtitle { display:none !important; }
   box-shadow: 0 3px 10px rgba(0,0,0,.18);
   pointer-events: none;
 }
+
+/* V29 — espace de modification du profil */
+.sw-edit-account,.sw-edit-tabs { --sw-edit-bg:#ded9d0; --sw-edit-panel:#eeebe4; --sw-edit-input:#f8f6f1; --sw-edit-ink:#292c2c; --sw-edit-muted:#526368; --sw-edit-line:#c9c3b9; }
+[data-color-scheme="dark"] .sw-edit-account,[data-color-scheme="dark"] .sw-edit-tabs { --sw-edit-bg:#172326; --sw-edit-panel:#243438; --sw-edit-input:#172326; --sw-edit-ink:#eeebe4; --sw-edit-muted:#bdc5c3; --sw-edit-line:#40565a; }
+.sw-edit-account { box-sizing:border-box; background:var(--sw-edit-bg)!important; color:var(--sw-edit-ink); border-radius:8px 22px 8px 16px; padding:18px!important; font:400 14px/1.5 "DM Sans",Arial,sans-serif; }
+.sw-edit-tabs { background:var(--sw-edit-panel); color:var(--sw-edit-ink); padding:10px; border-radius:8px 18px 8px 14px; margin-bottom:10px; }
+.sw-edit-tabs a { color:var(--sw-edit-ink)!important; }
+.sw-edit-account #ucp .page-title { font:500 23px/1.3 "Bricolage Grotesque",sans-serif; text-transform:none; color:var(--sw-edit-ink); text-align:left; margin:16px 0 8px; }
+.sw-edit-account #ucp .page-title::after,.sw-edit-section h2::after { content:""; display:block; height:1px; margin-top:8px; background:var(--sw-frequency,linear-gradient(90deg,#537b80,#dec9b3,#ad6355)); }
+.sw-edit-account #ucp .panel { background:var(--sw-edit-panel)!important; border:1px solid var(--sw-edit-line)!important; border-radius:8px 20px 8px 16px; padding:16px!important; }
+.sw-edit-account #ucp .sw-edit-profile-fields { background:transparent!important; border:0!important; padding:0!important; }
+.sw-edit-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.sw-edit-section { min-width:0; padding:16px; background:var(--sw-edit-panel); border:1px solid var(--sw-edit-line); border-radius:8px 20px 8px 16px; }
+.sw-edit-section-6,.sw-edit-section-7 { grid-column:1/-1; }
+.sw-edit-section h2 { margin:0 0 12px; font:500 21px/1.3 "Bricolage Grotesque",sans-serif; color:var(--sw-edit-ink); }
+.sw-edit-account #ucp .sw-edit-section dl { display:block; margin:0; padding:10px 0; border-bottom:1px dotted var(--sw-edit-line); }
+.sw-edit-account #ucp .sw-edit-section dl:last-child { border-bottom:0; }
+.sw-edit-account #ucp .sw-edit-section dt,.sw-edit-account #ucp .sw-edit-section dd { float:none!important; width:auto!important; margin:0!important; padding:0; }
+.sw-edit-account #ucp .sw-edit-section dt { font-weight:600; margin-bottom:5px!important; }
+.sw-edit-account #ucp dt,.sw-edit-account #ucp dt label,.sw-edit-account #ucp dt span { color:var(--sw-edit-ink)!important; }
+.sw-edit-account #ucp input[type=text],.sw-edit-account #ucp input[type=email],.sw-edit-account #ucp input[type=password],.sw-edit-account #ucp input[type=url],.sw-edit-account #ucp textarea,.sw-edit-account #ucp select { box-sizing:border-box; max-width:100%; background:var(--sw-edit-input)!important; color:var(--sw-edit-ink)!important; border:1px solid var(--sw-edit-line)!important; border-radius:6px 10px 6px 8px; font:400 14px/1.5 "DM Sans",Arial,sans-serif; padding:8px 10px; }
+.sw-edit-account #ucp input[type=text],.sw-edit-account #ucp input[type=email],.sw-edit-account #ucp input[type=password],.sw-edit-account #ucp input[type=url] { width:min(100%,520px); }
+.sw-edit-account #ucp input[name*="year"],.sw-edit-account #ucp input[name*="annee"] { width:85px; }
+.sw-edit-account #ucp textarea { width:100%; min-height:100px; resize:vertical; }
+.sw-edit-account #ucp .italic { display:inline-block; font:400 12px/1.5 "DM Sans",Arial,sans-serif; color:var(--sw-edit-muted); margin-top:4px; }
+.sw-edit-account #ucp .submit-buttons input[type=submit] { background:#36565c!important; color:#eeebe4!important; border:1px solid #537b80!important; border-radius:6px 14px 6px 10px; }
+.sw-edit-account #ucp .submit-buttons input[type=reset] { background:transparent!important; color:var(--sw-edit-ink)!important; border:1px solid var(--sw-edit-line)!important; border-radius:6px 14px 6px 10px; }
+@media(max-width:800px){ .sw-edit-grid{grid-template-columns:1fr;} .sw-edit-account #ucp .panel dt,.sw-edit-account #ucp .panel dd{float:none!important;width:auto!important;margin-left:0!important;} }
