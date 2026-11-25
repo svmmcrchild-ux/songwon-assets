@@ -2203,8 +2203,12 @@ blockquote cite a {
   box-shadow: var(--shadowBox);
   border-radius: 10px;
   height: max-content;
+  max-height: calc(100vh - 48px);
   max-height: calc(100dvh - 48px);
-  overflow: auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   transform: translateX(-20%);
 }
 
@@ -4254,7 +4258,7 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
   .sw-profile-group b, .sw-profile-group strong, .sw-profile-group span { color: inherit !important; }
 }
 .sw-profile-identity-details > :empty { display: none; }
-.sw-profile-search { margin-top: 1px; font-size: 11px; }
+.sw-profile-search { margin-top: 5px; font-size: 11px; }
 .sw-profile-search a { color: var(--sw-post-muted); }
 .sw-profile-search > span { margin: 0 6px; }
 .sw-profile-pictures { display: flex; gap: 10px; }
@@ -4332,7 +4336,7 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
   --sw-post-line: rgba(189,149,141,.16);
   --sw-profile-rank-gradient: linear-gradient(110deg,#9bbfc1,#dec9b3,#d49a89);
 }
-.wombat-aside { background: var(--neutral); padding-bottom: 12px; }
+.wombat-aside { background: var(--neutral); padding-bottom: 0; }
 /* ==========================================================
    SONGWON — HARMONISATION DE LA PAGE DU SUJET
    ========================================================== */
@@ -4397,3 +4401,32 @@ body:has(.sw-topic-page) .songwon-header-subtitle { display:none !important; }
 .sw-panel-last-text a span[style*="rgb(0, 0, 255)"], .sw-panel-last-text a[style*="rgb(0, 0, 255)"] {color:var(--accentClr)!important;}
 .sw-panel-last-text a span[style*="rgb(0,0,255)"], .sw-panel-last-text a[style*="rgb(0,0,255)"] {color:var(--accentClr)!important;}
 .sw-residents-newcomer-name a span[style*="#0000FF"], .sw-residents-newcomer-name a span[style*="#0000ff"], .sw-residents-newcomer-name a span[style*="rgb(0, 0, 255)"] {color:#eeebe4!important;}
+
+/* SONGWON — V26 : pied du profil et réseaux sociaux */
+.sw-profile .sw-profile-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px; margin-top: 8px; padding: 8px 4px 4px;
+  border-top: 1px solid transparent; border-image: var(--sw-frequency) 1;
+}
+.sw-profile .sw-profile-socials { display: flex; align-items: center; gap: 8px; }
+.sw-profile .sw-social-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; padding: 0; margin: 0;
+  border: 1px solid var(--sw-post-line); border-radius: 5px 10px 5px 8px;
+  background: var(--sw-post-sheet); color: var(--sw-post-ink); cursor: pointer;
+  box-shadow: none; text-decoration: none;
+}
+.sw-profile .sw-social-icon svg { display: block; width: 19px; height: 19px; }
+.sw-profile .sw-social-icon:hover, .sw-profile .sw-social-copied { color: var(--accentClr); border-color: currentColor; }
+.sw-profile .sw-profile-open {
+  display: inline-flex; align-items: center; gap: 7px; margin-left: auto;
+  padding: 7px 12px; border-radius: 5px 12px 5px 10px;
+  background: #36565c; color: #eeebe4 !important;
+  font: 500 12px/1.4 "DM Sans", Arial, sans-serif; text-decoration: none;
+}
+.sw-profile .sw-profile-open svg { width: 16px; height: 16px; flex: none; }
+.sw-profile .sw-profile-open:hover { background: #537b80; }
+.sw-profile .sw-social-icon:focus-visible, .sw-profile .sw-profile-open:focus-visible { outline: 2px solid var(--accentClr); outline-offset: 2px; }
+.sw-profile .sw-profile-admin { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin: 5px 0 0; padding: 4px 0; height: auto; }
+.sw-profile .sw-profile-admin a { color: var(--sw-post-muted); font-size: 11px; }
+.wombat-aside .sw-profile { box-sizing: border-box; height: auto; max-height: none; overflow: visible; padding-bottom: 14px !important; }
