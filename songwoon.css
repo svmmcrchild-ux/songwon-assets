@@ -2645,12 +2645,23 @@ body::after {
 }
 
 /* Ouverture immersive — index identifié par le QEEL ou les catégories. */
-body:has(.sw-residents, .sw-archive) .songwon-header {
+body:has(.sw-home) .songwon-header,
+body:has(.sw-residents) .songwon-header,
+body:has(.sw-archive) .songwon-header {
   box-sizing: border-box;
-  height: calc(100vh - 55px - var(--sw-frame-bottom));
-  height: calc(100dvh - 55px - var(--sw-frame-bottom));
+  height: calc(100vh - 55px - var(--sw-frame-bottom, 35px)) !important;
+  min-height: calc(100vh - 55px - var(--sw-frame-bottom, 35px)) !important;
+  height: calc(100dvh - 55px - var(--sw-frame-bottom, 35px)) !important;
+  min-height: calc(100dvh - 55px - var(--sw-frame-bottom, 35px)) !important;
+  max-height: none !important;
+  flex-shrink: 0;
   align-items: flex-end;
   padding: 24px 12px clamp(42px, 12vh, 130px);
+}
+/* Secours sur l'index : la PA ne remonte pas dans la fenêtre initiale. */
+body:has(.sw-home) #page-header:has(.songwon-header) {
+  min-height: calc(100vh - 55px - var(--sw-frame-bottom, 35px)) !important;
+  min-height: calc(100dvh - 55px - var(--sw-frame-bottom, 35px)) !important;
 }
 
 .songwon-header-content {
