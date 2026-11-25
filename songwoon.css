@@ -606,6 +606,7 @@ a.specials_links {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
   column-gap: 18px;
   row-gap: 8px;
   padding: 0;
@@ -613,6 +614,9 @@ a.specials_links {
   border: none;
   background: transparent;
 }
+/* V17 — crédits natifs, sans modifier les liens */
+.sw-footer-links > .right {float:none;display:block;max-width:100%;padding:9px 16px;background:var(--sw-glass);border:1px solid var(--sw-glass-line);border-radius:5px 15px 7px 13px;box-shadow:var(--sw-soft-shadow);line-height:1.8;}
+#page-footer .sw-footer-links > .right a {font-size:11px;}
 .sw-footer-links,
 .sw-footer-links a,
 .sw-footer-admin,
@@ -3125,9 +3129,9 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
 .sw-panel-stat-number { font-size: 12px; }
 .sw-panel-last-text { color: var(--sw-ink); }
 .sw-panel-last-text a.lastpost_link { color: var(--sw-ink); font-weight: 600; }
-.sw-archive-category { display: flex; align-items: center; justify-content: center; gap: 9px; }
-.sw-archive-category::after { display: none; }
-.sw-archive-category-title { font-size: 28px !important; }
+.sw-archive-category { display: flex; align-items: center; justify-content: flex-start; gap: 9px; padding: 10px 20px; background: var(--sw-glass); border: 1px solid var(--sw-glass-line); border-radius: 5px 15px 7px 13px; box-shadow: var(--sw-soft-shadow); backdrop-filter: blur(6px); flex-wrap: wrap; }
+.sw-archive-category::after { display: block; flex: 0 0 100%; height: 1px; margin: 0; background: var(--sw-frequency); }
+.sw-archive-category-title { font-size: 24px !important; }
 
 
 /* ==========================================
@@ -3223,81 +3227,16 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
    SONGWON - LIENS DE GESTION AVANT LE QEEL
    ========================================== */
 
-/* Conteneur commun aux deux barres */
-.sw-index-tools {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  gap: 12px;
-  width: 100%;
-  margin: 20px auto 30px;
-  padding: 0;
-}
-
-/* Supprimer l'apparence des barres */
-.sw-index-tools .links_bar {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 6px;
-  width: auto;
-  min-width: 0;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0;
-  box-shadow: none !important;
-  white-space: nowrap;
-}
-
-/* Typographie des commandes */
-.sw-index-tools,
-.sw-index-tools span,
-.sw-index-tools a {
-  font-family: "DM Sans", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.4;
-}
-
-/* Couleur des liens */
-.sw-index-tools a {
-  color: #292c2c !important;
-  text-decoration: none;
-}
-
-/* Liens de droite */
-.sw-index-tools .specials_links {
-  float: none !important;
-  display: inline;
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Survol */
-.sw-index-tools a:hover {
-  color: #41676c !important;
-}
-
-/* Mode nuit */
-[data-color-scheme="dark"] .sw-index-tools a {
-  color: #eeebe4 !important;
-}
-
-[data-color-scheme="dark"] .sw-index-tools a:hover {
-  color: #bd958d !important;
-}
-
-/* Ecrans plus etroits */
-@media (max-width: 1100px) {
-  .sw-index-tools {
-    flex-wrap: wrap;
-  }
-}
+/* V17 — commandes de gestion */
+.sw-index-tools {display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:8px;width:100%;margin:16px auto;padding:0;}
+.sw-index-tools .sw-tools-separator {display:none;}
+.sw-index-tools a {display:inline-flex;align-items:center;gap:7px;padding:8px 12px;background:var(--sw-glass);border:1px solid var(--sw-glass-line);border-radius:5px 12px 5px 10px;color:var(--textColor)!important;font:500 12px/1.4 "DM Sans",sans-serif!important;text-decoration:none;box-shadow:var(--sw-soft-shadow);}
+.sw-index-tools a:hover {color:var(--accentClr)!important;background:var(--neutral);}
+.sw-index-tools a::before {content:"";width:16px;height:16px;flex:0 0 16px;background:var(--accentClr);mask:var(--tool-icon) center/contain no-repeat;-webkit-mask:var(--tool-icon) center/contain no-repeat;}
+.sw-index-tools a[href*="search_id=newsearch"] { --tool-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Cpath%20d%3D%22M12%207v5l3%202%22%2F%3E%3C%2Fsvg%3E"); }
+.sw-index-tools a[href*="search_id=selfsearch"] { --tool-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M14%202H6a2%202%200%200%200-2%202v16a2%202%200%200%200%202%202h12a2%202%200%200%200%202-2V8Z%20M14%202v6h6M8%2013h8M8%2017h8%22%2F%3E%3C%2Fsvg%3E"); }
+.sw-index-tools a[href*="search_id=unanswered"] { --tool-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M21%2011a9%209%200%200%201-9%209%2010%2010%200%200%201-4-.9L3%2021l1.9-5A9%209%200%201%201%2021%2011Z%22%2F%3E%3C%2Fsvg%3E"); }
+.sw-index-tools a[accesskey="m"] { --tool-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m2%2012%205%205L17%207m-5%2010L22%207%22%2F%3E%3C%2Fsvg%3E"); }
 
 /* SONGWON - QEEL V16 */
 .sw-residents {width:100%;margin:28px auto;box-sizing:border-box;--q-ink:#292c2c;--q-accent:#41676c;--q-inset:#ded9d0;font:13px/1.4 "DM Sans",sans-serif;color:var(--q-ink);}
@@ -3347,7 +3286,9 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
 .sw-footer-admin {
   display: flex;
   justify-content: center;
-  margin: 24px auto;
+  margin: 8px auto;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .sw-footer-admin a {
@@ -4384,3 +4325,14 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
 .sw-topic-page .links_bar .right { margin-left:auto; }
 .sw-topic-page .jumpbox, .sw-topic-page .quickmod { font:400 12px/1.5 "DM Sans",Arial,sans-serif; color:var(--sw-post-ink); background:var(--sw-post-sheet); border:1px solid var(--sw-post-line); border-radius:5px 12px 5px 10px; padding:8px; }
 @media(max-width:760px){ .sw-topic-page .post.post_row > .post_details { padding:16px 18px 10px !important; } .sw-topic-page .post.post_row > .post_message { padding:18px 20px 28px !important; } }
+
+/* V17 — contraste du bleu natif uniquement */
+.sw-residents a span[style*="#0000FF"], .sw-residents a[style*="#0000FF"] {color:var(--accentClr)!important;}
+.sw-residents a span[style*="#0000ff"], .sw-residents a[style*="#0000ff"] {color:var(--accentClr)!important;}
+.sw-residents a span[style*="rgb(0, 0, 255)"], .sw-residents a[style*="rgb(0, 0, 255)"] {color:var(--accentClr)!important;}
+.sw-residents a span[style*="rgb(0,0,255)"], .sw-residents a[style*="rgb(0,0,255)"] {color:var(--accentClr)!important;}
+.sw-panel-last-text a span[style*="#0000FF"], .sw-panel-last-text a[style*="#0000FF"] {color:var(--accentClr)!important;}
+.sw-panel-last-text a span[style*="#0000ff"], .sw-panel-last-text a[style*="#0000ff"] {color:var(--accentClr)!important;}
+.sw-panel-last-text a span[style*="rgb(0, 0, 255)"], .sw-panel-last-text a[style*="rgb(0, 0, 255)"] {color:var(--accentClr)!important;}
+.sw-panel-last-text a span[style*="rgb(0,0,255)"], .sw-panel-last-text a[style*="rgb(0,0,255)"] {color:var(--accentClr)!important;}
+.sw-residents-newcomer-name a span[style*="#0000FF"], .sw-residents-newcomer-name a span[style*="#0000ff"], .sw-residents-newcomer-name a span[style*="rgb(0, 0, 255)"] {color:#eeebe4!important;}
