@@ -3711,14 +3711,14 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
   --vf-line: rgba(189,149,141,.27);
   --vf-shadow: rgba(0,0,0,.23);
 }
-.sw-viewforum .sw-vf-header { text-align:center; margin: 0 0 18px; }
-.sw-viewforum .sw-vf-title { margin:0; padding:0; background:none; font:600 42px/1.2 "Bricolage Grotesque", Arial, sans-serif !important; letter-spacing:0.5px; text-transform:none !important; color:var(--contrast); }
+.sw-viewforum .sw-vf-header { text-align:left; margin:0 0 14px; padding:16px 22px; background:var(--sw-glass); border:1px solid var(--sw-glass-line); border-radius:15px 6px 14px 7px; box-shadow:var(--sw-soft-shadow); backdrop-filter:blur(6px); }
+.sw-viewforum .sw-vf-title { margin:0; padding:0; background:none; font:600 32px/1.2 "Bricolage Grotesque", Arial, sans-serif !important; letter-spacing:0.5px; text-transform:none !important; color:var(--contrast); }
 /* Fil d'Ariane — même traitement que les dates des sujets */
 .sw-viewforum .sw-vf-breadcrumb {
-  margin: 3px 0 0;
+  margin: 0 0 8px;
   font: 400 11px/1.5 "DM Sans", Arial, sans-serif !important;
   color: var(--contrastLight);
-  text-align: center;
+  text-align: left;
 }
 .sw-viewforum .sw-vf-breadcrumb a,
 .sw-viewforum .sw-vf-breadcrumb a * {
@@ -3734,7 +3734,7 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
 .sw-viewforum .sw-vf-subforums:not(:has(.sw-forum-panel)) { display:none; }
 .sw-viewforum .sw-vf-subforums .sw-archive-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
 .sw-viewforum .sw-forum-panel { display:grid; grid-template-columns:minmax(0,1fr) calc(23% + 69px); gap:4px 12px; padding:12px 15px; box-sizing:border-box; width:100%; }
-.sw-viewforum .sw-panel-heading { grid-column:1; grid-row:1; border:0; border-image:none; padding:0; }
+.sw-viewforum .sw-panel-heading { grid-column:1; grid-row:1; border:0; border-bottom:1px solid transparent; border-image:var(--sw-frequency) 1; padding:0 0 7px; }
 .sw-viewforum .sw-panel-folder { display:grid; place-items:center; flex:0 0 22px; color:var(--contrast); }
 .sw-viewforum .sw-panel-title { font-size:23px !important; }
 .sw-viewforum .sw-panel-content { grid-column:1; grid-row:2; display:block; }
@@ -3748,11 +3748,11 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
 .sw-viewforum .sw-panel-last-label { display:none; }
 .sw-viewforum .sw-panel-last-avatar { width:44px; height:44px; border:0; isolation:isolate; }
 .sw-viewforum .sw-vf-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin:14px 0 10px; }
-.sw-viewforum .sw-new-topic { display:inline-flex; align-items:center; min-height:30px; box-sizing:border-box; font-size:20px !important; line-height:1.1; padding:3px 11px; background:var(--vf-paper); color:var(--accentClr); border:1px solid var(--vf-line); border-radius:5px 12px 5px 10px; }
+.sw-viewforum .sw-new-topic { display:inline-flex; align-items:center; min-height:30px; box-sizing:border-box; font-size:15px !important; line-height:1.2; gap:8px; padding:8px 14px; background:#36565c; color:#eeebe4 !important; border:1px solid var(--vf-line); border-radius:5px 12px 5px 10px; }
 .sw-viewforum .sw-vf-watch { margin-left:auto; font-size:11px; }
-.sw-viewforum .sw-vf-watch a { margin-left:8px; }
+.sw-viewforum .sw-vf-watch a { display:inline-flex; align-items:center; gap:7px; margin-left:8px; padding:8px 12px; background:var(--sw-glass); color:var(--contrast) !important; border:1px solid var(--sw-glass-line); border-radius:5px 12px 5px 10px; }
 .sw-viewforum .sw-topics-sheet { display:grid; gap:10px; padding:0; border:0; overflow:visible; background:transparent !important; }
-.sw-viewforum .sw-topics-sheet .topicslist_row { display:grid; grid-template-columns:30px minmax(0,1fr) 90px 44px minmax(115px,23%); align-items:center; gap:12px; padding:12px 15px; margin:0; background:var(--vf-paper) !important; border:1px solid var(--vf-line); border-radius:15px 6px 14px 7px; box-shadow:var(--sw-soft-shadow); }
+.sw-viewforum .sw-topics-sheet .topicslist_row { display:grid; grid-template-columns:30px minmax(0,1fr) 90px 44px minmax(115px,23%); align-items:center; gap:12px; padding:12px 15px; margin:0; background:var(--sw-glass) !important; border:1px solid var(--sw-glass-line); border-radius:15px 6px 14px 7px; backdrop-filter:blur(6px); box-shadow:var(--sw-soft-shadow); }
 .sw-viewforum .sw-topics-sheet .topicslist_row:last-child { border-bottom:1px solid var(--vf-line); }
 .sw-viewforum .topicslist-img { width:30px; height:30px; background:none; display:grid; place-items:center; }
 .sw-viewforum .topicslist-img img { max-width:100%; max-height:100%; object-fit:contain; }
@@ -3804,6 +3804,26 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
   .sw-viewforum .topicslist-avatar-lastpost { grid-column:3; grid-row:1; }
   .sw-viewforum .topicslist-lastpost { grid-column:2 / -1; grid-row:3; }
 }
+
+
+/* V15 — pictogrammes et bandeau éditorial */
+.sw-viewforum .sw-vf-signature { height:1px; margin-top:10px; background:var(--sw-frequency); }
+.sw-viewforum .sw-vf-breadcrumb a { display:inline-flex; align-items:center; gap:5px; }
+.sw-viewforum .sw-vf-icon, .sw-viewforum .sw-topic-icon, .sw-viewforum .sw-vf-watch a::before { display:inline-block; width:16px; height:16px; flex:0 0 16px; vertical-align:middle; background:var(--accentClr); mask:var(--sw-cat-icon) center/contain no-repeat; -webkit-mask:var(--sw-cat-icon) center/contain no-repeat; }
+.sw-viewforum .sw-new-topic .sw-vf-icon { background:#eeebe4; }
+.sw-viewforum .sw-new-topic:hover { background:#41676c; }
+.sw-viewforum .sw-vf-watch a::before { content:""; }
+.sw-viewforum .sw-topic-stat { display:inline-flex; align-items:center; justify-content:flex-end; gap:6px; }
+.sw-viewforum .sw-topic-stat-number { font-size:12px; }
+.sw-viewforum .sw-topic-stat-label { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.sw-viewforum .sw-topics-sheet .topicslist_row:nth-child(even) { border-radius:7px 16px 6px 14px; }
+.sw-viewforum .sw-vf-rules h2 { display:flex; align-items:center; gap:8px; }
+@media(max-width:700px) { .sw-viewforum .sw-vf-header { padding:12px 15px; } .sw-viewforum .sw-vf-title { font-size:26px !important; } .sw-viewforum .sw-vf-watch { margin-left:0; } .sw-viewforum .sw-vf-watch a { margin-left:0; } }
+.sw-viewforum .sw-icon-home { --sw-cat-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m3%2010%209-7%209%207M5%209v12h14V9M9%2021v-7h6v7%22%2F%3E%3C%2Fsvg%3E"); }
+.sw-viewforum .sw-icon-book-open { --sw-cat-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%207v14M3%2018V4c4-1%207%200%209%203%202-3%205-4%209-3v14c-4-1-7%200-9%203-2-3-5-4-9-3Z%22%2F%3E%3C%2Fsvg%3E"); }
+.sw-viewforum .sw-icon-square-pen { --sw-cat-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%203H5a2%202%200%200%200-2%202v14a2%202%200%200%200%202%202h14a2%202%200%200%200%202-2v-7M16%204l4%204M10%2018l-4%201%201-4L18%204a2.8%202.8%200%200%201%204%204Z%22%2F%3E%3C%2Fsvg%3E"); }
+.sw-viewforum .sw-vf-watch a::before { --sw-cat-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M18%208a6%206%200%200%200-12%200c0%207-3%207-3%209h18c0-2-3-2-3-9M10%2021h4%22%2F%3E%3C%2Fsvg%3E"); }
+.sw-viewforum .sw-icon-eye { --sw-cat-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M2%2012s3.6-7%2010-7%2010%207%2010%207-3.6%207-10%207-10-7-10-7Z%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%223%22%2F%3E%3C%2Fsvg%3E"); }
 
 /* ==========================================
    SONGWON — PANNEAU D'ACCUEIL
