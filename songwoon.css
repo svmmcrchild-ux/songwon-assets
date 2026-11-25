@@ -4442,23 +4442,29 @@ body:has(.sw-topic-page) .songwon-header-subtitle { display:none !important; }
 .sw-profile .sw-social-icon:focus-visible, .sw-profile .sw-profile-open:focus-visible { outline: 2px solid var(--accentClr); outline-offset: 2px; }
 .sw-profile .sw-profile-admin { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin: 5px 0 0; padding: 4px 0; height: auto; }
 .sw-profile .sw-profile-admin a { color: var(--sw-post-muted); font-size: 11px; }
-/* V31 — Wombat : pied de profil accessible pendant le défilement. */
+/* V32 — Wombat : profil compact, statistiques et contacts visibles. */
 .wombat-aside .sw-profile {
   box-sizing: border-box;
   height: auto;
-  max-height: calc(100vh - 48px);
-  max-height: calc(100dvh - 48px);
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding-bottom: 0 !important;
+  max-height: none;
+  overflow: visible;
+  padding-bottom: 7px !important;
 }
 .wombat-aside .sw-profile .sw-profile-footer {
-  position: sticky;
-  bottom: 0;
-  z-index: 5;
-  background: var(--sw-post-profile);
-  padding-bottom: 10px;
+  position: static;
+  margin-top: 5px;
+  padding: 5px 4px 2px;
+}
+@media (min-width: 651px) {
+  .wombat-aside .sw-profile {
+    --sw-profile-portrait-h: clamp(130px, calc(100dvh - 480px), 310px);
+  }
+  .wombat-aside .sw-profile-pictures > div { width: 54px; height: 54px; }
+  .wombat-aside .sw-profile-universe { margin-top: 3px; }
+  .wombat-aside .sw-profile-universe .sw-profile-scroll { height: 34px; }
+  .wombat-aside .sw-profile-links { min-height: 28px; }
+  .wombat-aside .sw-profile-links a { height: 26px; }
+  .wombat-aside .sw-profile-admin { margin-top: 2px; padding: 2px 0; }
 }
 
 
