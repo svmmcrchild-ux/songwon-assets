@@ -2566,12 +2566,19 @@ form[name="form_login"] .content {
 body {
   padding-top: 50px;
 
-  background-image: url("https://cdn.jsdelivr.net/gh/svmmcrchild-ux/songwon-assets@c049c7bf413661030b7e0ae200272eeecc749751/WTLGO_Frequences_perdues_jour.jpg");
-
-  background-position: center top;
+  --sw-photo-height: clamp(850px, 85vw, 1350px);
+  --sw-photo: url("https://cdn.jsdelivr.net/gh/svmmcrchild-ux/songwon-assets@c049c7bf413661030b7e0ae200272eeecc749751/WTLGO_Frequences_perdues_jour.jpg");
+  background-color: var(--neutralDark);
+  /* Le calque opaque se prolonge sous le fondu et masque la photo restante. */
+  background-image: linear-gradient(to bottom,
+    transparent 0px, transparent calc(var(--sw-photo-height) * .28),
+    color-mix(in srgb, var(--neutralDark) 35%, transparent) calc(var(--sw-photo-height) * .52),
+    color-mix(in srgb, var(--neutralDark) 85%, transparent) calc(var(--sw-photo-height) * .8),
+    var(--neutralDark) var(--sw-photo-height)), var(--sw-photo);
+  background-position: center top, center clamp(-650px, -32vw, -180px);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: 100% 100%, max(100%, 900px) auto;
+  background-attachment: scroll;
 }
 
 
@@ -2713,7 +2720,7 @@ body {
 
 /* Photographie nuit — colorimetrie Photoshop */
 [data-color-scheme="dark"] body {
-  background-image: url("https://cdn.jsdelivr.net/gh/svmmcrchild-ux/songwon-assets@c049c7bf413661030b7e0ae200272eeecc749751/WTLGO_Frequences_perdues_nuit.jpg");
+  --sw-photo: url("https://cdn.jsdelivr.net/gh/svmmcrchild-ux/songwon-assets@c049c7bf413661030b7e0ae200272eeecc749751/WTLGO_Frequences_perdues_nuit.jpg");
 }
 
 
