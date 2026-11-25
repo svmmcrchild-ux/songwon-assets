@@ -2560,18 +2560,13 @@ form[name="form_login"] .content {
 
 
 /* ==========================================
-   PHOTOGRAPHIE ET FONDU PROGRESSIF
+   PHOTOGRAPHIE — FREQUENCES PERDUES
    ========================================== */
 
 body {
   padding-top: 50px;
 
-  background-image:
-    linear-gradient(
-      rgba(238,235,228,0.60),
-      rgba(238,235,228,0.60)
-    ),
-    url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg");
+  background-image: url("https://cdn.jsdelivr.net/gh/svmmcrchild-ux/songwon-assets@c049c7bf413661030b7e0ae200272eeecc749751/WTLGO_Frequences_perdues_jour.jpg");
 
   background-position: center top;
   background-repeat: no-repeat;
@@ -2716,14 +2711,9 @@ body {
    ========================================== */
 
 
-/* Photographie avec voile chocolat uniforme */
+/* Photographie nuit — colorimetrie Photoshop */
 [data-color-scheme="dark"] body {
-  background-image:
-    linear-gradient(
-      rgba(23,35,38,0.75),
-      rgba(23,35,38,0.75)
-    ),
-    url("https://raw.githubusercontent.com/svmmcrchild-ux/songwon-assets/refs/heads/main/Fond_Songwon_Forum.jpg");
+  background-image: url("https://cdn.jsdelivr.net/gh/svmmcrchild-ux/songwon-assets@c049c7bf413661030b7e0ae200272eeecc749751/WTLGO_Frequences_perdues_nuit.jpg");
 }
 
 
