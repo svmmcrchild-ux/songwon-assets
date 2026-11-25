@@ -3299,351 +3299,48 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
   }
 }
 
-/* ==========================================
-   SONGWON - QEEL : PICTOGRAMMES DES GROUPES
-   ========================================== */
-
-/* Cartes des groupes */
-
-.sw-residents-group-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  min-height: 80px;
-  padding: 8px 20px;
-  background: var(--sw-glass);
-  border: 1px solid var(--sw-glass-line) ;
-  border-radius: 5px 15px 7px 13px;
-  box-shadow: var(--sw-soft-shadow);
-  box-sizing: border-box;
-  text-decoration: none;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
-
-.sw-residents-group-image svg {
-  display: block;
-  width: 32px;
-  height: 32px;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/* ==========================================
-   SONGWON - QEEL : STRUCTURE DES SIX CARTES
-   ========================================== */
-
-.sw-residents {
-  width: 100%;
-  margin: 45px auto 35px;
-  box-sizing: border-box;
-}
-
-/* En-tête du QEEL */
-
-.sw-residents-section-title {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-/* Première rangée */
-
-.sw-residents-overview {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-/* Cartes statistiques et présences */
-
-.sw-residents-card {
-  min-width: 0;
-  padding: 22px;
-  background: var(--sw-glass);
-  border: 1px solid var(--sw-glass-line) ;
-  border-radius: 5px 15px 7px 13px;
-  box-shadow: var(--sw-soft-shadow);
-  box-sizing: border-box;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
-
-/* Deuxième rangée */
-
-.sw-residents-groups-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-/* Cartes des groupes */
-
-.sw-residents-group-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 115px;
-  padding: 20px;
-  background: var(--sw-glass);
-  border: 1px solid var(--sw-glass-line) ;
-  border-radius: 5px 15px 7px 13px;
-  box-shadow: var(--sw-soft-shadow);
-  box-sizing: border-box;
-  text-decoration: none;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
-
-.sw-residents-card:nth-child(even),
-.sw-residents-group-card:nth-child(even) {
-  border-radius: 13px 5px 14px 6px;
-}
-
-/* Adaptation aux petits écrans */
-
-@media (max-width: 750px) {
-  .sw-residents-overview,
-  .sw-residents-groups-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==========================================
-   SONGWON - QEEL : TYPOGRAPHIES ET FINITIONS
-   ========================================== */
-
-/* Titre principal */
-
-.sw-residents-section-title h2 {
-  font-family: "Bricolage Grotesque", Arial, sans-serif;
-  font-size: 36px;
-  font-weight: 600;
-  color: #292c2c;
-  margin: 5px 0 8px;
-}
-
-.sw-residents-kicker {
-  font-family: "Bricolage Grotesque", Arial, sans-serif;
-  font-size: 16px;
-  color: #41676c;
-  letter-spacing: 1px;
-}
-
-.sw-residents-section-title p {
-  font-family: "Caveat", cursive;
-  font-size: 21px;
-  color: #526064;
-  margin: 0;
-}
-
-/* En-têtes des cartes */
-
-.sw-residents-label {
-  display: block;
-  font-family: "Bricolage Grotesque", Arial, sans-serif;
-  font-size: 16px;
-  color: #41676c;
-  margin-bottom: 8px;
-  padding-bottom: 0;
-}
-
-.sw-residents-card h3 {
-  font-family: "Bricolage Grotesque", Arial, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #292c2c;
-  margin: 0 0 18px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid transparent;
-  border-image: var(--sw-frequency) 1;
-}
-
-/* Contenu des cartes */
-
-.sw-residents-content,
-.sw-residents-newcomer-content {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #292c2c;
-}
-.sw-residents-online,
-.sw-residents-connected,
-.sw-residents-stat {
-  margin-bottom: 12px;
-}
-
-/* Avatar circulaire du dernier habitant */
-
-.sw-residents-newcomer-avatar {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 14px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.sw-residents-newcomer-avatar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-}
-
-
-/* Nom des groupes */
-
-.sw-residents-group-name {
-  font-family: "Bricolage Grotesque", Arial, sans-serif;
-  font-size: 21px;
-  color: #41676c;
-  font-weight: 600;
-}
-
-/* Légende et pied du QEEL */
-
-.sw-residents-group-legend {
-  margin-top: 16px;
-  text-align: center;
-  font-size: 12px;
-  color: #526064;
-}
-
-.sw-residents-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  margin-top: 24px;
-  padding: 14px 0;
-  border-top: 1px solid #a7aaa4;
-  font-family: "DM Sans", Arial, sans-serif;
-  font-size: 14px;
-  color: #526064;
-}
-
-.sw-residents-footer a {
-  color: #41676c;
-}
-
-.sw-archive-bottomsignature span {
-  padding: 0 8px;
-  color: #41676c;
-}
-
-/* ==========================================
-   SONGWON - QEEL : PROPORTIONS DES CARTES
-   ========================================== */
-
-.sw-residents-overview {
-  align-items: stretch;
-}
-
-.sw-residents-card {
-  padding: 20px 22px;
-  min-height: 280px;
-  height: auto;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
-
-/* Espacement du contenu */
-
-.sw-residents-card h3 {
-  margin-bottom: 14px;
-}
-
-.sw-residents-content,
-.sw-residents-newcomer-content {
-  line-height: 1.5;
-}
-
-.sw-residents-online,
-.sw-residents-connected,
-.sw-residents-stat {
-  margin-bottom: 10px;
-}
-
-/* Eviter les espacements excessifs */
-
-.sw-residents-birthdays {
-  margin-top: 12px;
-}
-
-.sw-residents-inner-table {
-  margin: 0;
-}
-
-/* ==========================================
-   SONGWON - QEEL : MODE NUIT
-   ========================================== */
-
-[data-color-scheme="dark"] .sw-residents-card,
-[data-color-scheme="dark"] .sw-residents-group-card {
-  background-color: var(--sw-glass);
-  border-color: var(--sw-glass-line);
-  box-shadow: var(--sw-soft-shadow);
-  color: #eeebe4;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-}
-
-/* Titre principal et sous-titre */
-
-[data-color-scheme="dark"] .sw-residents-section-title h2 {
-  color: #eeebe4;
-}
-
-[data-color-scheme="dark"] .sw-residents-kicker,
-[data-color-scheme="dark"] .sw-residents-section-title p {
-  color: #dec9b3;
-}
-
-/* Titres et annotations des cartes */
-
-[data-color-scheme="dark"] .sw-residents-card h3 {
-  color: #eeebe4;
-}
-
-[data-color-scheme="dark"] .sw-residents-label,
-[data-color-scheme="dark"] .sw-residents-group-name {
-  color: #bd958d;
-}
-
-/* Textes des statistiques et des présences */
-
-[data-color-scheme="dark"] .sw-residents-content,
-[data-color-scheme="dark"] .sw-residents-newcomer-content {
-  color: #eeebe4;
-}
-
-/* Pictogrammes */
-
-[data-color-scheme="dark"] .sw-residents-group-image {
-  color: #bd958d;
-}
-
-/* Légende et pied du QEEL */
-
-[data-color-scheme="dark"] .sw-residents-group-legend,
-[data-color-scheme="dark"] .sw-residents-footer {
-  color: #dec9b3;
-}
-
-[data-color-scheme="dark"] .sw-residents-footer {
-  border-top-color: #537b80;
-}
-
-[data-color-scheme="dark"] .sw-residents-footer a {
-  color: #bd958d;
-}
+/* SONGWON - QEEL V16 */
+.sw-residents {width:100%;margin:28px auto;box-sizing:border-box;--q-ink:#292c2c;--q-accent:#41676c;--q-inset:#ded9d0;font:13px/1.4 "DM Sans",sans-serif;color:var(--q-ink);}
+[data-color-scheme="dark"] .sw-residents {--q-ink:#eeebe4;--q-accent:#bd958d;--q-inset:#36565c;}
+.sw-residents-section-title,.sw-residents-card,.sw-residents-group-card,.sw-residents-footer,.sw-residents-chat {background:var(--sw-glass);border:1px solid var(--sw-glass-line);border-radius:5px 15px 7px 13px;box-shadow:var(--sw-soft-shadow);backdrop-filter:blur(6px);box-sizing:border-box;min-width:0;color:var(--q-ink);}
+.sw-residents-section-title {display:flex;align-items:center;gap:14px;padding:9px 20px;margin:0 0 10px;flex-wrap:wrap;}
+.sw-residents-section-title h2 {font:600 23px/1.1 "Bricolage Grotesque",sans-serif;margin:0;color:inherit;}
+.sw-residents-section-title p {font:19px/1 "Caveat",cursive;margin:0 0 0 auto;color:var(--q-accent);}
+.sw-residents-kicker,.sw-residents-label {font:700 10px/1.2 "DM Sans",sans-serif;letter-spacing:1.5px;color:var(--q-accent);}
+.sw-residents-overview {display:grid;grid-template-columns:7fr 5fr;gap:10px;margin-bottom:10px;}
+.sw-residents-card {padding:12px 20px;min-height:0;}
+.sw-residents-card:nth-child(even),.sw-residents-group-card:nth-child(even){border-radius:13px 5px 14px 6px;}
+.sw-residents-card h3 {font:600 21px/1.2 "Bricolage Grotesque",sans-serif;margin:5px 0 8px;padding-bottom:7px;color:inherit;border-bottom:1px solid transparent;border-image:var(--sw-frequency) 1;}
+.sw-residents-content,.sw-residents-newcomer-content {font:13px/1.4 "DM Sans",sans-serif;color:inherit;}
+.sw-residents-newcomer {background:#36565c;color:#eeebe4;}
+.sw-residents-newcomer .sw-residents-label {color:#dec9b3;}
+.sw-residents-newcomer-content {display:flex;align-items:center;gap:18px;min-height:80px;}
+.sw-residents-newcomer-avatar {position:relative;width:80px;height:80px;flex:0 0 80px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#537b80;margin:0;}
+.sw-residents-newcomer-avatar img {width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.sw-residents-newcomer-name a {color:#eeebe4!important;font-weight:700;}
+.sw-residents-statistics {grid-column:1/-1;}
+.sw-residents-statistics .sw-residents-content {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
+.sw-qeel-native {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.sw-qeel-tiles {display:flex;gap:8px;}
+.sw-qeel-tile {display:flex;align-items:center;justify-content:center;gap:7px;flex:1;min-width:0;background:var(--q-inset);border-radius:6px;padding:6px;}
+.sw-qeel-tile svg {width:19px;height:19px;flex-shrink:0;color:var(--q-accent);}
+.sw-qeel-tile strong {font:600 22px/1 "Bricolage Grotesque",sans-serif;}
+.sw-qeel-tile small {font-size:11px;}
+.sw-residents-connected,.sw-residents-recent {max-height:32px;overflow:auto;margin-top:5px;}
+.sw-residents-birthdays {grid-column:1/-1;max-height:34px;overflow:auto;font-size:11px;}
+.sw-residents-inner-table {margin:0;width:100%;font-size:inherit;}
+.sw-residents-inner-table td {padding:0 4px;}
+.sw-residents-groups-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+.sw-residents-group-card {display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:8px 12px;text-decoration:none;color:var(--q-accent);}
+.sw-residents-group-image {display:flex;width:25px;height:25px;color:var(--q-accent);}
+.sw-residents-group-image svg {width:100%;height:100%;}
+.sw-residents-group-name {font:600 18px/1.2 "Bricolage Grotesque",sans-serif;color:var(--q-accent);}
+.sw-residents-footer {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;padding:9px 16px;font-size:11px;flex-wrap:wrap;}
+.sw-residents-footer a {color:var(--q-accent);}
+.sw-residents-group-legend {margin:0;font-size:11px;}
+.sw-residents-chat {padding:8px 16px;margin-top:10px;}
+.sw-archive-bottomsignature span {padding:0 6px;color:var(--q-accent);}
+@media(max-width:750px){.sw-residents-overview{grid-template-columns:1fr;}.sw-residents-statistics .sw-residents-content{grid-template-columns:1fr;}.sw-qeel-tile{flex-wrap:wrap;}.sw-residents-section-title p{margin-left:0;}}
 
 /* SONGWON - BOUTON PANNEAU D'ADMINISTRATION */
 
