@@ -3815,7 +3815,9 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
   align-items: center;
   gap: 10px;
   margin: 18px auto 10px;
-  font: 600 23px/1.3 "Bricolage Grotesque", Arial, sans-serif;
+  font: 500 13px/1.3 "DM Sans", Arial, sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 1px;
   color: var(--sw-post-ink);
   text-align: center;
 }
@@ -3828,6 +3830,18 @@ body:has(.sw-home) #page-header:has(.songwon-header) {
   height: 1px;
   border: 0;
   background: var(--sw-frequency);
+}
+/* Dégradé du texte du rang, avec contraste adapté aux deux modes. */
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .post.post_row .sw-character-rank {
+    background-image: linear-gradient(110deg, #36565c 0%, #695c55 50%, #914b40 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  html[data-color-scheme="dark"] .post.post_row .sw-character-rank {
+    background-image: linear-gradient(110deg, #9bbfc1 0%, #dec9b3 50%, #d49a89 100%);
+  }
 }
 .sw-character-rank img { max-width: 100%; height: auto; }
 .sw-character-warnings {
