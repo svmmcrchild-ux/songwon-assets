@@ -3358,10 +3358,6 @@ body::after {
   min-height: 115px;
   padding: 20px;
   background: var(--sw-qeel-paper);
-  background-image: var(--sw-frequency-surface);
-  background-size: 100% 3px;
-  background-position: bottom;
-  background-repeat: no-repeat;
   border: 1px solid rgba(83,123,128,.27);
   border-radius: 5px 15px 7px 13px;
   box-shadow: 3px 5px 0 rgba(41,44,44,.15), 0 9px 23px rgba(0,0,0,.035);
@@ -3419,11 +3415,7 @@ body::after {
   font-size: 16px;
   color: #41676c;
   margin-bottom: 8px;
-  padding-bottom: 5px;
-  background-image: var(--sw-frequency);
-  background-size: 48px 2px;
-  background-position: left bottom;
-  background-repeat: no-repeat;
+  padding-bottom: 0;
 }
 
 .sw-residents-card h3 {
@@ -3432,6 +3424,9 @@ body::after {
   font-weight: 600;
   color: #292c2c;
   margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid transparent;
+  border-image: var(--sw-frequency) 1;
 }
 
 /* Contenu des cartes */
