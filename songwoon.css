@@ -4497,3 +4497,17 @@ body:has(.sw-topic-page) .songwon-header-subtitle { display:none !important; }
 .sw-edit-account #ucp .submit-buttons input[type=submit] { background:#36565c!important; color:#eeebe4!important; border:1px solid #537b80!important; border-radius:6px 14px 6px 10px; }
 .sw-edit-account #ucp .submit-buttons input[type=reset] { background:transparent!important; color:var(--sw-edit-ink)!important; border:1px solid var(--sw-edit-line)!important; border-radius:6px 14px 6px 10px; }
 @media(max-width:800px){ .sw-edit-grid{grid-template-columns:1fr;} .sw-edit-account #ucp .panel dt,.sw-edit-account #ucp .panel dd{float:none!important;width:auto!important;margin-left:0!important;} }
+
+/* V30 — répartition compacte et champs extensibles */
+.sw-edit-grid { align-items:start; }
+.sw-edit-section[hidden] { display:none!important; }
+.sw-edit-section-2,.sw-edit-section-3 { grid-column:1/-1; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 18px; }
+.sw-edit-section-3 { grid-template-columns:repeat(6,minmax(0,1fr)); }
+.sw-edit-section-2 h2,.sw-edit-section-3 h2 { grid-column:1/-1; }
+.sw-edit-section-3 dl { grid-column:span 3; }
+.sw-edit-section-3 dl[data-sw-field^="image-"] { grid-column:span 2; }
+.sw-edit-account #ucp .sw-edit-section input[type=text],.sw-edit-account #ucp .sw-edit-section input[type=url],.sw-edit-account #ucp .sw-edit-section input[type=email] { width:100%!important; max-width:100%!important; }
+.sw-edit-account #ucp .sw-edit-section dl[data-sw-field="date-de-naissance"] input[type=text] { width:85px!important; }
+.sw-edit-account #ucp .sw-edit-section textarea.sw-edit-long { width:100%!important; min-height:75px; height:75px; resize:vertical; }
+.sw-edit-account #ucp .sw-edit-section-3 dl[data-sw-field^="image-"] input[type=text] { display:block; margin:4px 0 8px; }
+@media(max-width:800px){.sw-edit-section-2,.sw-edit-section-3{grid-template-columns:1fr;} .sw-edit-section-3 dl,.sw-edit-section-3 dl[data-sw-field^="image-"]{grid-column:1/-1;} }
