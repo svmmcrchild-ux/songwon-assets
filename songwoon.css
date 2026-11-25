@@ -21,9 +21,9 @@
  *** Tutoriel pour utiliser les variables
  *** https://blankthemerpg.forumactif.com/t139-utiliser-les-variables-css ***/
 
-/* SONGWON - CHARGEMENT DE SCHOOLBELL */
+/* SONGWON - CHARGEMENT DES POLICES — FRÉQUENCES PERDUES */
 
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 /* SONGWON - MODE CLAIR */
 :root {
@@ -563,8 +563,8 @@ summary {
 .links_bar a,
 .links_bar .buttons,
 .links_bar .right {
-  font-family: "Caveat", cursive;
-  font-size: 20px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
   font-weight: 400;
   text-transform: none;
 }
@@ -604,8 +604,8 @@ a.specials_links {
 .sw-footer-links a,
 .sw-footer-admin,
 #page-footer a {
-  font-family: "Caveat", cursive;
-  font-size: 18px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
   font-weight: normal;
   color: #526064;
   text-decoration: none;
@@ -1517,9 +1517,9 @@ a.groups:last-child {
 
 /* Titre du sujet */
 .topictitle {
-  font-family: "Schoolbell", cursive;
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
@@ -2822,7 +2822,7 @@ body::after {
 .sw-archive-category-title {
   margin: 0 !important;
   padding: 0 !important;
-  font: 400 31px/1.3 "Dry Brush", cursive !important;
+  font: 600 31px/1.3 "Bricolage Grotesque", Arial, sans-serif !important;
   color: var(--sw-ink);
 }
 
@@ -2897,10 +2897,10 @@ body::after {
   min-width: 0;
   margin: 0 !important;
   padding: 0 !important;
-  font-family: "Schoolbell", cursive !important;
+  font-family: "Bricolage Grotesque", Arial, sans-serif !important;
   font-size: 25px !important;
   font-style: normal !important;
-  font-weight: 400 !important;
+  font-weight: 600 !important;
   line-height: 1.3 !important;
 }
 
@@ -3140,8 +3140,8 @@ body::after {
   border-radius: 0;
   box-shadow: none;
 
-  font-family: "Caveat", cursive;
-  font-size: 19px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -3153,8 +3153,8 @@ body::after {
 
 /* Liens */
 .sw-archive ~ .links_bar a {
-  font-family: "Caveat", cursive !important;
-  font-size: 19px;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 14px;
   font-weight: 400 !important;
   color: #292c2c;
   text-decoration: none;
@@ -3215,12 +3215,12 @@ body::after {
   white-space: nowrap;
 }
 
-/* Police manuscrite */
+/* Typographie des commandes */
 .sw-index-tools,
 .sw-index-tools span,
 .sw-index-tools a {
-  font-family: "Caveat", cursive !important;
-  font-size: 16px !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 1.4;
 }
@@ -3377,16 +3377,16 @@ body::after {
 /* Titre principal */
 
 .sw-residents-section-title h2 {
-  font-family: "Dry Brush", cursive;
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
   font-size: 36px;
-  font-weight: normal;
+  font-weight: 600;
   color: #292c2c;
   margin: 5px 0 8px;
 }
 
 .sw-residents-kicker {
-  font-family: "Caveat", cursive;
-  font-size: 20px;
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
+  font-size: 16px;
   color: #41676c;
   letter-spacing: 1px;
 }
@@ -3402,16 +3402,16 @@ body::after {
 
 .sw-residents-label {
   display: block;
-  font-family: "Caveat", cursive;
-  font-size: 17px;
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
+  font-size: 16px;
   color: #41676c;
   margin-bottom: 8px;
 }
 
 .sw-residents-card h3 {
-  font-family: "Schoolbell", cursive;
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
   font-size: 22px;
-  font-weight: normal;
+  font-weight: 600;
   color: #292c2c;
   margin: 0 0 18px;
 }
@@ -3454,9 +3454,10 @@ body::after {
 /* Nom des groupes */
 
 .sw-residents-group-name {
-  font-family: "Schoolbell", cursive;
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
   font-size: 21px;
   color: #41676c;
+  font-weight: 600;
 }
 
 /* Légende et pied du QEEL */
@@ -3476,8 +3477,8 @@ body::after {
   margin-top: 24px;
   padding: 14px 0;
   border-top: 1px solid #a7aaa4;
-  font-family: "Caveat", cursive;
-  font-size: 19px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
   color: #526064;
 }
 
@@ -3607,8 +3608,8 @@ body::after {
   background: #ded9d0;
   border: 1px solid #a7aaa4;
   border-radius: 10px;
-  font-family: "Caveat", cursive;
-  font-size: 20px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
   font-weight: normal;
   color: #292c2c;
   text-decoration: none;
@@ -3660,7 +3661,7 @@ body::after {
   --vf-shadow: rgba(0,0,0,.23);
 }
 .sw-viewforum .sw-vf-header { text-align:center; margin: 0 0 18px; }
-.sw-viewforum .sw-vf-title { margin:0; padding:0; background:none; font:600 42px/1.2 "Caveat", cursive !important; letter-spacing:0.5px; text-transform:none !important; color:var(--contrast); }
+.sw-viewforum .sw-vf-title { margin:0; padding:0; background:none; font:600 42px/1.2 "Bricolage Grotesque", Arial, sans-serif !important; letter-spacing:0.5px; text-transform:none !important; color:var(--contrast); }
 /* Fil d'Ariane — même traitement que les dates des sujets */
 .sw-viewforum .sw-vf-breadcrumb {
   margin: 3px 0 0;
@@ -3847,8 +3848,7 @@ body::after {
   padding: 0 0 8px !important;
   border-bottom: 1px dashed var(--sw-pa-line);
   color: var(--sw-pa-ink) !important;
-  font: 400 22px/1.2 "Schoolbell Songwon",
-       "Schoolbell", cursive !important;
+  font: 600 22px/1.2 "Bricolage Grotesque", Arial, sans-serif !important;
 }
 
 .sw-pa a {
@@ -4145,7 +4145,7 @@ body::after {
   margin: 20px 0 25px !important;
   text-align: left !important;
   color: var(--sw-post-ink) !important;
-  font: 400 26px/1.4 "Schoolbell", cursive !important;
+  font: 600 26px/1.4 "Bricolage Grotesque", Arial, sans-serif !important;
 }
 
 /* STRUCTURE : DEUX BLOCS SEPARES */
@@ -4180,11 +4180,11 @@ body::after {
   margin: 0 !important; text-align: center; color: var(--sw-post-ink);
 }
 .sw-character-heading .post_pseudo, .sw-character-heading .post_pseudo a {
-  display: block; font: 400 29px/1.3 "Dry Brush","Schoolbell",cursive !important;
+  display: block; font: 600 29px/1.3 "Bricolage Grotesque", Arial, sans-serif !important;
   color: var(--sw-post-ink) !important; text-decoration: none;
 }
 .sw-character-faceclaim {
-  font: 400 21px/1.2 "Caveat", cursive;
+  font: 400 14px/1.2 "DM Sans", Arial, sans-serif;
   color: var(--sw-post-muted);
   margin: 0 0 14px;
   text-align: center;
@@ -4294,7 +4294,7 @@ body::after {
   color: var(--sw-post-ink);
 }
 .sw-character-player strong {
-  font: 400 25px/1.15 "Schoolbell",cursive;
+  font: 600 25px/1.15 "Bricolage Grotesque", Arial, sans-serif;
   color: var(--sw-post-ink);
 }
 .sw-character-stats {
@@ -4344,7 +4344,7 @@ body::after {
   align-items: center;
   gap: 10px;
   margin: 18px auto 10px;
-  font: 400 23px/1.3 "Schoolbell",cursive;
+  font: 600 23px/1.3 "Bricolage Grotesque", Arial, sans-serif;
   color: var(--sw-post-ink);
   text-align: center;
 }
@@ -4366,7 +4366,7 @@ body::after {
   text-align: left;
 }
 .sw-character-warnings-title {
-  font: 400 19px "Schoolbell",cursive;
+  font: 600 19px "Bricolage Grotesque", Arial, sans-serif;
   border-bottom: 1px dashed var(--sw-post-line);
   padding-bottom: 5px;
   margin-bottom: 7px;
@@ -4432,12 +4432,12 @@ body::after {
   width: 100% !important;
 }
 
-/* Date manuscrite */
+/* Date du message */
 .post.post_row .post_date {
   flex: 1 1 220px;
   color: var(--sw-post-muted) !important;
-  font-family: "Caveat", cursive !important;
-  font-size: 19px !important;
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 14px !important;
   font-weight: 400;
 }
 
@@ -4668,9 +4668,9 @@ body::after {
 .sw-character-links [hidden] { display:none !important; }
 
 .sw-new-topic {
-  font-family: "Caveat", cursive !important;
-  font-size: 25px !important;
-  font-weight: 400 !important;
+  font-family: "Bricolage Grotesque", Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
   text-transform: none !important;
 }
 /* SONGWON — Alignement des zones cliquables des réactions */
@@ -4750,8 +4750,8 @@ body::after {
 }
 .sw-profile *, .sw-profile *::before, .sw-profile *::after { box-sizing: border-box; }
 .sw-profile-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 2px; border-bottom: 1px solid var(--sw-post-line); }
-.sw-profile .sw-profile-name, .sw-profile-name a, .sw-profile-name span { font: 400 28px/1.1 "Dry Brush", "Schoolbell", cursive !important; color: var(--sw-post-ink) !important; text-align: left; margin: 0 0 1px; }
-.sw-profile-identity-details { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: 400 16px/1.2 "Caveat", cursive; color: var(--sw-post-muted); }
+.sw-profile .sw-profile-name, .sw-profile-name a, .sw-profile-name span { font: 600 28px/1.1 "Bricolage Grotesque", Arial, sans-serif !important; color: var(--sw-post-ink) !important; text-align: left; margin: 0 0 1px; }
+.sw-profile-identity-details { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: 400 14px/1.2 "DM Sans", Arial, sans-serif; color: var(--sw-post-muted); }
 .sw-profile-identity-details > :empty { display: none; }
 .sw-profile-search { margin-top: 1px; font-size: 11px; }
 .sw-profile-search a { color: var(--sw-post-muted); }
@@ -4765,8 +4765,8 @@ body::after {
 .sw-profile-links svg { width: 22px; height: 22px; }
 .sw-profile-main { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,calc(var(--sw-profile-portrait-h) * 400 / 620)) minmax(0,1fr); gap: 10px; align-items: start; }
 .sw-profile-panel { min-width: 0; padding: 5px 10px; background: var(--sw-post-sheet); border: 1px solid var(--sw-post-line); border-radius: 5px; }
-.sw-profile h2 { font: 400 19px/1.2 "Schoolbell", cursive !important; color: var(--sw-post-ink); text-align: center; margin: 0 0 3px; padding: 0 0 2px; border-bottom: 1px solid var(--sw-post-line); background: none; }
-.sw-profile h3 { font: 400 16px/1.2 "Caveat", cursive !important; color: var(--sw-post-muted); margin: 0; padding: 0 0 3px; background: none; }
+.sw-profile h2 { font: 600 19px/1.2 "Bricolage Grotesque", Arial, sans-serif !important; color: var(--sw-post-ink); text-align: center; margin: 0 0 3px; padding: 0 0 2px; border-bottom: 1px solid var(--sw-post-line); background: none; }
+.sw-profile h3 { font: 600 16px/1.2 "Bricolage Grotesque", Arial, sans-serif !important; color: var(--sw-post-muted); margin: 0; padding: 0 0 3px; background: none; }
 .sw-profile-character, .sw-profile-player { height: var(--sw-profile-portrait-h); display: flex; flex-direction: column; }
 .sw-profile-scroll { min-height: 0; overflow-y: auto; overflow-wrap: anywhere; scrollbar-width: thin; }
 .sw-profile-field { padding: 2px 0; border-bottom: 1px dotted var(--sw-post-line); }
@@ -4827,9 +4827,11 @@ body::after {
 [data-color-scheme="dark"] .sw-topic-page { --sw-topic-shadow: rgba(0,0,0,.23); }
 .sw-topic-page .sw-topic-posts { background:transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; }
 .sw-topic-page .sw-topic-actions { display:flex; flex-wrap:wrap; gap:8px; }
-.sw-topic-page .sw-new-topic, .sw-topic-page .links_bar .buttons { font:400 20px/1.1 "Caveat",cursive !important; }
+.sw-topic-page .sw-new-topic, .sw-topic-page .links_bar .buttons { font:600 16px/1.1 "Bricolage Grotesque", Arial, sans-serif !important; }
 .sw-topic-page .post.post_row > .post_profile.sw-character { border:1px solid var(--sw-post-line) !important; border-radius:5px 15px 7px 13px !important; box-shadow:3px 5px 0 var(--sw-topic-shadow) !important; }
-.sw-topic-page .sw-character-heading .post_pseudo, .sw-topic-page .sw-character-heading .post_pseudo a, .sw-topic-page .sw-character-heading .post_pseudo span { font-family:"Schoolbell",cursive !important; }
+.sw-topic-page .sw-character-heading .post_pseudo, .sw-topic-page .sw-character-heading .post_pseudo a, .sw-topic-page .sw-character-heading .post_pseudo span { font-family:"Bricolage Grotesque", Arial, sans-serif !important;
+  font-weight: 600;
+}
 .sw-topic-page .post.post_row > .post_details { border:1px solid var(--sw-post-line) !important; border-bottom:0 !important; border-radius:5px 15px 0 0 !important; box-shadow:3px 0 0 var(--sw-topic-shadow) !important; padding:20px 30px 12px !important; }
 .sw-topic-page .post.post_row > .post_message { border:1px solid var(--sw-post-line) !important; border-top:0 !important; border-radius:0 0 7px 13px !important; box-shadow:3px 5px 0 var(--sw-topic-shadow) !important; padding:20px 32px 35px !important; font-size:14px; line-height:1.7; }
  .sw-topic-page .post.post_row .post_date { flex:1 1 160px; font:400 12px/1.5 "DM Sans",Arial,sans-serif !important; }
