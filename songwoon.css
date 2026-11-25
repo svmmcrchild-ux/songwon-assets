@@ -4596,3 +4596,25 @@ html[data-color-scheme="dark"] .sw-account-page,html[data-color-scheme="dark"].s
 .sw-register-header small{letter-spacing:3px;font-size:11px}.sw-register-header h1{font:500 30px 'Bricolage Grotesque',sans-serif;margin:6px 0}.sw-register-header p{font:500 23px Caveat,cursive;margin:0}
 .sw-register-controls:not([hidden]){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:18px}.sw-register-controls label{display:flex;flex-direction:column;gap:4px;font-size:12px}.sw-register-controls :is(input,select){width:100%;min-width:0;box-sizing:border-box;background:var(--neutralDark);color:var(--textColor);padding:8px;border:var(--border);border-radius:6px}.sw-register-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.sw-register-grid.sw-isotope{display:block}.sw-register-grid.sw-isotope .sw-resident{width:calc(50% - 7px);margin-bottom:14px}.sw-resident{display:flex;gap:14px;box-sizing:border-box;min-width:0;background:var(--neutralDark);border:var(--border);border-radius:8px 20px 8px 14px;padding:12px;min-height:240px}.sw-resident-avatar{flex:0 0 36%;align-self:start;display:block}.sw-resident-avatar img{width:100%;aspect-ratio:400/620;object-fit:cover;border-radius:5px 12px 5px 8px}.sw-resident-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;overflow-wrap:anywhere}.sw-resident h2{font:500 19px 'Bricolage Grotesque',sans-serif;margin:0;text-transform:uppercase;letter-spacing:1px}.sw-resident-face{font:500 22px Caveat,cursive}.sw-resident-rule{height:2px;background:var(--sw-frequency);margin:3px 0}.sw-resident-group{font-weight:600}.sw-resident-visit{margin-top:auto;font-size:11px;color:var(--contrastLight)}.sw-resident-contact a{display:inline-flex;align-items:center;gap:5px}.sw-resident-contact svg{width:19px;height:19px}.sw-register-pages{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:14px}.sw-register [hidden]{display:none!important}
 @media(max-width:800px){.sw-register-grid{grid-template-columns:1fr}.sw-register-grid.sw-isotope .sw-resident{width:100%}.sw-register-controls:not([hidden]){grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* V39 — registre compact */
+.sw-register-controls:not([hidden]){gap:7px 12px;margin-bottom:14px;align-items:end}
+.sw-register-controls :is(input,select){height:34px;padding:5px 8px;font-size:13px}
+.sw-register-controls button{justify-self:start;padding:6px 14px!important;min-height:32px}
+.sw-resident{min-height:0;gap:12px;padding:12px;align-items:stretch}
+.sw-resident-avatar{flex:0 0 27%;max-width:150px}
+.sw-resident-avatar img{display:block}
+.sw-resident-body{gap:4px}
+.sw-resident h2{letter-spacing:2px}
+.sw-resident-name.sw-staff-name,.sw-resident-name.sw-staff-name *{color:var(--textColor)!important}
+.sw-resident-group,.sw-resident-age{font-size:12px;color:var(--contrastLight)}
+.sw-resident-job:not(:empty)::before,.sw-resident-district:not(:empty)::before{display:block;font-size:11px;font-weight:600;color:var(--contrastLight);margin-bottom:2px}
+.sw-resident-job:not(:empty)::before{content:'Occupation'}
+.sw-resident-district:not(:empty)::before{content:'À Songwon';flex-basis:100%}
+.sw-resident-district{display:flex;flex-wrap:wrap;gap:4px}
+.sw-resident-district span{background:var(--neutral);border:var(--border);border-radius:5px;padding:2px 6px;font-size:11px}
+.sw-resident-contact{display:flex;gap:5px;margin:4px 0}
+.sw-resident-contact a.sw-resident-icon{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--neutral);border:var(--border);border-radius:6px;color:var(--contrastLight)!important;box-sizing:border-box}
+.sw-resident-contact a.sw-resident-icon svg{width:18px;height:18px}
+.sw-resident-visit{padding-top:4px}
+@media(max-width:520px){.sw-register-controls:not([hidden]){grid-template-columns:1fr}.sw-register-header h1{font-size:23px}.sw-resident-avatar{flex-basis:30%}}
