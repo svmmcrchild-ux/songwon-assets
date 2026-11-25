@@ -4443,3 +4443,29 @@ body:has(.sw-topic-page) .songwon-header-subtitle { display:none !important; }
 .sw-profile .sw-profile-admin { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin: 5px 0 0; padding: 4px 0; height: auto; }
 .sw-profile .sw-profile-admin a { color: var(--sw-post-muted); font-size: 11px; }
 .wombat-aside .sw-profile { box-sizing: border-box; height: auto; max-height: none; overflow: visible; padding-bottom: 14px !important; }
+
+/* SONGWON — V28 : confirmation de copie Discord */
+.sw-profile button.sw-social-discord {
+  position: relative;
+  overflow: visible !important;
+}
+.sw-profile button.sw-social-discord.sw-social-copied::after {
+  content: "✓  Pseudo copié !";
+  display: block;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 6px 10px;
+  width: max-content;
+  white-space: nowrap;
+  border-radius: 5px 10px 5px 8px;
+  background: #36565c;
+  color: #eeebe4;
+  font: 500 12px/1.4 "DM Sans", Arial, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,.18);
+  pointer-events: none;
+}
