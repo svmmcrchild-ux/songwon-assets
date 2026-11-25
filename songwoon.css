@@ -4618,3 +4618,42 @@ html[data-color-scheme="dark"] .sw-account-page,html[data-color-scheme="dark"].s
 .sw-resident-contact a.sw-resident-icon svg{width:18px;height:18px}
 .sw-resident-visit{padding-top:4px}
 @media(max-width:520px){.sw-register-controls:not([hidden]){grid-template-columns:1fr}.sw-register-header h1{font-size:23px}.sw-resident-avatar{flex-basis:30%}}
+
+/* V41 — messagerie privée, liste uniquement */
+.sw-pm{background:var(--neutral);color:var(--textColor);padding:22px;border-radius:8px 22px 8px 16px;box-sizing:border-box}
+.sw-pm-header{text-align:center;padding:12px 0 18px;border-bottom:2px solid transparent;border-image:var(--sw-frequency) 1;margin-bottom:18px}
+.sw-pm-header small{letter-spacing:3px;font-size:11px}.sw-pm-header h1{font:500 30px 'Bricolage Grotesque',sans-serif;margin:6px 0}.sw-pm-header p{font:500 23px Caveat,cursive;margin:0}
+.sw-pm svg{width:19px;height:19px;flex-shrink:0;vertical-align:middle}
+.sw-pm #privmsgs-menu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.sw-pm #privmsgs-menu li{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 8px;margin:0;background:var(--neutralDark);border:var(--border);border-radius:6px 14px 6px 10px;text-align:center;color:var(--contrastLight)}
+.sw-pm #privmsgs-menu li.sw-pm-active{background:#36565c;color:#eeebe4;border-color:#537b80}.sw-pm #privmsgs-menu li.sw-pm-active a{color:#eeebe4!important}
+.sw-pm-toolbar,.sw-pm-summary,.sw-pm-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0}
+.sw-pm-filter,.sw-pm-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.sw-pm .newpm_button,.sw-pm-actions button{display:inline-flex;align-items:center;gap:7px;padding:9px 12px!important;border-radius:6px 12px 6px 8px;background:#36565c!important;color:#eeebe4!important;border:1px solid #537b80!important;font-size:12px}
+.sw-pm .mp_row{display:flex;align-items:center;gap:14px;padding:12px;margin:8px 0;background:var(--neutralDark);border:var(--border);border-radius:6px 16px 6px 10px;box-sizing:border-box}
+.sw-pm .mp_img{display:flex;align-items:center;justify-content:center;width:38px;height:38px;flex:0 0 38px;background:var(--neutral);border:var(--border);border-radius:6px 12px 6px 8px;color:var(--contrastLight)}
+.sw-pm .mp_img img{display:none!important}.sw-pm .mp_img svg{width:22px;height:22px}.sw-pm .sw-pm-unread .mp_img{color:#984f42}html[data-color-scheme="dark"] .sw-pm .sw-pm-unread .mp_img{color:#d28e7d}
+.sw-pm .mp_infos{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}.sw-pm .mp_infos .topictitle{font:500 19px 'Bricolage Grotesque',sans-serif;overflow-wrap:anywhere}.sw-pm .mp_infos span{font-size:12px}.sw-pm input[type=checkbox]{accent-color:#537b80;width:16px;height:16px;flex-shrink:0}
+.sw-pm-summary{font-size:12px;color:var(--contrastLight)}.sw-pm-capacity{display:flex;flex-direction:column;gap:5px}.sw-pm-capacity progress{width:180px;height:7px;accent-color:#537b80}.sw-pm [hidden]{display:none!important}.sw-pm-empty{text-align:center;padding:24px;background:var(--neutralDark);border-radius:8px}.sw-pm-actions{padding-top:12px;border-top:var(--border)}.sw-pm-actions button[name^=delete]{background:var(--neutralDark)!important;color:var(--textColor)!important;border:var(--border)!important}.sw-pm-bottom{font-size:12px;margin-bottom:0}.sw-pm-jump{margin-left:auto}.sw-pm select{max-width:100%}
+@media(max-width:800px){.sw-pm #privmsgs-menu{grid-template-columns:repeat(2,minmax(0,1fr))}.sw-pm{padding:14px}.sw-pm-header h1{font-size:24px}}
+
+/* V42 — lecture des messages privés */
+.sw-pm-readpage .sw-pm-letter{background:var(--neutralDark);border:var(--border);border-radius:8px 20px 8px 14px;padding:16px;min-width:0}
+.sw-pm-readpage .sw-pm-letter h2{font:500 25px 'Bricolage Grotesque',sans-serif;text-align:center;margin:0 0 14px;overflow-wrap:anywhere}
+.sw-pm-letter-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;padding-bottom:12px;border-bottom:2px solid transparent;border-image:var(--sw-frequency) 1}
+.sw-pm-letter-tools{display:flex;gap:8px;flex-wrap:wrap}.sw-pm-letter-tools a:not([hidden]){display:inline-flex;align-items:center;gap:5px;background:var(--neutral);border:var(--border);border-radius:6px;padding:6px 9px;color:var(--contrastLight)}
+.sw-pm-letter-grid{display:grid;grid-template-columns:minmax(100px,150px) minmax(0,1fr);gap:16px;margin-top:14px;align-items:start}
+.sw-pm-sender{min-width:0;text-align:center;padding:10px;background:var(--neutral);border:var(--border);border-radius:6px 14px 6px 10px;overflow-wrap:anywhere}.sw-pm-sender>img,.sw-pm-sender>a>img{display:block;width:100%;height:auto;aspect-ratio:400/620;object-fit:cover;border-radius:5px 10px 5px 8px}.sw-pm-sender .message_from{margin-top:8px;font-weight:600}
+.sw-pm-letter-content{min-width:0;min-height:180px;overflow-wrap:anywhere;background:var(--neutral);border:var(--border);border-radius:6px 14px 6px 10px;padding:16px;box-sizing:border-box}.sw-pm-letter-content img{max-width:100%;height:auto}.sw-pm-review{margin-top:16px;min-width:0}
+@media(max-width:600px){.sw-pm-letter-grid{grid-template-columns:1fr}.sw-pm-sender{max-width:150px}.sw-pm-readpage .sw-pm-letter{padding:10px}}
+
+/* V43 — rédaction des MP exclusivement */
+.sw-pm-compose > .container {background:var(--neutral);color:var(--textColor);padding:22px;border-radius:8px 22px 8px 16px;box-sizing:border-box}
+.sw-pm-compose .sw-pm-header .page-title {margin:6px 0;font:500 30px 'Bricolage Grotesque',sans-serif}
+.sw-pm-compose-back {display:inline-flex;align-items:center;gap:7px;margin:0 0 12px;padding:7px 12px;border:var(--border);border-radius:6px 12px 6px 8px;background:var(--neutralDark);color:var(--contrastLight)}
+.sw-pm-compose #postingbox {background:var(--neutralDark);border:var(--border);border-radius:8px 20px 8px 14px;padding:16px;box-sizing:border-box}
+.sw-pm-compose .sw-pm-recipients input[name="username[]"] {width:min(100%,300px)!important;box-sizing:border-box;margin:4px 0!important}
+.sw-pm-compose #postingbox input[name="subject"] {width:min(100%,650px);box-sizing:border-box}
+.sw-pm-compose #add_username {box-sizing:border-box;width:32px;height:32px;padding:32px 0 0;cursor:pointer;vertical-align:middle;border:var(--border);border-radius:6px;background:var(--neutral) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23537b80' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M19 8v6m-3-3h6'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3C/svg%3E") center/20px no-repeat}
+html[data-color-scheme="dark"] .sw-pm-compose #add_username {background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dec9b3' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M19 8v6m-3-3h6'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3C/svg%3E")}
+.sw-pm-compose .posting-buttons {margin:14px 0 0;text-align:center}
+@media(max-width:800px){.sw-pm-compose > .container{padding:14px}.sw-pm-compose .sw-pm-header .page-title{font-size:24px}}
