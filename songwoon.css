@@ -2655,8 +2655,8 @@ body:has(.sw-archive) .songwon-header {
   min-height: calc(100dvh - 55px - var(--sw-frame-bottom, 35px)) !important;
   max-height: none !important;
   flex-shrink: 0;
-  align-items: flex-end;
-  padding: 24px 12px clamp(42px, 12vh, 130px);
+  align-items: center;
+  padding: 24px 12px;
 }
 /* Secours sur l'index : la PA ne remonte pas dans la fenêtre initiale. */
 body:has(.sw-home) #page-header:has(.songwon-header) {
