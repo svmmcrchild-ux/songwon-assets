@@ -4442,7 +4442,25 @@ body:has(.sw-topic-page) .songwon-header-subtitle { display:none !important; }
 .sw-profile .sw-social-icon:focus-visible, .sw-profile .sw-profile-open:focus-visible { outline: 2px solid var(--accentClr); outline-offset: 2px; }
 .sw-profile .sw-profile-admin { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin: 5px 0 0; padding: 4px 0; height: auto; }
 .sw-profile .sw-profile-admin a { color: var(--sw-post-muted); font-size: 11px; }
-.wombat-aside .sw-profile { box-sizing: border-box; height: auto; max-height: none; overflow: visible; padding-bottom: 14px !important; }
+/* V31 — Wombat : pied de profil accessible pendant le défilement. */
+.wombat-aside .sw-profile {
+  box-sizing: border-box;
+  height: auto;
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: 0 !important;
+}
+.wombat-aside .sw-profile .sw-profile-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  background: var(--sw-post-profile);
+  padding-bottom: 10px;
+}
+
 
 /* SONGWON — V28 : confirmation de copie Discord */
 .sw-profile button.sw-social-discord {
