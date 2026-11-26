@@ -666,18 +666,25 @@ a.specials_links:empty {
 /* Bouton des notifications */
 #notiffi_button {
   cursor: pointer;
-  background: var(--neutral);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 5px 10px;
-  position: fixed;
-  z-index: 99;
-  top: 10px;
-  right: 10px;
-  height: 35px;
+  position: relative;
+  display: none;
+  color: var(--contrast);
 }
+.songwon-navigation #notiffi_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 34px;
+  height: 34px;
+  padding: 5px;
+  background: transparent;
+  border-radius: 5px;
+  color: var(--contrast);
+}
+#notiffi_button:hover, #notiffi_button:focus-visible { background: var(--neutral); }
+#notiffi_button .ntf_button-text { display: flex; align-items: center; }
+#notiffi_button .unread_count { position: absolute; top: -2px; right: -3px; width: auto; min-width: 15px; height: 15px; padding: 0 3px; border-radius: 20px; background: #ad6355; color: #fff; font-size: 10px; }
 
 /* Compteur des notifications non lues */
 .unread_count {
@@ -704,10 +711,10 @@ a.specials_links:empty {
 
 /* Panneau ferme */
 #notiffi_panel {
-  --menuSize: 500px;
+  --menuSize: min(420px, 100vw);
   width: var(--menuSize);
   position: fixed;
-  z-index: 98;
+  z-index: 998;
   top: 0;
   height: 100%;
   right: calc(var(--menuSize) * -1);
