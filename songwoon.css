@@ -4848,3 +4848,32 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 .sw-copy-code svg {width:14px;height:14px;}
 .codebox dt:after {content:'';display:block;clear:both;}
 .sw-dialogue-color[aria-disabled=true] {opacity:.45;cursor:not-allowed;}
+
+
+/* SONGWON — V58 : onglets du Wombat */
+.sw-profile .sw-profile-tabs[hidden],
+.wombat-aside .sw-profile .sw-profile-main[hidden],
+.wombat-aside .sw-profile .sw-profile-universe[hidden],
+.wombat-aside .sw-profile .sw-profile-warnings[hidden] { display: none !important; }
+.wombat-aside .sw-profile .sw-profile-tabs:not([hidden]) {
+  display: flex; gap: 6px; margin: 4px 0 8px;
+  padding: 3px; border: 1px solid var(--sw-post-line);
+  border-radius: 5px 12px 5px 10px; background: var(--sw-post-sheet);
+}
+.wombat-aside .sw-profile-tabs button {
+  flex: 1 1 0; min-width: 0; margin: 0; padding: 7px 4px;
+  border: 1px solid transparent; border-radius: 4px 9px 4px 7px;
+  background: transparent; color: var(--sw-post-muted);
+  font: 500 15px/1.2 "Bricolage Grotesque", Arial, sans-serif;
+  text-transform: none; cursor: pointer; box-shadow: none;
+}
+.wombat-aside .sw-profile-tabs button[aria-pressed="true"] {
+  background: var(--sw-frequency-surface); color: var(--sw-post-ink);
+  border-color: var(--sw-post-line);
+}
+.wombat-aside .sw-profile-tabs button:focus-visible {
+  outline: 2px solid var(--accentClr); outline-offset: -2px;
+}
+.wombat-aside .sw-profile .sw-profile-universe:not([hidden]) .sw-profile-scroll {
+  height: auto; min-height: 65px; max-height: 180px;
+}
