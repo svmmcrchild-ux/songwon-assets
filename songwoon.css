@@ -4912,3 +4912,23 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
  .wombat-aside .sw-profile .sw-profile-unknown-layout .sw-profile-universe:not([hidden]) .sw-profile-scroll {height:100px;flex:none;}
  .wombat-aside .sw-profile-radar {height:230px;}
 }
+
+/* SONGWON — V61 : finitions et hauteur commune des onglets */
+.wombat-aside .sw-profile-daily-layout[hidden] {display:none!important;}
+.wombat-aside .sw-profile .sw-profile-tabs button {padding:2px 4px;min-height:32px;height:auto;}
+.wombat-aside .sw-profile .sw-radar-label {font-size:13px;}
+.wombat-aside .sw-radar-capacity {cursor:help;}
+.wombat-aside .sw-radar-capacity:focus-visible {outline:1px solid var(--accentClr);}
+.wombat-aside .sw-profile-adversity > span {display:inline-flex;align-items:center;gap:6px;cursor:help;}
+.wombat-aside .sw-profile-adversity svg {color:var(--accentClr);flex:none;}
+@media(min-width:651px) {
+ .wombat-aside .sw-profile {--sw-tab-height:clamp(240px,calc(100dvh - 365px),325px);--sw-profile-portrait-h:calc(var(--sw-tab-height) - 78px);}
+ .wombat-aside .sw-profile-daily-layout:not([hidden]), .wombat-aside .sw-profile-unknown-layout:not([hidden]) {height:var(--sw-tab-height);margin:0 0 5px;min-height:0;}
+ .wombat-aside .sw-profile-daily-layout:not([hidden]) {display:grid;grid-template-rows:minmax(0,1fr) 56px;gap:5px;}
+ .wombat-aside .sw-profile-daily-layout .sw-profile-main {min-height:0;grid-template-columns:minmax(0,1fr) minmax(0,calc(var(--sw-profile-portrait-h) * 400 / 620)) minmax(0,1fr);}
+ .wombat-aside .sw-profile-daily-layout :is(.sw-profile-character,.sw-profile-player) {height:var(--sw-profile-portrait-h);min-height:0;}
+ .wombat-aside .sw-profile-daily-layout .sw-profile-credits {max-height:17px;overflow:auto;}
+ .wombat-aside .sw-profile-daily-layout .sw-profile-warnings {margin:0;min-height:0;}
+ .wombat-aside .sw-profile-unknown-layout .sw-profile-radar {flex:1 1 0;height:0;min-height:0;}
+ .wombat-aside .sw-profile-unknown-layout .sw-profile-abilities {min-height:0;}
+}
