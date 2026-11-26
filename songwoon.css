@@ -4636,15 +4636,36 @@ html[data-color-scheme="dark"] .sw-account-page,html[data-color-scheme="dark"].s
 .sw-pm-summary{font-size:12px;color:var(--contrastLight)}.sw-pm-capacity{display:flex;flex-direction:column;gap:5px}.sw-pm-capacity progress{width:180px;height:7px;accent-color:#537b80}.sw-pm [hidden]{display:none!important}.sw-pm-empty{text-align:center;padding:24px;background:var(--neutralDark);border-radius:8px}.sw-pm-actions{padding-top:12px;border-top:var(--border)}.sw-pm-actions button[name^=delete]{background:var(--neutralDark)!important;color:var(--textColor)!important;border:var(--border)!important}.sw-pm-bottom{font-size:12px;margin-bottom:0}.sw-pm-jump{margin-left:auto}.sw-pm select{max-width:100%}
 @media(max-width:800px){.sw-pm #privmsgs-menu{grid-template-columns:repeat(2,minmax(0,1fr))}.sw-pm{padding:14px}.sw-pm-header h1{font-size:24px}}
 
-/* V42 — lecture des messages privés */
-.sw-pm-readpage .sw-pm-letter{background:var(--neutralDark);border:var(--border);border-radius:8px 20px 8px 14px;padding:16px;min-width:0}
-.sw-pm-readpage .sw-pm-letter h2{font:500 25px 'Bricolage Grotesque',sans-serif;text-align:center;margin:0 0 14px;overflow-wrap:anywhere}
-.sw-pm-letter-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;padding-bottom:12px;border-bottom:2px solid transparent;border-image:var(--sw-frequency) 1}
-.sw-pm-letter-tools{display:flex;gap:8px;flex-wrap:wrap}.sw-pm-letter-tools a:not([hidden]){display:inline-flex;align-items:center;gap:5px;background:var(--neutral);border:var(--border);border-radius:6px;padding:6px 9px;color:var(--contrastLight)}
-.sw-pm-letter-grid{display:grid;grid-template-columns:minmax(100px,150px) minmax(0,1fr);gap:16px;margin-top:14px;align-items:start}
-.sw-pm-sender{min-width:0;text-align:center;padding:10px;background:var(--neutral);border:var(--border);border-radius:6px 14px 6px 10px;overflow-wrap:anywhere}.sw-pm-sender>img,.sw-pm-sender>a>img{display:block;width:100%;height:auto;aspect-ratio:400/620;object-fit:cover;border-radius:5px 10px 5px 8px}.sw-pm-sender .message_from{margin-top:8px;font-weight:600}
-.sw-pm-letter-content{min-width:0;min-height:180px;overflow-wrap:anywhere;background:var(--neutral);border:var(--border);border-radius:6px 14px 6px 10px;padding:16px;box-sizing:border-box}.sw-pm-letter-content img{max-width:100%;height:auto}.sw-pm-review{margin-top:16px;min-width:0}
-@media(max-width:600px){.sw-pm-letter-grid{grid-template-columns:1fr}.sw-pm-sender{max-width:150px}.sw-pm-readpage .sw-pm-letter{padding:10px}}
+/* V46 — lecture des MP : correspondance compacte */
+.sw-pm-readpage .sw-pm-letter{background:var(--neutralDark);border:var(--border);border-radius:8px 20px 8px 14px;padding:20px;min-width:0}
+.sw-pm-readpage .sw-pm-letter h2{font:500 25px 'Bricolage Grotesque',sans-serif;text-align:left;margin:0 0 16px;overflow-wrap:anywhere}
+.sw-pm-letter-meta,.sw-pm-history-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
+.sw-pm-letter-meta{justify-content:space-between;padding-bottom:14px;border-bottom:2px solid transparent;border-image:var(--sw-frequency) 1}
+.sw-pm-letter-identity{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
+.sw-pm-letter-byline,.sw-pm-history-identity{display:flex;flex-direction:column;gap:3px;min-width:0;overflow-wrap:anywhere}
+.sw-pm-letter-byline span,.sw-pm-history-subject,.sw-pm-history-meta time{font-size:12px;color:var(--contrastLight)}
+.sw-pm-letter-byline .message_from:empty{display:none}
+.sw-pm-round-avatar{position:relative;display:block;flex:0 0 44px;width:44px;height:44px;overflow:hidden;border-radius:50%;background:var(--neutral);border:var(--border);box-sizing:border-box}
+.sw-pm-round-avatar:before{content:'';position:absolute;inset:0;background:currentColor;opacity:.65;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5'%3E%3Ccircle cx='12' cy='8' r='3'/%3E%3Cpath d='M5 20v-2a7 7 0 0 1 14 0v2'/%3E%3C/svg%3E") center/24px no-repeat}
+.sw-pm-round-avatar img{position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover;object-position:center 30%;border-radius:50%;display:block}
+.sw-pm-letter-tools{display:flex;gap:8px;flex-wrap:wrap}.sw-pm-letter-tools a:not([hidden]){display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:5px 8px;color:var(--contrastLight)}
+.sw-pm-readpage .sw-pm-letter-content{display:block;float:none!important;width:auto!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:18px 0;overflow-wrap:anywhere;background:transparent;border:0;box-sizing:border-box;line-height:1.65}
+.sw-pm-readpage .sw-pm-actions{justify-content:flex-end;padding-top:10px}
+.sw-pm-readpage .sw-pm-actions button{background:transparent!important;color:var(--contrastLight)!important;border:0!important;padding:5px 8px!important;box-shadow:none!important}
+.sw-pm-readpage .sw-pm-actions button[name=delete]{color:#984f42!important;background:transparent!important;border:0!important}
+html[data-color-scheme="dark"] .sw-pm-readpage .sw-pm-actions button[name=delete]{color:#d28e7d!important}
+.sw-pm-review{margin-top:24px;min-width:0}
+.sw-pm-history{min-width:0;color:var(--textColor)}
+.sw-pm-history-heading{margin:18px 0 12px;padding-bottom:10px;border-bottom:2px solid transparent;border-image:var(--sw-frequency) 1}
+.sw-pm-history-heading h2{font:500 21px 'Bricolage Grotesque',sans-serif;margin:0;color:var(--contrastLight)}
+.sw-pm-history-heading p{font:500 20px Caveat,cursive;margin:3px 0 0}
+.sw-pm-history-card{background:var(--neutralDark);border:var(--border);border-radius:6px 14px 6px 10px;padding:14px;margin:9px 0;min-width:0}
+.sw-pm-history-card .sw-pm-round-avatar{width:38px;height:38px;flex-basis:38px}
+.sw-pm-history-identity{flex:1}.sw-pm-history-author{font-weight:600}
+.sw-pm-history-content{padding:12px 0 0;margin:0;overflow-wrap:anywhere;line-height:1.6;min-width:0}
+.sw-pm-letter-content img,.sw-pm-history-content img{max-width:100%;height:auto}
+.sw-pm-history .pagination:empty{display:none}
+@media(max-width:600px){.sw-pm-readpage .sw-pm-letter{padding:12px}.sw-pm-history-meta time{flex-basis:100%}}
 
 /* V43 — rédaction des MP exclusivement */
 .sw-pm-compose > .container {background:var(--neutral);color:var(--textColor);padding:22px;border-radius:8px 22px 8px 16px;box-sizing:border-box}
@@ -4659,8 +4680,6 @@ html[data-color-scheme="dark"] .sw-pm-compose #add_username {background-image:ur
 @media(max-width:800px){.sw-pm-compose > .container{padding:14px}.sw-pm-compose .sw-pm-header .page-title{font-size:24px}}
 
 /* V44 — finitions messagerie et éditeur */
-.sw-pm-letter-grid{align-items:stretch}
-.sw-pm-letter-content{height:auto;align-self:stretch}
 .sw-pm :is(.mp_infos span,.sw-pm-letter-meta,.message_from) a:not([style*="color"]),.sw-pm-history-author a:not([style*="color"]){color:var(--textColor)}
 .sw-pm :is(.mp_infos span,.sw-pm-letter-meta,.message_from) a span:not([style*="color"]):not([class*="sw-group-"]),.sw-pm-history-author a span:not([style*="color"]):not([class*="sw-group-"]){color:inherit}
 .sw-pm-compose #postingbox input[type=text]{background:var(--neutral)!important;color:var(--textColor)!important;border:var(--border)!important;border-radius:6px;padding:8px 10px;min-height:36px}
@@ -4692,7 +4711,5 @@ html[data-color-scheme="dark"] .sw-pm-compose #find_user{background-image:url("d
 html[data-color-scheme="dark"] .sw-pm-compose input[type=button][value="  ?  "]{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23dec9b3%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Cpath%20d%3D%22M9%209a3%203%200%201%201%204%203c-1%201-1%202-1%202m0%203h.01%22%2F%3E%3C%2Fsvg%3E")!important;background-repeat:no-repeat!important;background-position:10px center!important;background-size:17px!important;padding-left:34px!important;}
 
 /* V45 — correctifs ciblés de la messagerie */
-.sw-pm-readpage .sw-pm-letter-grid{align-items:stretch!important}
-.sw-pm-readpage .sw-pm-letter-grid > .sw-pm-letter-content{align-self:stretch!important;height:auto!important;max-height:none!important;margin:0!important;float:none!important;width:auto!important}
 html .sw-pm-compose input[type=button][value="  ?  "],html[data-color-scheme="dark"] .sw-pm-compose input[type=button][value="  ?  "]{color:transparent!important;font-size:0!important;width:38px!important;min-width:38px!important;padding:0!important;background-position:center!important}
 .sw-pm a.sw-pm-staff,.sw-pm a.sw-pm-staff *,body a.sw-pm-staff,body a.sw-pm-staff *{color:var(--textColor)!important}
