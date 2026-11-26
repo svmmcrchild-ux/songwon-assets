@@ -4840,3 +4840,11 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 #notiffi_panel .notification[data-sw-icon="ghost"] { --ntf-symbol:var(--ntf-ghost); }
 #notiffi_panel .notification[data-sw-icon="user-plus"] { --ntf-symbol:var(--ntf-user-plus); }
 #notiffi_panel .notification[data-sw-icon="bell"] { --ntf-symbol:var(--ntf-bell); }
+/* V57 — Confort d'écriture */
+.sw-writing-status {display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;padding:5px 8px;color:var(--contrast);font:400 12px/1.5 'DM Sans',sans-serif;}
+.sw-writing-status button,.sw-copy-code {background:transparent!important;color:var(--contrast)!important;border:var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font:500 11px/1.4 'DM Sans',sans-serif;}
+.sw-writing-status button:hover,.sw-copy-code:hover {color:var(--accentClr)!important;}
+.sw-copy-code {display:inline-flex;align-items:center;gap:5px;margin-left:auto;float:right;}
+.sw-copy-code svg {width:14px;height:14px;}
+.codebox dt:after {content:'';display:block;clear:both;}
+.sw-dialogue-color[aria-disabled=true] {opacity:.45;cursor:not-allowed;}
