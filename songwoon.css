@@ -4636,8 +4636,8 @@ html[data-color-scheme="dark"] .sw-account-page,html[data-color-scheme="dark"].s
 .sw-pm-summary{font-size:12px;color:var(--contrastLight)}.sw-pm-capacity{display:flex;flex-direction:column;gap:5px}.sw-pm-capacity progress{width:180px;height:7px;accent-color:#537b80}.sw-pm [hidden]{display:none!important}.sw-pm-empty{text-align:center;padding:24px;background:var(--neutralDark);border-radius:8px}.sw-pm-actions{padding-top:12px;border-top:var(--border)}.sw-pm-actions button[name^=delete]{background:var(--neutralDark)!important;color:var(--textColor)!important;border:var(--border)!important}.sw-pm-bottom{font-size:12px;margin-bottom:0}.sw-pm-jump{margin-left:auto}.sw-pm select{max-width:100%}
 @media(max-width:800px){.sw-pm #privmsgs-menu{grid-template-columns:repeat(2,minmax(0,1fr))}.sw-pm{padding:14px}.sw-pm-header h1{font-size:24px}}
 
-/* V46 — lecture des MP : correspondance compacte */
-.sw-pm-readpage .sw-pm-letter{background:var(--neutralDark);border:var(--border);border-radius:8px 20px 8px 14px;padding:20px;min-width:0}
+/* V47 — lecture des MP : correspondance et finitions */
+.sw-pm-readpage .sw-pm-letter{background:#f6f3ed;border:1px solid #c9c3b9;border-radius:8px 20px 8px 14px;padding:20px;min-width:0}
 .sw-pm-readpage .sw-pm-letter h2{font:500 25px 'Bricolage Grotesque',sans-serif;text-align:left;margin:0 0 16px;overflow-wrap:anywhere}
 .sw-pm-letter-meta,.sw-pm-history-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
 .sw-pm-letter-meta{justify-content:space-between;padding-bottom:14px;border-bottom:2px solid transparent;border-image:var(--sw-frequency) 1}
@@ -4655,11 +4655,16 @@ html[data-color-scheme="dark"] .sw-account-page,html[data-color-scheme="dark"].s
 .sw-pm-readpage .sw-pm-actions button[name=delete]{color:#984f42!important;background:transparent!important;border:0!important}
 html[data-color-scheme="dark"] .sw-pm-readpage .sw-pm-actions button[name=delete]{color:#d28e7d!important}
 .sw-pm-review{margin-top:24px;min-width:0}
-.sw-pm-history{min-width:0;color:var(--textColor)}
+.sw-pm-history{min-width:0;color:var(--textColor);box-sizing:border-box}
+.sw-pm-history:not(.sw-pm-review .sw-pm-history){background:var(--neutral);padding:20px;border-radius:8px 20px 8px 14px;margin:16px 0}
+.sw-pm-history:not(.sw-pm-review .sw-pm-history) .sw-pm-history-heading{margin-top:0}
+html[data-color-scheme="dark"] .sw-pm-readpage .sw-pm-letter{background:#293a3d;border-color:#40565a}
+html[data-color-scheme="dark"] .sw-pm-history-card{border-color:#40565a}
+.sw-pm-history-card:is(.current_msg,.current-msg,.currentmsg){border-inline-start:3px solid #537b80}
 .sw-pm-history-heading{margin:18px 0 12px;padding-bottom:10px;border-bottom:2px solid transparent;border-image:var(--sw-frequency) 1}
 .sw-pm-history-heading h2{font:500 21px 'Bricolage Grotesque',sans-serif;margin:0;color:var(--contrastLight)}
 .sw-pm-history-heading p{font:500 20px Caveat,cursive;margin:3px 0 0}
-.sw-pm-history-card{background:var(--neutralDark);border:var(--border);border-radius:6px 14px 6px 10px;padding:14px;margin:9px 0;min-width:0}
+.sw-pm-history-card{background:var(--neutralDark);border:1px solid #c9c3b9;border-radius:6px 14px 6px 10px;padding:14px;margin:9px 0;min-width:0}
 .sw-pm-history-card .sw-pm-round-avatar{width:38px;height:38px;flex-basis:38px}
 .sw-pm-history-identity{flex:1}.sw-pm-history-author{font-weight:600}
 .sw-pm-history-content{padding:12px 0 0;margin:0;overflow-wrap:anywhere;line-height:1.6;min-width:0}
