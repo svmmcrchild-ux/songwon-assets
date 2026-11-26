@@ -984,17 +984,35 @@ a.specials_links:empty {
 
 /* SWITCHEROO - AJOUTER UN COMPTE */
 
+/* V50 : pictogramme indépendant de la police d’icônes */
 .switcheroo__squircle--button {
-  transition: border-radius 128ms var(--ease);
-  color: var(--contrastLight);
+  transition: border-radius 128ms var(--ease), background-color 128ms var(--ease);
+  background-color: #36565c;
+  color: #eeebe4;
 }
 
-.switcheroo__squircle--button i {
-  font-size: 19px;
+.switcheroo__squircle--button i,
+.switcheroo__squircle--button > svg {
+  display: none;
+}
+
+.switcheroo__squircle--button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(currentColor, currentColor) center / 16px 2px no-repeat,
+              linear-gradient(currentColor, currentColor) center / 2px 16px no-repeat;
+  pointer-events: none;
 }
 
 .switcheroo__squircle--button:hover {
-  color: var(--accentClr);
+  background-color: #984f42;
+  color: #eeebe4;
+  outline-color: #ad6355;
 }
 
 /* Bouton de suppression d'un compte */
