@@ -675,15 +675,20 @@ a.specials_links:empty {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  width: 34px;
+  box-sizing: border-box;
+  width: 44px;
   height: 34px;
   padding: 5px;
+  margin: 0 3px;
   background: transparent;
   border-radius: 5px;
-  color: var(--contrast);
+  color: #41676c !important;
+  transform: translateY(-3px);
 }
+[data-color-scheme="dark"] .songwon-navigation #notiffi_button { color: #eeebe4 !important; }
 #notiffi_button:hover, #notiffi_button:focus-visible { background: var(--neutral); }
-#notiffi_button .ntf_button-text { display: flex; align-items: center; }
+#notiffi_button .ntf_button-text { display: flex; align-items: center; color: inherit !important; }
+#notiffi_button .ntf_button-text svg { display: block; color: inherit !important; stroke: currentColor !important; }
 #notiffi_button .unread_count { position: absolute; top: -2px; right: -3px; width: auto; min-width: 15px; height: 15px; padding: 0 3px; border-radius: 20px; background: #ad6355; color: #fff; font-size: 10px; }
 
 /* Compteur des notifications non lues */
