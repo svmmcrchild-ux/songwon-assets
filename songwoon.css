@@ -4877,3 +4877,12 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 .wombat-aside .sw-profile .sw-profile-universe:not([hidden]) .sw-profile-scroll {
   height: auto; min-height: 65px; max-height: 180px;
 }
+
+/* SONGWON — V59 : lecture des capacités */
+.wombat-aside .sw-profile-abilities[hidden] { display:none !important; }
+.wombat-aside .sw-profile-abilities { margin: 0 0 8px; padding: 8px 10px; }
+.wombat-aside .sw-profile-abilities-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+.wombat-aside .sw-profile-abilities-grid > div { display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px; padding:4px 8px; border:1px solid var(--sw-post-line); border-radius:5px; }
+.wombat-aside .sw-profile-abilities-grid > div:last-child { grid-column:1/-1; }
+.wombat-aside .sw-profile-abilities-grid strong { color:var(--accentClr); }
+@media(max-width:650px) { .wombat-aside .sw-profile-abilities-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
