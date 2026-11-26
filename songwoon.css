@@ -4886,3 +4886,29 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 .wombat-aside .sw-profile-abilities-grid > div:last-child { grid-column:1/-1; }
 .wombat-aside .sw-profile-abilities-grid strong { color:var(--accentClr); }
 @media(max-width:650px) { .wombat-aside .sw-profile-abilities-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* SONGWON — V60 : radar et disposition compacte du Wombat */
+.wombat-aside .sw-profile-unknown-layout[hidden] {display:none!important;}
+.wombat-aside .sw-profile-unknown-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:stretch;margin-bottom:5px;}
+.wombat-aside .sw-profile .sw-profile-tabs:not([hidden]) {padding:2px;margin:3px 0 6px;}
+.wombat-aside .sw-profile-tabs button {padding:4px 4px;font-size:14px;}
+.wombat-aside .sw-profile-unknown-layout .sw-profile-abilities {margin:0;display:flex;flex-direction:column;min-width:0;padding:5px 10px;}
+.wombat-aside .sw-profile-radar {display:block;width:100%;height:clamp(170px,calc(100dvh - 430px),250px);overflow:visible;}
+.sw-radar-ring {fill:none;stroke:var(--sw-post-muted);stroke-opacity:.32;stroke-width:1;}
+.sw-radar-shape {fill:#537b80;fill-opacity:.36;stroke:#537b80;stroke-width:2;}
+.sw-radar-dot {fill:#ad6355;}
+.sw-radar-label {fill:var(--sw-post-ink);font:500 12px "DM Sans",Arial,sans-serif;}
+.sw-radar-value {fill:#36565c;font:700 13px "DM Sans",Arial,sans-serif;}
+[data-color-scheme="dark"] .sw-radar-shape {stroke:#9bbfc1;fill-opacity:.55;}
+[data-color-scheme="dark"] .sw-radar-dot,[data-color-scheme="dark"] .sw-radar-value {fill:#d49a89;}
+.wombat-aside .sw-profile-adversity {display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--sw-post-line);padding:4px 5px;margin-top:auto;}
+.wombat-aside .sw-profile-adversity strong {font:700 21px/1.1 "Bricolage Grotesque",Arial,sans-serif;color:var(--accentClr);}
+.wombat-aside .sw-profile-unknown-layout .sw-profile-universe {display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:7px;margin:0;min-height:0;}
+.wombat-aside .sw-profile-unknown-layout .sw-profile-universe > section {display:flex;flex-direction:column;min-height:0;}
+.wombat-aside .sw-profile .sw-profile-unknown-layout .sw-profile-universe:not([hidden]) .sw-profile-scroll {height:0;min-height:0;max-height:none;flex:1 1 0;overflow-y:auto;}
+@media(max-width:650px){
+ .wombat-aside .sw-profile-unknown-layout {grid-template-columns:minmax(0,1fr);}
+ .wombat-aside .sw-profile-unknown-layout .sw-profile-universe {grid-template-rows:auto auto;}
+ .wombat-aside .sw-profile .sw-profile-unknown-layout .sw-profile-universe:not([hidden]) .sw-profile-scroll {height:100px;flex:none;}
+ .wombat-aside .sw-profile-radar {height:230px;}
+}
