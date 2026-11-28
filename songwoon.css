@@ -5180,30 +5180,25 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 .sw-rp-icon-warning{--sw-rp-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M10.3%203.9%202.5%2018a2%202%200%200%200%201.7%203h15.6a2%202%200%200%200%201.7-3L13.7%203.9a2%202%200%200%200-3.4%200Z%20M12%209v4M12%2017h.01%22%2F%3E%3C%2Fsvg%3E");}
 .sw-rp-icon-eye{--sw-rp-icon:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M2%2012s3.6-7%2010-7%2010%207%2010%207-3.6%207-10%207-10-7-10-7Z%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%223%22%2F%3E%3C%2Fsvg%3E");}
 
-/* SONGWON — Fiches officielles : interactions communes */
-.sw-sheet .sw-character-flip{margin:0;}
-.sw-sheet .sw-character-front{position:absolute;inset:0;transition:opacity .25s ease;overflow:hidden;border-radius:8px;}
-.sw-sheet .sw-character-front img{display:block;width:100%;height:100%;object-fit:cover;}
-.sw-sheet .sw-character-back{box-sizing:border-box;overflow:auto;padding:12px!important;}
-.sw-sheet .sw-character-flip:hover .sw-character-back,.sw-sheet .sw-character-flip:focus-within .sw-character-back{opacity:0;pointer-events:none;}
-.sw-sheet .sw-character-flip:hover .sw-character-front,.sw-sheet .sw-character-flip:focus-within .sw-character-front{opacity:1;}
-.sw-sheet .sw-character-flip[open] .sw-character-back{opacity:1;pointer-events:auto;inset:0 0 30px;height:auto;}
-.sw-sheet .sw-character-flip[open] .sw-character-front{opacity:0;}
-.sw-sheet .sw-character-flip summary{position:absolute;inset:auto 0 0;z-index:3;cursor:pointer;text-align:center;list-style:none;}
+/* SONGWON — Fiches officielles V2 */
+.sw-sheet{border-radius:5px 12px 5px 10px;border:1px solid var(--sw-post-line);}
+.sw-sheet .sw-sheet-layout{grid-template-columns:260px minmax(0,1fr);gap:16px;align-items:start;}
+.sw-sheet .sw-sheet-portrait{position:relative;width:100%;aspect-ratio:400/620;overflow:hidden;border-radius:5px 12px 5px 10px;box-shadow:inset 0 0 0 1px var(--sw-post-line);}
+.sw-sheet .sw-character-front{position:absolute;inset:0;transition:opacity .25s ease;}
+.sw-sheet .sw-character-front img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit;}
+.sw-sheet .sw-character-flip{margin:0;position:absolute;inset:0;height:100%;}
+.sw-sheet .sw-character-flip summary{position:absolute;right:9px;bottom:9px;z-index:4;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#36565c;color:#fff;cursor:pointer;list-style:none;}
 .sw-sheet summary::-webkit-details-marker{display:none;}
-.sw-sheet .sw-sheet-content{position:relative;min-height:0;}
-.sw-sheet .sw-sheet-tabs{position:absolute;inset:0;display:flex;flex-direction:column;min-height:0;}
-.sw-sheet .sw-sheet-tabs details{min-height:0;}
-.sw-sheet .sw-sheet-tabs details[open]{flex:1;display:flex;flex-direction:column;overflow:auto;}
-.sw-sheet .sw-sheet-tabs summary{cursor:pointer;position:sticky;top:0;z-index:1;list-style:none;}
-.sw-sheet .sw-sheet-tabs details[open]>summary{color:var(--accentClr);}
-.sw-sheet .sw-sheet-player{display:flex;align-items:flex-start;gap:12px;margin-top:12px;}
-.sw-sheet .sw-sheet-player img{width:80px;height:80px;object-fit:cover;border-radius:8px;flex:none;}
-.sw-sheet .sw-sheet-player>div{min-width:0;}
-@media(max-width:600px){.sw-sheet .sw-character-flip{max-width:260px;margin:auto;}.sw-sheet .sw-sheet-tabs{position:static;}.sw-sheet .sw-sheet-tabs details[open]{max-height:420px;}}
-
-.sw-sheet .sw-sheet-portrait{position:relative;aspect-ratio:400/620;}
+.sw-sheet .sw-character-back{box-sizing:border-box;overflow:auto;padding:12px 12px 42px!important;opacity:0;pointer-events:none;border-radius:inherit;}
+.sw-sheet .sw-character-flip[open] .sw-character-back{opacity:1;pointer-events:auto;}
 .sw-sheet .sw-sheet-portrait:has(details[open])>.sw-character-front{opacity:0;}
-.sw-sheet .sw-sheet-portrait>.sw-character-front{bottom:30px;}
-.sw-sheet .sw-sheet-portrait>.sw-character-front img{object-fit:contain;}
-@media(max-width:600px){.sw-sheet .sw-sheet-portrait{max-width:260px;margin:auto;width:100%;}}
+.sw-sheet .sw-sheet-tabs{position:relative;height:403px;min-width:0;border:1px solid var(--sw-post-line);border-radius:5px 12px 5px 10px;background:var(--sw-post-sheet);overflow:hidden;}
+.sw-sheet .sw-sheet-tabs details>summary{position:absolute;top:0;width:50%;height:38px;display:grid;place-items:center;box-sizing:border-box;cursor:pointer;list-style:none;color:var(--contrast);border-bottom:1px solid var(--sw-post-line);font-weight:600;}
+.sw-sheet .sw-sheet-tabs details:first-of-type>summary{left:0;}
+.sw-sheet .sw-sheet-tabs details:last-of-type>summary{right:0;}
+.sw-sheet .sw-sheet-tabs details[open]>summary{color:var(--accentClr);border-bottom:2px solid var(--accentClr);}
+.sw-sheet .sw-sheet-tabs details[open]>.sw-inner{position:absolute;inset:39px 0 0;overflow:auto;background:transparent;padding:14px;}
+.sw-sheet .sw-sheet-player{display:flex;align-items:flex-start;gap:12px;margin-top:12px;border-radius:5px 12px 5px 10px;}
+.sw-sheet .sw-sheet-player img{width:80px;height:80px;object-fit:cover;border-radius:5px 12px 5px 10px;flex:none;}
+.sw-sheet .sw-sheet-player>div{min-width:0;}
+@media(max-width:600px){.sw-sheet .sw-sheet-layout{grid-template-columns:minmax(0,1fr);}.sw-sheet .sw-sheet-portrait{max-width:260px;margin:auto;}.sw-sheet .sw-sheet-tabs{height:403px;}}
