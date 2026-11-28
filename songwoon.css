@@ -5206,3 +5206,10 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 
 /* SONGWON - Fiches officielles V4 : radar uniquement */
 .sw-sheet .sw-sheet-radar .sw-profile-radar{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;overflow:visible;}
+
+/* SONGWON - Scenario : quatre onglets, sans modifier les presentations */
+.sw-sheet.sw-scenario .sw-sheet-tabs > details > summary{width:25%;right:auto;font-size:12px;}
+.sw-sheet.sw-scenario .sw-sheet-tabs > details:nth-of-type(1)>summary{left:0;}
+.sw-sheet.sw-scenario .sw-sheet-tabs > details:nth-of-type(2)>summary{left:25%;}
+.sw-sheet.sw-scenario .sw-sheet-tabs > details:nth-of-type(3)>summary{left:50%;}
+.sw-sheet.sw-scenario .sw-sheet-tabs > details:nth-of-type(4)>summary{left:75%;}
