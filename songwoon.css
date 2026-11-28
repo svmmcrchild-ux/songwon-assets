@@ -5124,3 +5124,6 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 .sw-tag-fill {background:#36565c;color:#eeebe4;}
 .sw-tag-round {background:var(--neutralDarker);color:var(--contrast);border-radius:999px;}
 .sw-tag-terra {border:1px solid var(--sw-terracotta);color:var(--contrast);}
+
+/* SONGWON - Conteneur commun des planches de test */
+.sw-lab {box-sizing:border-box;min-width:0;overflow-wrap:anywhere;color:var(--contrast);background:var(--neutral);padding:16px;border-radius:12px;}
