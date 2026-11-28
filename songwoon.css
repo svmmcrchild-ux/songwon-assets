@@ -5181,7 +5181,7 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 .sw-rp-body {font:400 14px/1.65 var(--font);overflow-wrap:anywhere;}
 .sw-rp-body p {margin:0 0 12px;}
 .sw-letter,.sw-small-note {box-sizing:border-box;color:#49463e;background:#eee5d5;font-size:23px;line-height:1.35;padding:20px;max-width:100%;overflow-wrap:anywhere;}
-.sw-letter {max-width:540px;margin:0 auto;border-radius:3px;}
+.sw-letter {max-width:700px;margin:0 auto;border-radius:3px;}
 .sw-small-note {background:#dfd0ad;max-width:280px;margin:0 auto;border-radius:3px;}
 [data-color-scheme="dark"] .sw-letter {background:#403a32;color:#eee5d5;}
 [data-color-scheme="dark"] .sw-small-note {background:#514635;color:#f0e2c4;}
