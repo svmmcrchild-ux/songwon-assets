@@ -5203,3 +5203,6 @@ html[data-color-scheme="dark"] :is(#search_menu,.sw-search-form) input::placehol
 .sw-sheet .sw-sheet-player img{width:80px;height:80px;object-fit:cover;border-radius:5px 12px 5px 10px;flex:none;}
 .sw-sheet .sw-sheet-player>div{min-width:0;}
 @media(max-width:600px){.sw-sheet .sw-sheet-layout{grid-template-columns:minmax(0,1fr);}.sw-sheet .sw-sheet-portrait{max-width:260px;margin:auto;}.sw-sheet .sw-sheet-tabs{height:403px;}}
+
+/* SONGWON - Fiches officielles V4 : radar uniquement */
+.sw-sheet .sw-sheet-radar .sw-profile-radar{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;overflow:visible;}
